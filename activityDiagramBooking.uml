@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Package xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_n9VbAJSBEeWINvudePaB-Q" name="activityDiagramBooking">
+  <packagedElement xmi:type="uml:Activity" xmi:id="_q8O1EJSBEeWINvudePaB-Q" name="Booking" node="_wE9pcJSBEeWINvudePaB-Q _A6P5oJSEEeWINvudePaB-Q _G8aQYJSEEeWINvudePaB-Q _fkuC4JSEEeWINvudePaB-Q _mLQ5EJSEEeWINvudePaB-Q _urUOkJSEEeWINvudePaB-Q _0JCbgJSEEeWINvudePaB-Q _4eUZsJSEEeWINvudePaB-Q _-uIx8JSEEeWINvudePaB-Q _WqFNsJSFEeWINvudePaB-Q _CT33oJSHEeWINvudePaB-Q">
+    <edge xmi:type="uml:ControlFlow" xmi:id="_bT8UwJSFEeWINvudePaB-Q" target="_A6P5oJSEEeWINvudePaB-Q" source="_wE9pcJSBEeWINvudePaB-Q"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_efrQ8JSFEeWINvudePaB-Q" target="_G8aQYJSEEeWINvudePaB-Q" source="_A6P5oJSEEeWINvudePaB-Q"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_gi2CkJSFEeWINvudePaB-Q" target="_fkuC4JSEEeWINvudePaB-Q" source="_G8aQYJSEEeWINvudePaB-Q"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_hrFdAJSFEeWINvudePaB-Q" target="_mLQ5EJSEEeWINvudePaB-Q" source="_fkuC4JSEEeWINvudePaB-Q"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_tFhDgJSGEeWINvudePaB-Q" name="Customer's data is in the system" target="_4eUZsJSEEeWINvudePaB-Q" source="_mLQ5EJSEEeWINvudePaB-Q"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_yZamEJSGEeWINvudePaB-Q" name="Customer's data is not in the system" target="_urUOkJSEEeWINvudePaB-Q" source="_mLQ5EJSEEeWINvudePaB-Q"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_290lYJSGEeWINvudePaB-Q" target="_0JCbgJSEEeWINvudePaB-Q" source="_urUOkJSEEeWINvudePaB-Q"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_4pUd4JSGEeWINvudePaB-Q" target="_-uIx8JSEEeWINvudePaB-Q" source="_4eUZsJSEEeWINvudePaB-Q"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_5OtC4JSGEeWINvudePaB-Q" target="_WqFNsJSFEeWINvudePaB-Q" source="_-uIx8JSEEeWINvudePaB-Q"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_NkqPYJSHEeWINvudePaB-Q" target="_CT33oJSHEeWINvudePaB-Q" source="_WqFNsJSFEeWINvudePaB-Q"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_P24JoJSHEeWINvudePaB-Q" target="_-uIx8JSEEeWINvudePaB-Q" source="_0JCbgJSEEeWINvudePaB-Q"/>
+    <node xmi:type="uml:InitialNode" xmi:id="_wE9pcJSBEeWINvudePaB-Q" name="Start" outgoing="_bT8UwJSFEeWINvudePaB-Q"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_A6P5oJSEEeWINvudePaB-Q" name="Enter search conditions" incoming="_bT8UwJSFEeWINvudePaB-Q" outgoing="_efrQ8JSFEeWINvudePaB-Q"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_G8aQYJSEEeWINvudePaB-Q" name="Search result is displayed" incoming="_efrQ8JSFEeWINvudePaB-Q" outgoing="_gi2CkJSFEeWINvudePaB-Q"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_fkuC4JSEEeWINvudePaB-Q" name="Select room(s) from search result" incoming="_gi2CkJSFEeWINvudePaB-Q" outgoing="_hrFdAJSFEeWINvudePaB-Q"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_mLQ5EJSEEeWINvudePaB-Q" name="Selected room(s) are added to booking" incoming="_hrFdAJSFEeWINvudePaB-Q" outgoing="_tFhDgJSGEeWINvudePaB-Q _yZamEJSGEeWINvudePaB-Q"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_urUOkJSEEeWINvudePaB-Q" name="Enter customer information" incoming="_yZamEJSGEeWINvudePaB-Q" outgoing="_290lYJSGEeWINvudePaB-Q"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_0JCbgJSEEeWINvudePaB-Q" name="Customer information is stored" incoming="_290lYJSGEeWINvudePaB-Q" outgoing="_P24JoJSHEeWINvudePaB-Q"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_4eUZsJSEEeWINvudePaB-Q" name="Select the customer from the system" incoming="_tFhDgJSGEeWINvudePaB-Q" outgoing="_4pUd4JSGEeWINvudePaB-Q"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_-uIx8JSEEeWINvudePaB-Q" name="Send confirmation e-mail? (Y/N)" incoming="_4pUd4JSGEeWINvudePaB-Q _P24JoJSHEeWINvudePaB-Q" outgoing="_5OtC4JSGEeWINvudePaB-Q"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_WqFNsJSFEeWINvudePaB-Q" name="Booking is stored and confimation e-mail is sent (if asked)" incoming="_5OtC4JSGEeWINvudePaB-Q" outgoing="_NkqPYJSHEeWINvudePaB-Q"/>
+    <node xmi:type="uml:ActivityFinalNode" xmi:id="_CT33oJSHEeWINvudePaB-Q" name="End" incoming="_NkqPYJSHEeWINvudePaB-Q"/>
+  </packagedElement>
+  <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_xYxzAJSHEeWINvudePaB-Q">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_xY35oJSHEeWINvudePaB-Q" source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <references xmi:type="ecore:EPackage" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#_Kv8EIKFXEeS_KNX0nfvIVQ"/>
+    </eAnnotations>
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_xY5HwJSHEeWINvudePaB-Q" source="duplicatedProfile"/>
+    <appliedProfile xmi:type="uml:Profile" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#ActionLanguage"/>
+  </profileApplication>
+</uml:Package>
