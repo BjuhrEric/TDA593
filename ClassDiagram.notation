@@ -577,7 +577,7 @@
   <styles xmi:type="style:PapyrusViewStyle" xmi:id="_a2mso5OBEeWai68V7lLhPw">
     <owner xmi:type="uml:Package" href="ClassDiagram.uml#_JI3k8JOUEeWai68V7lLhPw"/>
   </styles>
-  <element xmi:type="uml:Model" href="class-diagram.uml#_a2YDIJOBEeWai68V7lLhPw"/>
+  <element xmi:type="uml:Model" href="model.uml#_a2YDIJOBEeWai68V7lLhPw"/>
   <edges xmi:type="notation:Connector" xmi:id="_4TTwUJODEeWai68V7lLhPw" type="4002" source="_a_zPcJOCEeWai68V7lLhPw" target="_oH1AMJODEeWai68V7lLhPw">
     <children xmi:type="notation:DecorationNode" xmi:id="_4TUXYJODEeWai68V7lLhPw" type="6007">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_4TUXYZODEeWai68V7lLhPw" y="40"/>
