@@ -237,7 +237,7 @@
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
     </ownedAttribute>
   </packagedElement>
-  <packagedElement xmi:type="uml:Association" xmi:id="_XEboQJOREeWai68V7lLhPw" memberEnd="_XEcPUpOREeWai68V7lLhPw _XEcPU5OREeWai68V7lLhPw" navigableOwnedEnd="_XEcPU5OREeWai68V7lLhPw">
+  <packagedElement xmi:type="uml:Association" xmi:id="_XEboQJOREeWai68V7lLhPw" memberEnd="_XEcPUpOREeWai68V7lLhPw _XEcPU5OREeWai68V7lLhPw">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_XEcPUJOREeWai68V7lLhPw" source="org.eclipse.papyrus">
       <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_XEcPUZOREeWai68V7lLhPw" key="nature" value="UML_Nature"/>
     </eAnnotations>
