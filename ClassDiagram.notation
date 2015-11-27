@@ -796,7 +796,7 @@
       <layoutConstraint xmi:type="notation:Location" xmi:id="_-uli_JOJEeWai68V7lLhPw" x="-57" y="-11"/>
     </children>
     <children xmi:type="notation:DecorationNode" xmi:id="_-uli_ZOJEeWai68V7lLhPw" type="6034">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_-uli_pOJEeWai68V7lLhPw" x="15" y="-12"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_-uli_pOJEeWai68V7lLhPw" x="35" y="-15"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_-uli8ZOJEeWai68V7lLhPw"/>
     <element xmi:type="uml:Association" href="ClassDiagram.uml#_-uL6UJOJEeWai68V7lLhPw"/>
