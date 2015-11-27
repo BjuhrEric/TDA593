@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Package xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_wQVcoJUpEeW_s7g45KehCA" name="ComponentDiagram">
+  <packagedElement xmi:type="uml:Component" xmi:id="_yzPeQJUpEeW_s7g45KehCA" name="CustomerRecord">
+    <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_yzPeQZUpEeW_s7g45KehCA" client="_yzPeQJUpEeW_s7g45KehCA" supplier="_yzc5oJUpEeW_s7g45KehCA" contract="_yzc5oJUpEeW_s7g45KehCA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Component" xmi:id="_yzQsYJUpEeW_s7g45KehCA" name="Room">
+    <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_yzRTcJUpEeW_s7g45KehCA" client="_yzQsYJUpEeW_s7g45KehCA" supplier="_yzbEcJUpEeW_s7g45KehCA" contract="_yzbEcJUpEeW_s7g45KehCA"/>
+    <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_yzRTcZUpEeW_s7g45KehCA" client="_yzQsYJUpEeW_s7g45KehCA" supplier="_yzdgsJUpEeW_s7g45KehCA" contract="_yzdgsJUpEeW_s7g45KehCA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Component" xmi:id="_yzR6gJUpEeW_s7g45KehCA" name="Booking">
+    <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_yzR6gZUpEeW_s7g45KehCA" client="_yzR6gJUpEeW_s7g45KehCA" supplier="_yzcSkJUpEeW_s7g45KehCA" contract="_yzcSkJUpEeW_s7g45KehCA"/>
+    <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_yzR6gpUpEeW_s7g45KehCA" client="_yzR6gJUpEeW_s7g45KehCA" supplier="_yzdgs5UpEeW_s7g45KehCA" contract="_yzdgs5UpEeW_s7g45KehCA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Component" xmi:id="_yzShkJUpEeW_s7g45KehCA" name="Bank">
+    <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_yzShkZUpEeW_s7g45KehCA" client="_yzShkJUpEeW_s7g45KehCA" supplier="_yzbrgJUpEeW_s7g45KehCA" contract="_yzbrgJUpEeW_s7g45KehCA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Component" xmi:id="_yzShkpUpEeW_s7g45KehCA" name="Billing">
+    <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_yzShk5UpEeW_s7g45KehCA" client="_yzShkpUpEeW_s7g45KehCA" supplier="_yzadYJUpEeW_s7g45KehCA" contract="_yzadYJUpEeW_s7g45KehCA"/>
+    <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_yzShlJUpEeW_s7g45KehCA" client="_yzShkpUpEeW_s7g45KehCA" supplier="_yzeHwJUpEeW_s7g45KehCA" contract="_yzeHwJUpEeW_s7g45KehCA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_yzShlZUpEeW_s7g45KehCA" client="_yzShkpUpEeW_s7g45KehCA" supplier="_yzbrgJUpEeW_s7g45KehCA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Component" xmi:id="_yzTIoJUpEeW_s7g45KehCA" name="Receptionist">
+    <packagedElement xmi:type="uml:Usage" xmi:id="_yzTIoZUpEeW_s7g45KehCA" client="_yzTIoJUpEeW_s7g45KehCA" supplier="_yzadYJUpEeW_s7g45KehCA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_yzTIopUpEeW_s7g45KehCA" client="_yzTIoJUpEeW_s7g45KehCA" supplier="_yzbEcJUpEeW_s7g45KehCA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_yzTIo5UpEeW_s7g45KehCA" client="_yzTIoJUpEeW_s7g45KehCA" supplier="_yzcSkJUpEeW_s7g45KehCA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_yzTIpJUpEeW_s7g45KehCA" client="_yzTIoJUpEeW_s7g45KehCA" supplier="_yzc5oJUpEeW_s7g45KehCA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_yzTIpZUpEeW_s7g45KehCA" client="_yzTIoJUpEeW_s7g45KehCA" supplier="_yzfV4JUpEeW_s7g45KehCA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Component" xmi:id="_yzTvsJUpEeW_s7g45KehCA" name="Admin">
+    <packagedElement xmi:type="uml:Usage" xmi:id="_yzTvsZUpEeW_s7g45KehCA" client="_yzTvsJUpEeW_s7g45KehCA" supplier="_yzadYJUpEeW_s7g45KehCA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_yzTvspUpEeW_s7g45KehCA" client="_yzTvsJUpEeW_s7g45KehCA" supplier="_yzbEcJUpEeW_s7g45KehCA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_yzTvs5UpEeW_s7g45KehCA" client="_yzTvsJUpEeW_s7g45KehCA" supplier="_yzcSkJUpEeW_s7g45KehCA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_yzTvtJUpEeW_s7g45KehCA" client="_yzTvsJUpEeW_s7g45KehCA" supplier="_yzc5oJUpEeW_s7g45KehCA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_yzTvtZUpEeW_s7g45KehCA" client="_yzTvsJUpEeW_s7g45KehCA" supplier="_yzfV4JUpEeW_s7g45KehCA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Component" xmi:id="_yzUWwJUpEeW_s7g45KehCA" name="Customer">
+    <packagedElement xmi:type="uml:Usage" xmi:id="_yzUWwZUpEeW_s7g45KehCA" client="_yzUWwJUpEeW_s7g45KehCA" supplier="_yzdgs5UpEeW_s7g45KehCA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Component" xmi:id="_yzUWwpUpEeW_s7g45KehCA" name="CleaningStaff">
+    <packagedElement xmi:type="uml:Usage" xmi:id="_yzUWw5UpEeW_s7g45KehCA" client="_yzUWwpUpEeW_s7g45KehCA" supplier="_yzdgsJUpEeW_s7g45KehCA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_yzUWxJUpEeW_s7g45KehCA" client="_yzUWwpUpEeW_s7g45KehCA" supplier="_yzfV4JUpEeW_s7g45KehCA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Component" xmi:id="_yzU90JUpEeW_s7g45KehCA" name="KitchenStaff">
+    <packagedElement xmi:type="uml:Usage" xmi:id="_yzU90ZUpEeW_s7g45KehCA" client="_yzU90JUpEeW_s7g45KehCA" supplier="_yzeHwJUpEeW_s7g45KehCA"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_yzU90pUpEeW_s7g45KehCA" client="_yzU90JUpEeW_s7g45KehCA" supplier="_yzfV4JUpEeW_s7g45KehCA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_yzadYJUpEeW_s7g45KehCA" name="RequiresBilling">
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_yzadYZUpEeW_s7g45KehCA" name="addItemToBill"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_yzadYpUpEeW_s7g45KehCA" name="removeItemFromBill"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_yzadY5UpEeW_s7g45KehCA" name="mergeBill"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_yzadZJUpEeW_s7g45KehCA" name="getRoomBill"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_yzadZZUpEeW_s7g45KehCA" name="getPurchaseables"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_yzadZpUpEeW_s7g45KehCA" name="addCostOfEventBookingToGuest"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_yzadZ5UpEeW_s7g45KehCA" name="makePayment"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_yzbEcJUpEeW_s7g45KehCA" name="RequiresRoom">
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_yzbEcZUpEeW_s7g45KehCA" name="checkAvailableRooms"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_yzbEcpUpEeW_s7g45KehCA" name="numberOfAvailableRooms"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_yzbEc5UpEeW_s7g45KehCA" name="listAvailableRoomTypes"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_yzbEdJUpEeW_s7g45KehCA" name="isRoomTypeAvailable"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_yzbEdZUpEeW_s7g45KehCA" name="fitsInRoom"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_yzbEdpUpEeW_s7g45KehCA" name="changeStatusOfRoom"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_yzbEd5UpEeW_s7g45KehCA" name="isVenueAvailable"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_yzbEeJUpEeW_s7g45KehCA" name="findRoomsOnName"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_yzbEeZUpEeW_s7g45KehCA" name="isRoomClean"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_yzbEepUpEeW_s7g45KehCA" name="markAsOccupied"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_yzbrgJUpEeW_s7g45KehCA" name="RequiresBank">
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_yzbrgZUpEeW_s7g45KehCA" name="makePayment"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_yzbrgpUpEeW_s7g45KehCA" name="validateCC"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_yzbrg5UpEeW_s7g45KehCA" name="printReceit"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_yzcSkJUpEeW_s7g45KehCA" name="RequiresBooking">
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_yzcSkZUpEeW_s7g45KehCA" name="createBooking"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_yzcSkpUpEeW_s7g45KehCA" name="sendConfirmationEmail"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_yzcSk5UpEeW_s7g45KehCA" name="createVenueBooking"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_yzcSlJUpEeW_s7g45KehCA" name="cancelBooking"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_yzcSlZUpEeW_s7g45KehCA" name="isBookingCompleted"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_yzcSlpUpEeW_s7g45KehCA" name="checkIn"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_yzcSl5UpEeW_s7g45KehCA" name="checkOut"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_yzcSmJUpEeW_s7g45KehCA" name="checkInAll"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_yzcSmZUpEeW_s7g45KehCA" name="checkOutAll"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_yzc5oJUpEeW_s7g45KehCA" name="RequiresCustomerRecord">
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_yzc5oZUpEeW_s7g45KehCA" name="createCustomerProfile"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_yzc5opUpEeW_s7g45KehCA" name="changeStatusOfGuest"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_yzdgsJUpEeW_s7g45KehCA" name="CanClean">
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_yzdgsZUpEeW_s7g45KehCA" name="isRoomClean"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_yzdgspUpEeW_s7g45KehCA" name="markAsClean"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_yzdgs5UpEeW_s7g45KehCA" name="CustomerBooking">
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_yzdgtJUpEeW_s7g45KehCA" name="createBooking"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_yzdgtZUpEeW_s7g45KehCA" name="makePayment"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_yzeHwJUpEeW_s7g45KehCA" name="KitchingBilling">
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_yzeHwZUpEeW_s7g45KehCA" name="addItemToBill"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_yzeHwpUpEeW_s7g45KehCA" name="getPurcheables"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Component" xmi:id="_yzeu0JUpEeW_s7g45KehCA" name="HotelSystem">
+    <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_yzeu0ZUpEeW_s7g45KehCA" client="_yzeu0JUpEeW_s7g45KehCA" supplier="_yzfV4JUpEeW_s7g45KehCA" contract="_yzfV4JUpEeW_s7g45KehCA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_yzfV4JUpEeW_s7g45KehCA" name="RequiresLogin">
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_yzfV4ZUpEeW_s7g45KehCA" name="login"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_yzfV4pUpEeW_s7g45KehCA" name="logout"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_yzfV45UpEeW_s7g45KehCA" supplier="_yzShkpUpEeW_s7g45KehCA">
+    <client xmi:type="uml:Model" href="component-diagram.uml#_iK_C0JLJEeWriLl3VSPcBg"/>
+    <client xmi:type="uml:Model" href="component-diagram.uml#_iK_C0JLJEeWriLl3VSPcBg"/>
+    <client xmi:type="uml:Model" href="component-diagram.uml#_iK_C0JLJEeWriLl3VSPcBg"/>
+    <client xmi:type="uml:Model" href="component-diagram.uml#_iK_C0JLJEeWriLl3VSPcBg"/>
+  </packagedElement>
+  <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_lkXzwJUqEeWD-Il5naS0Lw">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_lkfIgJUqEeWD-Il5naS0Lw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <references xmi:type="ecore:EPackage" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#_Kv8EIKFXEeS_KNX0nfvIVQ"/>
+    </eAnnotations>
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_lkg9sJUqEeWD-Il5naS0Lw" source="duplicatedProfile"/>
+    <appliedProfile xmi:type="uml:Profile" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#ActionLanguage"/>
+  </profileApplication>
+</uml:Package>
