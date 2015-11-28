@@ -55,7 +55,10 @@
     </ownedAttribute>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_0SoBwpOGEeWai68V7lLhPw" name="title" type="_wVVFwJOGEeWai68V7lLhPw" aggregation="shared" association="_0SmzoJOGEeWai68V7lLhPw"/>
   </packagedElement>
-  <packagedElement xmi:type="uml:Enumeration" xmi:id="_m_lwUJOEEeWai68V7lLhPw" name="Guest Status"/>
+  <packagedElement xmi:type="uml:Enumeration" xmi:id="_m_lwUJOEEeWai68V7lLhPw" name="Guest Status">
+    <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_Hls-wJVlEeWBluaU4-si5w" name="CheckedIn"/>
+    <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_LrM0gJVlEeWBluaU4-si5w" name="CheckedOut"/>
+  </packagedElement>
   <packagedElement xmi:type="uml:Association" xmi:id="_-U2mkJOEEeWai68V7lLhPw" visibility="private" memberEnd="_-U7fEJOEEeWai68V7lLhPw _-U8GIJOEEeWai68V7lLhPw">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_-U6Q8JOEEeWai68V7lLhPw" source="org.eclipse.papyrus">
       <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_-U6Q8ZOEEeWai68V7lLhPw" key="nature" value="UML_Nature"/>
@@ -96,7 +99,11 @@
     </ownedEnd>
   </packagedElement>
   <packagedElement xmi:type="uml:Enumeration" xmi:id="_6baTAJOIEeWai68V7lLhPw" name="Room Status"/>
-  <packagedElement xmi:type="uml:Enumeration" xmi:id="_gUvPoJOJEeWai68V7lLhPw" name="Cleaning Status"/>
+  <packagedElement xmi:type="uml:Enumeration" xmi:id="_gUvPoJOJEeWai68V7lLhPw" name="Cleaning Status" visibility="package">
+    <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_T5edgJVlEeWBluaU4-si5w" name="Clean"/>
+    <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_e8sTUJVlEeWBluaU4-si5w" name="Dirty"/>
+    <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_g78OQJVlEeWBluaU4-si5w" name="Checked Out"/>
+  </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_kdDI0JOJEeWai68V7lLhPw" name="Room Type">
     <ownedAttribute xmi:type="uml:Property" xmi:id="_b07KgJOLEeWai68V7lLhPw" name="name" isReadOnly="true">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
@@ -223,6 +230,12 @@
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_DngK8JOQEeWai68V7lLhPw" name="Event Booking">
     <ownedAttribute xmi:type="uml:Property" xmi:id="_klheUJUIEeWictR9w7kxNQ" name="bill" type="_QLEo0JUHEeWictR9w7kxNQ" isReadOnly="true" association="_klgQMJUIEeWictR9w7kxNQ"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_ok_DQJVlEeWBluaU4-si5w" name="startTime">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_piTAEJVlEeWBluaU4-si5w" name="endTime">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+    </ownedAttribute>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_qbT0sJUCEeWictR9w7kxNQ" name="close"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_tCy0UJUCEeWictR9w7kxNQ" name="cancel"/>
   </packagedElement>
