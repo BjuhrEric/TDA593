@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Package xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_-SeE4JaNEeWZYqa-HFjkTQ" name="BookingSequenceDiagram">
+  <packagedElement xmi:type="uml:Interaction" xmi:id="_CnOeoJaOEeWZYqa-HFjkTQ" name="Booking">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_G2VjYJaOEeWZYqa-HFjkTQ" name="">
+      <type xmi:type="uml:Component" href="ComponentDiagram.uml#_yzTIoJUpEeW_s7g45KehCA"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_N3WIAJaOEeWZYqa-HFjkTQ" name="">
+      <type xmi:type="uml:Interface" href="ComponentDiagram.uml#_yzbEcJUpEeW_s7g45KehCA"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_PDeugJaPEeWZYqa-HFjkTQ" name="">
+      <type xmi:type="uml:Interface" href="ComponentDiagram.uml#_yzbrgJUpEeW_s7g45KehCA"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_UEWx8JaQEeWZYqa-HFjkTQ" name="">
+      <type xmi:type="uml:Interface" href="ComponentDiagram.uml#_yzcSkJUpEeW_s7g45KehCA"/>
+    </ownedAttribute>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_G2THIJaOEeWZYqa-HFjkTQ" name="" represents="_G2VjYJaOEeWZYqa-HFjkTQ" coveredBy="_c-GEsJaOEeWZYqa-HFjkTQ _hSrfUJaOEeWZYqa-HFjkTQ _Zfu1gJaQEeWZYqa-HFjkTQ _cJzPEJaQEeWZYqa-HFjkTQ"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_N3US0JaOEeWZYqa-HFjkTQ" name="" represents="_N3WIAJaOEeWZYqa-HFjkTQ" coveredBy="_QoDVEJaOEeWZYqa-HFjkTQ _QoCuAJaOEeWZYqa-HFjkTQ _c-H54JaOEeWZYqa-HFjkTQ _hSqRMJaOEeWZYqa-HFjkTQ _UcxHYJaPEeWZYqa-HFjkTQ"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_PDbrMJaPEeWZYqa-HFjkTQ" name="" represents="_PDeugJaPEeWZYqa-HFjkTQ" coveredBy="_Ucy8kJaPEeWZYqa-HFjkTQ"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_UETuoJaQEeWZYqa-HFjkTQ" name="" represents="_UEWx8JaQEeWZYqa-HFjkTQ" coveredBy="_ZfwDoJaQEeWZYqa-HFjkTQ _cJ1EQJaQEeWZYqa-HFjkTQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_cJ1EQJaQEeWZYqa-HFjkTQ" name="sendConfirmationEmail_MessageRecv" covered="_UETuoJaQEeWZYqa-HFjkTQ" message="_cJwy0JaQEeWZYqa-HFjkTQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_c-GEsJaOEeWZYqa-HFjkTQ" name="listAvailableRoomTypes_MessageSend" covered="_G2THIJaOEeWZYqa-HFjkTQ" message="_c99h0JaOEeWZYqa-HFjkTQ"/>
+    <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_QoCuAJaOEeWZYqa-HFjkTQ" name="BehaviorExecSpec" covered="_N3US0JaOEeWZYqa-HFjkTQ" finish="_QoDVEJaOEeWZYqa-HFjkTQ" start="_c-H54JaOEeWZYqa-HFjkTQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_c-H54JaOEeWZYqa-HFjkTQ" name="listAvailableRoomTypes_MessageRecv" covered="_N3US0JaOEeWZYqa-HFjkTQ" message="_c99h0JaOEeWZYqa-HFjkTQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_hSqRMJaOEeWZYqa-HFjkTQ" name="MessageSend" covered="_N3US0JaOEeWZYqa-HFjkTQ" message="_hSn08JaOEeWZYqa-HFjkTQ"/>
+    <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_QoDVEJaOEeWZYqa-HFjkTQ" name="BehaviorExecSpecFinish" covered="_N3US0JaOEeWZYqa-HFjkTQ" execution="_QoCuAJaOEeWZYqa-HFjkTQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_hSrfUJaOEeWZYqa-HFjkTQ" name="MessageRecv" covered="_G2THIJaOEeWZYqa-HFjkTQ" message="_hSn08JaOEeWZYqa-HFjkTQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_UcxHYJaPEeWZYqa-HFjkTQ" name="validateCC_MessageSend" covered="_N3US0JaOEeWZYqa-HFjkTQ" message="_UcurIJaPEeWZYqa-HFjkTQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_Ucy8kJaPEeWZYqa-HFjkTQ" name="validateCC_MessageRecv" covered="_PDbrMJaPEeWZYqa-HFjkTQ" message="_UcurIJaPEeWZYqa-HFjkTQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_Zfu1gJaQEeWZYqa-HFjkTQ" name="createBooking_MessageSend" covered="_G2THIJaOEeWZYqa-HFjkTQ" message="_ZfsZQJaQEeWZYqa-HFjkTQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_ZfwDoJaQEeWZYqa-HFjkTQ" name="createBooking_MessageRecv" covered="_UETuoJaQEeWZYqa-HFjkTQ" message="_ZfsZQJaQEeWZYqa-HFjkTQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_cJzPEJaQEeWZYqa-HFjkTQ" name="sendConfirmationEmail_MessageSend" covered="_G2THIJaOEeWZYqa-HFjkTQ" message="_cJwy0JaQEeWZYqa-HFjkTQ"/>
+    <message xmi:type="uml:Message" xmi:id="_c99h0JaOEeWZYqa-HFjkTQ" name="listAvailableRoomTypes" receiveEvent="_c-H54JaOEeWZYqa-HFjkTQ" sendEvent="_c-GEsJaOEeWZYqa-HFjkTQ">
+      <signature xmi:type="uml:Operation" href="ComponentDiagram.uml#_yzbEc5UpEeW_s7g45KehCA"/>
+    </message>
+    <message xmi:type="uml:Message" xmi:id="_hSn08JaOEeWZYqa-HFjkTQ" name="result: List" messageSort="reply" receiveEvent="_hSrfUJaOEeWZYqa-HFjkTQ" sendEvent="_hSqRMJaOEeWZYqa-HFjkTQ"/>
+    <message xmi:type="uml:Message" xmi:id="_UcurIJaPEeWZYqa-HFjkTQ" name="validateCC" messageSort="asynchCall" receiveEvent="_Ucy8kJaPEeWZYqa-HFjkTQ" sendEvent="_UcxHYJaPEeWZYqa-HFjkTQ">
+      <signature xmi:type="uml:Operation" href="ComponentDiagram.uml#_yzbrgpUpEeW_s7g45KehCA"/>
+    </message>
+    <message xmi:type="uml:Message" xmi:id="_ZfsZQJaQEeWZYqa-HFjkTQ" name="createBooking" messageSort="asynchCall" receiveEvent="_ZfwDoJaQEeWZYqa-HFjkTQ" sendEvent="_Zfu1gJaQEeWZYqa-HFjkTQ">
+      <signature xmi:type="uml:Operation" href="ComponentDiagram.uml#_yzcSkZUpEeW_s7g45KehCA"/>
+    </message>
+    <message xmi:type="uml:Message" xmi:id="_cJwy0JaQEeWZYqa-HFjkTQ" name="sendConfirmationEmail" messageSort="asynchCall" receiveEvent="_cJ1EQJaQEeWZYqa-HFjkTQ" sendEvent="_cJzPEJaQEeWZYqa-HFjkTQ">
+      <signature xmi:type="uml:Operation" href="ComponentDiagram.uml#_yzcSkpUpEeW_s7g45KehCA"/>
+    </message>
+  </packagedElement>
+  <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_AnRZEJaOEeWZYqa-HFjkTQ">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_AnVDcJaOEeWZYqa-HFjkTQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <references xmi:type="ecore:EPackage" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#_Kv8EIKFXEeS_KNX0nfvIVQ"/>
+    </eAnnotations>
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_AnWRkJaOEeWZYqa-HFjkTQ" source="duplicatedProfile"/>
+    <appliedProfile xmi:type="uml:Profile" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#ActionLanguage"/>
+  </profileApplication>
+</uml:Package>

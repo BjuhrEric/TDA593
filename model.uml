@@ -4,6 +4,7 @@
   <packagedElement xmi:type="uml:Package" xmi:id="_iYLtEJOUEeWai68V7lLhPw" name="controller"/>
   <packagedElement xmi:type="uml:Model" href="BookingActivityDiagram.uml#_SnyKAI-wEeWZdZttSEAxCA"/>
   <packagedElement xmi:type="uml:Package" href="ComponentDiagram.uml#_wQVcoJUpEeW_s7g45KehCA"/>
+  <packagedElement xmi:type="uml:Package" href="BookingSequenceDiagram.uml#_-SeE4JaNEeWZYqa-HFjkTQ"/>
   <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_lXNdQJOEEeWai68V7lLhPw">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_lXP5gJOEEeWai68V7lLhPw" source="http://www.eclipse.org/uml2/2.0.0/UML">
       <references xmi:type="ecore:EPackage" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#_Kv8EIKFXEeS_KNX0nfvIVQ"/>
