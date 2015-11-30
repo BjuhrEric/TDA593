@@ -72,7 +72,11 @@
     </ownedEnd>
   </packagedElement>
   <packagedElement xmi:type="uml:Interface" xmi:id="_n4U5sJOFEeWai68V7lLhPw" name="Billing Information">
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_-g3usJOXEeWMvbphIGZ4iQ" name="validate"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_-g3usJOXEeWMvbphIGZ4iQ" name="validate">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_7MMLMJdjEeW_YKMDk07f0A" name="return" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      </ownedParameter>
+    </ownedOperation>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_QkmZ4JOYEeWMvbphIGZ4iQ" name="getPaymentStrategy"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Enumeration" xmi:id="_wVVFwJOGEeWai68V7lLhPw" name="Title">
@@ -328,12 +332,15 @@
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_a--I4JUKEeWictR9w7kxNQ" name="cost" type="_-XeEUJUGEeWictR9w7kxNQ"/>
     </ownedOperation>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_BqAWoJUIEeWictR9w7kxNQ" name="split">
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_oYhj8JUKEeWictR9w7kxNQ" type="_QLEo0JUHEeWictR9w7kxNQ" direction="return"/>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_oYhj8JUKEeWictR9w7kxNQ" type="_QLEo0JUHEeWictR9w7kxNQ" direction="return">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_gtnaoJdjEeW_YKMDk07f0A"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_gtwkkJdjEeW_YKMDk07f0A" value="*"/>
+      </ownedParameter>
     </ownedOperation>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_C-igoJUIEeWictR9w7kxNQ" name="merge">
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_iKXYkJUKEeWictR9w7kxNQ" name="bill" type="_QLEo0JUHEeWictR9w7kxNQ"/>
     </ownedOperation>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_DlrZIJUIEeWictR9w7kxNQ" name="performPayment">
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_DlrZIJUIEeWictR9w7kxNQ" name="performPayment" concurrency="concurrent">
       <ownedParameter xmi:type="uml:Parameter" xmi:id="__YopkJUKEeWictR9w7kxNQ" name="info" type="_n4U5sJOFEeWai68V7lLhPw"/>
     </ownedOperation>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_GV-PIJULEeWictR9w7kxNQ" name="printReceipt"/>
@@ -428,6 +435,11 @@
       <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_CLW1oZbIEeWywcXnTB_lHw" key="nature" value="UML_Nature"/>
     </eAnnotations>
     <ownedEnd xmi:type="uml:Property" xmi:id="_CMGcgZbIEeWywcXnTB_lHw" name="floormap" type="_8mgF8JbHEeWywcXnTB_lHw" association="_CLNrsJbIEeWywcXnTB_lHw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_SbbR8JdkEeW_YKMDk07f0A" name="Payment Strategy">
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_aip3wJdkEeW_YKMDk07f0A" name="pay" visibility="public">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_oBSnIJdkEeW_YKMDk07f0A" name="bill" type="_QLEo0JUHEeWictR9w7kxNQ"/>
+    </ownedOperation>
   </packagedElement>
   <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_Lt_mQJUXEeWf7-9fzN2QKQ">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_LuCCgJUXEeWf7-9fzN2QKQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
