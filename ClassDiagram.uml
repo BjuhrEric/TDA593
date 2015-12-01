@@ -111,7 +111,7 @@
     <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_uoRtAJbGEeWywcXnTB_lHw" name="Occupied"/>
     <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_wj9WkJbGEeWywcXnTB_lHw" name="OutOfOrder"/>
   </packagedElement>
-  <packagedElement xmi:type="uml:Enumeration" xmi:id="_gUvPoJOJEeWai68V7lLhPw" name="Cleaning Status" visibility="package">
+  <packagedElement xmi:type="uml:Enumeration" xmi:id="_gUvPoJOJEeWai68V7lLhPw" name="Cleaning Status" visibility="public">
     <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_T5edgJVlEeWBluaU4-si5w" name="Clean"/>
     <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_e8sTUJVlEeWBluaU4-si5w" name="Dirty"/>
     <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_g78OQJVlEeWBluaU4-si5w" name="Checked Out"/>
@@ -176,16 +176,15 @@
     <ownedEnd xmi:type="uml:Property" xmi:id="_2S-zIJOKEeWai68V7lLhPw" name="roomBooking" type="_gxp5UJOCEeWai68V7lLhPw" association="_2S8W4JOKEeWai68V7lLhPw"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_Dgh9EJOMEeWai68V7lLhPw" name="Item">
-    <generalization xmi:type="uml:Generalization" xmi:id="_pJW14JUIEeWictR9w7kxNQ" general="_-XeEUJUGEeWictR9w7kxNQ"/>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_MIk7gJONEeWai68V7lLhPw" name="name">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
     </ownedAttribute>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_PSGRMJONEeWai68V7lLhPw" name="price">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/>
     </ownedAttribute>
+    <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_d75roJhNEeW7U_6ODGI2HQ" client="_Dgh9EJOMEeWai68V7lLhPw" supplier="_-XeEUJUGEeWictR9w7kxNQ" contract="_-XeEUJUGEeWictR9w7kxNQ"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_E-_fIJOMEeWai68V7lLhPw" name="Event">
-    <generalization xmi:type="uml:Generalization" xmi:id="_oVnEwJUIEeWictR9w7kxNQ" general="_-XeEUJUGEeWictR9w7kxNQ"/>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_stuowJONEeWai68V7lLhPw" name="name" isReadOnly="true">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
     </ownedAttribute>
@@ -208,6 +207,7 @@
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
     </ownedAttribute>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_XEcPUpOREeWai68V7lLhPw" name="venue" type="_M5p2UJOREeWai68V7lLhPw" association="_XEboQJOREeWai68V7lLhPw"/>
+    <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_e2K7gJhNEeW7U_6ODGI2HQ" client="_E-_fIJOMEeWai68V7lLhPw" supplier="_-XeEUJUGEeWictR9w7kxNQ" contract="_-XeEUJUGEeWictR9w7kxNQ"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_Gxc7QJOMEeWai68V7lLhPw" name="Package">
     <ownedAttribute xmi:type="uml:Property" xmi:id="_QQH1IpOMEeWai68V7lLhPw" name="event" type="_E-_fIJOMEeWai68V7lLhPw" aggregation="shared" association="_QQHOEJOMEeWai68V7lLhPw">
@@ -364,7 +364,7 @@
     <ownedEnd xmi:type="uml:Property" xmi:id="_mWa0MJUIEeWictR9w7kxNQ" name="room" type="_dGX6YJOCEeWai68V7lLhPw" association="_mWV7sJUIEeWictR9w7kxNQ"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_e-lcQJUOEeWictR9w7kxNQ" name="Organization">
-    <generalization xmi:type="uml:Generalization" xmi:id="_kAgMEJUQEeWictR9w7kxNQ" general="_Wmon8JUQEeWictR9w7kxNQ"/>
+    <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_2W6pAJhNEeW7U_6ODGI2HQ" client="_e-lcQJUOEeWictR9w7kxNQ" supplier="_Wmon8JUQEeWictR9w7kxNQ" contract="_Wmon8JUQEeWictR9w7kxNQ"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Interface" xmi:id="_Wmon8JUQEeWictR9w7kxNQ" name="Customer">
     <ownedOperation xmi:type="uml:Operation" xmi:id="_YOaeEJUQEeWictR9w7kxNQ" name="getBillingInformation">
@@ -394,7 +394,6 @@
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_-7sboJUaEeWqN5aFuAz_Hg" name="Individual Customer">
     <generalization xmi:type="uml:Generalization" xmi:id="_MKN18JUcEeWqN5aFuAz_Hg" general="_oHzLAJODEeWai68V7lLhPw"/>
-    <generalization xmi:type="uml:Generalization" xmi:id="_Nf7EoJUcEeWqN5aFuAz_Hg" general="_Wmon8JUQEeWictR9w7kxNQ"/>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_lfv60JUcEeWqN5aFuAz_Hg" name="billingInformation" type="_n4U5sJOFEeWai68V7lLhPw">
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_00G1sJUcEeWqN5aFuAz_Hg"/>
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_00Iq4JUcEeWqN5aFuAz_Hg" value="*"/>
@@ -407,6 +406,7 @@
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_6z4m0JUcEeWqN5aFuAz_Hg"/>
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_6z508JUcEeWqN5aFuAz_Hg" value="*"/>
     </ownedAttribute>
+    <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_0CBOMJhNEeW7U_6ODGI2HQ" client="_-7sboJUaEeWqN5aFuAz_Hg" supplier="_Wmon8JUQEeWictR9w7kxNQ" contract="_Wmon8JUQEeWictR9w7kxNQ"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_LiYE0JbHEeWywcXnTB_lHw" name="BookingSchedule">
     <ownedAttribute xmi:type="uml:Property" xmi:id="_SpeDUJbHEeWywcXnTB_lHw" name="roomBookings" type="_gxp5UJOCEeWai68V7lLhPw">
