@@ -9,10 +9,10 @@
     <ownedAttribute xmi:type="uml:Property" xmi:id="_Vzg3IJOKEeWai68V7lLhPw" name="cleaningStatus" type="_gUvPoJOJEeWai68V7lLhPw" association="_VzfpAJOKEeWai68V7lLhPw"/>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_n-_wIZOKEeWai68V7lLhPw" name="roomType" type="_kdDI0JOJEeWai68V7lLhPw" association="_n--iAJOKEeWai68V7lLhPw"/>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_mWWiwpUIEeWictR9w7kxNQ" name="bill" type="_QLEo0JUHEeWictR9w7kxNQ" association="_mWV7sJUIEeWictR9w7kxNQ"/>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_1MUigJOJEeWai68V7lLhPw" name="getNumberOfGuests"/>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_3ehOoJOJEeWai68V7lLhPw" name="getGuests"/>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_njUecJUDEeWictR9w7kxNQ" name="setBill">
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_u59tIJUJEeWictR9w7kxNQ" name="bill" type="_QLEo0JUHEeWictR9w7kxNQ"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_1MUigJOJEeWai68V7lLhPw" name="getNumberOfGuests">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_L8SHkJhREeW7U_6ODGI2HQ" name="return" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedParameter>
     </ownedOperation>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_Uc54IJUMEeWictR9w7kxNQ" name="checkIn"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_VnATwJUMEeWictR9w7kxNQ" name="checkOut"/>
@@ -20,9 +20,6 @@
   <packagedElement xmi:type="uml:Class" xmi:id="_d1iGcJOCEeWai68V7lLhPw" name="Guest">
     <generalization xmi:type="uml:Generalization" xmi:id="_TccGYJUcEeWqN5aFuAz_Hg" general="_oHzLAJODEeWai68V7lLhPw"/>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_-U7fEJOEEeWai68V7lLhPw" name="status" type="_m_lwUJOEEeWai68V7lLhPw" aggregation="shared" association="_-U2mkJOEEeWai68V7lLhPw"/>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_k_tUYJUSEeWictR9w7kxNQ" name="setStatus" visibility="public" concurrency="concurrent">
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_qSe1kJUSEeWictR9w7kxNQ" name="status" type="_m_lwUJOEEeWai68V7lLhPw"/>
-    </ownedOperation>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_gxp5UJOCEeWai68V7lLhPw" name="Room Booking">
     <ownedAttribute xmi:type="uml:Property" xmi:id="_h_CgMJOHEeWai68V7lLhPw" name="startDate">
@@ -77,7 +74,9 @@
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
       </ownedParameter>
     </ownedOperation>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_QkmZ4JOYEeWMvbphIGZ4iQ" name="getPaymentStrategy"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_QkmZ4JOYEeWMvbphIGZ4iQ" name="getPaymentStrategy">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_TkV6kJhQEeW7U_6ODGI2HQ" name="return" type="_SbbR8JdkEeW_YKMDk07f0A" direction="return"/>
+    </ownedOperation>
   </packagedElement>
   <packagedElement xmi:type="uml:Enumeration" xmi:id="_wVVFwJOGEeWai68V7lLhPw" name="Title">
     <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_L_MdQJUSEeWictR9w7kxNQ" name="Mr"/>
@@ -413,7 +412,10 @@
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_YpkkkJbHEeWywcXnTB_lHw"/>
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_YpkkkZbHEeWywcXnTB_lHw" value="*"/>
     </ownedAttribute>
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_ZthU4JbHEeWywcXnTB_lHw" name="eventBookings"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_ZthU4JbHEeWywcXnTB_lHw" name="eventBookings" type="_DngK8JOQEeWai68V7lLhPw">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_NzPeoJhQEeW7U_6ODGI2HQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_NzQswJhQEeW7U_6ODGI2HQ" value="*"/>
+    </ownedAttribute>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_d_an4JbHEeWywcXnTB_lHw" name="showBookedRooms"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_gp-wsJbHEeWywcXnTB_lHw" name="showBookedEvents"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_ofCBYJbHEeWywcXnTB_lHw" name="exportBookedRooms"/>
