@@ -46,12 +46,12 @@
   <packagedElement xmi:type="uml:Class" xmi:id="_oHzLAJODEeWai68V7lLhPw" name="Person">
     <ownedAttribute xmi:type="uml:Property" xmi:id="_rZygMJODEeWai68V7lLhPw" name="firstNames" isReadOnly="true">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Os0eEJOGEeWai68V7lLhPw" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Os0eEJOGEeWai68V7lLhPw"/>
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Os2TQJOGEeWai68V7lLhPw" value="*"/>
     </ownedAttribute>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_VuJy0JOGEeWai68V7lLhPw" name="familyNames" isReadOnly="true">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ZT6_oJOGEeWai68V7lLhPw" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ZT6_oJOGEeWai68V7lLhPw"/>
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ZT8NwJOGEeWai68V7lLhPw" value="*"/>
     </ownedAttribute>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_0SoBwpOGEeWai68V7lLhPw" name="title" type="_wVVFwJOGEeWai68V7lLhPw" aggregation="shared" association="_0SmzoJOGEeWai68V7lLhPw"/>
