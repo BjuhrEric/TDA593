@@ -199,6 +199,12 @@
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_jNJEEJkDEeWpzYqYFLvPJA" name="booking" direction="return">
         <type xmi:type="uml:Class" href="ClassDiagram.uml#_gxp5UJOCEeWai68V7lLhPw"/>
       </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_jPkBwJkKEeWpzYqYFLvPJA" name="payByInvoice">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_lb_dEJkKEeWpzYqYFLvPJA" name="payInAdvance">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
+      </ownedParameter>
     </ownedOperation>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_yzcSkpUpEeW_s7g45KehCA" name="sendConfirmationEmail">
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_sDvjQJkBEeWpzYqYFLvPJA" name="booking">
@@ -255,6 +261,14 @@
         <type xmi:type="uml:Interface" href="ClassDiagram.uml#_Wmon8JUQEeWictR9w7kxNQ"/>
       </ownedParameter>
     </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_60eIcJkIEeWpzYqYFLvPJA" name="confirmBooking">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_-IhTIJkIEeWpzYqYFLvPJA" name="booking">
+        <type xmi:type="uml:Class" href="ClassDiagram.uml#_gxp5UJOCEeWai68V7lLhPw"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="__xifYJkIEeWpzYqYFLvPJA" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
+      </ownedParameter>
+    </ownedOperation>
   </packagedElement>
   <packagedElement xmi:type="uml:Interface" xmi:id="_yzc5oJUpEeW_s7g45KehCA" name="RequiresCustomerRecord">
     <ownedOperation xmi:type="uml:Operation" xmi:id="_yzc5oZUpEeW_s7g45KehCA" name="createCustomerProfile">
@@ -274,6 +288,14 @@
       </ownedParameter>
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_FxKcUJkFEeWpzYqYFLvPJA" name="status">
         <type xmi:type="uml:Enumeration" href="ClassDiagram.uml#_m_lwUJOEEeWai68V7lLhPw"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_pEQZsJkJEeWpzYqYFLvPJA" name="getCustomerData">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_sEU4cJkJEeWpzYqYFLvPJA" name="email">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_wSzrEJkJEeWpzYqYFLvPJA" name="customer" direction="return">
+        <type xmi:type="uml:Interface" href="ClassDiagram.uml#_Wmon8JUQEeWictR9w7kxNQ"/>
       </ownedParameter>
     </ownedOperation>
   </packagedElement>
