@@ -104,23 +104,25 @@ public class IndividualCustomerImpl extends PersonImpl implements IndividualCust
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void addRoomBooking(RoomBooking roomBooking) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		if (roomBookings == null) {
+			roomBookings = new ArrayList<>();
+		}
+		roomBookings.add(roomBooking);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void addEventBooking(EventBooking eventBooking) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		if (eventBookings == null) {
+			eventBookings = new ArrayList<>();
+		}
+		eventBookings.add(eventBooking);
 	}
 
-} //IndividualCustomerImpl
+}

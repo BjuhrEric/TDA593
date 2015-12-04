@@ -73,6 +73,20 @@ public class PersonImpl implements Person {
 		super();
 	}
 
+	public void addFamilyName(String name) {
+		if (familyNames == null) {
+			familyNames = new ArrayList<>();
+		}
+		familyNames.add(name);
+	}
+	
+	public void addFirstName(String name) {
+		if (firstNames == null) {
+			firstNames = new ArrayList<>();
+		}
+		firstNames.add(name);
+	}
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -82,7 +96,7 @@ public class PersonImpl implements Person {
 		if (firstNames == null) {
 			firstNames = new ArrayList<>();
 		}
-		return firstNames;
+		return new ArrayList<>(firstNames);
 	}
 
 	/**
@@ -94,7 +108,19 @@ public class PersonImpl implements Person {
 		if (familyNames == null) {
 			familyNames = new ArrayList<>();
 		}
-		return familyNames;
+		return new ArrayList<>(familyNames);
+	}
+	
+	public void removeFirstName(final String name) {
+		if (firstNames != null) {
+			firstNames.remove(name);
+		}
+	}
+	
+	public void removeFamilyName(final String name) {
+		if (familyNames != null) {
+			familyNames.remove(name);
+		}
 	}
 
 	/**
