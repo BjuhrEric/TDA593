@@ -36,10 +36,10 @@ public interface Package extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Event</em>' reference list.
 	 * @see ClassDiagram.ClassDiagramPackage#getPackage_Event()
-	 * @model type="ClassDiagram.Event" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
-	EList getEvent();
+	EList<Event> getEvent();
 
 	/**
 	 * Returns the value of the '<em><b>Code</b></em>' attribute.
@@ -78,9 +78,9 @@ public interface Package extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Item</em>' reference list.
 	 * @see ClassDiagram.ClassDiagramPackage#getPackage_Item()
-	 * @model type="ClassDiagram.Item" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
-	EList getItem();
+	EList<Item> getItem();
 
 } // Package

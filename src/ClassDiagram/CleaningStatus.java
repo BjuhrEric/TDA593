@@ -5,8 +5,7 @@ package ClassDiagram;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-
-import org.eclipse.emf.common.util.AbstractEnumerator;
+import org.eclipse.emf.common.util.Enumerator;
 
 /**
  * <!-- begin-user-doc -->
@@ -17,7 +16,35 @@ import org.eclipse.emf.common.util.AbstractEnumerator;
  * @model annotation="http://www.eclipse.org/uml2/2.0.0/UML originalName='Cleaning Status'"
  * @generated
  */
-public final class CleaningStatus extends AbstractEnumerator {
+public enum CleaningStatus implements Enumerator
+{
+	/**
+	 * The '<em><b>Clean</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #CLEAN_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	CLEAN(0, "Clean", "Clean"),
+	/**
+	 * The '<em><b>Dirty</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #DIRTY_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	DIRTY(1, "Dirty", "Dirty"),
+	/**
+	 * The '<em><b>Checked Out</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #CHECKED_OUT_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	CHECKED_OUT(2, "CheckedOut", "CheckedOut");
 	/**
 	 * The '<em><b>Clean</b></em>' literal value.
 	 * <!-- begin-user-doc -->
@@ -26,12 +53,12 @@ public final class CleaningStatus extends AbstractEnumerator {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #CLEAN_LITERAL
+	 * @see #CLEAN
 	 * @model name="Clean"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int CLEAN = 0;
+	public static final int CLEAN_VALUE = 0;
 
 	/**
 	 * The '<em><b>Dirty</b></em>' literal value.
@@ -41,12 +68,12 @@ public final class CleaningStatus extends AbstractEnumerator {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #DIRTY_LITERAL
+	 * @see #DIRTY
 	 * @model name="Dirty"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int DIRTY = 1;
+	public static final int DIRTY_VALUE = 1;
 
 	/**
 	 * The '<em><b>Checked Out</b></em>' literal value.
@@ -56,43 +83,13 @@ public final class CleaningStatus extends AbstractEnumerator {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #CHECKED_OUT_LITERAL
+	 * @see #CHECKED_OUT
 	 * @model name="CheckedOut"
 	 *        annotation="http://www.eclipse.org/uml2/2.0.0/UML originalName='Checked Out'"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int CHECKED_OUT = 2;
-
-	/**
-	 * The '<em><b>Clean</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #CLEAN
-	 * @generated
-	 * @ordered
-	 */
-	public static final CleaningStatus CLEAN_LITERAL = new CleaningStatus(CLEAN, "Clean", "Clean");
-
-	/**
-	 * The '<em><b>Dirty</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #DIRTY
-	 * @generated
-	 * @ordered
-	 */
-	public static final CleaningStatus DIRTY_LITERAL = new CleaningStatus(DIRTY, "Dirty", "Dirty");
-
-	/**
-	 * The '<em><b>Checked Out</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #CHECKED_OUT
-	 * @generated
-	 * @ordered
-	 */
-	public static final CleaningStatus CHECKED_OUT_LITERAL = new CleaningStatus(CHECKED_OUT, "CheckedOut", "CheckedOut");
+	public static final int CHECKED_OUT_VALUE = 2;
 
 	/**
 	 * An array of all the '<em><b>Cleaning Status</b></em>' enumerators.
@@ -102,9 +99,9 @@ public final class CleaningStatus extends AbstractEnumerator {
 	 */
 	private static final CleaningStatus[] VALUES_ARRAY =
 		new CleaningStatus[] {
-			CLEAN_LITERAL,
-			DIRTY_LITERAL,
-			CHECKED_OUT_LITERAL,
+			CLEAN,
+			DIRTY,
+			CHECKED_OUT,
 		};
 
 	/**
@@ -113,7 +110,7 @@ public final class CleaningStatus extends AbstractEnumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final List VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+	public static final List<CleaningStatus> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
 	/**
 	 * Returns the '<em><b>Cleaning Status</b></em>' literal with the specified literal value.
@@ -161,12 +158,33 @@ public final class CleaningStatus extends AbstractEnumerator {
 	 */
 	public static CleaningStatus get(int value) {
 		switch (value) {
-			case CLEAN: return CLEAN_LITERAL;
-			case DIRTY: return DIRTY_LITERAL;
-			case CHECKED_OUT: return CHECKED_OUT_LITERAL;
+			case CLEAN_VALUE: return CLEAN;
+			case DIRTY_VALUE: return DIRTY;
+			case CHECKED_OUT_VALUE: return CHECKED_OUT;
 		}
 		return null;
 	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private final int value;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private final String name;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private final String literal;
 
 	/**
 	 * Only this class can construct instances.
@@ -175,7 +193,46 @@ public final class CleaningStatus extends AbstractEnumerator {
 	 * @generated
 	 */
 	private CleaningStatus(int value, String name, String literal) {
-		super(value, name, literal);
+		this.value = value;
+		this.name = name;
+		this.literal = literal;
 	}
 
-} //CleaningStatus
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public int getValue() {
+	  return value;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getName() {
+	  return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getLiteral() {
+	  return literal;
+	}
+
+	/**
+	 * Returns the literal value of the enumerator, which is its string representation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		return literal;
+	}
+}

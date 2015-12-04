@@ -5,8 +5,7 @@ package ClassDiagram;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-
-import org.eclipse.emf.common.util.AbstractEnumerator;
+import org.eclipse.emf.common.util.Enumerator;
 
 /**
  * <!-- begin-user-doc -->
@@ -17,7 +16,62 @@ import org.eclipse.emf.common.util.AbstractEnumerator;
  * @model
  * @generated
  */
-public final class Title extends AbstractEnumerator {
+public enum Title implements Enumerator
+{
+	/**
+	 * The '<em><b>Mr</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #MR_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	MR(0, "Mr", "Mr"),
+	/**
+	 * The '<em><b>Mrs</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #MRS_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	MRS(1, "Mrs", "Mrs"),
+	/**
+	 * The '<em><b>Ms</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #MS_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	MS(2, "Ms", "Ms"),
+	/**
+	 * The '<em><b>Sir</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #SIR_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	SIR(3, "Sir", "Sir"),
+	/**
+	 * The '<em><b>Dr</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #DR_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	DR(4, "Dr", "Dr"),
+	/**
+	 * The '<em><b>Mdm</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #MDM_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	MDM(5, "Mdm", "Mdm");
 	/**
 	 * The '<em><b>Mr</b></em>' literal value.
 	 * <!-- begin-user-doc -->
@@ -26,12 +80,12 @@ public final class Title extends AbstractEnumerator {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #MR_LITERAL
+	 * @see #MR
 	 * @model name="Mr"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MR = 0;
+	public static final int MR_VALUE = 0;
 
 	/**
 	 * The '<em><b>Mrs</b></em>' literal value.
@@ -41,12 +95,12 @@ public final class Title extends AbstractEnumerator {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #MRS_LITERAL
+	 * @see #MRS
 	 * @model name="Mrs"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MRS = 1;
+	public static final int MRS_VALUE = 1;
 
 	/**
 	 * The '<em><b>Ms</b></em>' literal value.
@@ -56,12 +110,12 @@ public final class Title extends AbstractEnumerator {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #MS_LITERAL
+	 * @see #MS
 	 * @model name="Ms"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MS = 2;
+	public static final int MS_VALUE = 2;
 
 	/**
 	 * The '<em><b>Sir</b></em>' literal value.
@@ -71,12 +125,12 @@ public final class Title extends AbstractEnumerator {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #SIR_LITERAL
+	 * @see #SIR
 	 * @model name="Sir"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int SIR = 3;
+	public static final int SIR_VALUE = 3;
 
 	/**
 	 * The '<em><b>Dr</b></em>' literal value.
@@ -86,12 +140,12 @@ public final class Title extends AbstractEnumerator {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #DR_LITERAL
+	 * @see #DR
 	 * @model name="Dr"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int DR = 4;
+	public static final int DR_VALUE = 4;
 
 	/**
 	 * The '<em><b>Mdm</b></em>' literal value.
@@ -101,72 +155,12 @@ public final class Title extends AbstractEnumerator {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #MDM_LITERAL
+	 * @see #MDM
 	 * @model name="Mdm"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MDM = 5;
-
-	/**
-	 * The '<em><b>Mr</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #MR
-	 * @generated
-	 * @ordered
-	 */
-	public static final Title MR_LITERAL = new Title(MR, "Mr", "Mr");
-
-	/**
-	 * The '<em><b>Mrs</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #MRS
-	 * @generated
-	 * @ordered
-	 */
-	public static final Title MRS_LITERAL = new Title(MRS, "Mrs", "Mrs");
-
-	/**
-	 * The '<em><b>Ms</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #MS
-	 * @generated
-	 * @ordered
-	 */
-	public static final Title MS_LITERAL = new Title(MS, "Ms", "Ms");
-
-	/**
-	 * The '<em><b>Sir</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #SIR
-	 * @generated
-	 * @ordered
-	 */
-	public static final Title SIR_LITERAL = new Title(SIR, "Sir", "Sir");
-
-	/**
-	 * The '<em><b>Dr</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #DR
-	 * @generated
-	 * @ordered
-	 */
-	public static final Title DR_LITERAL = new Title(DR, "Dr", "Dr");
-
-	/**
-	 * The '<em><b>Mdm</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #MDM
-	 * @generated
-	 * @ordered
-	 */
-	public static final Title MDM_LITERAL = new Title(MDM, "Mdm", "Mdm");
+	public static final int MDM_VALUE = 5;
 
 	/**
 	 * An array of all the '<em><b>Title</b></em>' enumerators.
@@ -176,12 +170,12 @@ public final class Title extends AbstractEnumerator {
 	 */
 	private static final Title[] VALUES_ARRAY =
 		new Title[] {
-			MR_LITERAL,
-			MRS_LITERAL,
-			MS_LITERAL,
-			SIR_LITERAL,
-			DR_LITERAL,
-			MDM_LITERAL,
+			MR,
+			MRS,
+			MS,
+			SIR,
+			DR,
+			MDM,
 		};
 
 	/**
@@ -190,7 +184,7 @@ public final class Title extends AbstractEnumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final List VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+	public static final List<Title> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
 	/**
 	 * Returns the '<em><b>Title</b></em>' literal with the specified literal value.
@@ -238,15 +232,36 @@ public final class Title extends AbstractEnumerator {
 	 */
 	public static Title get(int value) {
 		switch (value) {
-			case MR: return MR_LITERAL;
-			case MRS: return MRS_LITERAL;
-			case MS: return MS_LITERAL;
-			case SIR: return SIR_LITERAL;
-			case DR: return DR_LITERAL;
-			case MDM: return MDM_LITERAL;
+			case MR_VALUE: return MR;
+			case MRS_VALUE: return MRS;
+			case MS_VALUE: return MS;
+			case SIR_VALUE: return SIR;
+			case DR_VALUE: return DR;
+			case MDM_VALUE: return MDM;
 		}
 		return null;
 	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private final int value;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private final String name;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private final String literal;
 
 	/**
 	 * Only this class can construct instances.
@@ -255,7 +270,46 @@ public final class Title extends AbstractEnumerator {
 	 * @generated
 	 */
 	private Title(int value, String name, String literal) {
-		super(value, name, literal);
+		this.value = value;
+		this.name = name;
+		this.literal = literal;
 	}
 
-} //Title
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public int getValue() {
+	  return value;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getName() {
+	  return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getLiteral() {
+	  return literal;
+	}
+
+	/**
+	 * Returns the literal value of the enumerator, which is its string representation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		return literal;
+	}
+}

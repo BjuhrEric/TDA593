@@ -39,7 +39,7 @@ public interface Person extends EObject {
 	 * @model dataType="org.eclipse.uml2.types.String" changeable="false" ordered="false"
 	 * @generated
 	 */
-	EList getFirstNames();
+	EList<String> getFirstNames();
 
 	/**
 	 * Returns the value of the '<em><b>Family Names</b></em>' attribute list.
@@ -55,7 +55,7 @@ public interface Person extends EObject {
 	 * @model dataType="org.eclipse.uml2.types.String" changeable="false" ordered="false"
 	 * @generated
 	 */
-	EList getFamilyNames();
+	EList<String> getFamilyNames();
 
 	/**
 	 * Returns the value of the '<em><b>Title</b></em>' attribute.

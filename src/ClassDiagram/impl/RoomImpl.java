@@ -10,6 +10,7 @@ import ClassDiagram.Room;
 import ClassDiagram.RoomStatus;
 import ClassDiagram.RoomType;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -50,7 +51,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList guest;
+	protected EList<Guest> guest;
 
 	/**
 	 * The default value of the '{@link #getRoomStatus() <em>Room Status</em>}' attribute.
@@ -60,7 +61,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final RoomStatus ROOM_STATUS_EDEFAULT = RoomStatus.AVAILABLE_LITERAL;
+	protected static final RoomStatus ROOM_STATUS_EDEFAULT = RoomStatus.AVAILABLE;
 
 	/**
 	 * The cached value of the '{@link #getRoomStatus() <em>Room Status</em>}' attribute.
@@ -80,7 +81,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final CleaningStatus CLEANING_STATUS_EDEFAULT = CleaningStatus.CLEAN_LITERAL;
+	protected static final CleaningStatus CLEANING_STATUS_EDEFAULT = CleaningStatus.CLEAN;
 
 	/**
 	 * The cached value of the '{@link #getCleaningStatus() <em>Cleaning Status</em>}' attribute.
@@ -126,6 +127,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return ClassDiagramPackage.Literals.ROOM;
 	}
@@ -135,9 +137,9 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList getGuest() {
+	public EList<Guest> getGuest() {
 		if (guest == null) {
-			guest = new EObjectResolvingEList(Guest.class, this, ClassDiagramPackage.ROOM__GUEST);
+			guest = new EObjectResolvingEList<Guest>(Guest.class, this, ClassDiagramPackage.ROOM__GUEST);
 		}
 		return guest;
 	}
@@ -298,6 +300,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case ClassDiagramPackage.ROOM__GUEST:
@@ -321,11 +324,13 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+		@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ClassDiagramPackage.ROOM__GUEST:
 				getGuest().clear();
-				getGuest().addAll((Collection)newValue);
+				getGuest().addAll((Collection<? extends Guest>)newValue);
 				return;
 			case ClassDiagramPackage.ROOM__ROOM_STATUS:
 				setRoomStatus((RoomStatus)newValue);
@@ -348,6 +353,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case ClassDiagramPackage.ROOM__GUEST:
@@ -374,6 +380,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case ClassDiagramPackage.ROOM__GUEST:
@@ -395,6 +402,27 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case ClassDiagramPackage.ROOM___GET_NUMBER_OF_GUESTS:
+				return getNumberOfGuests();
+			case ClassDiagramPackage.ROOM___CHECK_IN:
+				checkIn();
+				return null;
+			case ClassDiagramPackage.ROOM___CHECK_OUT:
+				checkOut();
+				return null;
+		}
+		return super.eInvoke(operationID, arguments);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 

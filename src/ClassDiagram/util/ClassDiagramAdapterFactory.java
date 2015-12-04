@@ -3,6 +3,7 @@
 package ClassDiagram.util;
 
 import ClassDiagram.Account;
+import ClassDiagram.AccountType;
 import ClassDiagram.Bill;
 import ClassDiagram.BillingInformation;
 import ClassDiagram.BookingSchedule;
@@ -67,6 +68,7 @@ public class ClassDiagramAdapterFactory extends AdapterFactoryImpl {
 	 * @return whether this factory is applicable for the type of the object.
 	 * @generated
 	 */
+	@Override
 	public boolean isFactoryForType(Object object) {
 		if (object == modelPackage) {
 			return true;
@@ -83,69 +85,94 @@ public class ClassDiagramAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ClassDiagramSwitch modelSwitch =
-		new ClassDiagramSwitch() {
-			public Object caseRoom(Room object) {
+	protected ClassDiagramSwitch<Adapter> modelSwitch =
+		new ClassDiagramSwitch<Adapter>() {
+			@Override
+			public Adapter caseRoom(Room object) {
 				return createRoomAdapter();
 			}
-			public Object caseGuest(Guest object) {
+			@Override
+			public Adapter caseGuest(Guest object) {
 				return createGuestAdapter();
 			}
-			public Object casePerson(Person object) {
+			@Override
+			public Adapter casePerson(Person object) {
 				return createPersonAdapter();
 			}
-			public Object caseRoomType(RoomType object) {
+			@Override
+			public Adapter caseRoomType(RoomType object) {
 				return createRoomTypeAdapter();
 			}
-			public Object caseBill(Bill object) {
+			@Override
+			public Adapter caseBill(Bill object) {
 				return createBillAdapter();
 			}
-			public Object caseCost(Cost object) {
+			@Override
+			public Adapter caseCost(Cost object) {
 				return createCostAdapter();
 			}
-			public Object caseBillingInformation(BillingInformation object) {
+			@Override
+			public Adapter caseBillingInformation(BillingInformation object) {
 				return createBillingInformationAdapter();
 			}
-			public Object casePaymentStrategy(PaymentStrategy object) {
+			@Override
+			public Adapter casePaymentStrategy(PaymentStrategy object) {
 				return createPaymentStrategyAdapter();
 			}
-			public Object caseRoomBooking(RoomBooking object) {
+			@Override
+			public Adapter caseRoomBooking(RoomBooking object) {
 				return createRoomBookingAdapter();
 			}
-			public Object caseItem(Item object) {
+			@Override
+			public Adapter caseItem(Item object) {
 				return createItemAdapter();
 			}
-			public Object caseEvent(Event object) {
+			@Override
+			public Adapter caseEvent(Event object) {
 				return createEventAdapter();
 			}
-			public Object caseVenue(Venue object) {
+			@Override
+			public Adapter caseVenue(Venue object) {
 				return createVenueAdapter();
 			}
-			public Object casePackage(ClassDiagram.Package object) {
+			@Override
+			public Adapter casePackage(ClassDiagram.Package object) {
 				return createPackageAdapter();
 			}
-			public Object caseEventBooking(EventBooking object) {
+			@Override
+			public Adapter caseEventBooking(EventBooking object) {
 				return createEventBookingAdapter();
 			}
-			public Object caseAccount(Account object) {
+			@Override
+			public Adapter caseAccount(Account object) {
 				return createAccountAdapter();
 			}
-			public Object caseOrganization(Organization object) {
+			@Override
+			public Adapter caseAccountType(AccountType object) {
+				return createAccountTypeAdapter();
+			}
+			@Override
+			public Adapter caseOrganization(Organization object) {
 				return createOrganizationAdapter();
 			}
-			public Object caseCustomer(Customer object) {
+			@Override
+			public Adapter caseCustomer(Customer object) {
 				return createCustomerAdapter();
 			}
-			public Object caseIndividualCustomer(IndividualCustomer object) {
+			@Override
+			public Adapter caseIndividualCustomer(IndividualCustomer object) {
 				return createIndividualCustomerAdapter();
 			}
-			public Object caseBookingSchedule(BookingSchedule object) {
+			@Override
+			public Adapter caseBookingSchedule(BookingSchedule object) {
 				return createBookingScheduleAdapter();
 			}
-			public Object caseFloorMap(FloorMap object) {
+			@Override
+			public Adapter caseFloorMap(FloorMap object) {
 				return createFloorMapAdapter();
 			}
-			public Object defaultCase(EObject object) {
+			@Override
+			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
 		};
@@ -158,8 +185,9 @@ public class ClassDiagramAdapterFactory extends AdapterFactoryImpl {
 	 * @return the adapter for the <code>target</code>.
 	 * @generated
 	 */
+	@Override
 	public Adapter createAdapter(Notifier target) {
-		return (Adapter)modelSwitch.doSwitch((EObject)target);
+		return modelSwitch.doSwitch((EObject)target);
 	}
 
 
@@ -370,6 +398,20 @@ public class ClassDiagramAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createAccountAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link ClassDiagram.AccountType <em>Account Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see ClassDiagram.AccountType
+	 * @generated
+	 */
+	public Adapter createAccountTypeAdapter() {
 		return null;
 	}
 

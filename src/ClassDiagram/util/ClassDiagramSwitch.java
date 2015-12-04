@@ -3,6 +3,7 @@
 package ClassDiagram.util;
 
 import ClassDiagram.Account;
+import ClassDiagram.AccountType;
 import ClassDiagram.Bill;
 import ClassDiagram.BillingInformation;
 import ClassDiagram.BookingSchedule;
@@ -22,11 +23,9 @@ import ClassDiagram.Room;
 import ClassDiagram.RoomBooking;
 import ClassDiagram.RoomType;
 import ClassDiagram.Venue;
-
-import java.util.List;
-
-import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.util.Switch;
 
 /**
  * <!-- begin-user-doc -->
@@ -41,7 +40,7 @@ import org.eclipse.emf.ecore.EObject;
  * @see ClassDiagram.ClassDiagramPackage
  * @generated
  */
-public class ClassDiagramSwitch {
+public class ClassDiagramSwitch<T> extends Switch<T> {
 	/**
 	 * The cached model package
 	 * <!-- begin-user-doc -->
@@ -63,14 +62,16 @@ public class ClassDiagramSwitch {
 	}
 
 	/**
-	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
+	 * Checks whether this is a switch for the given package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the first non-null result returned by a <code>caseXXX</code> call.
+	 * @param ePackage the package in question.
+	 * @return whether this is a switch for the given package.
 	 * @generated
 	 */
-	public Object doSwitch(EObject theEObject) {
-		return doSwitch(theEObject.eClass(), theEObject);
+	@Override
+	protected boolean isSwitchFor(EPackage ePackage) {
+		return ePackage == modelPackage;
 	}
 
 	/**
@@ -80,137 +81,124 @@ public class ClassDiagramSwitch {
 	 * @return the first non-null result returned by a <code>caseXXX</code> call.
 	 * @generated
 	 */
-	protected Object doSwitch(EClass theEClass, EObject theEObject) {
-		if (theEClass.eContainer() == modelPackage) {
-			return doSwitch(theEClass.getClassifierID(), theEObject);
-		}
-		else {
-			List eSuperTypes = theEClass.getESuperTypes();
-			return
-				eSuperTypes.isEmpty() ?
-					defaultCase(theEObject) :
-					doSwitch((EClass)eSuperTypes.get(0), theEObject);
-		}
-	}
-
-	/**
-	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the first non-null result returned by a <code>caseXXX</code> call.
-	 * @generated
-	 */
-	protected Object doSwitch(int classifierID, EObject theEObject) {
+	@Override
+	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
 			case ClassDiagramPackage.ROOM: {
 				Room room = (Room)theEObject;
-				Object result = caseRoom(room);
+				T result = caseRoom(room);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case ClassDiagramPackage.GUEST: {
 				Guest guest = (Guest)theEObject;
-				Object result = caseGuest(guest);
+				T result = caseGuest(guest);
 				if (result == null) result = casePerson(guest);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case ClassDiagramPackage.PERSON: {
 				Person person = (Person)theEObject;
-				Object result = casePerson(person);
+				T result = casePerson(person);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case ClassDiagramPackage.ROOM_TYPE: {
 				RoomType roomType = (RoomType)theEObject;
-				Object result = caseRoomType(roomType);
+				T result = caseRoomType(roomType);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case ClassDiagramPackage.BILL: {
 				Bill bill = (Bill)theEObject;
-				Object result = caseBill(bill);
+				T result = caseBill(bill);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case ClassDiagramPackage.COST: {
 				Cost cost = (Cost)theEObject;
-				Object result = caseCost(cost);
+				T result = caseCost(cost);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case ClassDiagramPackage.BILLING_INFORMATION: {
 				BillingInformation billingInformation = (BillingInformation)theEObject;
-				Object result = caseBillingInformation(billingInformation);
+				T result = caseBillingInformation(billingInformation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case ClassDiagramPackage.PAYMENT_STRATEGY: {
 				PaymentStrategy paymentStrategy = (PaymentStrategy)theEObject;
-				Object result = casePaymentStrategy(paymentStrategy);
+				T result = casePaymentStrategy(paymentStrategy);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case ClassDiagramPackage.ROOM_BOOKING: {
 				RoomBooking roomBooking = (RoomBooking)theEObject;
-				Object result = caseRoomBooking(roomBooking);
+				T result = caseRoomBooking(roomBooking);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case ClassDiagramPackage.ITEM: {
 				Item item = (Item)theEObject;
-				Object result = caseItem(item);
+				T result = caseItem(item);
 				if (result == null) result = caseCost(item);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case ClassDiagramPackage.EVENT: {
 				Event event = (Event)theEObject;
-				Object result = caseEvent(event);
+				T result = caseEvent(event);
 				if (result == null) result = caseCost(event);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case ClassDiagramPackage.VENUE: {
 				Venue venue = (Venue)theEObject;
-				Object result = caseVenue(venue);
+				T result = caseVenue(venue);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case ClassDiagramPackage.PACKAGE: {
 				ClassDiagram.Package package_ = (ClassDiagram.Package)theEObject;
-				Object result = casePackage(package_);
+				T result = casePackage(package_);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case ClassDiagramPackage.EVENT_BOOKING: {
 				EventBooking eventBooking = (EventBooking)theEObject;
-				Object result = caseEventBooking(eventBooking);
+				T result = caseEventBooking(eventBooking);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case ClassDiagramPackage.ACCOUNT: {
 				Account account = (Account)theEObject;
-				Object result = caseAccount(account);
+				T result = caseAccount(account);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ClassDiagramPackage.ACCOUNT_TYPE: {
+				AccountType accountType = (AccountType)theEObject;
+				T result = caseAccountType(accountType);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case ClassDiagramPackage.ORGANIZATION: {
 				Organization organization = (Organization)theEObject;
-				Object result = caseOrganization(organization);
+				T result = caseOrganization(organization);
 				if (result == null) result = caseCustomer(organization);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case ClassDiagramPackage.CUSTOMER: {
 				Customer customer = (Customer)theEObject;
-				Object result = caseCustomer(customer);
+				T result = caseCustomer(customer);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case ClassDiagramPackage.INDIVIDUAL_CUSTOMER: {
 				IndividualCustomer individualCustomer = (IndividualCustomer)theEObject;
-				Object result = caseIndividualCustomer(individualCustomer);
+				T result = caseIndividualCustomer(individualCustomer);
 				if (result == null) result = casePerson(individualCustomer);
 				if (result == null) result = caseCustomer(individualCustomer);
 				if (result == null) result = defaultCase(theEObject);
@@ -218,13 +206,13 @@ public class ClassDiagramSwitch {
 			}
 			case ClassDiagramPackage.BOOKING_SCHEDULE: {
 				BookingSchedule bookingSchedule = (BookingSchedule)theEObject;
-				Object result = caseBookingSchedule(bookingSchedule);
+				T result = caseBookingSchedule(bookingSchedule);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case ClassDiagramPackage.FLOOR_MAP: {
 				FloorMap floorMap = (FloorMap)theEObject;
-				Object result = caseFloorMap(floorMap);
+				T result = caseFloorMap(floorMap);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -243,7 +231,7 @@ public class ClassDiagramSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseRoom(Room object) {
+	public T caseRoom(Room object) {
 		return null;
 	}
 
@@ -258,7 +246,7 @@ public class ClassDiagramSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseGuest(Guest object) {
+	public T caseGuest(Guest object) {
 		return null;
 	}
 
@@ -273,7 +261,7 @@ public class ClassDiagramSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object casePerson(Person object) {
+	public T casePerson(Person object) {
 		return null;
 	}
 
@@ -288,7 +276,7 @@ public class ClassDiagramSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseRoomType(RoomType object) {
+	public T caseRoomType(RoomType object) {
 		return null;
 	}
 
@@ -303,7 +291,7 @@ public class ClassDiagramSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseBill(Bill object) {
+	public T caseBill(Bill object) {
 		return null;
 	}
 
@@ -318,7 +306,7 @@ public class ClassDiagramSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseCost(Cost object) {
+	public T caseCost(Cost object) {
 		return null;
 	}
 
@@ -333,7 +321,7 @@ public class ClassDiagramSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseBillingInformation(BillingInformation object) {
+	public T caseBillingInformation(BillingInformation object) {
 		return null;
 	}
 
@@ -348,7 +336,7 @@ public class ClassDiagramSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object casePaymentStrategy(PaymentStrategy object) {
+	public T casePaymentStrategy(PaymentStrategy object) {
 		return null;
 	}
 
@@ -363,7 +351,7 @@ public class ClassDiagramSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseRoomBooking(RoomBooking object) {
+	public T caseRoomBooking(RoomBooking object) {
 		return null;
 	}
 
@@ -378,7 +366,7 @@ public class ClassDiagramSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseItem(Item object) {
+	public T caseItem(Item object) {
 		return null;
 	}
 
@@ -393,7 +381,7 @@ public class ClassDiagramSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseEvent(Event object) {
+	public T caseEvent(Event object) {
 		return null;
 	}
 
@@ -408,7 +396,7 @@ public class ClassDiagramSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseVenue(Venue object) {
+	public T caseVenue(Venue object) {
 		return null;
 	}
 
@@ -423,7 +411,7 @@ public class ClassDiagramSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object casePackage(ClassDiagram.Package object) {
+	public T casePackage(ClassDiagram.Package object) {
 		return null;
 	}
 
@@ -438,7 +426,7 @@ public class ClassDiagramSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseEventBooking(EventBooking object) {
+	public T caseEventBooking(EventBooking object) {
 		return null;
 	}
 
@@ -453,7 +441,22 @@ public class ClassDiagramSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseAccount(Account object) {
+	public T caseAccount(Account object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Account Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Account Type</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAccountType(AccountType object) {
 		return null;
 	}
 
@@ -468,7 +471,7 @@ public class ClassDiagramSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseOrganization(Organization object) {
+	public T caseOrganization(Organization object) {
 		return null;
 	}
 
@@ -483,7 +486,7 @@ public class ClassDiagramSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseCustomer(Customer object) {
+	public T caseCustomer(Customer object) {
 		return null;
 	}
 
@@ -498,7 +501,7 @@ public class ClassDiagramSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseIndividualCustomer(IndividualCustomer object) {
+	public T caseIndividualCustomer(IndividualCustomer object) {
 		return null;
 	}
 
@@ -513,7 +516,7 @@ public class ClassDiagramSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseBookingSchedule(BookingSchedule object) {
+	public T caseBookingSchedule(BookingSchedule object) {
 		return null;
 	}
 
@@ -528,7 +531,7 @@ public class ClassDiagramSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseFloorMap(FloorMap object) {
+	public T caseFloorMap(FloorMap object) {
 		return null;
 	}
 
@@ -543,7 +546,8 @@ public class ClassDiagramSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject)
 	 * @generated
 	 */
-	public Object defaultCase(EObject object) {
+	@Override
+	public T defaultCase(EObject object) {
 		return null;
 	}
 

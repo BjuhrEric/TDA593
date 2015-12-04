@@ -3,6 +3,7 @@
 package ClassDiagram.impl;
 
 import ClassDiagram.Account;
+import ClassDiagram.AccountType;
 import ClassDiagram.Bill;
 import ClassDiagram.BookingSchedule;
 import ClassDiagram.ClassDiagramFactory;
@@ -75,6 +76,7 @@ public class ClassDiagramFactoryImpl extends EFactoryImpl implements ClassDiagra
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case ClassDiagramPackage.ROOM: return createRoom();
@@ -89,6 +91,7 @@ public class ClassDiagramFactoryImpl extends EFactoryImpl implements ClassDiagra
 			case ClassDiagramPackage.PACKAGE: return createPackage();
 			case ClassDiagramPackage.EVENT_BOOKING: return createEventBooking();
 			case ClassDiagramPackage.ACCOUNT: return createAccount();
+			case ClassDiagramPackage.ACCOUNT_TYPE: return createAccountType();
 			case ClassDiagramPackage.ORGANIZATION: return createOrganization();
 			case ClassDiagramPackage.INDIVIDUAL_CUSTOMER: return createIndividualCustomer();
 			case ClassDiagramPackage.BOOKING_SCHEDULE: return createBookingSchedule();
@@ -103,6 +106,7 @@ public class ClassDiagramFactoryImpl extends EFactoryImpl implements ClassDiagra
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
 			case ClassDiagramPackage.TITLE:
@@ -125,6 +129,7 @@ public class ClassDiagramFactoryImpl extends EFactoryImpl implements ClassDiagra
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
 			case ClassDiagramPackage.TITLE:
@@ -260,6 +265,16 @@ public class ClassDiagramFactoryImpl extends EFactoryImpl implements ClassDiagra
 	public Account createAccount() {
 		AccountImpl account = new AccountImpl();
 		return account;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AccountType createAccountType() {
+		AccountTypeImpl accountType = new AccountTypeImpl();
+		return accountType;
 	}
 
 	/**
@@ -417,6 +432,7 @@ public class ClassDiagramFactoryImpl extends EFactoryImpl implements ClassDiagra
 	 * @deprecated
 	 * @generated
 	 */
+	@Deprecated
 	public static ClassDiagramPackage getPackage() {
 		return ClassDiagramPackage.eINSTANCE;
 	}

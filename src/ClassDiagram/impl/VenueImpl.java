@@ -102,6 +102,7 @@ public class VenueImpl extends MinimalEObjectImpl.Container implements Venue {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return ClassDiagramPackage.Literals.VENUE;
 	}
@@ -174,14 +175,15 @@ public class VenueImpl extends MinimalEObjectImpl.Container implements Venue {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case ClassDiagramPackage.VENUE__NAME:
 				return getName();
 			case ClassDiagramPackage.VENUE__GUEST_CAPACITY:
-				return new Integer(getGuestCapacity());
+				return getGuestCapacity();
 			case ClassDiagramPackage.VENUE__EVENT_CAPACITY:
-				return new Integer(getEventCapacity());
+				return getEventCapacity();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -191,16 +193,17 @@ public class VenueImpl extends MinimalEObjectImpl.Container implements Venue {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ClassDiagramPackage.VENUE__NAME:
 				setName((String)newValue);
 				return;
 			case ClassDiagramPackage.VENUE__GUEST_CAPACITY:
-				setGuestCapacity(((Integer)newValue).intValue());
+				setGuestCapacity((Integer)newValue);
 				return;
 			case ClassDiagramPackage.VENUE__EVENT_CAPACITY:
-				setEventCapacity(((Integer)newValue).intValue());
+				setEventCapacity((Integer)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -211,6 +214,7 @@ public class VenueImpl extends MinimalEObjectImpl.Container implements Venue {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case ClassDiagramPackage.VENUE__NAME:
@@ -231,6 +235,7 @@ public class VenueImpl extends MinimalEObjectImpl.Container implements Venue {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case ClassDiagramPackage.VENUE__NAME:
@@ -248,6 +253,7 @@ public class VenueImpl extends MinimalEObjectImpl.Container implements Venue {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 

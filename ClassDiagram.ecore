@@ -207,12 +207,23 @@
     <eOperations name="hasPermissions" ordered="false" lowerBound="1" eType="ecore:EDataType ../org.eclipse.uml2.types/model/Types.ecore#//Boolean"/>
     <eOperations name="removePermission" ordered="false" lowerBound="1"/>
     <eOperations name="setPermissions" ordered="false" lowerBound="1"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="permission" ordered="false"
-        upperBound="-1" eType="#//Permission"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="username" ordered="false"
         lowerBound="1" eType="ecore:EDataType ../org.eclipse.uml2.types/model/Types.ecore#//String"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="password" ordered="false"
         lowerBound="1" eType="ecore:EDataType ../org.eclipse.uml2.types/model/Types.ecore#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="accounttype" ordered="false"
+        lowerBound="1" eType="#//AccountType">
+      <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <details key="originalName" value="account type"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AccountType">
+    <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <details key="originalName" value="Account Type"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="permission" ordered="false"
+        upperBound="-1" eType="#//Permission"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Permission"/>
   <eClassifiers xsi:type="ecore:EClass" name="Organization" eSuperTypes="#//Customer"/>

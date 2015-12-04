@@ -5,8 +5,7 @@ package ClassDiagram;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-
-import org.eclipse.emf.common.util.AbstractEnumerator;
+import org.eclipse.emf.common.util.Enumerator;
 
 /**
  * <!-- begin-user-doc -->
@@ -17,7 +16,44 @@ import org.eclipse.emf.common.util.AbstractEnumerator;
  * @model annotation="http://www.eclipse.org/uml2/2.0.0/UML originalName='Room Status'"
  * @generated
  */
-public final class RoomStatus extends AbstractEnumerator {
+public enum RoomStatus implements Enumerator
+{
+	/**
+	 * The '<em><b>Available</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #AVAILABLE_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	AVAILABLE(0, "Available", "Available"),
+	/**
+	 * The '<em><b>Booked</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #BOOKED_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	BOOKED(1, "Booked", "Booked"),
+	/**
+	 * The '<em><b>Occupied</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #OCCUPIED_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	OCCUPIED(2, "Occupied", "Occupied"),
+	/**
+	 * The '<em><b>Out Of Order</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #OUT_OF_ORDER_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	OUT_OF_ORDER(3, "OutOfOrder", "OutOfOrder");
 	/**
 	 * The '<em><b>Available</b></em>' literal value.
 	 * <!-- begin-user-doc -->
@@ -26,12 +62,12 @@ public final class RoomStatus extends AbstractEnumerator {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #AVAILABLE_LITERAL
+	 * @see #AVAILABLE
 	 * @model name="Available"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int AVAILABLE = 0;
+	public static final int AVAILABLE_VALUE = 0;
 
 	/**
 	 * The '<em><b>Booked</b></em>' literal value.
@@ -41,12 +77,12 @@ public final class RoomStatus extends AbstractEnumerator {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #BOOKED_LITERAL
+	 * @see #BOOKED
 	 * @model name="Booked"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int BOOKED = 1;
+	public static final int BOOKED_VALUE = 1;
 
 	/**
 	 * The '<em><b>Occupied</b></em>' literal value.
@@ -56,12 +92,12 @@ public final class RoomStatus extends AbstractEnumerator {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #OCCUPIED_LITERAL
+	 * @see #OCCUPIED
 	 * @model name="Occupied"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int OCCUPIED = 2;
+	public static final int OCCUPIED_VALUE = 2;
 
 	/**
 	 * The '<em><b>Out Of Order</b></em>' literal value.
@@ -71,52 +107,12 @@ public final class RoomStatus extends AbstractEnumerator {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #OUT_OF_ORDER_LITERAL
+	 * @see #OUT_OF_ORDER
 	 * @model name="OutOfOrder"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int OUT_OF_ORDER = 3;
-
-	/**
-	 * The '<em><b>Available</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #AVAILABLE
-	 * @generated
-	 * @ordered
-	 */
-	public static final RoomStatus AVAILABLE_LITERAL = new RoomStatus(AVAILABLE, "Available", "Available");
-
-	/**
-	 * The '<em><b>Booked</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #BOOKED
-	 * @generated
-	 * @ordered
-	 */
-	public static final RoomStatus BOOKED_LITERAL = new RoomStatus(BOOKED, "Booked", "Booked");
-
-	/**
-	 * The '<em><b>Occupied</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #OCCUPIED
-	 * @generated
-	 * @ordered
-	 */
-	public static final RoomStatus OCCUPIED_LITERAL = new RoomStatus(OCCUPIED, "Occupied", "Occupied");
-
-	/**
-	 * The '<em><b>Out Of Order</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #OUT_OF_ORDER
-	 * @generated
-	 * @ordered
-	 */
-	public static final RoomStatus OUT_OF_ORDER_LITERAL = new RoomStatus(OUT_OF_ORDER, "OutOfOrder", "OutOfOrder");
+	public static final int OUT_OF_ORDER_VALUE = 3;
 
 	/**
 	 * An array of all the '<em><b>Room Status</b></em>' enumerators.
@@ -126,10 +122,10 @@ public final class RoomStatus extends AbstractEnumerator {
 	 */
 	private static final RoomStatus[] VALUES_ARRAY =
 		new RoomStatus[] {
-			AVAILABLE_LITERAL,
-			BOOKED_LITERAL,
-			OCCUPIED_LITERAL,
-			OUT_OF_ORDER_LITERAL,
+			AVAILABLE,
+			BOOKED,
+			OCCUPIED,
+			OUT_OF_ORDER,
 		};
 
 	/**
@@ -138,7 +134,7 @@ public final class RoomStatus extends AbstractEnumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final List VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+	public static final List<RoomStatus> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
 	/**
 	 * Returns the '<em><b>Room Status</b></em>' literal with the specified literal value.
@@ -186,13 +182,34 @@ public final class RoomStatus extends AbstractEnumerator {
 	 */
 	public static RoomStatus get(int value) {
 		switch (value) {
-			case AVAILABLE: return AVAILABLE_LITERAL;
-			case BOOKED: return BOOKED_LITERAL;
-			case OCCUPIED: return OCCUPIED_LITERAL;
-			case OUT_OF_ORDER: return OUT_OF_ORDER_LITERAL;
+			case AVAILABLE_VALUE: return AVAILABLE;
+			case BOOKED_VALUE: return BOOKED;
+			case OCCUPIED_VALUE: return OCCUPIED;
+			case OUT_OF_ORDER_VALUE: return OUT_OF_ORDER;
 		}
 		return null;
 	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private final int value;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private final String name;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private final String literal;
 
 	/**
 	 * Only this class can construct instances.
@@ -201,7 +218,46 @@ public final class RoomStatus extends AbstractEnumerator {
 	 * @generated
 	 */
 	private RoomStatus(int value, String name, String literal) {
-		super(value, name, literal);
+		this.value = value;
+		this.name = name;
+		this.literal = literal;
 	}
 
-} //RoomStatus
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public int getValue() {
+	  return value;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getName() {
+	  return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getLiteral() {
+	  return literal;
+	}
+
+	/**
+	 * Returns the literal value of the enumerator, which is its string representation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		return literal;
+	}
+}

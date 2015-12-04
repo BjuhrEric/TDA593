@@ -20,26 +20,26 @@ public interface Customer extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation" type="ClassDiagram.BillingInformation" ordered="false"
+	 * @model kind="operation" ordered="false"
 	 * @generated
 	 */
-	EList getBillingInformation();
+	EList<BillingInformation> getBillingInformation();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation" type="ClassDiagram.RoomBooking" ordered="false"
+	 * @model kind="operation" ordered="false"
 	 * @generated
 	 */
-	EList getRoomBookings();
+	EList<RoomBooking> getRoomBookings();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation" type="ClassDiagram.EventBooking" ordered="false"
+	 * @model kind="operation" ordered="false"
 	 * @generated
 	 */
-	EList getEventBookings();
+	EList<EventBooking> getEventBookings();
 
 	/**
 	 * <!-- begin-user-doc -->

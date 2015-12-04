@@ -162,6 +162,7 @@ public class RoomTypeImpl extends MinimalEObjectImpl.Container implements RoomTy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return ClassDiagramPackage.Literals.ROOM_TYPE;
 	}
@@ -225,18 +226,19 @@ public class RoomTypeImpl extends MinimalEObjectImpl.Container implements RoomTy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case ClassDiagramPackage.ROOM_TYPE__NAME:
 				return getName();
 			case ClassDiagramPackage.ROOM_TYPE__PRICE:
-				return new Double(getPrice());
+				return getPrice();
 			case ClassDiagramPackage.ROOM_TYPE__GUEST_CAPACITY:
-				return new Integer(getGuestCapacity());
+				return getGuestCapacity();
 			case ClassDiagramPackage.ROOM_TYPE__NUMBER_OF_BEDS:
-				return new Integer(getNumberOfBeds());
+				return getNumberOfBeds();
 			case ClassDiagramPackage.ROOM_TYPE__NUMBER_OF_EXTRA_BEDS:
-				return new Integer(getNumberOfExtraBeds());
+				return getNumberOfExtraBeds();
 			case ClassDiagramPackage.ROOM_TYPE__DESCRIPTION:
 				return getDescription();
 		}
@@ -248,6 +250,7 @@ public class RoomTypeImpl extends MinimalEObjectImpl.Container implements RoomTy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case ClassDiagramPackage.ROOM_TYPE__NAME:
@@ -271,6 +274,7 @@ public class RoomTypeImpl extends MinimalEObjectImpl.Container implements RoomTy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 

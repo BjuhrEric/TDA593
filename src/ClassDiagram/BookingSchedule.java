@@ -35,10 +35,10 @@ public interface BookingSchedule extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Room Bookings</em>' reference list.
 	 * @see ClassDiagram.ClassDiagramPackage#getBookingSchedule_RoomBookings()
-	 * @model type="ClassDiagram.RoomBooking" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
-	EList getRoomBookings();
+	EList<RoomBooking> getRoomBookings();
 
 	/**
 	 * Returns the value of the '<em><b>Event Bookings</b></em>' reference list.
@@ -51,10 +51,10 @@ public interface BookingSchedule extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Event Bookings</em>' reference list.
 	 * @see ClassDiagram.ClassDiagramPackage#getBookingSchedule_EventBookings()
-	 * @model type="ClassDiagram.EventBooking" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
-	EList getEventBookings();
+	EList<EventBooking> getEventBookings();
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -130,6 +130,15 @@ public interface ClassDiagramFactory extends EFactory {
 	Account createAccount();
 
 	/**
+	 * Returns a new object of class '<em>Account Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Account Type</em>'.
+	 * @generated
+	 */
+	AccountType createAccountType();
+
+	/**
 	 * Returns a new object of class '<em>Organization</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

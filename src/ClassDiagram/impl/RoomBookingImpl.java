@@ -7,6 +7,7 @@ import ClassDiagram.Room;
 import ClassDiagram.RoomBooking;
 import ClassDiagram.RoomType;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 import java.util.Date;
 
@@ -86,7 +87,7 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 	 * @generated
 	 * @ordered
 	 */
-	protected EList room;
+	protected EList<Room> room;
 
 	/**
 	 * The cached value of the '{@link #getRoomType() <em>Room Type</em>}' reference list.
@@ -96,7 +97,7 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 	 * @generated
 	 * @ordered
 	 */
-	protected EList roomType;
+	protected EList<RoomType> roomType;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -112,6 +113,7 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return ClassDiagramPackage.Literals.ROOM_BOOKING;
 	}
@@ -163,9 +165,9 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList getRoom() {
+	public EList<Room> getRoom() {
 		if (room == null) {
-			room = new EObjectResolvingEList(Room.class, this, ClassDiagramPackage.ROOM_BOOKING__ROOM);
+			room = new EObjectResolvingEList<Room>(Room.class, this, ClassDiagramPackage.ROOM_BOOKING__ROOM);
 		}
 		return room;
 	}
@@ -175,9 +177,9 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList getRoomType() {
+	public EList<RoomType> getRoomType() {
 		if (roomType == null) {
-			roomType = new EObjectResolvingEList(RoomType.class, this, ClassDiagramPackage.ROOM_BOOKING__ROOM_TYPE);
+			roomType = new EObjectResolvingEList<RoomType>(RoomType.class, this, ClassDiagramPackage.ROOM_BOOKING__ROOM_TYPE);
 		}
 		return roomType;
 	}
@@ -220,6 +222,7 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case ClassDiagramPackage.ROOM_BOOKING__START_DATE:
@@ -239,6 +242,8 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+		@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ClassDiagramPackage.ROOM_BOOKING__START_DATE:
@@ -249,11 +254,11 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 				return;
 			case ClassDiagramPackage.ROOM_BOOKING__ROOM:
 				getRoom().clear();
-				getRoom().addAll((Collection)newValue);
+				getRoom().addAll((Collection<? extends Room>)newValue);
 				return;
 			case ClassDiagramPackage.ROOM_BOOKING__ROOM_TYPE:
 				getRoomType().clear();
-				getRoomType().addAll((Collection)newValue);
+				getRoomType().addAll((Collection<? extends RoomType>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -264,6 +269,7 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case ClassDiagramPackage.ROOM_BOOKING__START_DATE:
@@ -287,6 +293,7 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case ClassDiagramPackage.ROOM_BOOKING__START_DATE:
@@ -306,6 +313,28 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case ClassDiagramPackage.ROOM_BOOKING___CANCEL:
+				cancel();
+				return null;
+			case ClassDiagramPackage.ROOM_BOOKING___CLOSE:
+				close();
+				return null;
+			case ClassDiagramPackage.ROOM_BOOKING___GENERATE_PDF:
+				generatePDF();
+				return null;
+		}
+		return super.eInvoke(operationID, arguments);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 

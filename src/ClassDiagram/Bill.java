@@ -52,10 +52,10 @@ public interface Bill extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model costType="ClassDiagram.Cost" costMany="true" costOrdered="false"
+	 * @model costMany="true" costOrdered="false"
 	 * @generated
 	 */
-	void addCost(EList cost);
+	void addCost(EList<Cost> cost);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -68,10 +68,10 @@ public interface Bill extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model type="ClassDiagram.Bill" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
-	EList split();
+	EList<Bill> split();
 
 	/**
 	 * <!-- begin-user-doc -->

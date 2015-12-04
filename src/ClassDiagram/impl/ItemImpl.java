@@ -81,6 +81,7 @@ public class ItemImpl extends MinimalEObjectImpl.Container implements Item {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return ClassDiagramPackage.Literals.ITEM;
 	}
@@ -132,12 +133,13 @@ public class ItemImpl extends MinimalEObjectImpl.Container implements Item {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case ClassDiagramPackage.ITEM__NAME:
 				return getName();
 			case ClassDiagramPackage.ITEM__PRICE:
-				return new Double(getPrice());
+				return getPrice();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -147,13 +149,14 @@ public class ItemImpl extends MinimalEObjectImpl.Container implements Item {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ClassDiagramPackage.ITEM__NAME:
 				setName((String)newValue);
 				return;
 			case ClassDiagramPackage.ITEM__PRICE:
-				setPrice(((Double)newValue).doubleValue());
+				setPrice((Double)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -164,6 +167,7 @@ public class ItemImpl extends MinimalEObjectImpl.Container implements Item {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case ClassDiagramPackage.ITEM__NAME:
@@ -181,6 +185,7 @@ public class ItemImpl extends MinimalEObjectImpl.Container implements Item {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case ClassDiagramPackage.ITEM__NAME:
@@ -196,6 +201,7 @@ public class ItemImpl extends MinimalEObjectImpl.Container implements Item {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
