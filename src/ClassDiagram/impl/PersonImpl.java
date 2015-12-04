@@ -41,7 +41,7 @@ public class PersonImpl extends MinimalEObjectImpl.Container implements Person {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList firstNames;
+	protected EList<String> firstNames;
 
 	/**
 	 * The cached value of the '{@link #getFamilyNames() <em>Family Names</em>}' attribute list.
@@ -51,7 +51,7 @@ public class PersonImpl extends MinimalEObjectImpl.Container implements Person {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList familyNames;
+	protected EList<String> familyNames;
 
 	/**
 	 * The default value of the '{@link #getTitle() <em>Title</em>}' attribute.
@@ -61,7 +61,7 @@ public class PersonImpl extends MinimalEObjectImpl.Container implements Person {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Title TITLE_EDEFAULT = Title.MR_LITERAL;
+	protected static final Title TITLE_EDEFAULT = Title.MR;
 
 	/**
 	 * The cached value of the '{@link #getTitle() <em>Title</em>}' attribute.
@@ -87,6 +87,7 @@ public class PersonImpl extends MinimalEObjectImpl.Container implements Person {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return ClassDiagramPackage.Literals.PERSON;
 	}
@@ -96,9 +97,9 @@ public class PersonImpl extends MinimalEObjectImpl.Container implements Person {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList getFirstNames() {
+	public EList<String> getFirstNames() {
 		if (firstNames == null) {
-			firstNames = new EDataTypeUniqueEList(String.class, this, ClassDiagramPackage.PERSON__FIRST_NAMES);
+			firstNames = new EDataTypeUniqueEList<String>(String.class, this, ClassDiagramPackage.PERSON__FIRST_NAMES);
 		}
 		return firstNames;
 	}
@@ -108,9 +109,9 @@ public class PersonImpl extends MinimalEObjectImpl.Container implements Person {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList getFamilyNames() {
+	public EList<String> getFamilyNames() {
 		if (familyNames == null) {
-			familyNames = new EDataTypeUniqueEList(String.class, this, ClassDiagramPackage.PERSON__FAMILY_NAMES);
+			familyNames = new EDataTypeUniqueEList<String>(String.class, this, ClassDiagramPackage.PERSON__FAMILY_NAMES);
 		}
 		return familyNames;
 	}
@@ -141,6 +142,7 @@ public class PersonImpl extends MinimalEObjectImpl.Container implements Person {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case ClassDiagramPackage.PERSON__FIRST_NAMES:
@@ -158,6 +160,7 @@ public class PersonImpl extends MinimalEObjectImpl.Container implements Person {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ClassDiagramPackage.PERSON__TITLE:
@@ -172,6 +175,7 @@ public class PersonImpl extends MinimalEObjectImpl.Container implements Person {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case ClassDiagramPackage.PERSON__TITLE:
@@ -186,6 +190,7 @@ public class PersonImpl extends MinimalEObjectImpl.Container implements Person {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case ClassDiagramPackage.PERSON__FIRST_NAMES:
@@ -203,6 +208,7 @@ public class PersonImpl extends MinimalEObjectImpl.Container implements Person {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 

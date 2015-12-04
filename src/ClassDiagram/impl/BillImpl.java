@@ -7,6 +7,7 @@ import ClassDiagram.BillingInformation;
 import ClassDiagram.ClassDiagramPackage;
 import ClassDiagram.Cost;
 
+import java.lang.reflect.InvocationTargetException;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.EList;
@@ -55,6 +56,7 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return ClassDiagramPackage.Literals.BILL;
 	}
@@ -102,7 +104,7 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void addCost(EList cost) {
+	public void addCost(EList<Cost> cost) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -124,7 +126,7 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList split() {
+	public EList<Bill> split() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -168,6 +170,7 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case ClassDiagramPackage.BILL__COST:
@@ -182,6 +185,7 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ClassDiagramPackage.BILL__COST:
@@ -196,6 +200,7 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case ClassDiagramPackage.BILL__COST:
@@ -210,12 +215,43 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case ClassDiagramPackage.BILL__COST:
 				return cost != null;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	@SuppressWarnings("unchecked")
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case ClassDiagramPackage.BILL___ADD_COST__ELIST:
+				addCost((EList<Cost>)arguments.get(0));
+				return null;
+			case ClassDiagramPackage.BILL___REMOVE_COST__COST:
+				removeCost((Cost)arguments.get(0));
+				return null;
+			case ClassDiagramPackage.BILL___SPLIT:
+				return split();
+			case ClassDiagramPackage.BILL___MERGE__BILL:
+				merge((Bill)arguments.get(0));
+				return null;
+			case ClassDiagramPackage.BILL___PERFORM_PAYMENT__BILLINGINFORMATION:
+				performPayment((BillingInformation)arguments.get(0));
+				return null;
+			case ClassDiagramPackage.BILL___PRINT_RECEIPT:
+				printReceipt();
+				return null;
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 } //BillImpl

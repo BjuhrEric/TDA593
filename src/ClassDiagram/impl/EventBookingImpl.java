@@ -6,10 +6,12 @@ import ClassDiagram.Bill;
 import ClassDiagram.ClassDiagramPackage;
 import ClassDiagram.EventBooking;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Date;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
@@ -96,6 +98,7 @@ public class EventBookingImpl extends MinimalEObjectImpl.Container implements Ev
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return ClassDiagramPackage.Literals.EVENT_BOOKING;
 	}
@@ -206,6 +209,7 @@ public class EventBookingImpl extends MinimalEObjectImpl.Container implements Ev
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case ClassDiagramPackage.EVENT_BOOKING__BILL:
@@ -224,6 +228,7 @@ public class EventBookingImpl extends MinimalEObjectImpl.Container implements Ev
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ClassDiagramPackage.EVENT_BOOKING__START_TIME:
@@ -241,6 +246,7 @@ public class EventBookingImpl extends MinimalEObjectImpl.Container implements Ev
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case ClassDiagramPackage.EVENT_BOOKING__START_TIME:
@@ -258,6 +264,7 @@ public class EventBookingImpl extends MinimalEObjectImpl.Container implements Ev
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case ClassDiagramPackage.EVENT_BOOKING__BILL:
@@ -275,6 +282,28 @@ public class EventBookingImpl extends MinimalEObjectImpl.Container implements Ev
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case ClassDiagramPackage.EVENT_BOOKING___CANCEL:
+				cancel();
+				return null;
+			case ClassDiagramPackage.EVENT_BOOKING___CLOSE:
+				close();
+				return null;
+			case ClassDiagramPackage.EVENT_BOOKING___GENERATE_PDF:
+				generatePDF();
+				return null;
+		}
+		return super.eInvoke(operationID, arguments);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 

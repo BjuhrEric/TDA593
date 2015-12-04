@@ -201,6 +201,7 @@ public class EventImpl extends MinimalEObjectImpl.Container implements Event {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return ClassDiagramPackage.Literals.EVENT;
 	}
@@ -383,18 +384,19 @@ public class EventImpl extends MinimalEObjectImpl.Container implements Event {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case ClassDiagramPackage.EVENT__NAME:
 				return getName();
 			case ClassDiagramPackage.EVENT__PRICE:
-				return new Double(getPrice());
+				return getPrice();
 			case ClassDiagramPackage.EVENT__DESCRIPTION:
 				return getDescription();
 			case ClassDiagramPackage.EVENT__RESPONSIBLE_ENTITY:
 				return getResponsibleEntity();
 			case ClassDiagramPackage.EVENT__NUMBER_OF_GUESTS:
-				return new Integer(getNumberOfGuests());
+				return getNumberOfGuests();
 			case ClassDiagramPackage.EVENT__START_TIME:
 				return getStartTime();
 			case ClassDiagramPackage.EVENT__END_TIME:
@@ -411,10 +413,11 @@ public class EventImpl extends MinimalEObjectImpl.Container implements Event {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ClassDiagramPackage.EVENT__PRICE:
-				setPrice(((Double)newValue).doubleValue());
+				setPrice((Double)newValue);
 				return;
 			case ClassDiagramPackage.EVENT__DESCRIPTION:
 				setDescription((String)newValue);
@@ -423,7 +426,7 @@ public class EventImpl extends MinimalEObjectImpl.Container implements Event {
 				setResponsibleEntity((String)newValue);
 				return;
 			case ClassDiagramPackage.EVENT__NUMBER_OF_GUESTS:
-				setNumberOfGuests(((Integer)newValue).intValue());
+				setNumberOfGuests((Integer)newValue);
 				return;
 			case ClassDiagramPackage.EVENT__START_TIME:
 				setStartTime((Date)newValue);
@@ -443,6 +446,7 @@ public class EventImpl extends MinimalEObjectImpl.Container implements Event {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case ClassDiagramPackage.EVENT__PRICE:
@@ -475,6 +479,7 @@ public class EventImpl extends MinimalEObjectImpl.Container implements Event {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case ClassDiagramPackage.EVENT__NAME:
@@ -502,6 +507,7 @@ public class EventImpl extends MinimalEObjectImpl.Container implements Event {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 

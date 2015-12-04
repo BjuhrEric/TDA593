@@ -2,56 +2,50 @@
  */
 package ClassDiagram.impl;
 
+import ClassDiagram.AccountType;
 import ClassDiagram.ClassDiagramPackage;
-import ClassDiagram.Guest;
-import ClassDiagram.GuestStatus;
+import ClassDiagram.Permission;
 
-import org.eclipse.emf.common.notify.Notification;
+import java.util.Collection;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Guest</b></em>'.
+ * An implementation of the model object '<em><b>Account Type</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link ClassDiagram.impl.GuestImpl#getStatus <em>Status</em>}</li>
+ *   <li>{@link ClassDiagram.impl.AccountTypeImpl#getPermission <em>Permission</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class GuestImpl extends PersonImpl implements Guest {
+public class AccountTypeImpl extends MinimalEObjectImpl.Container implements AccountType {
 	/**
-	 * The default value of the '{@link #getStatus() <em>Status</em>}' attribute.
+	 * The cached value of the '{@link #getPermission() <em>Permission</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getStatus()
+	 * @see #getPermission()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final GuestStatus STATUS_EDEFAULT = GuestStatus.CHECKED_IN;
-
-	/**
-	 * The cached value of the '{@link #getStatus() <em>Status</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStatus()
-	 * @generated
-	 * @ordered
-	 */
-	protected GuestStatus status = STATUS_EDEFAULT;
+	protected EList<Permission> permission;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected GuestImpl() {
+	protected AccountTypeImpl() {
 		super();
 	}
 
@@ -62,7 +56,7 @@ public class GuestImpl extends PersonImpl implements Guest {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ClassDiagramPackage.Literals.GUEST;
+		return ClassDiagramPackage.Literals.ACCOUNT_TYPE;
 	}
 
 	/**
@@ -70,20 +64,11 @@ public class GuestImpl extends PersonImpl implements Guest {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public GuestStatus getStatus() {
-		return status;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setStatus(GuestStatus newStatus) {
-		GuestStatus oldStatus = status;
-		status = newStatus == null ? STATUS_EDEFAULT : newStatus;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ClassDiagramPackage.GUEST__STATUS, oldStatus, status));
+	public EList<Permission> getPermission() {
+		if (permission == null) {
+			permission = new EDataTypeUniqueEList<Permission>(Permission.class, this, ClassDiagramPackage.ACCOUNT_TYPE__PERMISSION);
+		}
+		return permission;
 	}
 
 	/**
@@ -94,8 +79,8 @@ public class GuestImpl extends PersonImpl implements Guest {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ClassDiagramPackage.GUEST__STATUS:
-				return getStatus();
+			case ClassDiagramPackage.ACCOUNT_TYPE__PERMISSION:
+				return getPermission();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -105,11 +90,13 @@ public class GuestImpl extends PersonImpl implements Guest {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ClassDiagramPackage.GUEST__STATUS:
-				setStatus((GuestStatus)newValue);
+			case ClassDiagramPackage.ACCOUNT_TYPE__PERMISSION:
+				getPermission().clear();
+				getPermission().addAll((Collection<? extends Permission>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -123,8 +110,8 @@ public class GuestImpl extends PersonImpl implements Guest {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ClassDiagramPackage.GUEST__STATUS:
-				setStatus(STATUS_EDEFAULT);
+			case ClassDiagramPackage.ACCOUNT_TYPE__PERMISSION:
+				getPermission().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -138,8 +125,8 @@ public class GuestImpl extends PersonImpl implements Guest {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ClassDiagramPackage.GUEST__STATUS:
-				return status != STATUS_EDEFAULT;
+			case ClassDiagramPackage.ACCOUNT_TYPE__PERMISSION:
+				return permission != null && !permission.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -154,10 +141,10 @@ public class GuestImpl extends PersonImpl implements Guest {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (status: ");
-		result.append(status);
+		result.append(" (permission: ");
+		result.append(permission);
 		result.append(')');
 		return result.toString();
 	}
 
-} //GuestImpl
+} //AccountTypeImpl

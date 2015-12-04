@@ -43,7 +43,7 @@ public class PackageImpl extends MinimalEObjectImpl.Container implements ClassDi
 	 * @generated
 	 * @ordered
 	 */
-	protected EList event;
+	protected EList<Event> event;
 
 	/**
 	 * The default value of the '{@link #getCode() <em>Code</em>}' attribute.
@@ -73,7 +73,7 @@ public class PackageImpl extends MinimalEObjectImpl.Container implements ClassDi
 	 * @generated
 	 * @ordered
 	 */
-	protected EList item;
+	protected EList<Item> item;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -89,6 +89,7 @@ public class PackageImpl extends MinimalEObjectImpl.Container implements ClassDi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return ClassDiagramPackage.Literals.PACKAGE;
 	}
@@ -98,9 +99,9 @@ public class PackageImpl extends MinimalEObjectImpl.Container implements ClassDi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList getEvent() {
+	public EList<Event> getEvent() {
 		if (event == null) {
-			event = new EObjectResolvingEList(Event.class, this, ClassDiagramPackage.PACKAGE__EVENT);
+			event = new EObjectResolvingEList<Event>(Event.class, this, ClassDiagramPackage.PACKAGE__EVENT);
 		}
 		return event;
 	}
@@ -131,9 +132,9 @@ public class PackageImpl extends MinimalEObjectImpl.Container implements ClassDi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList getItem() {
+	public EList<Item> getItem() {
 		if (item == null) {
-			item = new EObjectResolvingEList(Item.class, this, ClassDiagramPackage.PACKAGE__ITEM);
+			item = new EObjectResolvingEList<Item>(Item.class, this, ClassDiagramPackage.PACKAGE__ITEM);
 		}
 		return item;
 	}
@@ -143,6 +144,7 @@ public class PackageImpl extends MinimalEObjectImpl.Container implements ClassDi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case ClassDiagramPackage.PACKAGE__EVENT:
@@ -160,18 +162,20 @@ public class PackageImpl extends MinimalEObjectImpl.Container implements ClassDi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+		@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ClassDiagramPackage.PACKAGE__EVENT:
 				getEvent().clear();
-				getEvent().addAll((Collection)newValue);
+				getEvent().addAll((Collection<? extends Event>)newValue);
 				return;
 			case ClassDiagramPackage.PACKAGE__CODE:
 				setCode((String)newValue);
 				return;
 			case ClassDiagramPackage.PACKAGE__ITEM:
 				getItem().clear();
-				getItem().addAll((Collection)newValue);
+				getItem().addAll((Collection<? extends Item>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -182,6 +186,7 @@ public class PackageImpl extends MinimalEObjectImpl.Container implements ClassDi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case ClassDiagramPackage.PACKAGE__EVENT:
@@ -202,6 +207,7 @@ public class PackageImpl extends MinimalEObjectImpl.Container implements ClassDi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case ClassDiagramPackage.PACKAGE__EVENT:
@@ -219,6 +225,7 @@ public class PackageImpl extends MinimalEObjectImpl.Container implements ClassDi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 

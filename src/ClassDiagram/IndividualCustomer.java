@@ -34,10 +34,10 @@ public interface IndividualCustomer extends Person, Customer {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Billing Information</em>' reference list.
 	 * @see ClassDiagram.ClassDiagramPackage#getIndividualCustomer_BillingInformation()
-	 * @model type="ClassDiagram.BillingInformation" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
-	EList getBillingInformation();
+	EList<BillingInformation> getBillingInformation();
 
 	/**
 	 * Returns the value of the '<em><b>Room Bookings</b></em>' reference list.
@@ -50,10 +50,10 @@ public interface IndividualCustomer extends Person, Customer {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Room Bookings</em>' reference list.
 	 * @see ClassDiagram.ClassDiagramPackage#getIndividualCustomer_RoomBookings()
-	 * @model type="ClassDiagram.RoomBooking" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
-	EList getRoomBookings();
+	EList<RoomBooking> getRoomBookings();
 
 	/**
 	 * Returns the value of the '<em><b>Event Bookings</b></em>' reference list.
@@ -66,9 +66,9 @@ public interface IndividualCustomer extends Person, Customer {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Event Bookings</em>' reference list.
 	 * @see ClassDiagram.ClassDiagramPackage#getIndividualCustomer_EventBookings()
-	 * @model type="ClassDiagram.EventBooking" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
-	EList getEventBookings();
+	EList<EventBooking> getEventBookings();
 
 } // IndividualCustomer

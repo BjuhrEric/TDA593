@@ -2,11 +2,13 @@
  */
 package ClassDiagram.impl;
 
+import ClassDiagram.BillingInformation;
 import ClassDiagram.ClassDiagramPackage;
 import ClassDiagram.EventBooking;
 import ClassDiagram.Organization;
 import ClassDiagram.RoomBooking;
 
+import java.lang.reflect.InvocationTargetException;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
@@ -35,6 +37,7 @@ public class OrganizationImpl extends MinimalEObjectImpl.Container implements Or
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return ClassDiagramPackage.Literals.ORGANIZATION;
 	}
@@ -44,7 +47,7 @@ public class OrganizationImpl extends MinimalEObjectImpl.Container implements Or
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList getBillingInformation() {
+	public EList<BillingInformation> getBillingInformation() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -55,7 +58,7 @@ public class OrganizationImpl extends MinimalEObjectImpl.Container implements Or
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList getRoomBookings() {
+	public EList<RoomBooking> getRoomBookings() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -66,7 +69,7 @@ public class OrganizationImpl extends MinimalEObjectImpl.Container implements Or
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList getEventBookings() {
+	public EList<EventBooking> getEventBookings() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -92,6 +95,30 @@ public class OrganizationImpl extends MinimalEObjectImpl.Container implements Or
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case ClassDiagramPackage.ORGANIZATION___GET_BILLING_INFORMATION:
+				return getBillingInformation();
+			case ClassDiagramPackage.ORGANIZATION___GET_ROOM_BOOKINGS:
+				return getRoomBookings();
+			case ClassDiagramPackage.ORGANIZATION___GET_EVENT_BOOKINGS:
+				return getEventBookings();
+			case ClassDiagramPackage.ORGANIZATION___ADD_ROOM_BOOKING__ROOMBOOKING:
+				addRoomBooking((RoomBooking)arguments.get(0));
+				return null;
+			case ClassDiagramPackage.ORGANIZATION___ADD_EVENT_BOOKING__EVENTBOOKING:
+				addEventBooking((EventBooking)arguments.get(0));
+				return null;
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 } //OrganizationImpl

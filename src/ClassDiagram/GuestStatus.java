@@ -5,8 +5,7 @@ package ClassDiagram;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-
-import org.eclipse.emf.common.util.AbstractEnumerator;
+import org.eclipse.emf.common.util.Enumerator;
 
 /**
  * <!-- begin-user-doc -->
@@ -17,7 +16,44 @@ import org.eclipse.emf.common.util.AbstractEnumerator;
  * @model annotation="http://www.eclipse.org/uml2/2.0.0/UML originalName='Guest Status'"
  * @generated
  */
-public final class GuestStatus extends AbstractEnumerator {
+public enum GuestStatus implements Enumerator
+{
+	/**
+	 * The '<em><b>Checked In</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #CHECKED_IN_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	CHECKED_IN(0, "CheckedIn", "CheckedIn"),
+	/**
+	 * The '<em><b>Checked Out</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #CHECKED_OUT_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	CHECKED_OUT(1, "CheckedOut", "CheckedOut"),
+	/**
+	 * The '<em><b>Not In Hotel</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #NOT_IN_HOTEL_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	NOT_IN_HOTEL(2, "NotInHotel", "NotInHotel"),
+	/**
+	 * The '<em><b>Not Arrived Yet</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #NOT_ARRIVED_YET_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	NOT_ARRIVED_YET(3, "NotArrivedYet", "NotArrivedYet");
 	/**
 	 * The '<em><b>Checked In</b></em>' literal value.
 	 * <!-- begin-user-doc -->
@@ -26,12 +62,12 @@ public final class GuestStatus extends AbstractEnumerator {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #CHECKED_IN_LITERAL
+	 * @see #CHECKED_IN
 	 * @model name="CheckedIn"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int CHECKED_IN = 0;
+	public static final int CHECKED_IN_VALUE = 0;
 
 	/**
 	 * The '<em><b>Checked Out</b></em>' literal value.
@@ -41,12 +77,12 @@ public final class GuestStatus extends AbstractEnumerator {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #CHECKED_OUT_LITERAL
+	 * @see #CHECKED_OUT
 	 * @model name="CheckedOut"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int CHECKED_OUT = 1;
+	public static final int CHECKED_OUT_VALUE = 1;
 
 	/**
 	 * The '<em><b>Not In Hotel</b></em>' literal value.
@@ -56,12 +92,12 @@ public final class GuestStatus extends AbstractEnumerator {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #NOT_IN_HOTEL_LITERAL
+	 * @see #NOT_IN_HOTEL
 	 * @model name="NotInHotel"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int NOT_IN_HOTEL = 2;
+	public static final int NOT_IN_HOTEL_VALUE = 2;
 
 	/**
 	 * The '<em><b>Not Arrived Yet</b></em>' literal value.
@@ -71,52 +107,12 @@ public final class GuestStatus extends AbstractEnumerator {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #NOT_ARRIVED_YET_LITERAL
+	 * @see #NOT_ARRIVED_YET
 	 * @model name="NotArrivedYet"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int NOT_ARRIVED_YET = 3;
-
-	/**
-	 * The '<em><b>Checked In</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #CHECKED_IN
-	 * @generated
-	 * @ordered
-	 */
-	public static final GuestStatus CHECKED_IN_LITERAL = new GuestStatus(CHECKED_IN, "CheckedIn", "CheckedIn");
-
-	/**
-	 * The '<em><b>Checked Out</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #CHECKED_OUT
-	 * @generated
-	 * @ordered
-	 */
-	public static final GuestStatus CHECKED_OUT_LITERAL = new GuestStatus(CHECKED_OUT, "CheckedOut", "CheckedOut");
-
-	/**
-	 * The '<em><b>Not In Hotel</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #NOT_IN_HOTEL
-	 * @generated
-	 * @ordered
-	 */
-	public static final GuestStatus NOT_IN_HOTEL_LITERAL = new GuestStatus(NOT_IN_HOTEL, "NotInHotel", "NotInHotel");
-
-	/**
-	 * The '<em><b>Not Arrived Yet</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #NOT_ARRIVED_YET
-	 * @generated
-	 * @ordered
-	 */
-	public static final GuestStatus NOT_ARRIVED_YET_LITERAL = new GuestStatus(NOT_ARRIVED_YET, "NotArrivedYet", "NotArrivedYet");
+	public static final int NOT_ARRIVED_YET_VALUE = 3;
 
 	/**
 	 * An array of all the '<em><b>Guest Status</b></em>' enumerators.
@@ -126,10 +122,10 @@ public final class GuestStatus extends AbstractEnumerator {
 	 */
 	private static final GuestStatus[] VALUES_ARRAY =
 		new GuestStatus[] {
-			CHECKED_IN_LITERAL,
-			CHECKED_OUT_LITERAL,
-			NOT_IN_HOTEL_LITERAL,
-			NOT_ARRIVED_YET_LITERAL,
+			CHECKED_IN,
+			CHECKED_OUT,
+			NOT_IN_HOTEL,
+			NOT_ARRIVED_YET,
 		};
 
 	/**
@@ -138,7 +134,7 @@ public final class GuestStatus extends AbstractEnumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final List VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+	public static final List<GuestStatus> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
 	/**
 	 * Returns the '<em><b>Guest Status</b></em>' literal with the specified literal value.
@@ -186,13 +182,34 @@ public final class GuestStatus extends AbstractEnumerator {
 	 */
 	public static GuestStatus get(int value) {
 		switch (value) {
-			case CHECKED_IN: return CHECKED_IN_LITERAL;
-			case CHECKED_OUT: return CHECKED_OUT_LITERAL;
-			case NOT_IN_HOTEL: return NOT_IN_HOTEL_LITERAL;
-			case NOT_ARRIVED_YET: return NOT_ARRIVED_YET_LITERAL;
+			case CHECKED_IN_VALUE: return CHECKED_IN;
+			case CHECKED_OUT_VALUE: return CHECKED_OUT;
+			case NOT_IN_HOTEL_VALUE: return NOT_IN_HOTEL;
+			case NOT_ARRIVED_YET_VALUE: return NOT_ARRIVED_YET;
 		}
 		return null;
 	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private final int value;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private final String name;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private final String literal;
 
 	/**
 	 * Only this class can construct instances.
@@ -201,7 +218,46 @@ public final class GuestStatus extends AbstractEnumerator {
 	 * @generated
 	 */
 	private GuestStatus(int value, String name, String literal) {
-		super(value, name, literal);
+		this.value = value;
+		this.name = name;
+		this.literal = literal;
 	}
 
-} //GuestStatus
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public int getValue() {
+	  return value;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getName() {
+	  return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getLiteral() {
+	  return literal;
+	}
+
+	/**
+	 * Returns the literal value of the enumerator, which is its string representation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		return literal;
+	}
+}

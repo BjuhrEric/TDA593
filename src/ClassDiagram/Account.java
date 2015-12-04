@@ -2,8 +2,6 @@
  */
 package ClassDiagram;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -15,9 +13,9 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link ClassDiagram.Account#getPermission <em>Permission</em>}</li>
  *   <li>{@link ClassDiagram.Account#getUsername <em>Username</em>}</li>
  *   <li>{@link ClassDiagram.Account#getPassword <em>Password</em>}</li>
+ *   <li>{@link ClassDiagram.Account#getAccounttype <em>Accounttype</em>}</li>
  * </ul>
  *
  * @see ClassDiagram.ClassDiagramPackage#getAccount()
@@ -25,24 +23,6 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface Account extends EObject {
-	/**
-	 * Returns the value of the '<em><b>Permission</b></em>' attribute list.
-	 * The list contents are of type {@link ClassDiagram.Permission}.
-	 * The literals are from the enumeration {@link ClassDiagram.Permission}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Permission</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Permission</em>' attribute list.
-	 * @see ClassDiagram.Permission
-	 * @see ClassDiagram.ClassDiagramPackage#getAccount_Permission()
-	 * @model dataType="ClassDiagram.Permission" ordered="false"
-	 * @generated
-	 */
-	EList getPermission();
-
 	/**
 	 * Returns the value of the '<em><b>Username</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -94,6 +74,33 @@ public interface Account extends EObject {
 	 * @generated
 	 */
 	void setPassword(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Accounttype</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Accounttype</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Accounttype</em>' reference.
+	 * @see #setAccounttype(AccountType)
+	 * @see ClassDiagram.ClassDiagramPackage#getAccount_Accounttype()
+	 * @model required="true" ordered="false"
+	 *        annotation="http://www.eclipse.org/uml2/2.0.0/UML originalName='account type'"
+	 * @generated
+	 */
+	AccountType getAccounttype();
+
+	/**
+	 * Sets the value of the '{@link ClassDiagram.Account#getAccounttype <em>Accounttype</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Accounttype</em>' reference.
+	 * @see #getAccounttype()
+	 * @generated
+	 */
+	void setAccounttype(AccountType value);
 
 	/**
 	 * <!-- begin-user-doc -->

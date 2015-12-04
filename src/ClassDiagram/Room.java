@@ -38,10 +38,10 @@ public interface Room extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Guest</em>' reference list.
 	 * @see ClassDiagram.ClassDiagramPackage#getRoom_Guest()
-	 * @model type="ClassDiagram.Guest" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
-	EList getGuest();
+	EList<Guest> getGuest();
 
 	/**
 	 * Returns the value of the '<em><b>Room Status</b></em>' attribute.

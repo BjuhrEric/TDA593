@@ -34,9 +34,9 @@ public interface FloorMap extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Room</em>' reference list.
 	 * @see ClassDiagram.ClassDiagramPackage#getFloorMap_Room()
-	 * @model type="ClassDiagram.Room" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
-	EList getRoom();
+	EList<Room> getRoom();
 
 } // FloorMap

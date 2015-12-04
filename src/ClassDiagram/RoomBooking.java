@@ -91,10 +91,10 @@ public interface RoomBooking extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Room</em>' reference list.
 	 * @see ClassDiagram.ClassDiagramPackage#getRoomBooking_Room()
-	 * @model type="ClassDiagram.Room" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
-	EList getRoom();
+	EList<Room> getRoom();
 
 	/**
 	 * Returns the value of the '<em><b>Room Type</b></em>' reference list.
@@ -107,10 +107,10 @@ public interface RoomBooking extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Room Type</em>' reference list.
 	 * @see ClassDiagram.ClassDiagramPackage#getRoomBooking_RoomType()
-	 * @model type="ClassDiagram.RoomType" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
-	EList getRoomType();
+	EList<RoomType> getRoomType();
 
 	/**
 	 * <!-- begin-user-doc -->

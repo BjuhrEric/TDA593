@@ -38,7 +38,7 @@ public class FloorMapImpl extends MinimalEObjectImpl.Container implements FloorM
 	 * @generated
 	 * @ordered
 	 */
-	protected EList room;
+	protected EList<Room> room;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -54,6 +54,7 @@ public class FloorMapImpl extends MinimalEObjectImpl.Container implements FloorM
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return ClassDiagramPackage.Literals.FLOOR_MAP;
 	}
@@ -63,9 +64,9 @@ public class FloorMapImpl extends MinimalEObjectImpl.Container implements FloorM
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList getRoom() {
+	public EList<Room> getRoom() {
 		if (room == null) {
-			room = new EObjectResolvingEList(Room.class, this, ClassDiagramPackage.FLOOR_MAP__ROOM);
+			room = new EObjectResolvingEList<Room>(Room.class, this, ClassDiagramPackage.FLOOR_MAP__ROOM);
 		}
 		return room;
 	}
@@ -75,6 +76,7 @@ public class FloorMapImpl extends MinimalEObjectImpl.Container implements FloorM
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case ClassDiagramPackage.FLOOR_MAP__ROOM:
@@ -88,11 +90,13 @@ public class FloorMapImpl extends MinimalEObjectImpl.Container implements FloorM
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+		@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ClassDiagramPackage.FLOOR_MAP__ROOM:
 				getRoom().clear();
-				getRoom().addAll((Collection)newValue);
+				getRoom().addAll((Collection<? extends Room>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -103,6 +107,7 @@ public class FloorMapImpl extends MinimalEObjectImpl.Container implements FloorM
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case ClassDiagramPackage.FLOOR_MAP__ROOM:
@@ -117,6 +122,7 @@ public class FloorMapImpl extends MinimalEObjectImpl.Container implements FloorM
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case ClassDiagramPackage.FLOOR_MAP__ROOM:
