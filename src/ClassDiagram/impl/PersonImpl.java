@@ -2,20 +2,11 @@
  */
 package ClassDiagram.impl;
 
-import ClassDiagram.ClassDiagramPackage;
 import ClassDiagram.Person;
 import ClassDiagram.Title;
 
-import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,28 +21,28 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  *   <li>{@link ClassDiagram.impl.PersonImpl#getTitle <em>Title</em>}</li>
  * </ul>
  *
- * @generated
+ * @generated NOT
  */
-public class PersonImpl extends MinimalEObjectImpl.Container implements Person {
+public class PersonImpl implements Person {
 	/**
 	 * The cached value of the '{@link #getFirstNames() <em>First Names</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getFirstNames()
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
-	protected EList<String> firstNames;
+	protected List<String> firstNames;
 
 	/**
 	 * The cached value of the '{@link #getFamilyNames() <em>Family Names</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getFamilyNames()
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
-	protected EList<String> familyNames;
+	protected List<String> familyNames;
 
 	/**
 	 * The default value of the '{@link #getTitle() <em>Title</em>}' attribute.
@@ -61,7 +52,7 @@ public class PersonImpl extends MinimalEObjectImpl.Container implements Person {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Title TITLE_EDEFAULT = Title.MR;
+	protected static final Title TITLE_DEFAULT = Title.MR;
 
 	/**
 	 * The cached value of the '{@link #getTitle() <em>Title</em>}' attribute.
@@ -71,7 +62,7 @@ public class PersonImpl extends MinimalEObjectImpl.Container implements Person {
 	 * @generated
 	 * @ordered
 	 */
-	protected Title title = TITLE_EDEFAULT;
+	protected Title title = TITLE_DEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -85,21 +76,11 @@ public class PersonImpl extends MinimalEObjectImpl.Container implements Person {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	@Override
-	protected EClass eStaticClass() {
-		return ClassDiagramPackage.Literals.PERSON;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<String> getFirstNames() {
+	public List<String> getFirstNames() {
 		if (firstNames == null) {
-			firstNames = new EDataTypeUniqueEList<String>(String.class, this, ClassDiagramPackage.PERSON__FIRST_NAMES);
+			firstNames = new ArrayList<>();
 		}
 		return firstNames;
 	}
@@ -107,11 +88,11 @@ public class PersonImpl extends MinimalEObjectImpl.Container implements Person {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	public EList<String> getFamilyNames() {
+	public List<String> getFamilyNames() {
 		if (familyNames == null) {
-			familyNames = new EDataTypeUniqueEList<String>(String.class, this, ClassDiagramPackage.PERSON__FAMILY_NAMES);
+			familyNames = new ArrayList<>();
 		}
 		return familyNames;
 	}
@@ -128,79 +109,10 @@ public class PersonImpl extends MinimalEObjectImpl.Container implements Person {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void setTitle(Title newTitle) {
-		Title oldTitle = title;
-		title = newTitle == null ? TITLE_EDEFAULT : newTitle;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ClassDiagramPackage.PERSON__TITLE, oldTitle, title));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case ClassDiagramPackage.PERSON__FIRST_NAMES:
-				return getFirstNames();
-			case ClassDiagramPackage.PERSON__FAMILY_NAMES:
-				return getFamilyNames();
-			case ClassDiagramPackage.PERSON__TITLE:
-				return getTitle();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case ClassDiagramPackage.PERSON__TITLE:
-				setTitle((Title)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case ClassDiagramPackage.PERSON__TITLE:
-				setTitle(TITLE_EDEFAULT);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case ClassDiagramPackage.PERSON__FIRST_NAMES:
-				return firstNames != null && !firstNames.isEmpty();
-			case ClassDiagramPackage.PERSON__FAMILY_NAMES:
-				return familyNames != null && !familyNames.isEmpty();
-			case ClassDiagramPackage.PERSON__TITLE:
-				return title != TITLE_EDEFAULT;
-		}
-		return super.eIsSet(featureID);
+		title = newTitle == null ? TITLE_DEFAULT : newTitle;
 	}
 
 	/**
@@ -210,8 +122,6 @@ public class PersonImpl extends MinimalEObjectImpl.Container implements Person {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
-
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (firstNames: ");
 		result.append(firstNames);
@@ -223,4 +133,4 @@ public class PersonImpl extends MinimalEObjectImpl.Container implements Person {
 		return result.toString();
 	}
 
-} //PersonImpl
+}

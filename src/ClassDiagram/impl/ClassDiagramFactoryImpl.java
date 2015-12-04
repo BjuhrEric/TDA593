@@ -80,8 +80,6 @@ public class ClassDiagramFactoryImpl extends EFactoryImpl implements ClassDiagra
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case ClassDiagramPackage.ROOM: return createRoom();
-			case ClassDiagramPackage.GUEST: return createGuest();
-			case ClassDiagramPackage.PERSON: return createPerson();
 			case ClassDiagramPackage.ROOM_TYPE: return createRoomType();
 			case ClassDiagramPackage.BILL: return createBill();
 			case ClassDiagramPackage.ROOM_BOOKING: return createRoomBooking();
@@ -92,8 +90,6 @@ public class ClassDiagramFactoryImpl extends EFactoryImpl implements ClassDiagra
 			case ClassDiagramPackage.EVENT_BOOKING: return createEventBooking();
 			case ClassDiagramPackage.ACCOUNT: return createAccount();
 			case ClassDiagramPackage.ACCOUNT_TYPE: return createAccountType();
-			case ClassDiagramPackage.ORGANIZATION: return createOrganization();
-			case ClassDiagramPackage.INDIVIDUAL_CUSTOMER: return createIndividualCustomer();
 			case ClassDiagramPackage.BOOKING_SCHEDULE: return createBookingSchedule();
 			case ClassDiagramPackage.FLOOR_MAP: return createFloorMap();
 			default:

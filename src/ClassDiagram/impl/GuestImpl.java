@@ -2,15 +2,8 @@
  */
 package ClassDiagram.impl;
 
-import ClassDiagram.ClassDiagramPackage;
 import ClassDiagram.Guest;
 import ClassDiagram.GuestStatus;
-
-import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,7 +16,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link ClassDiagram.impl.GuestImpl#getStatus <em>Status</em>}</li>
  * </ul>
  *
- * @generated
+ * @generated NOT
  */
 public class GuestImpl extends PersonImpl implements Guest {
 	/**
@@ -60,16 +53,6 @@ public class GuestImpl extends PersonImpl implements Guest {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	protected EClass eStaticClass() {
-		return ClassDiagramPackage.Literals.GUEST;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public GuestStatus getStatus() {
 		return status;
 	}
@@ -77,82 +60,19 @@ public class GuestImpl extends PersonImpl implements Guest {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void setStatus(GuestStatus newStatus) {
-		GuestStatus oldStatus = status;
 		status = newStatus == null ? STATUS_EDEFAULT : newStatus;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ClassDiagramPackage.GUEST__STATUS, oldStatus, status));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case ClassDiagramPackage.GUEST__STATUS:
-				return getStatus();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case ClassDiagramPackage.GUEST__STATUS:
-				setStatus((GuestStatus)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case ClassDiagramPackage.GUEST__STATUS:
-				setStatus(STATUS_EDEFAULT);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case ClassDiagramPackage.GUEST__STATUS:
-				return status != STATUS_EDEFAULT;
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
-
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (status: ");
 		result.append(status);

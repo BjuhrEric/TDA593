@@ -2,9 +2,7 @@
  */
 package ClassDiagram;
 
-import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EObject;
+import java.util.List;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,32 +12,32 @@ import org.eclipse.emf.ecore.EObject;
  *
  * @see ClassDiagram.ClassDiagramPackage#getCustomer()
  * @model interface="true" abstract="true"
- * @generated
+ * @generated NOT
  */
-public interface Customer extends EObject {
+public interface Customer {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation" ordered="false"
-	 * @generated
+	 * @generated NOT
 	 */
-	EList<BillingInformation> getBillingInformation();
+	List<BillingInformation> getBillingInformation();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation" ordered="false"
-	 * @generated
+	 * @generated NOT
 	 */
-	EList<RoomBooking> getRoomBookings();
+	List<RoomBooking> getRoomBookings();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation" ordered="false"
-	 * @generated
+	 * @generated NOT
 	 */
-	EList<EventBooking> getEventBookings();
+	List<EventBooking> getEventBookings();
 
 	/**
 	 * <!-- begin-user-doc -->
