@@ -42,10 +42,10 @@ public interface Bill extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model costMany="true" costOrdered="false"
+	 * @model costRequired="true" costOrdered="false"
 	 * @generated
 	 */
-	void addCost(EList<Cost> cost);
+	void addCost(Cost cost);
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -104,12 +104,12 @@ public class ClassDiagramAdapterFactory extends AdapterFactoryImpl {
 				return createRoomTypeAdapter();
 			}
 			@Override
-			public Adapter caseBill(Bill object) {
-				return createBillAdapter();
-			}
-			@Override
 			public Adapter caseCost(Cost object) {
 				return createCostAdapter();
+			}
+			@Override
+			public Adapter caseBill(Bill object) {
+				return createBillAdapter();
 			}
 			@Override
 			public Adapter caseBillingInformation(BillingInformation object) {

@@ -167,14 +167,14 @@ public interface Room extends EObject {
 	 * @model
 	 * @generated
 	 */
-	void checkIn();
+	void checkOut();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model guestRequired="true" guestOrdered="false"
 	 * @generated
 	 */
-	void checkOut();
+	void addGuest(Guest guest);
 
 } // Room

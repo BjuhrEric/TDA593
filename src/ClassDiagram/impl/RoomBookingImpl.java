@@ -3,6 +3,7 @@
 package ClassDiagram.impl;
 
 import ClassDiagram.ClassDiagramPackage;
+import ClassDiagram.Guest;
 import ClassDiagram.Room;
 import ClassDiagram.RoomBooking;
 import ClassDiagram.RoomType;
@@ -34,6 +35,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *   <li>{@link ClassDiagram.impl.RoomBookingImpl#getEndDate <em>End Date</em>}</li>
  *   <li>{@link ClassDiagram.impl.RoomBookingImpl#getRoom <em>Room</em>}</li>
  *   <li>{@link ClassDiagram.impl.RoomBookingImpl#getRoomType <em>Room Type</em>}</li>
+ *   <li>{@link ClassDiagram.impl.RoomBookingImpl#getNumberOfGuests <em>Number Of Guests</em>}</li>
  * </ul>
  *
  * @generated
@@ -98,6 +100,26 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 	 * @ordered
 	 */
 	protected EList<RoomType> roomType;
+
+	/**
+	 * The default value of the '{@link #getNumberOfGuests() <em>Number Of Guests</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNumberOfGuests()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int NUMBER_OF_GUESTS_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getNumberOfGuests() <em>Number Of Guests</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNumberOfGuests()
+	 * @generated
+	 * @ordered
+	 */
+	protected int numberOfGuests = NUMBER_OF_GUESTS_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -189,6 +211,15 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public int getNumberOfGuests() {
+		return numberOfGuests;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public void cancel() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -222,6 +253,17 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public void checkIn(Guest guest) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -233,6 +275,8 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 				return getRoom();
 			case ClassDiagramPackage.ROOM_BOOKING__ROOM_TYPE:
 				return getRoomType();
+			case ClassDiagramPackage.ROOM_BOOKING__NUMBER_OF_GUESTS:
+				return getNumberOfGuests();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -304,6 +348,8 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 				return room != null && !room.isEmpty();
 			case ClassDiagramPackage.ROOM_BOOKING__ROOM_TYPE:
 				return roomType != null && !roomType.isEmpty();
+			case ClassDiagramPackage.ROOM_BOOKING__NUMBER_OF_GUESTS:
+				return numberOfGuests != NUMBER_OF_GUESTS_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -325,6 +371,9 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 			case ClassDiagramPackage.ROOM_BOOKING___GENERATE_PDF:
 				generatePDF();
 				return null;
+			case ClassDiagramPackage.ROOM_BOOKING___CHECK_IN__GUEST:
+				checkIn((Guest)arguments.get(0));
+				return null;
 		}
 		return super.eInvoke(operationID, arguments);
 	}
@@ -343,6 +392,8 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 		result.append(startDate);
 		result.append(", endDate: ");
 		result.append(endDate);
+		result.append(", numberOfGuests: ");
+		result.append(numberOfGuests);
 		result.append(')');
 		return result.toString();
 	}

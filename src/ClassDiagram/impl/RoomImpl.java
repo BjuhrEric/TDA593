@@ -278,7 +278,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void checkIn() {
+	public void checkOut() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -289,7 +289,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void checkOut() {
+	public void addGuest(Guest guest) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -407,11 +407,11 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 		switch (operationID) {
 			case ClassDiagramPackage.ROOM___GET_NUMBER_OF_GUESTS:
 				return getNumberOfGuests();
-			case ClassDiagramPackage.ROOM___CHECK_IN:
-				checkIn();
-				return null;
 			case ClassDiagramPackage.ROOM___CHECK_OUT:
 				checkOut();
+				return null;
+			case ClassDiagramPackage.ROOM___ADD_GUEST__GUEST:
+				addGuest((Guest)arguments.get(0));
 				return null;
 		}
 		return super.eInvoke(operationID, arguments);

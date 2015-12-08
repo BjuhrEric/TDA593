@@ -68,8 +68,10 @@
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
           propertySortChoices="true" ecoreFeature="ecore:EReference ClassDiagram.ecore#//Room/bill"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ClassDiagram.ecore#//Room/getNumberOfGuests"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ClassDiagram.ecore#//Room/checkIn"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ClassDiagram.ecore#//Room/checkOut"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ClassDiagram.ecore#//Room/addGuest">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ClassDiagram.ecore#//Room/addGuest/guest"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="ClassDiagram.ecore#//Guest">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute ClassDiagram.ecore#//Guest/status"/>
@@ -95,6 +97,10 @@
       <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" createChild="false"
           ecoreFeature="ecore:EAttribute ClassDiagram.ecore#//RoomType/description"/>
     </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="ClassDiagram.ecore#//Cost">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ClassDiagram.ecore#//Cost/getPrice"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ClassDiagram.ecore#//Cost/getName"/>
+    </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="ClassDiagram.ecore#//Bill">
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
           propertySortChoices="true" ecoreFeature="ecore:EReference ClassDiagram.ecore#//Bill/cost"/>
@@ -113,10 +119,6 @@
       </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ClassDiagram.ecore#//Bill/printReceipt"/>
     </genClasses>
-    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="ClassDiagram.ecore#//Cost">
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ClassDiagram.ecore#//Cost/getPrice"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ClassDiagram.ecore#//Cost/getName"/>
-    </genClasses>
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="ClassDiagram.ecore#//BillingInformation">
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ClassDiagram.ecore#//BillingInformation/validate"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ClassDiagram.ecore#//BillingInformation/getPaymentStrategy"/>
@@ -133,9 +135,14 @@
           propertySortChoices="true" ecoreFeature="ecore:EReference ClassDiagram.ecore#//RoomBooking/room"/>
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
           propertySortChoices="true" ecoreFeature="ecore:EReference ClassDiagram.ecore#//RoomBooking/roomType"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" createChild="false"
+          ecoreFeature="ecore:EAttribute ClassDiagram.ecore#//RoomBooking/numberOfGuests"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ClassDiagram.ecore#//RoomBooking/cancel"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ClassDiagram.ecore#//RoomBooking/close"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ClassDiagram.ecore#//RoomBooking/generatePDF"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ClassDiagram.ecore#//RoomBooking/checkIn">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ClassDiagram.ecore#//RoomBooking/checkIn/guest"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="ClassDiagram.ecore#//Item">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute ClassDiagram.ecore#//Item/name"/>

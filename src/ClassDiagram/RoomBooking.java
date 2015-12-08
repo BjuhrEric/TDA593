@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link ClassDiagram.RoomBooking#getEndDate <em>End Date</em>}</li>
  *   <li>{@link ClassDiagram.RoomBooking#getRoom <em>Room</em>}</li>
  *   <li>{@link ClassDiagram.RoomBooking#getRoomType <em>Room Type</em>}</li>
+ *   <li>{@link ClassDiagram.RoomBooking#getNumberOfGuests <em>Number Of Guests</em>}</li>
  * </ul>
  *
  * @see ClassDiagram.ClassDiagramPackage#getRoomBooking()
@@ -113,6 +114,21 @@ public interface RoomBooking extends EObject {
 	EList<RoomType> getRoomType();
 
 	/**
+	 * Returns the value of the '<em><b>Number Of Guests</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Number Of Guests</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Number Of Guests</em>' attribute.
+	 * @see ClassDiagram.ClassDiagramPackage#getRoomBooking_NumberOfGuests()
+	 * @model dataType="org.eclipse.uml2.types.Integer" required="true" changeable="false" ordered="false"
+	 * @generated
+	 */
+	int getNumberOfGuests();
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model
@@ -135,5 +151,13 @@ public interface RoomBooking extends EObject {
 	 * @generated
 	 */
 	void generatePDF();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model guestRequired="true" guestOrdered="false"
+	 * @generated
+	 */
+	void checkIn(Guest guest);
 
 } // RoomBooking

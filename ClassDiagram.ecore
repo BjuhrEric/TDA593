@@ -3,8 +3,10 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="ClassDiagram" nsURI="http:///ClassDiagram.ecore" nsPrefix="ClassDiagram">
   <eClassifiers xsi:type="ecore:EClass" name="Room">
     <eOperations name="getNumberOfGuests" ordered="false" lowerBound="1" eType="ecore:EDataType ../org.eclipse.uml2.types/model/Types.ecore#//Integer"/>
-    <eOperations name="checkIn" ordered="false" lowerBound="1"/>
     <eOperations name="checkOut" ordered="false" lowerBound="1"/>
+    <eOperations name="addGuest" ordered="false" lowerBound="1">
+      <eParameters name="guest" ordered="false" lowerBound="1" eType="#//Guest"/>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="guest" ordered="false"
         upperBound="-1" eType="#//Guest"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="roomStatus" ordered="false"
@@ -68,7 +70,7 @@
       </eAnnotations>
     </eLiterals>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RoomType">
+  <eClassifiers xsi:type="ecore:EClass" name="RoomType" eSuperTypes="#//Cost">
     <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
       <details key="originalName" value="Room Type"/>
     </eAnnotations>
@@ -91,9 +93,13 @@
         lowerBound="1" eType="ecore:EDataType ../org.eclipse.uml2.types/model/Types.ecore#//String"
         changeable="false"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Cost" abstract="true" interface="true">
+    <eOperations name="getPrice" ordered="false" lowerBound="1" eType="ecore:EDataType ../org.eclipse.uml2.types/model/Types.ecore#//Real"/>
+    <eOperations name="getName" ordered="false" lowerBound="1" eType="ecore:EDataType ../org.eclipse.uml2.types/model/Types.ecore#//String"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Bill">
     <eOperations name="addCost" ordered="false" lowerBound="1">
-      <eParameters name="cost" ordered="false" upperBound="-1" eType="#//Cost"/>
+      <eParameters name="cost" ordered="false" lowerBound="1" eType="#//Cost"/>
     </eOperations>
     <eOperations name="removeCost" ordered="false" lowerBound="1">
       <eParameters name="cost" ordered="false" lowerBound="1" eType="#//Cost"/>
@@ -108,10 +114,6 @@
     <eOperations name="printReceipt" ordered="false" lowerBound="1"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="cost" ordered="false" upperBound="-1"
         eType="#//Cost"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Cost" abstract="true" interface="true">
-    <eOperations name="getPrice" ordered="false" lowerBound="1" eType="ecore:EDataType ../org.eclipse.uml2.types/model/Types.ecore#//Real"/>
-    <eOperations name="getName" ordered="false" lowerBound="1" eType="ecore:EDataType ../org.eclipse.uml2.types/model/Types.ecore#//String"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BillingInformation" abstract="true"
       interface="true">
@@ -136,6 +138,9 @@
     <eOperations name="cancel" ordered="false" lowerBound="1"/>
     <eOperations name="close" ordered="false" lowerBound="1"/>
     <eOperations name="generatePDF" ordered="false" lowerBound="1"/>
+    <eOperations name="checkIn" ordered="false" lowerBound="1">
+      <eParameters name="guest" ordered="false" lowerBound="1" eType="#//Guest"/>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="startDate" ordered="false"
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="endDate" ordered="false"
@@ -144,6 +149,9 @@
         eType="#//Room"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="roomType" ordered="false"
         upperBound="-1" eType="#//RoomType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="numberOfGuests" ordered="false"
+        lowerBound="1" eType="ecore:EDataType ../org.eclipse.uml2.types/model/Types.ecore#//Integer"
+        changeable="false"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Item" eSuperTypes="#//Cost">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" lowerBound="1"

@@ -75,7 +75,7 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void addCost(EList<Cost> cost) {
+	public void addCost(Cost cost) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -205,8 +205,8 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 	@SuppressWarnings("unchecked")
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case ClassDiagramPackage.BILL___ADD_COST__ELIST:
-				addCost((EList<Cost>)arguments.get(0));
+			case ClassDiagramPackage.BILL___ADD_COST__COST:
+				addCost((Cost)arguments.get(0));
 				return null;
 			case ClassDiagramPackage.BILL___REMOVE_COST__COST:
 				removeCost((Cost)arguments.get(0));

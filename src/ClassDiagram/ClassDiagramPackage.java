@@ -131,22 +131,22 @@ public interface ClassDiagramPackage extends EPackage {
 	int ROOM___GET_NUMBER_OF_GUESTS = 0;
 
 	/**
-	 * The operation id for the '<em>Check In</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM___CHECK_IN = 1;
-
-	/**
 	 * The operation id for the '<em>Check Out</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM___CHECK_OUT = 2;
+	int ROOM___CHECK_OUT = 1;
+
+	/**
+	 * The operation id for the '<em>Add Guest</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM___ADD_GUEST__GUEST = 2;
 
 	/**
 	 * The number of operations of the '<em>Room</em>' class.
@@ -287,13 +287,69 @@ public interface ClassDiagramPackage extends EPackage {
 	int ROOM_TYPE = 3;
 
 	/**
+	 * The meta object id for the '{@link ClassDiagram.impl.BillImpl <em>Bill</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ClassDiagram.impl.BillImpl
+	 * @see ClassDiagram.impl.ClassDiagramPackageImpl#getBill()
+	 * @generated
+	 */
+	int BILL = 5;
+
+	/**
+	 * The meta object id for the '{@link ClassDiagram.Cost <em>Cost</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ClassDiagram.Cost
+	 * @see ClassDiagram.impl.ClassDiagramPackageImpl#getCost()
+	 * @generated
+	 */
+	int COST = 4;
+
+	/**
+	 * The number of structural features of the '<em>Cost</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COST_FEATURE_COUNT = 0;
+
+	/**
+	 * The operation id for the '<em>Get Price</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COST___GET_PRICE = 0;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COST___GET_NAME = 1;
+
+	/**
+	 * The number of operations of the '<em>Cost</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COST_OPERATION_COUNT = 2;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_TYPE__NAME = 0;
+	int ROOM_TYPE__NAME = COST_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Price</b></em>' attribute.
@@ -302,7 +358,7 @@ public interface ClassDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_TYPE__PRICE = 1;
+	int ROOM_TYPE__PRICE = COST_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Guest Capacity</b></em>' attribute.
@@ -311,7 +367,7 @@ public interface ClassDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_TYPE__GUEST_CAPACITY = 2;
+	int ROOM_TYPE__GUEST_CAPACITY = COST_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Number Of Beds</b></em>' attribute.
@@ -320,7 +376,7 @@ public interface ClassDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_TYPE__NUMBER_OF_BEDS = 3;
+	int ROOM_TYPE__NUMBER_OF_BEDS = COST_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Number Of Extra Beds</b></em>' attribute.
@@ -329,7 +385,7 @@ public interface ClassDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_TYPE__NUMBER_OF_EXTRA_BEDS = 4;
+	int ROOM_TYPE__NUMBER_OF_EXTRA_BEDS = COST_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -338,7 +394,7 @@ public interface ClassDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_TYPE__DESCRIPTION = 5;
+	int ROOM_TYPE__DESCRIPTION = COST_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Room Type</em>' class.
@@ -347,7 +403,25 @@ public interface ClassDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_TYPE_FEATURE_COUNT = 6;
+	int ROOM_TYPE_FEATURE_COUNT = COST_FEATURE_COUNT + 6;
+
+	/**
+	 * The operation id for the '<em>Get Price</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_TYPE___GET_PRICE = COST___GET_PRICE;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_TYPE___GET_NAME = COST___GET_NAME;
 
 	/**
 	 * The number of operations of the '<em>Room Type</em>' class.
@@ -356,17 +430,7 @@ public interface ClassDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_TYPE_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link ClassDiagram.impl.BillImpl <em>Bill</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see ClassDiagram.impl.BillImpl
-	 * @see ClassDiagram.impl.ClassDiagramPackageImpl#getBill()
-	 * @generated
-	 */
-	int BILL = 4;
+	int ROOM_TYPE_OPERATION_COUNT = COST_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Cost</b></em>' reference list.
@@ -393,7 +457,7 @@ public interface ClassDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BILL___ADD_COST__ELIST = 0;
+	int BILL___ADD_COST__COST = 0;
 
 	/**
 	 * The operation id for the '<em>Remove Cost</em>' operation.
@@ -448,52 +512,6 @@ public interface ClassDiagramPackage extends EPackage {
 	 * @ordered
 	 */
 	int BILL_OPERATION_COUNT = 6;
-
-	/**
-	 * The meta object id for the '{@link ClassDiagram.Cost <em>Cost</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see ClassDiagram.Cost
-	 * @see ClassDiagram.impl.ClassDiagramPackageImpl#getCost()
-	 * @generated
-	 */
-	int COST = 5;
-
-	/**
-	 * The number of structural features of the '<em>Cost</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COST_FEATURE_COUNT = 0;
-
-	/**
-	 * The operation id for the '<em>Get Price</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COST___GET_PRICE = 0;
-
-	/**
-	 * The operation id for the '<em>Get Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COST___GET_NAME = 1;
-
-	/**
-	 * The number of operations of the '<em>Cost</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COST_OPERATION_COUNT = 2;
 
 	/**
 	 * The meta object id for the '{@link ClassDiagram.BillingInformation <em>Billing Information</em>}' class.
@@ -625,13 +643,22 @@ public interface ClassDiagramPackage extends EPackage {
 	int ROOM_BOOKING__ROOM_TYPE = 3;
 
 	/**
+	 * The feature id for the '<em><b>Number Of Guests</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_BOOKING__NUMBER_OF_GUESTS = 4;
+
+	/**
 	 * The number of structural features of the '<em>Room Booking</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_BOOKING_FEATURE_COUNT = 4;
+	int ROOM_BOOKING_FEATURE_COUNT = 5;
 
 	/**
 	 * The operation id for the '<em>Cancel</em>' operation.
@@ -661,13 +688,22 @@ public interface ClassDiagramPackage extends EPackage {
 	int ROOM_BOOKING___GENERATE_PDF = 2;
 
 	/**
+	 * The operation id for the '<em>Check In</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_BOOKING___CHECK_IN__GUEST = 3;
+
+	/**
 	 * The number of operations of the '<em>Room Booking</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_BOOKING_OPERATION_COUNT = 3;
+	int ROOM_BOOKING_OPERATION_COUNT = 4;
 
 	/**
 	 * The meta object id for the '{@link ClassDiagram.impl.ItemImpl <em>Item</em>}' class.
@@ -1717,16 +1753,6 @@ public interface ClassDiagramPackage extends EPackage {
 	EOperation getRoom__GetNumberOfGuests();
 
 	/**
-	 * Returns the meta object for the '{@link ClassDiagram.Room#checkIn() <em>Check In</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Check In</em>' operation.
-	 * @see ClassDiagram.Room#checkIn()
-	 * @generated
-	 */
-	EOperation getRoom__CheckIn();
-
-	/**
 	 * Returns the meta object for the '{@link ClassDiagram.Room#checkOut() <em>Check Out</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1735,6 +1761,16 @@ public interface ClassDiagramPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getRoom__CheckOut();
+
+	/**
+	 * Returns the meta object for the '{@link ClassDiagram.Room#addGuest(ClassDiagram.Guest) <em>Add Guest</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Add Guest</em>' operation.
+	 * @see ClassDiagram.Room#addGuest(ClassDiagram.Guest)
+	 * @generated
+	 */
+	EOperation getRoom__AddGuest__Guest();
 
 	/**
 	 * Returns the meta object for class '{@link ClassDiagram.Guest <em>Guest</em>}'.
@@ -1898,14 +1934,14 @@ public interface ClassDiagramPackage extends EPackage {
 	EReference getBill_Cost();
 
 	/**
-	 * Returns the meta object for the '{@link ClassDiagram.Bill#addCost(org.eclipse.emf.common.util.EList) <em>Add Cost</em>}' operation.
+	 * Returns the meta object for the '{@link ClassDiagram.Bill#addCost(ClassDiagram.Cost) <em>Add Cost</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Add Cost</em>' operation.
-	 * @see ClassDiagram.Bill#addCost(org.eclipse.emf.common.util.EList)
+	 * @see ClassDiagram.Bill#addCost(ClassDiagram.Cost)
 	 * @generated
 	 */
-	EOperation getBill__AddCost__EList();
+	EOperation getBill__AddCost__Cost();
 
 	/**
 	 * Returns the meta object for the '{@link ClassDiagram.Bill#removeCost(ClassDiagram.Cost) <em>Remove Cost</em>}' operation.
@@ -2092,6 +2128,17 @@ public interface ClassDiagramPackage extends EPackage {
 	EReference getRoomBooking_RoomType();
 
 	/**
+	 * Returns the meta object for the attribute '{@link ClassDiagram.RoomBooking#getNumberOfGuests <em>Number Of Guests</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Number Of Guests</em>'.
+	 * @see ClassDiagram.RoomBooking#getNumberOfGuests()
+	 * @see #getRoomBooking()
+	 * @generated
+	 */
+	EAttribute getRoomBooking_NumberOfGuests();
+
+	/**
 	 * Returns the meta object for the '{@link ClassDiagram.RoomBooking#cancel() <em>Cancel</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2120,6 +2167,16 @@ public interface ClassDiagramPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getRoomBooking__GeneratePDF();
+
+	/**
+	 * Returns the meta object for the '{@link ClassDiagram.RoomBooking#checkIn(ClassDiagram.Guest) <em>Check In</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Check In</em>' operation.
+	 * @see ClassDiagram.RoomBooking#checkIn(ClassDiagram.Guest)
+	 * @generated
+	 */
+	EOperation getRoomBooking__CheckIn__Guest();
 
 	/**
 	 * Returns the meta object for class '{@link ClassDiagram.Item <em>Item</em>}'.
@@ -2881,20 +2938,20 @@ public interface ClassDiagramPackage extends EPackage {
 		EOperation ROOM___GET_NUMBER_OF_GUESTS = eINSTANCE.getRoom__GetNumberOfGuests();
 
 		/**
-		 * The meta object literal for the '<em><b>Check In</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ROOM___CHECK_IN = eINSTANCE.getRoom__CheckIn();
-
-		/**
 		 * The meta object literal for the '<em><b>Check Out</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EOperation ROOM___CHECK_OUT = eINSTANCE.getRoom__CheckOut();
+
+		/**
+		 * The meta object literal for the '<em><b>Add Guest</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ROOM___ADD_GUEST__GUEST = eINSTANCE.getRoom__AddGuest__Guest();
 
 		/**
 		 * The meta object literal for the '{@link ClassDiagram.impl.GuestImpl <em>Guest</em>}' class.
@@ -3030,7 +3087,7 @@ public interface ClassDiagramPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation BILL___ADD_COST__ELIST = eINSTANCE.getBill__AddCost__EList();
+		EOperation BILL___ADD_COST__COST = eINSTANCE.getBill__AddCost__Cost();
 
 		/**
 		 * The meta object literal for the '<em><b>Remove Cost</b></em>' operation.
@@ -3185,6 +3242,14 @@ public interface ClassDiagramPackage extends EPackage {
 		EReference ROOM_BOOKING__ROOM_TYPE = eINSTANCE.getRoomBooking_RoomType();
 
 		/**
+		 * The meta object literal for the '<em><b>Number Of Guests</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ROOM_BOOKING__NUMBER_OF_GUESTS = eINSTANCE.getRoomBooking_NumberOfGuests();
+
+		/**
 		 * The meta object literal for the '<em><b>Cancel</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3207,6 +3272,14 @@ public interface ClassDiagramPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation ROOM_BOOKING___GENERATE_PDF = eINSTANCE.getRoomBooking__GeneratePDF();
+
+		/**
+		 * The meta object literal for the '<em><b>Check In</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ROOM_BOOKING___CHECK_IN__GUEST = eINSTANCE.getRoomBooking__CheckIn__Guest();
 
 		/**
 		 * The meta object literal for the '{@link ClassDiagram.impl.ItemImpl <em>Item</em>}' class.

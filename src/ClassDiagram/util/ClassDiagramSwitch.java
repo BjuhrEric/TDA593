@@ -106,18 +106,19 @@ public class ClassDiagramSwitch<T> extends Switch<T> {
 			case ClassDiagramPackage.ROOM_TYPE: {
 				RoomType roomType = (RoomType)theEObject;
 				T result = caseRoomType(roomType);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ClassDiagramPackage.BILL: {
-				Bill bill = (Bill)theEObject;
-				T result = caseBill(bill);
+				if (result == null) result = caseCost(roomType);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case ClassDiagramPackage.COST: {
 				Cost cost = (Cost)theEObject;
 				T result = caseCost(cost);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ClassDiagramPackage.BILL: {
+				Bill bill = (Bill)theEObject;
+				T result = caseBill(bill);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

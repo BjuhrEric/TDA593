@@ -14,8 +14,10 @@
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
       </ownedParameter>
     </ownedOperation>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_Uc54IJUMEeWictR9w7kxNQ" name="checkIn"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_VnATwJUMEeWictR9w7kxNQ" name="checkOut"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_x6_qUJ2-EeWJ2YKRfJzR_A" name="addGuest">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_1v-X0J2-EeWJ2YKRfJzR_A" name="guest" type="_d1iGcJOCEeWai68V7lLhPw"/>
+    </ownedOperation>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_d1iGcJOCEeWai68V7lLhPw" name="Guest">
     <generalization xmi:type="uml:Generalization" xmi:id="_TccGYJUcEeWqN5aFuAz_Hg" general="_oHzLAJODEeWai68V7lLhPw"/>
@@ -36,9 +38,15 @@
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4fOoQJOKEeWai68V7lLhPw"/>
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4fQdcJOKEeWai68V7lLhPw" value="*"/>
     </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="__EaNEJ29EeWJ2YKRfJzR_A" name="numberOfGuests" isReadOnly="true">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+    </ownedAttribute>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_9a1F8JOSEeWai68V7lLhPw" name="cancel"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_I9YjIJOTEeWai68V7lLhPw" name="close"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_CN43IJbGEeWywcXnTB_lHw" name="generatePDF"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_IDOiMJ2-EeWJ2YKRfJzR_A" name="checkIn">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_jBpQcJ2-EeWJ2YKRfJzR_A" name="guest" type="_d1iGcJOCEeWai68V7lLhPw"/>
+    </ownedOperation>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_oHzLAJODEeWai68V7lLhPw" name="Person">
     <ownedAttribute xmi:type="uml:Property" xmi:id="_rZygMJODEeWai68V7lLhPw" name="firstNames" isReadOnly="true">
@@ -134,6 +142,7 @@
     <ownedAttribute xmi:type="uml:Property" xmi:id="_x-RAMJOLEeWai68V7lLhPw" name="description" isReadOnly="true">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
     </ownedAttribute>
+    <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_ndWxUJ2_EeWJ2YKRfJzR_A" client="_kdDI0JOJEeWai68V7lLhPw" supplier="_-XeEUJUGEeWictR9w7kxNQ" contract="_-XeEUJUGEeWictR9w7kxNQ"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Association" xmi:id="_-uL6UJOJEeWai68V7lLhPw" memberEnd="_-uNIcJOJEeWai68V7lLhPw _-uNIcZOJEeWai68V7lLhPw">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_-uMhYJOJEeWai68V7lLhPw" source="org.eclipse.papyrus">
@@ -323,8 +332,8 @@
     </ownedAttribute>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_8Qvy8JUHEeWictR9w7kxNQ" name="addCost">
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_mhK2MJUJEeWictR9w7kxNQ" name="cost" type="_-XeEUJUGEeWictR9w7kxNQ">
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_WcO9gJUKEeWictR9w7kxNQ"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_WcQysJUKEeWictR9w7kxNQ" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_WcO9gJUKEeWictR9w7kxNQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_WcQysJUKEeWictR9w7kxNQ" value="1"/>
       </ownedParameter>
     </ownedOperation>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_9n4lAJUHEeWictR9w7kxNQ" name="removeCost">
