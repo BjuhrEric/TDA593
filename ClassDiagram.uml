@@ -23,7 +23,7 @@
     <generalization xmi:type="uml:Generalization" xmi:id="_TccGYJUcEeWqN5aFuAz_Hg" general="_oHzLAJODEeWai68V7lLhPw"/>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_-U7fEJOEEeWai68V7lLhPw" name="status" type="_m_lwUJOEEeWai68V7lLhPw" aggregation="shared" association="_-U2mkJOEEeWai68V7lLhPw"/>
   </packagedElement>
-  <packagedElement xmi:type="uml:Class" xmi:id="_gxp5UJOCEeWai68V7lLhPw" name="Room Booking">
+  <packagedElement xmi:type="uml:Class" xmi:id="_gxp5UJOCEeWai68V7lLhPw" name="RoomBooking">
     <ownedAttribute xmi:type="uml:Property" xmi:id="_h_CgMJOHEeWai68V7lLhPw" name="startDate">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
     </ownedAttribute>
@@ -79,7 +79,7 @@
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_GbVlgJOFEeWai68V7lLhPw" value="*"/>
     </ownedEnd>
   </packagedElement>
-  <packagedElement xmi:type="uml:Interface" xmi:id="_n4U5sJOFEeWai68V7lLhPw" name="Billing Information">
+  <packagedElement xmi:type="uml:Interface" xmi:id="_n4U5sJOFEeWai68V7lLhPw" name="BillingInformation">
     <ownedOperation xmi:type="uml:Operation" xmi:id="_-g3usJOXEeWMvbphIGZ4iQ" name="validate">
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_7MMLMJdjEeW_YKMDk07f0A" name="return" direction="return">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
@@ -121,12 +121,12 @@
     <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_uoRtAJbGEeWywcXnTB_lHw" name="Occupied"/>
     <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_wj9WkJbGEeWywcXnTB_lHw" name="OutOfOrder"/>
   </packagedElement>
-  <packagedElement xmi:type="uml:Enumeration" xmi:id="_gUvPoJOJEeWai68V7lLhPw" name="Cleaning Status" visibility="public">
+  <packagedElement xmi:type="uml:Enumeration" xmi:id="_gUvPoJOJEeWai68V7lLhPw" name="CleaningStatus" visibility="public">
     <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_T5edgJVlEeWBluaU4-si5w" name="Clean"/>
     <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_e8sTUJVlEeWBluaU4-si5w" name="Dirty"/>
     <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_g78OQJVlEeWBluaU4-si5w" name="Checked Out"/>
   </packagedElement>
-  <packagedElement xmi:type="uml:Class" xmi:id="_kdDI0JOJEeWai68V7lLhPw" name="Room Type">
+  <packagedElement xmi:type="uml:Class" xmi:id="_kdDI0JOJEeWai68V7lLhPw" name="RoomType">
     <ownedAttribute xmi:type="uml:Property" xmi:id="_b07KgJOLEeWai68V7lLhPw" name="name" isReadOnly="true">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
     </ownedAttribute>
@@ -251,7 +251,7 @@
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_-rd2IJOMEeWai68V7lLhPw" value="*"/>
     </ownedEnd>
   </packagedElement>
-  <packagedElement xmi:type="uml:Class" xmi:id="_DngK8JOQEeWai68V7lLhPw" name="Event Booking">
+  <packagedElement xmi:type="uml:Class" xmi:id="_DngK8JOQEeWai68V7lLhPw" name="EventBooking">
     <ownedAttribute xmi:type="uml:Property" xmi:id="_klheUJUIEeWictR9w7kxNQ" name="bill" type="_QLEo0JUHEeWictR9w7kxNQ" isReadOnly="true" association="_klgQMJUIEeWictR9w7kxNQ"/>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_ok_DQJVlEeWBluaU4-si5w" name="startTime">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
@@ -390,7 +390,7 @@
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_iuG6oJUREeWictR9w7kxNQ" name="eventBooking" type="_DngK8JOQEeWai68V7lLhPw"/>
     </ownedOperation>
   </packagedElement>
-  <packagedElement xmi:type="uml:Class" xmi:id="_-7sboJUaEeWqN5aFuAz_Hg" name="Individual Customer">
+  <packagedElement xmi:type="uml:Class" xmi:id="_-7sboJUaEeWqN5aFuAz_Hg" name="IndividualCustomer">
     <generalization xmi:type="uml:Generalization" xmi:id="_MKN18JUcEeWqN5aFuAz_Hg" general="_oHzLAJODEeWai68V7lLhPw"/>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_lfv60JUcEeWqN5aFuAz_Hg" name="billingInformation" type="_n4U5sJOFEeWai68V7lLhPw">
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_00G1sJUcEeWqN5aFuAz_Hg"/>
@@ -437,7 +437,7 @@
     </eAnnotations>
     <ownedEnd xmi:type="uml:Property" xmi:id="_CMGcgZbIEeWywcXnTB_lHw" name="floormap" type="_8mgF8JbHEeWywcXnTB_lHw" association="_CLNrsJbIEeWywcXnTB_lHw"/>
   </packagedElement>
-  <packagedElement xmi:type="uml:Interface" xmi:id="_SbbR8JdkEeW_YKMDk07f0A" name="Payment Strategy">
+  <packagedElement xmi:type="uml:Interface" xmi:id="_SbbR8JdkEeW_YKMDk07f0A" name="PaymentStrategy">
     <ownedOperation xmi:type="uml:Operation" xmi:id="_aip3wJdkEeW_YKMDk07f0A" name="pay" visibility="public">
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_oBSnIJdkEeW_YKMDk07f0A" name="bill" type="_QLEo0JUHEeWictR9w7kxNQ"/>
     </ownedOperation>
@@ -451,7 +451,7 @@
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_DCG_gJqOEeWGP5Jq4ddH3g" value="*"/>
     </ownedEnd>
   </packagedElement>
-  <packagedElement xmi:type="uml:Class" xmi:id="_a3hK4JqNEeWGP5Jq4ddH3g" name="Account Type">
+  <packagedElement xmi:type="uml:Class" xmi:id="_a3hK4JqNEeWGP5Jq4ddH3g" name="AccountType">
     <ownedAttribute xmi:type="uml:Property" xmi:id="_569005qNEeWGP5Jq4ddH3g" name="permission" type="_NSKngJOSEeWai68V7lLhPw" aggregation="shared" association="_56900JqNEeWGP5Jq4ddH3g">
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Cgh8cJqOEeWGP5Jq4ddH3g"/>
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_CgjxoJqOEeWGP5Jq4ddH3g" value="*"/>
