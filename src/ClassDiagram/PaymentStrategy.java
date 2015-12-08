@@ -2,7 +2,6 @@
  */
 package ClassDiagram;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -13,15 +12,15 @@ import org.eclipse.emf.ecore.EObject;
  * @see ClassDiagram.ClassDiagramPackage#getPaymentStrategy()
  * @model interface="true" abstract="true"
  *        annotation="http://www.eclipse.org/uml2/2.0.0/UML originalName='Payment Strategy'"
- * @generated
+ * @generated NOT
  */
-public interface PaymentStrategy extends EObject {
+public interface PaymentStrategy {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model billRequired="true" billOrdered="false"
-	 * @generated
+	 * @generated NOT
 	 */
-	void pay(Bill bill);
+	boolean pay(Bill bill);
 
 } // PaymentStrategy
