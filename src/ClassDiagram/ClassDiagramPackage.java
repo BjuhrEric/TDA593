@@ -369,7 +369,7 @@ public interface ClassDiagramPackage extends EPackage {
 	int BILL = 4;
 
 	/**
-	 * The feature id for the '<em><b>Cost</b></em>' reference.
+	 * The feature id for the '<em><b>Cost</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1887,10 +1887,10 @@ public interface ClassDiagramPackage extends EPackage {
 	EClass getBill();
 
 	/**
-	 * Returns the meta object for the reference '{@link ClassDiagram.Bill#getCost <em>Cost</em>}'.
+	 * Returns the meta object for the reference list '{@link ClassDiagram.Bill#getCost <em>Cost</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Cost</em>'.
+	 * @return the meta object for the reference list '<em>Cost</em>'.
 	 * @see ClassDiagram.Bill#getCost()
 	 * @see #getBill()
 	 * @generated
@@ -3017,7 +3017,7 @@ public interface ClassDiagramPackage extends EPackage {
 		EClass BILL = eINSTANCE.getBill();
 
 		/**
-		 * The meta object literal for the '<em><b>Cost</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Cost</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

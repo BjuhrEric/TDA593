@@ -106,7 +106,7 @@
       <eParameters name="info" ordered="false" lowerBound="1" eType="#//BillingInformation"/>
     </eOperations>
     <eOperations name="printReceipt" ordered="false" lowerBound="1"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="cost" ordered="false" lowerBound="1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cost" ordered="false" upperBound="-1"
         eType="#//Cost"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Cost" abstract="true" interface="true">

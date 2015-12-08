@@ -317,7 +317,10 @@
     </ownedOperation>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_QLEo0JUHEeWictR9w7kxNQ" name="Bill">
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_QoyDEJUIEeWictR9w7kxNQ" name="cost" type="_-XeEUJUGEeWictR9w7kxNQ" association="_QosjgJUIEeWictR9w7kxNQ"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_QoyDEJUIEeWictR9w7kxNQ" name="cost" type="_-XeEUJUGEeWictR9w7kxNQ" association="_QosjgJUIEeWictR9w7kxNQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_WCMUQJ26EeWJ2YKRfJzR_A"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_WCYhgJ26EeWJ2YKRfJzR_A" value="*"/>
+    </ownedAttribute>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_8Qvy8JUHEeWictR9w7kxNQ" name="addCost">
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_mhK2MJUJEeWictR9w7kxNQ" name="cost" type="_-XeEUJUGEeWictR9w7kxNQ">
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_WcO9gJUKEeWictR9w7kxNQ"/>

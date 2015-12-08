@@ -8,15 +8,12 @@ import ClassDiagram.ClassDiagramPackage;
 import ClassDiagram.Cost;
 
 import java.lang.reflect.InvocationTargetException;
-import org.eclipse.emf.common.notify.Notification;
-
+import java.util.Collection;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -33,14 +30,14 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  */
 public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 	/**
-	 * The cached value of the '{@link #getCost() <em>Cost</em>}' reference.
+	 * The cached value of the '{@link #getCost() <em>Cost</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getCost()
 	 * @generated
 	 * @ordered
 	 */
-	protected Cost cost;
+	protected EList<Cost> cost;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -66,37 +63,11 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Cost getCost() {
-		if (cost != null && cost.eIsProxy()) {
-			InternalEObject oldCost = (InternalEObject)cost;
-			cost = (Cost)eResolveProxy(oldCost);
-			if (cost != oldCost) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ClassDiagramPackage.BILL__COST, oldCost, cost));
-			}
+	public EList<Cost> getCost() {
+		if (cost == null) {
+			cost = new EObjectResolvingEList<Cost>(Cost.class, this, ClassDiagramPackage.BILL__COST);
 		}
 		return cost;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Cost basicGetCost() {
-		return cost;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setCost(Cost newCost) {
-		Cost oldCost = cost;
-		cost = newCost;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ClassDiagramPackage.BILL__COST, oldCost, cost));
 	}
 
 	/**
@@ -174,8 +145,7 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case ClassDiagramPackage.BILL__COST:
-				if (resolve) return getCost();
-				return basicGetCost();
+				return getCost();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -185,11 +155,13 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ClassDiagramPackage.BILL__COST:
-				setCost((Cost)newValue);
+				getCost().clear();
+				getCost().addAll((Collection<? extends Cost>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -204,7 +176,7 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case ClassDiagramPackage.BILL__COST:
-				setCost((Cost)null);
+				getCost().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -219,7 +191,7 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case ClassDiagramPackage.BILL__COST:
-				return cost != null;
+				return cost != null && !cost.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

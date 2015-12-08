@@ -2,7 +2,7 @@
  */
 package ClassDiagram;
 
-import java.util.List;
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,7 +20,7 @@ import java.util.List;
  *
  * @see ClassDiagram.ClassDiagramPackage#getIndividualCustomer()
  * @model annotation="http://www.eclipse.org/uml2/2.0.0/UML originalName='Individual Customer'"
- * @generated NOT
+ * @generated
  */
 public interface IndividualCustomer extends Person, Customer {
 	/**
@@ -35,9 +35,9 @@ public interface IndividualCustomer extends Person, Customer {
 	 * @return the value of the '<em>Billing Information</em>' reference list.
 	 * @see ClassDiagram.ClassDiagramPackage#getIndividualCustomer_BillingInformation()
 	 * @model ordered="false"
-	 * @generated NOT
+	 * @generated
 	 */
-	List<BillingInformation> getBillingInformation();
+	EList<BillingInformation> getBillingInformation();
 
 	/**
 	 * Returns the value of the '<em><b>Room Bookings</b></em>' reference list.
@@ -51,9 +51,9 @@ public interface IndividualCustomer extends Person, Customer {
 	 * @return the value of the '<em>Room Bookings</em>' reference list.
 	 * @see ClassDiagram.ClassDiagramPackage#getIndividualCustomer_RoomBookings()
 	 * @model ordered="false"
-	 * @generated NOT
+	 * @generated
 	 */
-	List<RoomBooking> getRoomBookings();
+	EList<RoomBooking> getRoomBookings();
 
 	/**
 	 * Returns the value of the '<em><b>Event Bookings</b></em>' reference list.
@@ -67,8 +67,8 @@ public interface IndividualCustomer extends Person, Customer {
 	 * @return the value of the '<em>Event Bookings</em>' reference list.
 	 * @see ClassDiagram.ClassDiagramPackage#getIndividualCustomer_EventBookings()
 	 * @model ordered="false"
-	 * @generated NOT
+	 * @generated
 	 */
-	List<EventBooking> getEventBookings();
+	EList<EventBooking> getEventBookings();
 
 } // IndividualCustomer

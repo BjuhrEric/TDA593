@@ -2,8 +2,6 @@
  */
 package ClassDiagram;
 
-import java.util.List;
-
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
@@ -24,9 +22,9 @@ import org.eclipse.emf.ecore.EObject;
  *
  * @see ClassDiagram.ClassDiagramPackage#getPerson()
  * @model
- * @generated NOT
+ * @generated
  */
-public interface Person {
+public interface Person extends EObject {
 	/**
 	 * Returns the value of the '<em><b>First Names</b></em>' attribute list.
 	 * The list contents are of type {@link java.lang.String}.
@@ -39,9 +37,9 @@ public interface Person {
 	 * @return the value of the '<em>First Names</em>' attribute list.
 	 * @see ClassDiagram.ClassDiagramPackage#getPerson_FirstNames()
 	 * @model dataType="org.eclipse.uml2.types.String" changeable="false" ordered="false"
-	 * @generated NOT
+	 * @generated
 	 */
-	List<String> getFirstNames();
+	EList<String> getFirstNames();
 
 	/**
 	 * Returns the value of the '<em><b>Family Names</b></em>' attribute list.
@@ -55,9 +53,9 @@ public interface Person {
 	 * @return the value of the '<em>Family Names</em>' attribute list.
 	 * @see ClassDiagram.ClassDiagramPackage#getPerson_FamilyNames()
 	 * @model dataType="org.eclipse.uml2.types.String" changeable="false" ordered="false"
-	 * @generated NOT
+	 * @generated
 	 */
-	List<String> getFamilyNames();
+	EList<String> getFamilyNames();
 
 	/**
 	 * Returns the value of the '<em><b>Title</b></em>' attribute.
