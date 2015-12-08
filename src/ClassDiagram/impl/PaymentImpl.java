@@ -3,47 +3,52 @@
 package ClassDiagram.impl;
 
 import ClassDiagram.Bill;
+import ClassDiagram.BillingInformation;
 import ClassDiagram.ClassDiagramPackage;
-import ClassDiagram.Cost;
+import ClassDiagram.Payment;
 
 import java.lang.reflect.InvocationTargetException;
+
 import java.util.Collection;
+
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Bill</b></em>'.
+ * An implementation of the model object '<em><b>Payment</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link ClassDiagram.impl.BillImpl#getCost <em>Cost</em>}</li>
+ *   <li>{@link ClassDiagram.impl.PaymentImpl#getBill <em>Bill</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
+public class PaymentImpl extends MinimalEObjectImpl.Container implements Payment {
 	/**
-	 * The cached value of the '{@link #getCost() <em>Cost</em>}' reference list.
+	 * The cached value of the '{@link #getBill() <em>Bill</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getCost()
+	 * @see #getBill()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Cost> cost;
+	protected EList<Bill> bill;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected BillImpl() {
+	protected PaymentImpl() {
 		super();
 	}
 
@@ -54,7 +59,7 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ClassDiagramPackage.Literals.BILL;
+		return ClassDiagramPackage.Literals.PAYMENT;
 	}
 
 	/**
@@ -62,11 +67,11 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Cost> getCost() {
-		if (cost == null) {
-			cost = new EObjectResolvingEList<Cost>(Cost.class, this, ClassDiagramPackage.BILL__COST);
+	public EList<Bill> getBill() {
+		if (bill == null) {
+			bill = new EObjectResolvingEList<Bill>(Bill.class, this, ClassDiagramPackage.PAYMENT__BILL);
 		}
-		return cost;
+		return bill;
 	}
 
 	/**
@@ -74,7 +79,7 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void addCost(Cost cost) {
+	public void merge(EList<Payment> payment) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -85,7 +90,29 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void removeCost(Cost cost) {
+	public EList<Payment> split() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void performPayment(BillingInformation info) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void printReceipt() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -99,8 +126,8 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ClassDiagramPackage.BILL__COST:
-				return getCost();
+			case ClassDiagramPackage.PAYMENT__BILL:
+				return getBill();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -114,9 +141,9 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ClassDiagramPackage.BILL__COST:
-				getCost().clear();
-				getCost().addAll((Collection<? extends Cost>)newValue);
+			case ClassDiagramPackage.PAYMENT__BILL:
+				getBill().clear();
+				getBill().addAll((Collection<? extends Bill>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -130,8 +157,8 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ClassDiagramPackage.BILL__COST:
-				getCost().clear();
+			case ClassDiagramPackage.PAYMENT__BILL:
+				getBill().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -145,8 +172,8 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ClassDiagramPackage.BILL__COST:
-				return cost != null && !cost.isEmpty();
+			case ClassDiagramPackage.PAYMENT__BILL:
+				return bill != null && !bill.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -160,14 +187,19 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 	@SuppressWarnings("unchecked")
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case ClassDiagramPackage.BILL___ADD_COST__COST:
-				addCost((Cost)arguments.get(0));
+			case ClassDiagramPackage.PAYMENT___MERGE__ELIST:
+				merge((EList<Payment>)arguments.get(0));
 				return null;
-			case ClassDiagramPackage.BILL___REMOVE_COST__COST:
-				removeCost((Cost)arguments.get(0));
+			case ClassDiagramPackage.PAYMENT___SPLIT:
+				return split();
+			case ClassDiagramPackage.PAYMENT___PERFORM_PAYMENT__BILLINGINFORMATION:
+				performPayment((BillingInformation)arguments.get(0));
+				return null;
+			case ClassDiagramPackage.PAYMENT___PRINT_RECEIPT:
+				printReceipt();
 				return null;
 		}
 		return super.eInvoke(operationID, arguments);
 	}
 
-} //BillImpl
+} //PaymentImpl

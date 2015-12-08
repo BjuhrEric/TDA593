@@ -55,36 +55,4 @@ public interface Bill extends EObject {
 	 */
 	void removeCost(Cost cost);
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model ordered="false"
-	 * @generated
-	 */
-	EList<Bill> split();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model billRequired="true" billOrdered="false"
-	 * @generated
-	 */
-	void merge(Bill bill);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model infoRequired="true" infoOrdered="false"
-	 * @generated
-	 */
-	void performPayment(BillingInformation info);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	void printReceipt();
-
 } // Bill

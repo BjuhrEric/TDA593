@@ -17,6 +17,7 @@ import ClassDiagram.Guest;
 import ClassDiagram.IndividualCustomer;
 import ClassDiagram.Item;
 import ClassDiagram.Organization;
+import ClassDiagram.Payment;
 import ClassDiagram.PaymentStrategy;
 import ClassDiagram.Person;
 import ClassDiagram.Room;
@@ -122,6 +123,12 @@ public class ClassDiagramSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case ClassDiagramPackage.ROOM_BOOKING: {
+				RoomBooking roomBooking = (RoomBooking)theEObject;
+				T result = caseRoomBooking(roomBooking);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case ClassDiagramPackage.BILLING_INFORMATION: {
 				BillingInformation billingInformation = (BillingInformation)theEObject;
 				T result = caseBillingInformation(billingInformation);
@@ -131,12 +138,6 @@ public class ClassDiagramSwitch<T> extends Switch<T> {
 			case ClassDiagramPackage.PAYMENT_STRATEGY: {
 				PaymentStrategy paymentStrategy = (PaymentStrategy)theEObject;
 				T result = casePaymentStrategy(paymentStrategy);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ClassDiagramPackage.ROOM_BOOKING: {
-				RoomBooking roomBooking = (RoomBooking)theEObject;
-				T result = caseRoomBooking(roomBooking);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -214,6 +215,12 @@ public class ClassDiagramSwitch<T> extends Switch<T> {
 			case ClassDiagramPackage.FLOOR_MAP: {
 				FloorMap floorMap = (FloorMap)theEObject;
 				T result = caseFloorMap(floorMap);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ClassDiagramPackage.PAYMENT: {
+				Payment payment = (Payment)theEObject;
+				T result = casePayment(payment);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -533,6 +540,21 @@ public class ClassDiagramSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseFloorMap(FloorMap object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Payment</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Payment</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePayment(Payment object) {
 		return null;
 	}
 

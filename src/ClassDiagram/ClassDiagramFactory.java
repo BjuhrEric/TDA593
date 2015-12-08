@@ -175,6 +175,15 @@ public interface ClassDiagramFactory extends EFactory {
 	FloorMap createFloorMap();
 
 	/**
+	 * Returns a new object of class '<em>Payment</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Payment</em>'.
+	 * @generated
+	 */
+	Payment createPayment();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

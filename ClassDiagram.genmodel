@@ -110,23 +110,6 @@
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ClassDiagram.ecore#//Bill/removeCost">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ClassDiagram.ecore#//Bill/removeCost/cost"/>
       </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ClassDiagram.ecore#//Bill/split"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ClassDiagram.ecore#//Bill/merge">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ClassDiagram.ecore#//Bill/merge/bill"/>
-      </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ClassDiagram.ecore#//Bill/performPayment">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ClassDiagram.ecore#//Bill/performPayment/info"/>
-      </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ClassDiagram.ecore#//Bill/printReceipt"/>
-    </genClasses>
-    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="ClassDiagram.ecore#//BillingInformation">
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ClassDiagram.ecore#//BillingInformation/validate"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ClassDiagram.ecore#//BillingInformation/getPaymentStrategy"/>
-    </genClasses>
-    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="ClassDiagram.ecore#//PaymentStrategy">
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ClassDiagram.ecore#//PaymentStrategy/pay">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ClassDiagram.ecore#//PaymentStrategy/pay/bill"/>
-      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="ClassDiagram.ecore#//RoomBooking">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute ClassDiagram.ecore#//RoomBooking/startDate"/>
@@ -142,6 +125,18 @@
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ClassDiagram.ecore#//RoomBooking/generatePDF"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ClassDiagram.ecore#//RoomBooking/checkIn">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ClassDiagram.ecore#//RoomBooking/checkIn/guest"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ClassDiagram.ecore#//RoomBooking/checkOut">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ClassDiagram.ecore#//RoomBooking/checkOut/info"/>
+      </genOperations>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="ClassDiagram.ecore#//BillingInformation">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ClassDiagram.ecore#//BillingInformation/validate"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ClassDiagram.ecore#//BillingInformation/getPaymentStrategy"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="ClassDiagram.ecore#//PaymentStrategy">
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ClassDiagram.ecore#//PaymentStrategy/pay">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ClassDiagram.ecore#//PaymentStrategy/pay/bill"/>
       </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="ClassDiagram.ecore#//Item">
@@ -232,6 +227,18 @@
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="ClassDiagram.ecore#//FloorMap">
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
           propertySortChoices="true" ecoreFeature="ecore:EReference ClassDiagram.ecore#//FloorMap/room"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="ClassDiagram.ecore#//Payment">
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference ClassDiagram.ecore#//Payment/bill"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ClassDiagram.ecore#//Payment/merge">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ClassDiagram.ecore#//Payment/merge/payment"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ClassDiagram.ecore#//Payment/split"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ClassDiagram.ecore#//Payment/performPayment">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ClassDiagram.ecore#//Payment/performPayment/info"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ClassDiagram.ecore#//Payment/printReceipt"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

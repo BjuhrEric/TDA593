@@ -17,6 +17,7 @@ import ClassDiagram.Guest;
 import ClassDiagram.IndividualCustomer;
 import ClassDiagram.Item;
 import ClassDiagram.Organization;
+import ClassDiagram.Payment;
 import ClassDiagram.PaymentStrategy;
 import ClassDiagram.Person;
 import ClassDiagram.Room;
@@ -112,16 +113,16 @@ public class ClassDiagramAdapterFactory extends AdapterFactoryImpl {
 				return createBillAdapter();
 			}
 			@Override
+			public Adapter caseRoomBooking(RoomBooking object) {
+				return createRoomBookingAdapter();
+			}
+			@Override
 			public Adapter caseBillingInformation(BillingInformation object) {
 				return createBillingInformationAdapter();
 			}
 			@Override
 			public Adapter casePaymentStrategy(PaymentStrategy object) {
 				return createPaymentStrategyAdapter();
-			}
-			@Override
-			public Adapter caseRoomBooking(RoomBooking object) {
-				return createRoomBookingAdapter();
 			}
 			@Override
 			public Adapter caseItem(Item object) {
@@ -170,6 +171,10 @@ public class ClassDiagramAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseFloorMap(FloorMap object) {
 				return createFloorMapAdapter();
+			}
+			@Override
+			public Adapter casePayment(Payment object) {
+				return createPaymentAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -482,6 +487,20 @@ public class ClassDiagramAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createFloorMapAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link ClassDiagram.Payment <em>Payment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see ClassDiagram.Payment
+	 * @generated
+	 */
+	public Adapter createPaymentAdapter() {
 		return null;
 	}
 

@@ -160,4 +160,12 @@ public interface RoomBooking extends EObject {
 	 */
 	void checkIn(Guest guest);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model infoRequired="true" infoOrdered="false"
+	 * @generated
+	 */
+	void checkOut(BillingInformation info);
+
 } // RoomBooking

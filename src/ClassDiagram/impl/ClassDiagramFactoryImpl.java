@@ -17,6 +17,7 @@ import ClassDiagram.GuestStatus;
 import ClassDiagram.IndividualCustomer;
 import ClassDiagram.Item;
 import ClassDiagram.Organization;
+import ClassDiagram.Payment;
 import ClassDiagram.Permission;
 import ClassDiagram.Person;
 import ClassDiagram.Room;
@@ -96,6 +97,7 @@ public class ClassDiagramFactoryImpl extends EFactoryImpl implements ClassDiagra
 			case ClassDiagramPackage.INDIVIDUAL_CUSTOMER: return createIndividualCustomer();
 			case ClassDiagramPackage.BOOKING_SCHEDULE: return createBookingSchedule();
 			case ClassDiagramPackage.FLOOR_MAP: return createFloorMap();
+			case ClassDiagramPackage.PAYMENT: return createPayment();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -315,6 +317,16 @@ public class ClassDiagramFactoryImpl extends EFactoryImpl implements ClassDiagra
 	public FloorMap createFloorMap() {
 		FloorMapImpl floorMap = new FloorMapImpl();
 		return floorMap;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Payment createPayment() {
+		PaymentImpl payment = new PaymentImpl();
+		return payment;
 	}
 
 	/**

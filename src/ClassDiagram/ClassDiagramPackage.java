@@ -469,49 +469,13 @@ public interface ClassDiagramPackage extends EPackage {
 	int BILL___REMOVE_COST__COST = 1;
 
 	/**
-	 * The operation id for the '<em>Split</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BILL___SPLIT = 2;
-
-	/**
-	 * The operation id for the '<em>Merge</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BILL___MERGE__BILL = 3;
-
-	/**
-	 * The operation id for the '<em>Perform Payment</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BILL___PERFORM_PAYMENT__BILLINGINFORMATION = 4;
-
-	/**
-	 * The operation id for the '<em>Print Receipt</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BILL___PRINT_RECEIPT = 5;
-
-	/**
 	 * The number of operations of the '<em>Bill</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BILL_OPERATION_COUNT = 6;
+	int BILL_OPERATION_COUNT = 2;
 
 	/**
 	 * The meta object id for the '{@link ClassDiagram.BillingInformation <em>Billing Information</em>}' class.
@@ -521,43 +485,7 @@ public interface ClassDiagramPackage extends EPackage {
 	 * @see ClassDiagram.impl.ClassDiagramPackageImpl#getBillingInformation()
 	 * @generated
 	 */
-	int BILLING_INFORMATION = 6;
-
-	/**
-	 * The number of structural features of the '<em>Billing Information</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BILLING_INFORMATION_FEATURE_COUNT = 0;
-
-	/**
-	 * The operation id for the '<em>Validate</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BILLING_INFORMATION___VALIDATE = 0;
-
-	/**
-	 * The operation id for the '<em>Get Payment Strategy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BILLING_INFORMATION___GET_PAYMENT_STRATEGY = 1;
-
-	/**
-	 * The number of operations of the '<em>Billing Information</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BILLING_INFORMATION_OPERATION_COUNT = 2;
+	int BILLING_INFORMATION = 7;
 
 	/**
 	 * The meta object id for the '{@link ClassDiagram.PaymentStrategy <em>Payment Strategy</em>}' class.
@@ -567,34 +495,7 @@ public interface ClassDiagramPackage extends EPackage {
 	 * @see ClassDiagram.impl.ClassDiagramPackageImpl#getPaymentStrategy()
 	 * @generated
 	 */
-	int PAYMENT_STRATEGY = 7;
-
-	/**
-	 * The number of structural features of the '<em>Payment Strategy</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAYMENT_STRATEGY_FEATURE_COUNT = 0;
-
-	/**
-	 * The operation id for the '<em>Pay</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAYMENT_STRATEGY___PAY__BILL = 0;
-
-	/**
-	 * The number of operations of the '<em>Payment Strategy</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAYMENT_STRATEGY_OPERATION_COUNT = 1;
+	int PAYMENT_STRATEGY = 8;
 
 	/**
 	 * The meta object id for the '{@link ClassDiagram.impl.RoomBookingImpl <em>Room Booking</em>}' class.
@@ -604,7 +505,7 @@ public interface ClassDiagramPackage extends EPackage {
 	 * @see ClassDiagram.impl.ClassDiagramPackageImpl#getRoomBooking()
 	 * @generated
 	 */
-	int ROOM_BOOKING = 8;
+	int ROOM_BOOKING = 6;
 
 	/**
 	 * The feature id for the '<em><b>Start Date</b></em>' attribute.
@@ -697,13 +598,85 @@ public interface ClassDiagramPackage extends EPackage {
 	int ROOM_BOOKING___CHECK_IN__GUEST = 3;
 
 	/**
+	 * The operation id for the '<em>Check Out</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_BOOKING___CHECK_OUT__BILLINGINFORMATION = 4;
+
+	/**
 	 * The number of operations of the '<em>Room Booking</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_BOOKING_OPERATION_COUNT = 4;
+	int ROOM_BOOKING_OPERATION_COUNT = 5;
+
+	/**
+	 * The number of structural features of the '<em>Billing Information</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILLING_INFORMATION_FEATURE_COUNT = 0;
+
+	/**
+	 * The operation id for the '<em>Validate</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILLING_INFORMATION___VALIDATE = 0;
+
+	/**
+	 * The operation id for the '<em>Get Payment Strategy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILLING_INFORMATION___GET_PAYMENT_STRATEGY = 1;
+
+	/**
+	 * The number of operations of the '<em>Billing Information</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILLING_INFORMATION_OPERATION_COUNT = 2;
+
+	/**
+	 * The number of structural features of the '<em>Payment Strategy</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_STRATEGY_FEATURE_COUNT = 0;
+
+	/**
+	 * The operation id for the '<em>Pay</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_STRATEGY___PAY__BILL = 0;
+
+	/**
+	 * The number of operations of the '<em>Payment Strategy</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_STRATEGY_OPERATION_COUNT = 1;
 
 	/**
 	 * The meta object id for the '{@link ClassDiagram.impl.ItemImpl <em>Item</em>}' class.
@@ -1627,6 +1600,79 @@ public interface ClassDiagramPackage extends EPackage {
 	int FLOOR_MAP_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link ClassDiagram.impl.PaymentImpl <em>Payment</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ClassDiagram.impl.PaymentImpl
+	 * @see ClassDiagram.impl.ClassDiagramPackageImpl#getPayment()
+	 * @generated
+	 */
+	int PAYMENT = 21;
+
+	/**
+	 * The feature id for the '<em><b>Bill</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT__BILL = 0;
+
+	/**
+	 * The number of structural features of the '<em>Payment</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_FEATURE_COUNT = 1;
+
+	/**
+	 * The operation id for the '<em>Merge</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT___MERGE__ELIST = 0;
+
+	/**
+	 * The operation id for the '<em>Split</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT___SPLIT = 1;
+
+	/**
+	 * The operation id for the '<em>Perform Payment</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT___PERFORM_PAYMENT__BILLINGINFORMATION = 2;
+
+	/**
+	 * The operation id for the '<em>Print Receipt</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT___PRINT_RECEIPT = 3;
+
+	/**
+	 * The number of operations of the '<em>Payment</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_OPERATION_COUNT = 4;
+
+	/**
 	 * The meta object id for the '{@link ClassDiagram.Title <em>Title</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1634,7 +1680,7 @@ public interface ClassDiagramPackage extends EPackage {
 	 * @see ClassDiagram.impl.ClassDiagramPackageImpl#getTitle()
 	 * @generated
 	 */
-	int TITLE = 21;
+	int TITLE = 22;
 
 	/**
 	 * The meta object id for the '{@link ClassDiagram.GuestStatus <em>Guest Status</em>}' enum.
@@ -1644,7 +1690,7 @@ public interface ClassDiagramPackage extends EPackage {
 	 * @see ClassDiagram.impl.ClassDiagramPackageImpl#getGuestStatus()
 	 * @generated
 	 */
-	int GUEST_STATUS = 22;
+	int GUEST_STATUS = 23;
 
 	/**
 	 * The meta object id for the '{@link ClassDiagram.RoomStatus <em>Room Status</em>}' enum.
@@ -1654,7 +1700,7 @@ public interface ClassDiagramPackage extends EPackage {
 	 * @see ClassDiagram.impl.ClassDiagramPackageImpl#getRoomStatus()
 	 * @generated
 	 */
-	int ROOM_STATUS = 23;
+	int ROOM_STATUS = 24;
 
 	/**
 	 * The meta object id for the '{@link ClassDiagram.CleaningStatus <em>Cleaning Status</em>}' enum.
@@ -1664,7 +1710,7 @@ public interface ClassDiagramPackage extends EPackage {
 	 * @see ClassDiagram.impl.ClassDiagramPackageImpl#getCleaningStatus()
 	 * @generated
 	 */
-	int CLEANING_STATUS = 24;
+	int CLEANING_STATUS = 25;
 
 	/**
 	 * The meta object id for the '{@link ClassDiagram.Permission <em>Permission</em>}' enum.
@@ -1674,7 +1720,7 @@ public interface ClassDiagramPackage extends EPackage {
 	 * @see ClassDiagram.impl.ClassDiagramPackageImpl#getPermission()
 	 * @generated
 	 */
-	int PERMISSION = 25;
+	int PERMISSION = 26;
 
 
 	/**
@@ -1954,46 +2000,6 @@ public interface ClassDiagramPackage extends EPackage {
 	EOperation getBill__RemoveCost__Cost();
 
 	/**
-	 * Returns the meta object for the '{@link ClassDiagram.Bill#split() <em>Split</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Split</em>' operation.
-	 * @see ClassDiagram.Bill#split()
-	 * @generated
-	 */
-	EOperation getBill__Split();
-
-	/**
-	 * Returns the meta object for the '{@link ClassDiagram.Bill#merge(ClassDiagram.Bill) <em>Merge</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Merge</em>' operation.
-	 * @see ClassDiagram.Bill#merge(ClassDiagram.Bill)
-	 * @generated
-	 */
-	EOperation getBill__Merge__Bill();
-
-	/**
-	 * Returns the meta object for the '{@link ClassDiagram.Bill#performPayment(ClassDiagram.BillingInformation) <em>Perform Payment</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Perform Payment</em>' operation.
-	 * @see ClassDiagram.Bill#performPayment(ClassDiagram.BillingInformation)
-	 * @generated
-	 */
-	EOperation getBill__PerformPayment__BillingInformation();
-
-	/**
-	 * Returns the meta object for the '{@link ClassDiagram.Bill#printReceipt() <em>Print Receipt</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Print Receipt</em>' operation.
-	 * @see ClassDiagram.Bill#printReceipt()
-	 * @generated
-	 */
-	EOperation getBill__PrintReceipt();
-
-	/**
 	 * Returns the meta object for class '{@link ClassDiagram.Cost <em>Cost</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2177,6 +2183,16 @@ public interface ClassDiagramPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getRoomBooking__CheckIn__Guest();
+
+	/**
+	 * Returns the meta object for the '{@link ClassDiagram.RoomBooking#checkOut(ClassDiagram.BillingInformation) <em>Check Out</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Check Out</em>' operation.
+	 * @see ClassDiagram.RoomBooking#checkOut(ClassDiagram.BillingInformation)
+	 * @generated
+	 */
+	EOperation getRoomBooking__CheckOut__BillingInformation();
 
 	/**
 	 * Returns the meta object for class '{@link ClassDiagram.Item <em>Item</em>}'.
@@ -2808,6 +2824,67 @@ public interface ClassDiagramPackage extends EPackage {
 	EReference getFloorMap_Room();
 
 	/**
+	 * Returns the meta object for class '{@link ClassDiagram.Payment <em>Payment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Payment</em>'.
+	 * @see ClassDiagram.Payment
+	 * @generated
+	 */
+	EClass getPayment();
+
+	/**
+	 * Returns the meta object for the reference list '{@link ClassDiagram.Payment#getBill <em>Bill</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Bill</em>'.
+	 * @see ClassDiagram.Payment#getBill()
+	 * @see #getPayment()
+	 * @generated
+	 */
+	EReference getPayment_Bill();
+
+	/**
+	 * Returns the meta object for the '{@link ClassDiagram.Payment#merge(org.eclipse.emf.common.util.EList) <em>Merge</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Merge</em>' operation.
+	 * @see ClassDiagram.Payment#merge(org.eclipse.emf.common.util.EList)
+	 * @generated
+	 */
+	EOperation getPayment__Merge__EList();
+
+	/**
+	 * Returns the meta object for the '{@link ClassDiagram.Payment#split() <em>Split</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Split</em>' operation.
+	 * @see ClassDiagram.Payment#split()
+	 * @generated
+	 */
+	EOperation getPayment__Split();
+
+	/**
+	 * Returns the meta object for the '{@link ClassDiagram.Payment#performPayment(ClassDiagram.BillingInformation) <em>Perform Payment</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Perform Payment</em>' operation.
+	 * @see ClassDiagram.Payment#performPayment(ClassDiagram.BillingInformation)
+	 * @generated
+	 */
+	EOperation getPayment__PerformPayment__BillingInformation();
+
+	/**
+	 * Returns the meta object for the '{@link ClassDiagram.Payment#printReceipt() <em>Print Receipt</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Print Receipt</em>' operation.
+	 * @see ClassDiagram.Payment#printReceipt()
+	 * @generated
+	 */
+	EOperation getPayment__PrintReceipt();
+
+	/**
 	 * Returns the meta object for enum '{@link ClassDiagram.Title <em>Title</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3098,38 +3175,6 @@ public interface ClassDiagramPackage extends EPackage {
 		EOperation BILL___REMOVE_COST__COST = eINSTANCE.getBill__RemoveCost__Cost();
 
 		/**
-		 * The meta object literal for the '<em><b>Split</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation BILL___SPLIT = eINSTANCE.getBill__Split();
-
-		/**
-		 * The meta object literal for the '<em><b>Merge</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation BILL___MERGE__BILL = eINSTANCE.getBill__Merge__Bill();
-
-		/**
-		 * The meta object literal for the '<em><b>Perform Payment</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation BILL___PERFORM_PAYMENT__BILLINGINFORMATION = eINSTANCE.getBill__PerformPayment__BillingInformation();
-
-		/**
-		 * The meta object literal for the '<em><b>Print Receipt</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation BILL___PRINT_RECEIPT = eINSTANCE.getBill__PrintReceipt();
-
-		/**
 		 * The meta object literal for the '{@link ClassDiagram.Cost <em>Cost</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3280,6 +3325,14 @@ public interface ClassDiagramPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation ROOM_BOOKING___CHECK_IN__GUEST = eINSTANCE.getRoomBooking__CheckIn__Guest();
+
+		/**
+		 * The meta object literal for the '<em><b>Check Out</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ROOM_BOOKING___CHECK_OUT__BILLINGINFORMATION = eINSTANCE.getRoomBooking__CheckOut__BillingInformation();
 
 		/**
 		 * The meta object literal for the '{@link ClassDiagram.impl.ItemImpl <em>Item</em>}' class.
@@ -3784,6 +3837,56 @@ public interface ClassDiagramPackage extends EPackage {
 		 * @generated
 		 */
 		EReference FLOOR_MAP__ROOM = eINSTANCE.getFloorMap_Room();
+
+		/**
+		 * The meta object literal for the '{@link ClassDiagram.impl.PaymentImpl <em>Payment</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see ClassDiagram.impl.PaymentImpl
+		 * @see ClassDiagram.impl.ClassDiagramPackageImpl#getPayment()
+		 * @generated
+		 */
+		EClass PAYMENT = eINSTANCE.getPayment();
+
+		/**
+		 * The meta object literal for the '<em><b>Bill</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PAYMENT__BILL = eINSTANCE.getPayment_Bill();
+
+		/**
+		 * The meta object literal for the '<em><b>Merge</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation PAYMENT___MERGE__ELIST = eINSTANCE.getPayment__Merge__EList();
+
+		/**
+		 * The meta object literal for the '<em><b>Split</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation PAYMENT___SPLIT = eINSTANCE.getPayment__Split();
+
+		/**
+		 * The meta object literal for the '<em><b>Perform Payment</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation PAYMENT___PERFORM_PAYMENT__BILLINGINFORMATION = eINSTANCE.getPayment__PerformPayment__BillingInformation();
+
+		/**
+		 * The meta object literal for the '<em><b>Print Receipt</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation PAYMENT___PRINT_RECEIPT = eINSTANCE.getPayment__PrintReceipt();
 
 		/**
 		 * The meta object literal for the '{@link ClassDiagram.Title <em>Title</em>}' enum.

@@ -104,16 +104,33 @@
     <eOperations name="removeCost" ordered="false" lowerBound="1">
       <eParameters name="cost" ordered="false" lowerBound="1" eType="#//Cost"/>
     </eOperations>
-    <eOperations name="split" ordered="false" upperBound="-1" eType="#//Bill"/>
-    <eOperations name="merge" ordered="false" lowerBound="1">
-      <eParameters name="bill" ordered="false" lowerBound="1" eType="#//Bill"/>
-    </eOperations>
-    <eOperations name="performPayment" ordered="false" lowerBound="1">
-      <eParameters name="info" ordered="false" lowerBound="1" eType="#//BillingInformation"/>
-    </eOperations>
-    <eOperations name="printReceipt" ordered="false" lowerBound="1"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="cost" ordered="false" upperBound="-1"
         eType="#//Cost"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RoomBooking">
+    <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <details key="originalName" value="Room Booking"/>
+    </eAnnotations>
+    <eOperations name="cancel" ordered="false" lowerBound="1"/>
+    <eOperations name="close" ordered="false" lowerBound="1"/>
+    <eOperations name="generatePDF" ordered="false" lowerBound="1"/>
+    <eOperations name="checkIn" ordered="false" lowerBound="1">
+      <eParameters name="guest" ordered="false" lowerBound="1" eType="#//Guest"/>
+    </eOperations>
+    <eOperations name="checkOut" ordered="false" lowerBound="1">
+      <eParameters name="info" ordered="false" lowerBound="1" eType="#//BillingInformation"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="startDate" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="endDate" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="room" ordered="false" upperBound="-1"
+        eType="#//Room"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="roomType" ordered="false"
+        upperBound="-1" eType="#//RoomType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="numberOfGuests" ordered="false"
+        lowerBound="1" eType="ecore:EDataType ../org.eclipse.uml2.types/model/Types.ecore#//Integer"
+        changeable="false"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BillingInformation" abstract="true"
       interface="true">
@@ -130,28 +147,6 @@
     <eOperations name="pay" ordered="false" lowerBound="1">
       <eParameters name="bill" ordered="false" lowerBound="1" eType="#//Bill"/>
     </eOperations>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RoomBooking">
-    <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
-      <details key="originalName" value="Room Booking"/>
-    </eAnnotations>
-    <eOperations name="cancel" ordered="false" lowerBound="1"/>
-    <eOperations name="close" ordered="false" lowerBound="1"/>
-    <eOperations name="generatePDF" ordered="false" lowerBound="1"/>
-    <eOperations name="checkIn" ordered="false" lowerBound="1">
-      <eParameters name="guest" ordered="false" lowerBound="1" eType="#//Guest"/>
-    </eOperations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="startDate" ordered="false"
-        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="endDate" ordered="false"
-        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="room" ordered="false" upperBound="-1"
-        eType="#//Room"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="roomType" ordered="false"
-        upperBound="-1" eType="#//RoomType"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="numberOfGuests" ordered="false"
-        lowerBound="1" eType="ecore:EDataType ../org.eclipse.uml2.types/model/Types.ecore#//Integer"
-        changeable="false"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Item" eSuperTypes="#//Cost">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" lowerBound="1"
@@ -273,5 +268,17 @@
   <eClassifiers xsi:type="ecore:EClass" name="FloorMap">
     <eStructuralFeatures xsi:type="ecore:EReference" name="room" ordered="false" upperBound="-1"
         eType="#//Room"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Payment">
+    <eOperations name="merge" ordered="false" lowerBound="1">
+      <eParameters name="payment" ordered="false" upperBound="-1" eType="#//Payment"/>
+    </eOperations>
+    <eOperations name="split" ordered="false" upperBound="-1" eType="#//Payment"/>
+    <eOperations name="performPayment" ordered="false" lowerBound="1">
+      <eParameters name="info" ordered="false" lowerBound="1" eType="#//BillingInformation"/>
+    </eOperations>
+    <eOperations name="printReceipt" ordered="false" lowerBound="1"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bill" ordered="false" upperBound="-1"
+        eType="#//Bill"/>
   </eClassifiers>
 </ecore:EPackage>

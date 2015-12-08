@@ -2,6 +2,7 @@
  */
 package ClassDiagram.impl;
 
+import ClassDiagram.BillingInformation;
 import ClassDiagram.ClassDiagramPackage;
 import ClassDiagram.Guest;
 import ClassDiagram.Room;
@@ -264,6 +265,17 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public void checkOut(BillingInformation info) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -373,6 +385,9 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 				return null;
 			case ClassDiagramPackage.ROOM_BOOKING___CHECK_IN__GUEST:
 				checkIn((Guest)arguments.get(0));
+				return null;
+			case ClassDiagramPackage.ROOM_BOOKING___CHECK_OUT__BILLINGINFORMATION:
+				checkOut((BillingInformation)arguments.get(0));
 				return null;
 		}
 		return super.eInvoke(operationID, arguments);
