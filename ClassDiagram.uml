@@ -115,7 +115,7 @@
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ZNmDQJOIEeWai68V7lLhPw" value="*"/>
     </ownedEnd>
   </packagedElement>
-  <packagedElement xmi:type="uml:Enumeration" xmi:id="_6baTAJOIEeWai68V7lLhPw" name="Room Status">
+  <packagedElement xmi:type="uml:Enumeration" xmi:id="_6baTAJOIEeWai68V7lLhPw" name="RoomStatus">
     <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_q8h0AJbGEeWywcXnTB_lHw" name="Available"/>
     <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_sysEYJbGEeWywcXnTB_lHw" name="Booked"/>
     <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_uoRtAJbGEeWywcXnTB_lHw" name="Occupied"/>
