@@ -2,11 +2,20 @@
  */
 package ClassDiagram.impl;
 
+import ClassDiagram.ClassDiagramPackage;
 import ClassDiagram.Person;
 import ClassDiagram.Title;
 
-import java.util.ArrayList;
-import java.util.List;
+import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EClass;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,28 +30,28 @@ import java.util.List;
  *   <li>{@link ClassDiagram.impl.PersonImpl#getTitle <em>Title</em>}</li>
  * </ul>
  *
- * @generated NOT
+ * @generated
  */
-public class PersonImpl implements Person {
+public class PersonImpl extends MinimalEObjectImpl.Container implements Person {
 	/**
 	 * The cached value of the '{@link #getFirstNames() <em>First Names</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getFirstNames()
-	 * @generated NOT
+	 * @generated
 	 * @ordered
 	 */
-	protected List<String> firstNames;
+	protected EList<String> firstNames;
 
 	/**
 	 * The cached value of the '{@link #getFamilyNames() <em>Family Names</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getFamilyNames()
-	 * @generated NOT
+	 * @generated
 	 * @ordered
 	 */
-	protected List<String> familyNames;
+	protected EList<String> familyNames;
 
 	/**
 	 * The default value of the '{@link #getTitle() <em>Title</em>}' attribute.
@@ -52,7 +61,7 @@ public class PersonImpl implements Person {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Title TITLE_DEFAULT = Title.MR;
+	protected static final Title TITLE_EDEFAULT = Title.MR;
 
 	/**
 	 * The cached value of the '{@link #getTitle() <em>Title</em>}' attribute.
@@ -62,7 +71,7 @@ public class PersonImpl implements Person {
 	 * @generated
 	 * @ordered
 	 */
-	protected Title title = TITLE_DEFAULT;
+	protected Title title = TITLE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -73,54 +82,38 @@ public class PersonImpl implements Person {
 		super();
 	}
 
-	public void addFamilyName(String name) {
-		if (familyNames == null) {
-			familyNames = new ArrayList<>();
-		}
-		familyNames.add(name);
-	}
-	
-	public void addFirstName(String name) {
-		if (firstNames == null) {
-			firstNames = new ArrayList<>();
-		}
-		firstNames.add(name);
-	}
-	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
-	public List<String> getFirstNames() {
-		if (firstNames == null) {
-			firstNames = new ArrayList<>();
-		}
-		return new ArrayList<>(firstNames);
+	@Override
+	protected EClass eStaticClass() {
+		return ClassDiagramPackage.Literals.PERSON;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
-	public List<String> getFamilyNames() {
+	public EList<String> getFirstNames() {
+		if (firstNames == null) {
+			firstNames = new EDataTypeUniqueEList<String>(String.class, this, ClassDiagramPackage.PERSON__FIRST_NAMES);
+		}
+		return firstNames;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<String> getFamilyNames() {
 		if (familyNames == null) {
-			familyNames = new ArrayList<>();
+			familyNames = new EDataTypeUniqueEList<String>(String.class, this, ClassDiagramPackage.PERSON__FAMILY_NAMES);
 		}
-		return new ArrayList<>(familyNames);
-	}
-	
-	public void removeFirstName(final String name) {
-		if (firstNames != null) {
-			firstNames.remove(name);
-		}
-	}
-	
-	public void removeFamilyName(final String name) {
-		if (familyNames != null) {
-			familyNames.remove(name);
-		}
+		return familyNames;
 	}
 
 	/**
@@ -135,10 +128,79 @@ public class PersonImpl implements Person {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	public void setTitle(Title newTitle) {
-		title = newTitle == null ? TITLE_DEFAULT : newTitle;
+		Title oldTitle = title;
+		title = newTitle == null ? TITLE_EDEFAULT : newTitle;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ClassDiagramPackage.PERSON__TITLE, oldTitle, title));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+			case ClassDiagramPackage.PERSON__FIRST_NAMES:
+				return getFirstNames();
+			case ClassDiagramPackage.PERSON__FAMILY_NAMES:
+				return getFamilyNames();
+			case ClassDiagramPackage.PERSON__TITLE:
+				return getTitle();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+			case ClassDiagramPackage.PERSON__TITLE:
+				setTitle((Title)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+			case ClassDiagramPackage.PERSON__TITLE:
+				setTitle(TITLE_EDEFAULT);
+				return;
+		}
+		super.eUnset(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+			case ClassDiagramPackage.PERSON__FIRST_NAMES:
+				return firstNames != null && !firstNames.isEmpty();
+			case ClassDiagramPackage.PERSON__FAMILY_NAMES:
+				return familyNames != null && !familyNames.isEmpty();
+			case ClassDiagramPackage.PERSON__TITLE:
+				return title != TITLE_EDEFAULT;
+		}
+		return super.eIsSet(featureID);
 	}
 
 	/**
@@ -148,6 +210,8 @@ public class PersonImpl implements Person {
 	 */
 	@Override
 	public String toString() {
+		if (eIsProxy()) return super.toString();
+
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (firstNames: ");
 		result.append(firstNames);
@@ -159,4 +223,4 @@ public class PersonImpl implements Person {
 		return result.toString();
 	}
 
-}
+} //PersonImpl
