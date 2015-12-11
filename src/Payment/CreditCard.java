@@ -5,16 +5,16 @@ import ClassDiagram.PaymentStrategy;
 
 public class CreditCard implements BillingInformation {
 	private String cardno;
-	private String cvc;
+	private String cvv;
 	
-	public CreditCard(String cardno, String cvc){
+	public CreditCard(String cardno, String cvv){
 		this.cardno = cardno;
-		this.cvc = cvc;
+		this.cvv = cvv;
 	}
 
 	@Override
 	public boolean validate() {
-		return cardno.length() == 16 && cvc.length() == 3;
+		return cardno.length() == 16 && cvv.length() == 3;
 	}
 
 	@Override
