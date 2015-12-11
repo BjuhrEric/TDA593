@@ -20,7 +20,7 @@ package ClassDiagram;
  * </ul>
  *
  * @see ClassDiagram.ClassDiagramPackage#getRoomType()
- * @model annotation="http://www.eclipse.org/uml2/2.0.0/UML originalName='Room Type'"
+ * @model
  * @generated
  */
 public interface RoomType extends Cost {

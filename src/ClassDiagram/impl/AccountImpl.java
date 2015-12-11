@@ -186,28 +186,6 @@ public class AccountImpl extends MinimalEObjectImpl.Container implements Account
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void addPermission() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void clearPermissions() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public boolean hasPermission() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -220,28 +198,6 @@ public class AccountImpl extends MinimalEObjectImpl.Container implements Account
 	 * @generated
 	 */
 	public boolean hasPermissions() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void removePermission() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setPermissions() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -334,22 +290,10 @@ public class AccountImpl extends MinimalEObjectImpl.Container implements Account
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case ClassDiagramPackage.ACCOUNT___ADD_PERMISSION:
-				addPermission();
-				return null;
-			case ClassDiagramPackage.ACCOUNT___CLEAR_PERMISSIONS:
-				clearPermissions();
-				return null;
 			case ClassDiagramPackage.ACCOUNT___HAS_PERMISSION:
 				return hasPermission();
 			case ClassDiagramPackage.ACCOUNT___HAS_PERMISSIONS:
 				return hasPermissions();
-			case ClassDiagramPackage.ACCOUNT___REMOVE_PERMISSION:
-				removePermission();
-				return null;
-			case ClassDiagramPackage.ACCOUNT___SET_PERMISSIONS:
-				setPermissions();
-				return null;
 		}
 		return super.eInvoke(operationID, arguments);
 	}

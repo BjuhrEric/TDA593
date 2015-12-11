@@ -21,7 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see ClassDiagram.ClassDiagramPackage#getEventBooking()
- * @model annotation="http://www.eclipse.org/uml2/2.0.0/UML originalName='Event Booking'"
+ * @model
  * @generated
  */
 public interface EventBooking extends EObject {

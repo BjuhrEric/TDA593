@@ -105,22 +105,6 @@ public interface Account extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	void addPermission();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	void clearPermissions();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @model dataType="org.eclipse.uml2.types.Boolean" required="true" ordered="false"
 	 * @generated
 	 */
@@ -133,21 +117,5 @@ public interface Account extends EObject {
 	 * @generated
 	 */
 	boolean hasPermissions();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	void removePermission();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	void setPermissions();
 
 } // Account

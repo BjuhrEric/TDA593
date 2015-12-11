@@ -6,6 +6,7 @@ import ClassDiagram.AccountType;
 import ClassDiagram.ClassDiagramPackage;
 import ClassDiagram.Permission;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 
 import org.eclipse.emf.common.util.EList;
@@ -76,6 +77,61 @@ public class AccountTypeImpl extends MinimalEObjectImpl.Container implements Acc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public void addPermission(Permission p) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void removePermission(Permission p) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void hasPermission(boolean return_) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean hasPermissions() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void clearPermissions() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -129,6 +185,32 @@ public class AccountTypeImpl extends MinimalEObjectImpl.Container implements Acc
 				return permission != null && !permission.isEmpty();
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case ClassDiagramPackage.ACCOUNT_TYPE___ADD_PERMISSION__PERMISSION:
+				addPermission((Permission)arguments.get(0));
+				return null;
+			case ClassDiagramPackage.ACCOUNT_TYPE___REMOVE_PERMISSION__PERMISSION:
+				removePermission((Permission)arguments.get(0));
+				return null;
+			case ClassDiagramPackage.ACCOUNT_TYPE___HAS_PERMISSION__BOOLEAN:
+				hasPermission((Boolean)arguments.get(0));
+				return null;
+			case ClassDiagramPackage.ACCOUNT_TYPE___HAS_PERMISSIONS:
+				return hasPermissions();
+			case ClassDiagramPackage.ACCOUNT_TYPE___CLEAR_PERMISSIONS:
+				clearPermissions();
+				return null;
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

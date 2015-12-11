@@ -181,15 +181,22 @@
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute ClassDiagram.ecore#//Account/password"/>
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
           propertySortChoices="true" ecoreFeature="ecore:EReference ClassDiagram.ecore#//Account/accounttype"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ClassDiagram.ecore#//Account/addPermission"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ClassDiagram.ecore#//Account/clearPermissions"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ClassDiagram.ecore#//Account/hasPermission"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ClassDiagram.ecore#//Account/hasPermissions"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ClassDiagram.ecore#//Account/removePermission"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ClassDiagram.ecore#//Account/setPermissions"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="ClassDiagram.ecore#//AccountType">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute ClassDiagram.ecore#//AccountType/permission"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ClassDiagram.ecore#//AccountType/addPermission">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ClassDiagram.ecore#//AccountType/addPermission/p"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ClassDiagram.ecore#//AccountType/removePermission">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ClassDiagram.ecore#//AccountType/removePermission/p"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ClassDiagram.ecore#//AccountType/hasPermission">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ClassDiagram.ecore#//AccountType/hasPermission/return"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ClassDiagram.ecore#//AccountType/hasPermissions"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ClassDiagram.ecore#//AccountType/clearPermissions"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="ClassDiagram.ecore#//Organization"/>
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="ClassDiagram.ecore#//Customer">

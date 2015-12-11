@@ -291,8 +291,6 @@
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
     </ownedAttribute>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_HVF3oZqOEeWGP5Jq4ddH3g" name="account type" type="_a3hK4JqNEeWGP5Jq4ddH3g" aggregation="shared" association="_HVFQkJqOEeWGP5Jq4ddH3g"/>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_Fd2TYJbDEeWywcXnTB_lHw" name="addPermission"/>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_U4SBEJbDEeWywcXnTB_lHw" name="clearPermissions"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_jn7FUJbDEeWywcXnTB_lHw" name="hasPermission">
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_lxtKYJbFEeWywcXnTB_lHw" name="return" direction="return">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
@@ -303,8 +301,6 @@
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
       </ownedParameter>
     </ownedOperation>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_ISwD8JbDEeWywcXnTB_lHw" name="removePermission"/>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_SVMZQJbDEeWywcXnTB_lHw" name="setPermissions"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Association" xmi:id="_HVFQkJqOEeWGP5Jq4ddH3g" memberEnd="_HVF3oZqOEeWGP5Jq4ddH3g _HVGesJqOEeWGP5Jq4ddH3g">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_HVFQkZqOEeWGP5Jq4ddH3g" source="org.eclipse.papyrus">
@@ -456,6 +452,23 @@
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Cgh8cJqOEeWGP5Jq4ddH3g"/>
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_CgjxoJqOEeWGP5Jq4ddH3g" value="*"/>
     </ownedAttribute>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_Fd2TYJbDEeWywcXnTB_lHw" name="addPermission">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_kEEd8KAHEeWVP7497XArVA" name="p" type="_NSKngJOSEeWai68V7lLhPw"/>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_ISwD8JbDEeWywcXnTB_lHw" name="removePermission">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_n7vTEKAHEeWVP7497XArVA" name="p" type="_NSKngJOSEeWai68V7lLhPw"/>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_B2Hm4KAHEeWVP7497XArVA" name="hasPermission">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_a4NLUKAHEeWVP7497XArVA" name="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_H1a24KAHEeWVP7497XArVA" name="hasPermissions">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_RqwkUKAHEeWVP7497XArVA" name="return" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_JB5REKAHEeWVP7497XArVA" name="clearPermissions" visibility="public"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_I73BEJ3DEeWJ2YKRfJzR_A" name="Payment">
     <ownedAttribute xmi:type="uml:Property" xmi:id="_MqkugJ3DEeWJ2YKRfJzR_A" name="bill" type="_QLEo0JUHEeWictR9w7kxNQ" association="_MqiSQJ3DEeWJ2YKRfJzR_A">

@@ -19,7 +19,7 @@ import org.eclipse.emf.common.util.EList;
  * </ul>
  *
  * @see ClassDiagram.ClassDiagramPackage#getIndividualCustomer()
- * @model annotation="http://www.eclipse.org/uml2/2.0.0/UML originalName='Individual Customer'"
+ * @model
  * @generated
  */
 public interface IndividualCustomer extends Person, Customer {

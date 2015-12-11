@@ -1099,31 +1099,13 @@ public interface ClassDiagramPackage extends EPackage {
 	int ACCOUNT_FEATURE_COUNT = 3;
 
 	/**
-	 * The operation id for the '<em>Add Permission</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACCOUNT___ADD_PERMISSION = 0;
-
-	/**
-	 * The operation id for the '<em>Clear Permissions</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACCOUNT___CLEAR_PERMISSIONS = 1;
-
-	/**
 	 * The operation id for the '<em>Has Permission</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ACCOUNT___HAS_PERMISSION = 2;
+	int ACCOUNT___HAS_PERMISSION = 0;
 
 	/**
 	 * The operation id for the '<em>Has Permissions</em>' operation.
@@ -1132,25 +1114,7 @@ public interface ClassDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACCOUNT___HAS_PERMISSIONS = 3;
-
-	/**
-	 * The operation id for the '<em>Remove Permission</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACCOUNT___REMOVE_PERMISSION = 4;
-
-	/**
-	 * The operation id for the '<em>Set Permissions</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACCOUNT___SET_PERMISSIONS = 5;
+	int ACCOUNT___HAS_PERMISSIONS = 1;
 
 	/**
 	 * The number of operations of the '<em>Account</em>' class.
@@ -1159,7 +1123,7 @@ public interface ClassDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACCOUNT_OPERATION_COUNT = 6;
+	int ACCOUNT_OPERATION_COUNT = 2;
 
 	/**
 	 * The meta object id for the '{@link ClassDiagram.impl.AccountTypeImpl <em>Account Type</em>}' class.
@@ -1190,13 +1154,58 @@ public interface ClassDiagramPackage extends EPackage {
 	int ACCOUNT_TYPE_FEATURE_COUNT = 1;
 
 	/**
+	 * The operation id for the '<em>Add Permission</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACCOUNT_TYPE___ADD_PERMISSION__PERMISSION = 0;
+
+	/**
+	 * The operation id for the '<em>Remove Permission</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACCOUNT_TYPE___REMOVE_PERMISSION__PERMISSION = 1;
+
+	/**
+	 * The operation id for the '<em>Has Permission</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACCOUNT_TYPE___HAS_PERMISSION__BOOLEAN = 2;
+
+	/**
+	 * The operation id for the '<em>Has Permissions</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACCOUNT_TYPE___HAS_PERMISSIONS = 3;
+
+	/**
+	 * The operation id for the '<em>Clear Permissions</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACCOUNT_TYPE___CLEAR_PERMISSIONS = 4;
+
+	/**
 	 * The number of operations of the '<em>Account Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ACCOUNT_TYPE_OPERATION_COUNT = 0;
+	int ACCOUNT_TYPE_OPERATION_COUNT = 5;
 
 	/**
 	 * The meta object id for the '{@link ClassDiagram.Customer <em>Customer</em>}' class.
@@ -2527,26 +2536,6 @@ public interface ClassDiagramPackage extends EPackage {
 	EReference getAccount_Accounttype();
 
 	/**
-	 * Returns the meta object for the '{@link ClassDiagram.Account#addPermission() <em>Add Permission</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Add Permission</em>' operation.
-	 * @see ClassDiagram.Account#addPermission()
-	 * @generated
-	 */
-	EOperation getAccount__AddPermission();
-
-	/**
-	 * Returns the meta object for the '{@link ClassDiagram.Account#clearPermissions() <em>Clear Permissions</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Clear Permissions</em>' operation.
-	 * @see ClassDiagram.Account#clearPermissions()
-	 * @generated
-	 */
-	EOperation getAccount__ClearPermissions();
-
-	/**
 	 * Returns the meta object for the '{@link ClassDiagram.Account#hasPermission() <em>Has Permission</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2565,26 +2554,6 @@ public interface ClassDiagramPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getAccount__HasPermissions();
-
-	/**
-	 * Returns the meta object for the '{@link ClassDiagram.Account#removePermission() <em>Remove Permission</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Remove Permission</em>' operation.
-	 * @see ClassDiagram.Account#removePermission()
-	 * @generated
-	 */
-	EOperation getAccount__RemovePermission();
-
-	/**
-	 * Returns the meta object for the '{@link ClassDiagram.Account#setPermissions() <em>Set Permissions</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Set Permissions</em>' operation.
-	 * @see ClassDiagram.Account#setPermissions()
-	 * @generated
-	 */
-	EOperation getAccount__SetPermissions();
 
 	/**
 	 * Returns the meta object for class '{@link ClassDiagram.AccountType <em>Account Type</em>}'.
@@ -2606,6 +2575,56 @@ public interface ClassDiagramPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getAccountType_Permission();
+
+	/**
+	 * Returns the meta object for the '{@link ClassDiagram.AccountType#addPermission(ClassDiagram.Permission) <em>Add Permission</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Add Permission</em>' operation.
+	 * @see ClassDiagram.AccountType#addPermission(ClassDiagram.Permission)
+	 * @generated
+	 */
+	EOperation getAccountType__AddPermission__Permission();
+
+	/**
+	 * Returns the meta object for the '{@link ClassDiagram.AccountType#removePermission(ClassDiagram.Permission) <em>Remove Permission</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Remove Permission</em>' operation.
+	 * @see ClassDiagram.AccountType#removePermission(ClassDiagram.Permission)
+	 * @generated
+	 */
+	EOperation getAccountType__RemovePermission__Permission();
+
+	/**
+	 * Returns the meta object for the '{@link ClassDiagram.AccountType#hasPermission(boolean) <em>Has Permission</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Has Permission</em>' operation.
+	 * @see ClassDiagram.AccountType#hasPermission(boolean)
+	 * @generated
+	 */
+	EOperation getAccountType__HasPermission__boolean();
+
+	/**
+	 * Returns the meta object for the '{@link ClassDiagram.AccountType#hasPermissions() <em>Has Permissions</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Has Permissions</em>' operation.
+	 * @see ClassDiagram.AccountType#hasPermissions()
+	 * @generated
+	 */
+	EOperation getAccountType__HasPermissions();
+
+	/**
+	 * Returns the meta object for the '{@link ClassDiagram.AccountType#clearPermissions() <em>Clear Permissions</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Clear Permissions</em>' operation.
+	 * @see ClassDiagram.AccountType#clearPermissions()
+	 * @generated
+	 */
+	EOperation getAccountType__ClearPermissions();
 
 	/**
 	 * Returns the meta object for class '{@link ClassDiagram.Organization <em>Organization</em>}'.
@@ -3595,22 +3614,6 @@ public interface ClassDiagramPackage extends EPackage {
 		EReference ACCOUNT__ACCOUNTTYPE = eINSTANCE.getAccount_Accounttype();
 
 		/**
-		 * The meta object literal for the '<em><b>Add Permission</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ACCOUNT___ADD_PERMISSION = eINSTANCE.getAccount__AddPermission();
-
-		/**
-		 * The meta object literal for the '<em><b>Clear Permissions</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ACCOUNT___CLEAR_PERMISSIONS = eINSTANCE.getAccount__ClearPermissions();
-
-		/**
 		 * The meta object literal for the '<em><b>Has Permission</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3625,22 +3628,6 @@ public interface ClassDiagramPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation ACCOUNT___HAS_PERMISSIONS = eINSTANCE.getAccount__HasPermissions();
-
-		/**
-		 * The meta object literal for the '<em><b>Remove Permission</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ACCOUNT___REMOVE_PERMISSION = eINSTANCE.getAccount__RemovePermission();
-
-		/**
-		 * The meta object literal for the '<em><b>Set Permissions</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ACCOUNT___SET_PERMISSIONS = eINSTANCE.getAccount__SetPermissions();
 
 		/**
 		 * The meta object literal for the '{@link ClassDiagram.impl.AccountTypeImpl <em>Account Type</em>}' class.
@@ -3659,6 +3646,46 @@ public interface ClassDiagramPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ACCOUNT_TYPE__PERMISSION = eINSTANCE.getAccountType_Permission();
+
+		/**
+		 * The meta object literal for the '<em><b>Add Permission</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ACCOUNT_TYPE___ADD_PERMISSION__PERMISSION = eINSTANCE.getAccountType__AddPermission__Permission();
+
+		/**
+		 * The meta object literal for the '<em><b>Remove Permission</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ACCOUNT_TYPE___REMOVE_PERMISSION__PERMISSION = eINSTANCE.getAccountType__RemovePermission__Permission();
+
+		/**
+		 * The meta object literal for the '<em><b>Has Permission</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ACCOUNT_TYPE___HAS_PERMISSION__BOOLEAN = eINSTANCE.getAccountType__HasPermission__boolean();
+
+		/**
+		 * The meta object literal for the '<em><b>Has Permissions</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ACCOUNT_TYPE___HAS_PERMISSIONS = eINSTANCE.getAccountType__HasPermissions();
+
+		/**
+		 * The meta object literal for the '<em><b>Clear Permissions</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ACCOUNT_TYPE___CLEAR_PERMISSIONS = eINSTANCE.getAccountType__ClearPermissions();
 
 		/**
 		 * The meta object literal for the '{@link ClassDiagram.impl.OrganizationImpl <em>Organization</em>}' class.

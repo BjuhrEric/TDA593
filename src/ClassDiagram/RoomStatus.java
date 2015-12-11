@@ -13,7 +13,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * and utility methods for working with them.
  * <!-- end-user-doc -->
  * @see ClassDiagram.ClassDiagramPackage#getRoomStatus()
- * @model annotation="http://www.eclipse.org/uml2/2.0.0/UML originalName='Room Status'"
+ * @model
  * @generated
  */
 public enum RoomStatus implements Enumerator

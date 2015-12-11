@@ -50,18 +50,12 @@
     <eLiterals name="NotArrivedYet" value="3"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="RoomStatus">
-    <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
-      <details key="originalName" value="Room Status"/>
-    </eAnnotations>
     <eLiterals name="Available"/>
     <eLiterals name="Booked" value="1"/>
     <eLiterals name="Occupied" value="2"/>
     <eLiterals name="OutOfOrder" value="3"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="CleaningStatus">
-    <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
-      <details key="originalName" value="Cleaning Status"/>
-    </eAnnotations>
     <eLiterals name="Clean"/>
     <eLiterals name="Dirty" value="1"/>
     <eLiterals name="CheckedOut" value="2">
@@ -71,9 +65,6 @@
     </eLiterals>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RoomType" eSuperTypes="#//Cost">
-    <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
-      <details key="originalName" value="Room Type"/>
-    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" lowerBound="1"
         eType="ecore:EDataType ../org.eclipse.uml2.types/model/Types.ecore#//String"
         changeable="false"/>
@@ -108,9 +99,6 @@
         eType="#//Cost"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RoomBooking">
-    <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
-      <details key="originalName" value="Room Booking"/>
-    </eAnnotations>
     <eOperations name="cancel" ordered="false" lowerBound="1"/>
     <eOperations name="close" ordered="false" lowerBound="1"/>
     <eOperations name="generatePDF" ordered="false" lowerBound="1"/>
@@ -134,16 +122,10 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BillingInformation" abstract="true"
       interface="true">
-    <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
-      <details key="originalName" value="Billing Information"/>
-    </eAnnotations>
     <eOperations name="validate" ordered="false" lowerBound="1" eType="ecore:EDataType ../org.eclipse.uml2.types/model/Types.ecore#//Boolean"/>
     <eOperations name="getPaymentStrategy" ordered="false" lowerBound="1" eType="#//PaymentStrategy"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PaymentStrategy" abstract="true" interface="true">
-    <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
-      <details key="originalName" value="Payment Strategy"/>
-    </eAnnotations>
     <eOperations name="pay" ordered="false" lowerBound="1">
       <eParameters name="bill" ordered="false" lowerBound="1" eType="#//Bill"/>
     </eOperations>
@@ -190,9 +172,6 @@
         eType="#//Item"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EventBooking">
-    <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
-      <details key="originalName" value="Event Booking"/>
-    </eAnnotations>
     <eOperations name="cancel" ordered="false" lowerBound="1"/>
     <eOperations name="close" ordered="false" lowerBound="1"/>
     <eOperations name="generatePDF" ordered="false" lowerBound="1"/>
@@ -204,12 +183,8 @@
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Account">
-    <eOperations name="addPermission" ordered="false" lowerBound="1"/>
-    <eOperations name="clearPermissions" ordered="false" lowerBound="1"/>
     <eOperations name="hasPermission" ordered="false" lowerBound="1" eType="ecore:EDataType ../org.eclipse.uml2.types/model/Types.ecore#//Boolean"/>
     <eOperations name="hasPermissions" ordered="false" lowerBound="1" eType="ecore:EDataType ../org.eclipse.uml2.types/model/Types.ecore#//Boolean"/>
-    <eOperations name="removePermission" ordered="false" lowerBound="1"/>
-    <eOperations name="setPermissions" ordered="false" lowerBound="1"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="username" ordered="false"
         lowerBound="1" eType="ecore:EDataType ../org.eclipse.uml2.types/model/Types.ecore#//String"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="password" ordered="false"
@@ -222,9 +197,17 @@
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AccountType">
-    <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
-      <details key="originalName" value="Account Type"/>
-    </eAnnotations>
+    <eOperations name="addPermission" ordered="false" lowerBound="1">
+      <eParameters name="p" ordered="false" lowerBound="1" eType="#//Permission"/>
+    </eOperations>
+    <eOperations name="removePermission" ordered="false" lowerBound="1">
+      <eParameters name="p" ordered="false" lowerBound="1" eType="#//Permission"/>
+    </eOperations>
+    <eOperations name="hasPermission" ordered="false" lowerBound="1">
+      <eParameters name="return" ordered="false" lowerBound="1" eType="ecore:EDataType ../org.eclipse.uml2.types/model/Types.ecore#//Boolean"/>
+    </eOperations>
+    <eOperations name="hasPermissions" ordered="false" lowerBound="1" eType="ecore:EDataType ../org.eclipse.uml2.types/model/Types.ecore#//Boolean"/>
+    <eOperations name="clearPermissions" ordered="false" lowerBound="1"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="permission" ordered="false"
         upperBound="-1" eType="#//Permission"/>
   </eClassifiers>
@@ -242,9 +225,6 @@
     </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IndividualCustomer" eSuperTypes="#//Person #//Customer">
-    <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
-      <details key="originalName" value="Individual Customer"/>
-    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="billingInformation" ordered="false"
         upperBound="-1" eType="#//BillingInformation"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="roomBookings" ordered="false"

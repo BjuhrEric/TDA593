@@ -991,7 +991,7 @@ public class ClassDiagramPackageImpl extends EPackageImpl implements ClassDiagra
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getAccount__AddPermission() {
+	public EOperation getAccount__HasPermission() {
 		return accountEClass.getEOperations().get(0);
 	}
 
@@ -1000,44 +1000,8 @@ public class ClassDiagramPackageImpl extends EPackageImpl implements ClassDiagra
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getAccount__ClearPermissions() {
-		return accountEClass.getEOperations().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getAccount__HasPermission() {
-		return accountEClass.getEOperations().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EOperation getAccount__HasPermissions() {
-		return accountEClass.getEOperations().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getAccount__RemovePermission() {
-		return accountEClass.getEOperations().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getAccount__SetPermissions() {
-		return accountEClass.getEOperations().get(5);
+		return accountEClass.getEOperations().get(1);
 	}
 
 	/**
@@ -1056,6 +1020,51 @@ public class ClassDiagramPackageImpl extends EPackageImpl implements ClassDiagra
 	 */
 	public EAttribute getAccountType_Permission() {
 		return (EAttribute)accountTypeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getAccountType__AddPermission__Permission() {
+		return accountTypeEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getAccountType__RemovePermission__Permission() {
+		return accountTypeEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getAccountType__HasPermission__boolean() {
+		return accountTypeEClass.getEOperations().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getAccountType__HasPermissions() {
+		return accountTypeEClass.getEOperations().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getAccountType__ClearPermissions() {
+		return accountTypeEClass.getEOperations().get(4);
 	}
 
 	/**
@@ -1464,15 +1473,16 @@ public class ClassDiagramPackageImpl extends EPackageImpl implements ClassDiagra
 		createEAttribute(accountEClass, ACCOUNT__USERNAME);
 		createEAttribute(accountEClass, ACCOUNT__PASSWORD);
 		createEReference(accountEClass, ACCOUNT__ACCOUNTTYPE);
-		createEOperation(accountEClass, ACCOUNT___ADD_PERMISSION);
-		createEOperation(accountEClass, ACCOUNT___CLEAR_PERMISSIONS);
 		createEOperation(accountEClass, ACCOUNT___HAS_PERMISSION);
 		createEOperation(accountEClass, ACCOUNT___HAS_PERMISSIONS);
-		createEOperation(accountEClass, ACCOUNT___REMOVE_PERMISSION);
-		createEOperation(accountEClass, ACCOUNT___SET_PERMISSIONS);
 
 		accountTypeEClass = createEClass(ACCOUNT_TYPE);
 		createEAttribute(accountTypeEClass, ACCOUNT_TYPE__PERMISSION);
+		createEOperation(accountTypeEClass, ACCOUNT_TYPE___ADD_PERMISSION__PERMISSION);
+		createEOperation(accountTypeEClass, ACCOUNT_TYPE___REMOVE_PERMISSION__PERMISSION);
+		createEOperation(accountTypeEClass, ACCOUNT_TYPE___HAS_PERMISSION__BOOLEAN);
+		createEOperation(accountTypeEClass, ACCOUNT_TYPE___HAS_PERMISSIONS);
+		createEOperation(accountTypeEClass, ACCOUNT_TYPE___CLEAR_PERMISSIONS);
 
 		organizationEClass = createEClass(ORGANIZATION);
 
@@ -1670,20 +1680,25 @@ public class ClassDiagramPackageImpl extends EPackageImpl implements ClassDiagra
 		initEAttribute(getAccount_Password(), theTypesPackage.getString(), "password", null, 1, 1, Account.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getAccount_Accounttype(), this.getAccountType(), null, "accounttype", null, 1, 1, Account.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		initEOperation(getAccount__AddPermission(), null, "addPermission", 1, 1, IS_UNIQUE, !IS_ORDERED);
-
-		initEOperation(getAccount__ClearPermissions(), null, "clearPermissions", 1, 1, IS_UNIQUE, !IS_ORDERED);
-
 		initEOperation(getAccount__HasPermission(), theTypesPackage.getBoolean(), "hasPermission", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEOperation(getAccount__HasPermissions(), theTypesPackage.getBoolean(), "hasPermissions", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		initEOperation(getAccount__RemovePermission(), null, "removePermission", 1, 1, IS_UNIQUE, !IS_ORDERED);
-
-		initEOperation(getAccount__SetPermissions(), null, "setPermissions", 1, 1, IS_UNIQUE, !IS_ORDERED);
-
 		initEClass(accountTypeEClass, AccountType.class, "AccountType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAccountType_Permission(), this.getPermission(), "permission", null, 0, -1, AccountType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		op = initEOperation(getAccountType__AddPermission__Permission(), null, "addPermission", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getPermission(), "p", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getAccountType__RemovePermission__Permission(), null, "removePermission", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getPermission(), "p", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getAccountType__HasPermission__boolean(), null, "hasPermission", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theTypesPackage.getBoolean(), "return_", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		initEOperation(getAccountType__HasPermissions(), theTypesPackage.getBoolean(), "hasPermissions", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		initEOperation(getAccountType__ClearPermissions(), null, "clearPermissions", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(organizationEClass, Organization.class, "Organization", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1788,70 +1803,16 @@ public class ClassDiagramPackageImpl extends EPackageImpl implements ClassDiagra
 			 "originalName", "Guest Status"
 		   });	
 		addAnnotation
-		  (roomStatusEEnum, 
-		   source, 
-		   new String[] {
-			 "originalName", "Room Status"
-		   });	
-		addAnnotation
-		  (cleaningStatusEEnum, 
-		   source, 
-		   new String[] {
-			 "originalName", "Cleaning Status"
-		   });	
-		addAnnotation
 		  (cleaningStatusEEnum.getELiterals().get(2), 
 		   source, 
 		   new String[] {
 			 "originalName", "Checked Out"
 		   });	
 		addAnnotation
-		  (roomTypeEClass, 
-		   source, 
-		   new String[] {
-			 "originalName", "Room Type"
-		   });	
-		addAnnotation
-		  (roomBookingEClass, 
-		   source, 
-		   new String[] {
-			 "originalName", "Room Booking"
-		   });	
-		addAnnotation
-		  (billingInformationEClass, 
-		   source, 
-		   new String[] {
-			 "originalName", "Billing Information"
-		   });	
-		addAnnotation
-		  (paymentStrategyEClass, 
-		   source, 
-		   new String[] {
-			 "originalName", "Payment Strategy"
-		   });	
-		addAnnotation
-		  (eventBookingEClass, 
-		   source, 
-		   new String[] {
-			 "originalName", "Event Booking"
-		   });	
-		addAnnotation
 		  (getAccount_Accounttype(), 
 		   source, 
 		   new String[] {
 			 "originalName", "account type"
-		   });	
-		addAnnotation
-		  (accountTypeEClass, 
-		   source, 
-		   new String[] {
-			 "originalName", "Account Type"
-		   });	
-		addAnnotation
-		  (individualCustomerEClass, 
-		   source, 
-		   new String[] {
-			 "originalName", "Individual Customer"
 		   });
 	}
 	

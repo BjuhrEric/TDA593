@@ -126,7 +126,9 @@ public class IndividualCustomerImpl extends PersonImpl implements IndividualCust
 	 * @generated
 	 */
 	public void addRoomBooking(RoomBooking roomBooking) {
-		roomBookings.add(roomBooking);
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -135,7 +137,9 @@ public class IndividualCustomerImpl extends PersonImpl implements IndividualCust
 	 * @generated
 	 */
 	public void addEventBooking(EventBooking eventBooking) {
-		eventBookings.add(eventBooking);
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**

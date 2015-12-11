@@ -13,7 +13,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * and utility methods for working with them.
  * <!-- end-user-doc -->
  * @see ClassDiagram.ClassDiagramPackage#getCleaningStatus()
- * @model annotation="http://www.eclipse.org/uml2/2.0.0/UML originalName='Cleaning Status'"
+ * @model
  * @generated
  */
 public enum CleaningStatus implements Enumerator

@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see ClassDiagram.ClassDiagramPackage#getAccountType()
- * @model annotation="http://www.eclipse.org/uml2/2.0.0/UML originalName='Account Type'"
+ * @model
  * @generated
  */
 public interface AccountType extends EObject {
@@ -40,5 +40,45 @@ public interface AccountType extends EObject {
 	 * @generated
 	 */
 	EList<Permission> getPermission();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model pRequired="true" pOrdered="false"
+	 * @generated
+	 */
+	void addPermission(Permission p);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model pRequired="true" pOrdered="false"
+	 * @generated
+	 */
+	void removePermission(Permission p);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model returnDataType="org.eclipse.uml2.types.Boolean" returnRequired="true" returnOrdered="false"
+	 * @generated
+	 */
+	void hasPermission(boolean return_);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model dataType="org.eclipse.uml2.types.Boolean" required="true" ordered="false"
+	 * @generated
+	 */
+	boolean hasPermissions();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	void clearPermissions();
 
 } // AccountType
