@@ -1,14 +1,13 @@
 package DatabaseInterfaces;
 
+import java.util.List;
+import java.util.UUID;
+
 import ClassDiagram.Customer;
 
-	public interface Customers {
-	//add a customer to the Customer table
-	public void addCustomer(Customer customer);
-	//remove customer from the Customer table
-	public void deleteCustomer(Customer customer);
-	//Display customer
-	public void dispCustomer(Customer customer);
-	//List all customers
-	public void listCustomers();
+public interface Customers {
+	boolean addCustomer(Customer customer);
+	boolean deleteCustomer(UUID id);
+	Customer getCustomer(UUID id);
+	List<Customer> getCustomers();
 }
