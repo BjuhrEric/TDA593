@@ -6,7 +6,7 @@
   <packagedElement xmi:type="uml:Package" href="ComponentDiagram.uml#_wQVcoJUpEeW_s7g45KehCA"/>
   <packagedElement xmi:type="uml:Package" href="BookingSequenceDiagram.uml#_-SeE4JaNEeWZYqa-HFjkTQ"/>
   <packagedElement xmi:type="uml:Package" xmi:id="_fg2JYKASEeWyRqBnIRQHZw" name="MakingExtraPurchaseSequenceDiagram">
-    <packagedElement xmi:type="uml:Interaction" xmi:id="_5e18cKASEeWyRqBnIRQHZw" name="Interaction1">
+    <packagedElement xmi:type="uml:Interaction" xmi:id="_5e18cKASEeWyRqBnIRQHZw" name="Making an extra purchase">
       <ownedAttribute xmi:type="uml:Property" xmi:id="_A8W24KATEeWyRqBnIRQHZw" name="">
         <type xmi:type="uml:Component" href="ComponentDiagram.uml#_yzTIoJUpEeW_s7g45KehCA"/>
       </ownedAttribute>
