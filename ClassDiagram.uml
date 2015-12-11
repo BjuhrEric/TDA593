@@ -30,16 +30,16 @@
     <ownedAttribute xmi:type="uml:Property" xmi:id="_mTbtkJOHEeWai68V7lLhPw" name="endDate">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
     </ownedAttribute>
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_9reLAJOHEeWai68V7lLhPw" name="room" type="_dGX6YJOCEeWai68V7lLhPw" aggregation="shared" association="_9rc84JOHEeWai68V7lLhPw">
-      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_bX6lwJOIEeWai68V7lLhPw"/>
-      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_bX7z4JOIEeWai68V7lLhPw" value="*"/>
-    </ownedAttribute>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_2S-MEZOKEeWai68V7lLhPw" name="roomType" type="_kdDI0JOJEeWai68V7lLhPw" aggregation="shared" association="_2S8W4JOKEeWai68V7lLhPw">
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4fOoQJOKEeWai68V7lLhPw"/>
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4fQdcJOKEeWai68V7lLhPw" value="*"/>
     </ownedAttribute>
     <ownedAttribute xmi:type="uml:Property" xmi:id="__EaNEJ29EeWJ2YKRfJzR_A" name="numberOfGuests" isReadOnly="true">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_9reLAJOHEeWai68V7lLhPw" name="room" type="_dGX6YJOCEeWai68V7lLhPw" aggregation="shared" association="_9rc84JOHEeWai68V7lLhPw">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_bX6lwJOIEeWai68V7lLhPw"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_bX7z4JOIEeWai68V7lLhPw" value="*"/>
     </ownedAttribute>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_9a1F8JOSEeWai68V7lLhPw" name="cancel"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_I9YjIJOTEeWai68V7lLhPw" name="close"/>
@@ -49,6 +49,18 @@
     </ownedOperation>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_mqBdoJ3EEeWJ2YKRfJzR_A" name="checkOut">
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_sz0GYJ3EEeWJ2YKRfJzR_A" name="info" type="_n4U5sJOFEeWai68V7lLhPw"/>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_HmYN8KAKEeWVP7497XArVA" name="addRoom">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_QtaOcKALEeWVP7497XArVA" name="room" type="_dGX6YJOCEeWai68V7lLhPw"/>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_JzjQIKAKEeWVP7497XArVA" name="removeRoom">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_Tj1B8KALEeWVP7497XArVA" name="room" type="_dGX6YJOCEeWai68V7lLhPw"/>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_07PvEKAKEeWVP7497XArVA" name="addRoomType">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_WHgfoKALEeWVP7497XArVA" name="roomType" type="_kdDI0JOJEeWai68V7lLhPw"/>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_2nOvwKAKEeWVP7497XArVA" name="removeRoomType">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_e0p18KALEeWVP7497XArVA" name="roomType" type="_kdDI0JOJEeWai68V7lLhPw"/>
     </ownedOperation>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_oHzLAJODEeWai68V7lLhPw" name="Person">
@@ -295,10 +307,15 @@
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_lxtKYJbFEeWywcXnTB_lHw" name="return" direction="return">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
       </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_Ni7hYKAJEeWVP7497XArVA" name="p" type="_NSKngJOSEeWai68V7lLhPw"/>
     </ownedOperation>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_HznQ4JbDEeWywcXnTB_lHw" name="hasPermissions">
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_gOCGcJbFEeWywcXnTB_lHw" name="return" direction="return">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_I0e1QKAJEeWVP7497XArVA" name="p" type="_NSKngJOSEeWai68V7lLhPw">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_QlRRAKAJEeWVP7497XArVA"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_QlRRAaAJEeWVP7497XArVA" value="*"/>
       </ownedParameter>
     </ownedOperation>
   </packagedElement>
@@ -448,7 +465,7 @@
     </ownedEnd>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_a3hK4JqNEeWGP5Jq4ddH3g" name="AccountType">
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_569005qNEeWGP5Jq4ddH3g" name="permission" type="_NSKngJOSEeWai68V7lLhPw" aggregation="shared" association="_56900JqNEeWGP5Jq4ddH3g">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_569005qNEeWGP5Jq4ddH3g" name="permissions" type="_NSKngJOSEeWai68V7lLhPw" aggregation="shared" association="_56900JqNEeWGP5Jq4ddH3g">
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Cgh8cJqOEeWGP5Jq4ddH3g"/>
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_CgjxoJqOEeWGP5Jq4ddH3g" value="*"/>
     </ownedAttribute>
@@ -458,14 +475,19 @@
     <ownedOperation xmi:type="uml:Operation" xmi:id="_ISwD8JbDEeWywcXnTB_lHw" name="removePermission">
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_n7vTEKAHEeWVP7497XArVA" name="p" type="_NSKngJOSEeWai68V7lLhPw"/>
     </ownedOperation>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_B2Hm4KAHEeWVP7497XArVA" name="hasPermission">
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_B2Hm4KAHEeWVP7497XArVA" name="hasPermission" visibility="public">
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_a4NLUKAHEeWVP7497XArVA" name="return" direction="return">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
       </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_VJAh8KAJEeWVP7497XArVA" name="p" type="_NSKngJOSEeWai68V7lLhPw"/>
     </ownedOperation>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_H1a24KAHEeWVP7497XArVA" name="hasPermissions">
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_RqwkUKAHEeWVP7497XArVA" name="return" direction="return">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_ZU898KAJEeWVP7497XArVA" name="p" type="_NSKngJOSEeWai68V7lLhPw">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_aK9_8KAJEeWVP7497XArVA"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_aK9_8aAJEeWVP7497XArVA" value="*"/>
       </ownedParameter>
     </ownedOperation>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_JB5REKAHEeWVP7497XArVA" name="clearPermissions" visibility="public"/>

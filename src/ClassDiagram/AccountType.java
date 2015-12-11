@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link ClassDiagram.AccountType#getPermission <em>Permission</em>}</li>
+ *   <li>{@link ClassDiagram.AccountType#getPermissions <em>Permissions</em>}</li>
  * </ul>
  *
  * @see ClassDiagram.ClassDiagramPackage#getAccountType()
@@ -24,22 +24,22 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface AccountType extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Permission</b></em>' attribute list.
+	 * Returns the value of the '<em><b>Permissions</b></em>' attribute list.
 	 * The list contents are of type {@link ClassDiagram.Permission}.
 	 * The literals are from the enumeration {@link ClassDiagram.Permission}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Permission</em>' attribute list isn't clear,
+	 * If the meaning of the '<em>Permissions</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Permission</em>' attribute list.
+	 * @return the value of the '<em>Permissions</em>' attribute list.
 	 * @see ClassDiagram.Permission
-	 * @see ClassDiagram.ClassDiagramPackage#getAccountType_Permission()
+	 * @see ClassDiagram.ClassDiagramPackage#getAccountType_Permissions()
 	 * @model ordered="false"
 	 * @generated
 	 */
-	EList<Permission> getPermission();
+	EList<Permission> getPermissions();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -60,18 +60,18 @@ public interface AccountType extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model dataType="org.eclipse.uml2.types.Boolean" required="true" ordered="false"
+	 * @model dataType="org.eclipse.uml2.types.Boolean" required="true" ordered="false" pRequired="true" pOrdered="false"
 	 * @generated
 	 */
-	boolean hasPermission();
+	boolean hasPermission(Permission p);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model dataType="org.eclipse.uml2.types.Boolean" required="true" ordered="false"
+	 * @model dataType="org.eclipse.uml2.types.Boolean" required="true" ordered="false" pMany="true" pOrdered="false"
 	 * @generated
 	 */
-	boolean hasPermissions();
+	boolean hasPermissions(EList<Permission> p);
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -25,22 +25,21 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link ClassDiagram.impl.AccountTypeImpl#getPermission <em>Permission</em>}</li>
+ *   <li>{@link ClassDiagram.impl.AccountTypeImpl#getPermissions <em>Permissions</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class AccountTypeImpl extends MinimalEObjectImpl.Container implements AccountType {
 	/**
-	 * The cached value of the '{@link #getPermission() <em>Permission</em>}' attribute list.
+	 * The cached value of the '{@link #getPermissions() <em>Permissions</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPermission()
+	 * @see #getPermissions()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Permission> permission;
-
+	protected EList<Permission> permissions;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -65,11 +64,11 @@ public class AccountTypeImpl extends MinimalEObjectImpl.Container implements Acc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Permission> getPermission() {
-		if (permission == null) {
-			permission = new EDataTypeUniqueEList<Permission>(Permission.class, this, ClassDiagramPackage.ACCOUNT_TYPE__PERMISSION);
+	public EList<Permission> getPermissions() {
+		if (permissions == null) {
+			permissions = new EDataTypeUniqueEList<Permission>(Permission.class, this, ClassDiagramPackage.ACCOUNT_TYPE__PERMISSIONS);
 		}
-		return permission;
+		return permissions;
 	}
 
 	/**
@@ -78,9 +77,7 @@ public class AccountTypeImpl extends MinimalEObjectImpl.Container implements Acc
 	 * @generated
 	 */
 	public void addPermission(Permission p) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		permissions.add(p);
 	}
 
 	/**
@@ -89,9 +86,7 @@ public class AccountTypeImpl extends MinimalEObjectImpl.Container implements Acc
 	 * @generated
 	 */
 	public void removePermission(Permission p) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		permissions.remove(p);
 	}
 
 	/**
@@ -99,10 +94,8 @@ public class AccountTypeImpl extends MinimalEObjectImpl.Container implements Acc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean hasPermission() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public boolean hasPermission(Permission p) {
+		return permissions.contains(p);
 	}
 
 	/**
@@ -110,10 +103,13 @@ public class AccountTypeImpl extends MinimalEObjectImpl.Container implements Acc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean hasPermissions() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public boolean hasPermissions(EList<Permission> p) {
+		boolean all = true;
+		for (Permission per : p) {
+			all &= permissions.contains(per);
+		}
+		
+		return all;
 	}
 
 	/**
@@ -122,9 +118,7 @@ public class AccountTypeImpl extends MinimalEObjectImpl.Container implements Acc
 	 * @generated
 	 */
 	public void clearPermissions() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		permissions.clear();
 	}
 
 	/**
@@ -135,8 +129,8 @@ public class AccountTypeImpl extends MinimalEObjectImpl.Container implements Acc
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ClassDiagramPackage.ACCOUNT_TYPE__PERMISSION:
-				return getPermission();
+			case ClassDiagramPackage.ACCOUNT_TYPE__PERMISSIONS:
+				return getPermissions();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -150,9 +144,9 @@ public class AccountTypeImpl extends MinimalEObjectImpl.Container implements Acc
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ClassDiagramPackage.ACCOUNT_TYPE__PERMISSION:
-				getPermission().clear();
-				getPermission().addAll((Collection<? extends Permission>)newValue);
+			case ClassDiagramPackage.ACCOUNT_TYPE__PERMISSIONS:
+				getPermissions().clear();
+				getPermissions().addAll((Collection<? extends Permission>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -166,8 +160,8 @@ public class AccountTypeImpl extends MinimalEObjectImpl.Container implements Acc
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ClassDiagramPackage.ACCOUNT_TYPE__PERMISSION:
-				getPermission().clear();
+			case ClassDiagramPackage.ACCOUNT_TYPE__PERMISSIONS:
+				getPermissions().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -181,8 +175,8 @@ public class AccountTypeImpl extends MinimalEObjectImpl.Container implements Acc
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ClassDiagramPackage.ACCOUNT_TYPE__PERMISSION:
-				return permission != null && !permission.isEmpty();
+			case ClassDiagramPackage.ACCOUNT_TYPE__PERMISSIONS:
+				return permissions != null && !permissions.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -193,6 +187,7 @@ public class AccountTypeImpl extends MinimalEObjectImpl.Container implements Acc
 	 * @generated
 	 */
 	@Override
+	@SuppressWarnings("unchecked")
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
 			case ClassDiagramPackage.ACCOUNT_TYPE___ADD_PERMISSION__PERMISSION:
@@ -201,10 +196,10 @@ public class AccountTypeImpl extends MinimalEObjectImpl.Container implements Acc
 			case ClassDiagramPackage.ACCOUNT_TYPE___REMOVE_PERMISSION__PERMISSION:
 				removePermission((Permission)arguments.get(0));
 				return null;
-			case ClassDiagramPackage.ACCOUNT_TYPE___HAS_PERMISSION:
-				return hasPermission();
-			case ClassDiagramPackage.ACCOUNT_TYPE___HAS_PERMISSIONS:
-				return hasPermissions();
+			case ClassDiagramPackage.ACCOUNT_TYPE___HAS_PERMISSION__PERMISSION:
+				return hasPermission((Permission)arguments.get(0));
+			case ClassDiagramPackage.ACCOUNT_TYPE___HAS_PERMISSIONS__ELIST:
+				return hasPermissions((EList<Permission>)arguments.get(0));
 			case ClassDiagramPackage.ACCOUNT_TYPE___CLEAR_PERMISSIONS:
 				clearPermissions();
 				return null;
@@ -222,8 +217,8 @@ public class AccountTypeImpl extends MinimalEObjectImpl.Container implements Acc
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (permission: ");
-		result.append(permission);
+		result.append(" (permissions: ");
+		result.append(permissions);
 		result.append(')');
 		return result.toString();
 	}

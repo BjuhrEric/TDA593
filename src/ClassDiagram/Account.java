@@ -2,6 +2,7 @@
  */
 package ClassDiagram;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -105,17 +106,17 @@ public interface Account extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model dataType="org.eclipse.uml2.types.Boolean" required="true" ordered="false"
+	 * @model dataType="org.eclipse.uml2.types.Boolean" required="true" ordered="false" pRequired="true" pOrdered="false"
 	 * @generated
 	 */
-	boolean hasPermission();
+	boolean hasPermission(Permission p);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model dataType="org.eclipse.uml2.types.Boolean" required="true" ordered="false"
+	 * @model dataType="org.eclipse.uml2.types.Boolean" required="true" ordered="false" pMany="true" pOrdered="false"
 	 * @generated
 	 */
-	boolean hasPermissions();
+	boolean hasPermissions(EList<Permission> p);
 
 } // Account

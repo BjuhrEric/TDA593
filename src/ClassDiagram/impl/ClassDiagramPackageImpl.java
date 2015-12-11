@@ -641,7 +641,7 @@ public class ClassDiagramPackageImpl extends EPackageImpl implements ClassDiagra
 	 * @generated
 	 */
 	public EReference getRoomBooking_Room() {
-		return (EReference)roomBookingEClass.getEStructuralFeatures().get(2);
+		return (EReference)roomBookingEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -650,7 +650,7 @@ public class ClassDiagramPackageImpl extends EPackageImpl implements ClassDiagra
 	 * @generated
 	 */
 	public EReference getRoomBooking_RoomType() {
-		return (EReference)roomBookingEClass.getEStructuralFeatures().get(3);
+		return (EReference)roomBookingEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -659,7 +659,7 @@ public class ClassDiagramPackageImpl extends EPackageImpl implements ClassDiagra
 	 * @generated
 	 */
 	public EAttribute getRoomBooking_NumberOfGuests() {
-		return (EAttribute)roomBookingEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)roomBookingEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -705,6 +705,42 @@ public class ClassDiagramPackageImpl extends EPackageImpl implements ClassDiagra
 	 */
 	public EOperation getRoomBooking__CheckOut__BillingInformation() {
 		return roomBookingEClass.getEOperations().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getRoomBooking__AddRoom__Room() {
+		return roomBookingEClass.getEOperations().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getRoomBooking__RemoveRoom__Room() {
+		return roomBookingEClass.getEOperations().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getRoomBooking__AddRoomType__RoomType() {
+		return roomBookingEClass.getEOperations().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getRoomBooking__RemoveRoomType__RoomType() {
+		return roomBookingEClass.getEOperations().get(8);
 	}
 
 	/**
@@ -991,7 +1027,7 @@ public class ClassDiagramPackageImpl extends EPackageImpl implements ClassDiagra
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getAccount__HasPermission() {
+	public EOperation getAccount__HasPermission__Permission() {
 		return accountEClass.getEOperations().get(0);
 	}
 
@@ -1000,7 +1036,7 @@ public class ClassDiagramPackageImpl extends EPackageImpl implements ClassDiagra
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getAccount__HasPermissions() {
+	public EOperation getAccount__HasPermissions__EList() {
 		return accountEClass.getEOperations().get(1);
 	}
 
@@ -1018,7 +1054,7 @@ public class ClassDiagramPackageImpl extends EPackageImpl implements ClassDiagra
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getAccountType_Permission() {
+	public EAttribute getAccountType_Permissions() {
 		return (EAttribute)accountTypeEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -1045,7 +1081,7 @@ public class ClassDiagramPackageImpl extends EPackageImpl implements ClassDiagra
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getAccountType__HasPermission() {
+	public EOperation getAccountType__HasPermission__Permission() {
 		return accountTypeEClass.getEOperations().get(2);
 	}
 
@@ -1054,7 +1090,7 @@ public class ClassDiagramPackageImpl extends EPackageImpl implements ClassDiagra
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getAccountType__HasPermissions() {
+	public EOperation getAccountType__HasPermissions__EList() {
 		return accountTypeEClass.getEOperations().get(3);
 	}
 
@@ -1421,14 +1457,18 @@ public class ClassDiagramPackageImpl extends EPackageImpl implements ClassDiagra
 		roomBookingEClass = createEClass(ROOM_BOOKING);
 		createEAttribute(roomBookingEClass, ROOM_BOOKING__START_DATE);
 		createEAttribute(roomBookingEClass, ROOM_BOOKING__END_DATE);
-		createEReference(roomBookingEClass, ROOM_BOOKING__ROOM);
 		createEReference(roomBookingEClass, ROOM_BOOKING__ROOM_TYPE);
 		createEAttribute(roomBookingEClass, ROOM_BOOKING__NUMBER_OF_GUESTS);
+		createEReference(roomBookingEClass, ROOM_BOOKING__ROOM);
 		createEOperation(roomBookingEClass, ROOM_BOOKING___CANCEL);
 		createEOperation(roomBookingEClass, ROOM_BOOKING___CLOSE);
 		createEOperation(roomBookingEClass, ROOM_BOOKING___GENERATE_PDF);
 		createEOperation(roomBookingEClass, ROOM_BOOKING___CHECK_IN__GUEST);
 		createEOperation(roomBookingEClass, ROOM_BOOKING___CHECK_OUT__BILLINGINFORMATION);
+		createEOperation(roomBookingEClass, ROOM_BOOKING___ADD_ROOM__ROOM);
+		createEOperation(roomBookingEClass, ROOM_BOOKING___REMOVE_ROOM__ROOM);
+		createEOperation(roomBookingEClass, ROOM_BOOKING___ADD_ROOM_TYPE__ROOMTYPE);
+		createEOperation(roomBookingEClass, ROOM_BOOKING___REMOVE_ROOM_TYPE__ROOMTYPE);
 
 		billingInformationEClass = createEClass(BILLING_INFORMATION);
 		createEOperation(billingInformationEClass, BILLING_INFORMATION___VALIDATE);
@@ -1473,15 +1513,15 @@ public class ClassDiagramPackageImpl extends EPackageImpl implements ClassDiagra
 		createEAttribute(accountEClass, ACCOUNT__USERNAME);
 		createEAttribute(accountEClass, ACCOUNT__PASSWORD);
 		createEReference(accountEClass, ACCOUNT__ACCOUNTTYPE);
-		createEOperation(accountEClass, ACCOUNT___HAS_PERMISSION);
-		createEOperation(accountEClass, ACCOUNT___HAS_PERMISSIONS);
+		createEOperation(accountEClass, ACCOUNT___HAS_PERMISSION__PERMISSION);
+		createEOperation(accountEClass, ACCOUNT___HAS_PERMISSIONS__ELIST);
 
 		accountTypeEClass = createEClass(ACCOUNT_TYPE);
-		createEAttribute(accountTypeEClass, ACCOUNT_TYPE__PERMISSION);
+		createEAttribute(accountTypeEClass, ACCOUNT_TYPE__PERMISSIONS);
 		createEOperation(accountTypeEClass, ACCOUNT_TYPE___ADD_PERMISSION__PERMISSION);
 		createEOperation(accountTypeEClass, ACCOUNT_TYPE___REMOVE_PERMISSION__PERMISSION);
-		createEOperation(accountTypeEClass, ACCOUNT_TYPE___HAS_PERMISSION);
-		createEOperation(accountTypeEClass, ACCOUNT_TYPE___HAS_PERMISSIONS);
+		createEOperation(accountTypeEClass, ACCOUNT_TYPE___HAS_PERMISSION__PERMISSION);
+		createEOperation(accountTypeEClass, ACCOUNT_TYPE___HAS_PERMISSIONS__ELIST);
 		createEOperation(accountTypeEClass, ACCOUNT_TYPE___CLEAR_PERMISSIONS);
 
 		organizationEClass = createEClass(ORGANIZATION);
@@ -1613,9 +1653,9 @@ public class ClassDiagramPackageImpl extends EPackageImpl implements ClassDiagra
 		initEClass(roomBookingEClass, RoomBooking.class, "RoomBooking", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRoomBooking_StartDate(), ecorePackage.getEDate(), "startDate", null, 1, 1, RoomBooking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getRoomBooking_EndDate(), ecorePackage.getEDate(), "endDate", null, 1, 1, RoomBooking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getRoomBooking_Room(), this.getRoom(), null, "room", null, 0, -1, RoomBooking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getRoomBooking_RoomType(), this.getRoomType(), null, "roomType", null, 0, -1, RoomBooking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getRoomBooking_NumberOfGuests(), theTypesPackage.getInteger(), "numberOfGuests", null, 1, 1, RoomBooking.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getRoomBooking_Room(), this.getRoom(), null, "room", null, 0, -1, RoomBooking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEOperation(getRoomBooking__Cancel(), null, "cancel", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
@@ -1628,6 +1668,18 @@ public class ClassDiagramPackageImpl extends EPackageImpl implements ClassDiagra
 
 		op = initEOperation(getRoomBooking__CheckOut__BillingInformation(), null, "checkOut", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getBillingInformation(), "info", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getRoomBooking__AddRoom__Room(), null, "addRoom", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getRoom(), "room", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getRoomBooking__RemoveRoom__Room(), null, "removeRoom", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getRoom(), "room", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getRoomBooking__AddRoomType__RoomType(), null, "addRoomType", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getRoomType(), "roomType", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getRoomBooking__RemoveRoomType__RoomType(), null, "removeRoomType", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getRoomType(), "roomType", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(billingInformationEClass, BillingInformation.class, "BillingInformation", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1680,12 +1732,14 @@ public class ClassDiagramPackageImpl extends EPackageImpl implements ClassDiagra
 		initEAttribute(getAccount_Password(), theTypesPackage.getString(), "password", null, 1, 1, Account.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getAccount_Accounttype(), this.getAccountType(), null, "accounttype", null, 1, 1, Account.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		initEOperation(getAccount__HasPermission(), theTypesPackage.getBoolean(), "hasPermission", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getAccount__HasPermission__Permission(), theTypesPackage.getBoolean(), "hasPermission", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getPermission(), "p", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		initEOperation(getAccount__HasPermissions(), theTypesPackage.getBoolean(), "hasPermissions", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getAccount__HasPermissions__EList(), theTypesPackage.getBoolean(), "hasPermissions", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getPermission(), "p", 0, -1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(accountTypeEClass, AccountType.class, "AccountType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getAccountType_Permission(), this.getPermission(), "permission", null, 0, -1, AccountType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getAccountType_Permissions(), this.getPermission(), "permissions", null, 0, -1, AccountType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		op = initEOperation(getAccountType__AddPermission__Permission(), null, "addPermission", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getPermission(), "p", 1, 1, IS_UNIQUE, !IS_ORDERED);
@@ -1693,9 +1747,11 @@ public class ClassDiagramPackageImpl extends EPackageImpl implements ClassDiagra
 		op = initEOperation(getAccountType__RemovePermission__Permission(), null, "removePermission", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getPermission(), "p", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		initEOperation(getAccountType__HasPermission(), theTypesPackage.getBoolean(), "hasPermission", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getAccountType__HasPermission__Permission(), theTypesPackage.getBoolean(), "hasPermission", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getPermission(), "p", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		initEOperation(getAccountType__HasPermissions(), theTypesPackage.getBoolean(), "hasPermissions", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getAccountType__HasPermissions__EList(), theTypesPackage.getBoolean(), "hasPermissions", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getPermission(), "p", 0, -1, IS_UNIQUE, !IS_ORDERED);
 
 		initEOperation(getAccountType__ClearPermissions(), null, "clearPermissions", 1, 1, IS_UNIQUE, !IS_ORDERED);
 

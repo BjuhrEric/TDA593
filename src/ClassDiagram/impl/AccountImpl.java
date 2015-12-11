@@ -6,6 +6,7 @@ import ClassDiagram.Account;
 import ClassDiagram.AccountType;
 import ClassDiagram.ClassDiagramPackage;
 
+import ClassDiagram.Permission;
 import java.lang.reflect.InvocationTargetException;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -188,7 +189,7 @@ public class AccountImpl extends MinimalEObjectImpl.Container implements Account
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean hasPermission() {
+	public boolean hasPermission(Permission p) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -199,7 +200,7 @@ public class AccountImpl extends MinimalEObjectImpl.Container implements Account
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean hasPermissions() {
+	public boolean hasPermissions(EList<Permission> p) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -290,12 +291,13 @@ public class AccountImpl extends MinimalEObjectImpl.Container implements Account
 	 * @generated
 	 */
 	@Override
+	@SuppressWarnings("unchecked")
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case ClassDiagramPackage.ACCOUNT___HAS_PERMISSION:
-				return hasPermission();
-			case ClassDiagramPackage.ACCOUNT___HAS_PERMISSIONS:
-				return hasPermissions();
+			case ClassDiagramPackage.ACCOUNT___HAS_PERMISSION__PERMISSION:
+				return hasPermission((Permission)arguments.get(0));
+			case ClassDiagramPackage.ACCOUNT___HAS_PERMISSIONS__ELIST:
+				return hasPermissions((EList<Permission>)arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

@@ -526,22 +526,13 @@ public interface ClassDiagramPackage extends EPackage {
 	int ROOM_BOOKING__END_DATE = 1;
 
 	/**
-	 * The feature id for the '<em><b>Room</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM_BOOKING__ROOM = 2;
-
-	/**
 	 * The feature id for the '<em><b>Room Type</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_BOOKING__ROOM_TYPE = 3;
+	int ROOM_BOOKING__ROOM_TYPE = 2;
 
 	/**
 	 * The feature id for the '<em><b>Number Of Guests</b></em>' attribute.
@@ -550,7 +541,16 @@ public interface ClassDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_BOOKING__NUMBER_OF_GUESTS = 4;
+	int ROOM_BOOKING__NUMBER_OF_GUESTS = 3;
+
+	/**
+	 * The feature id for the '<em><b>Room</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_BOOKING__ROOM = 4;
 
 	/**
 	 * The number of structural features of the '<em>Room Booking</em>' class.
@@ -607,13 +607,49 @@ public interface ClassDiagramPackage extends EPackage {
 	int ROOM_BOOKING___CHECK_OUT__BILLINGINFORMATION = 4;
 
 	/**
+	 * The operation id for the '<em>Add Room</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_BOOKING___ADD_ROOM__ROOM = 5;
+
+	/**
+	 * The operation id for the '<em>Remove Room</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_BOOKING___REMOVE_ROOM__ROOM = 6;
+
+	/**
+	 * The operation id for the '<em>Add Room Type</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_BOOKING___ADD_ROOM_TYPE__ROOMTYPE = 7;
+
+	/**
+	 * The operation id for the '<em>Remove Room Type</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_BOOKING___REMOVE_ROOM_TYPE__ROOMTYPE = 8;
+
+	/**
 	 * The number of operations of the '<em>Room Booking</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_BOOKING_OPERATION_COUNT = 5;
+	int ROOM_BOOKING_OPERATION_COUNT = 9;
 
 	/**
 	 * The number of structural features of the '<em>Billing Information</em>' class.
@@ -1105,7 +1141,7 @@ public interface ClassDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACCOUNT___HAS_PERMISSION = 0;
+	int ACCOUNT___HAS_PERMISSION__PERMISSION = 0;
 
 	/**
 	 * The operation id for the '<em>Has Permissions</em>' operation.
@@ -1114,7 +1150,7 @@ public interface ClassDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACCOUNT___HAS_PERMISSIONS = 1;
+	int ACCOUNT___HAS_PERMISSIONS__ELIST = 1;
 
 	/**
 	 * The number of operations of the '<em>Account</em>' class.
@@ -1136,13 +1172,13 @@ public interface ClassDiagramPackage extends EPackage {
 	int ACCOUNT_TYPE = 15;
 
 	/**
-	 * The feature id for the '<em><b>Permission</b></em>' attribute list.
+	 * The feature id for the '<em><b>Permissions</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ACCOUNT_TYPE__PERMISSION = 0;
+	int ACCOUNT_TYPE__PERMISSIONS = 0;
 
 	/**
 	 * The number of structural features of the '<em>Account Type</em>' class.
@@ -1178,7 +1214,7 @@ public interface ClassDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACCOUNT_TYPE___HAS_PERMISSION = 2;
+	int ACCOUNT_TYPE___HAS_PERMISSION__PERMISSION = 2;
 
 	/**
 	 * The operation id for the '<em>Has Permissions</em>' operation.
@@ -1187,7 +1223,7 @@ public interface ClassDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACCOUNT_TYPE___HAS_PERMISSIONS = 3;
+	int ACCOUNT_TYPE___HAS_PERMISSIONS__ELIST = 3;
 
 	/**
 	 * The operation id for the '<em>Clear Permissions</em>' operation.
@@ -2204,6 +2240,46 @@ public interface ClassDiagramPackage extends EPackage {
 	EOperation getRoomBooking__CheckOut__BillingInformation();
 
 	/**
+	 * Returns the meta object for the '{@link ClassDiagram.RoomBooking#addRoom(ClassDiagram.Room) <em>Add Room</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Add Room</em>' operation.
+	 * @see ClassDiagram.RoomBooking#addRoom(ClassDiagram.Room)
+	 * @generated
+	 */
+	EOperation getRoomBooking__AddRoom__Room();
+
+	/**
+	 * Returns the meta object for the '{@link ClassDiagram.RoomBooking#removeRoom(ClassDiagram.Room) <em>Remove Room</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Remove Room</em>' operation.
+	 * @see ClassDiagram.RoomBooking#removeRoom(ClassDiagram.Room)
+	 * @generated
+	 */
+	EOperation getRoomBooking__RemoveRoom__Room();
+
+	/**
+	 * Returns the meta object for the '{@link ClassDiagram.RoomBooking#addRoomType(ClassDiagram.RoomType) <em>Add Room Type</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Add Room Type</em>' operation.
+	 * @see ClassDiagram.RoomBooking#addRoomType(ClassDiagram.RoomType)
+	 * @generated
+	 */
+	EOperation getRoomBooking__AddRoomType__RoomType();
+
+	/**
+	 * Returns the meta object for the '{@link ClassDiagram.RoomBooking#removeRoomType(ClassDiagram.RoomType) <em>Remove Room Type</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Remove Room Type</em>' operation.
+	 * @see ClassDiagram.RoomBooking#removeRoomType(ClassDiagram.RoomType)
+	 * @generated
+	 */
+	EOperation getRoomBooking__RemoveRoomType__RoomType();
+
+	/**
 	 * Returns the meta object for class '{@link ClassDiagram.Item <em>Item</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2536,24 +2612,24 @@ public interface ClassDiagramPackage extends EPackage {
 	EReference getAccount_Accounttype();
 
 	/**
-	 * Returns the meta object for the '{@link ClassDiagram.Account#hasPermission() <em>Has Permission</em>}' operation.
+	 * Returns the meta object for the '{@link ClassDiagram.Account#hasPermission(ClassDiagram.Permission) <em>Has Permission</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Has Permission</em>' operation.
-	 * @see ClassDiagram.Account#hasPermission()
+	 * @see ClassDiagram.Account#hasPermission(ClassDiagram.Permission)
 	 * @generated
 	 */
-	EOperation getAccount__HasPermission();
+	EOperation getAccount__HasPermission__Permission();
 
 	/**
-	 * Returns the meta object for the '{@link ClassDiagram.Account#hasPermissions() <em>Has Permissions</em>}' operation.
+	 * Returns the meta object for the '{@link ClassDiagram.Account#hasPermissions(org.eclipse.emf.common.util.EList) <em>Has Permissions</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Has Permissions</em>' operation.
-	 * @see ClassDiagram.Account#hasPermissions()
+	 * @see ClassDiagram.Account#hasPermissions(org.eclipse.emf.common.util.EList)
 	 * @generated
 	 */
-	EOperation getAccount__HasPermissions();
+	EOperation getAccount__HasPermissions__EList();
 
 	/**
 	 * Returns the meta object for class '{@link ClassDiagram.AccountType <em>Account Type</em>}'.
@@ -2566,15 +2642,15 @@ public interface ClassDiagramPackage extends EPackage {
 	EClass getAccountType();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link ClassDiagram.AccountType#getPermission <em>Permission</em>}'.
+	 * Returns the meta object for the attribute list '{@link ClassDiagram.AccountType#getPermissions <em>Permissions</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Permission</em>'.
-	 * @see ClassDiagram.AccountType#getPermission()
+	 * @return the meta object for the attribute list '<em>Permissions</em>'.
+	 * @see ClassDiagram.AccountType#getPermissions()
 	 * @see #getAccountType()
 	 * @generated
 	 */
-	EAttribute getAccountType_Permission();
+	EAttribute getAccountType_Permissions();
 
 	/**
 	 * Returns the meta object for the '{@link ClassDiagram.AccountType#addPermission(ClassDiagram.Permission) <em>Add Permission</em>}' operation.
@@ -2597,24 +2673,24 @@ public interface ClassDiagramPackage extends EPackage {
 	EOperation getAccountType__RemovePermission__Permission();
 
 	/**
-	 * Returns the meta object for the '{@link ClassDiagram.AccountType#hasPermission() <em>Has Permission</em>}' operation.
+	 * Returns the meta object for the '{@link ClassDiagram.AccountType#hasPermission(ClassDiagram.Permission) <em>Has Permission</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Has Permission</em>' operation.
-	 * @see ClassDiagram.AccountType#hasPermission()
+	 * @see ClassDiagram.AccountType#hasPermission(ClassDiagram.Permission)
 	 * @generated
 	 */
-	EOperation getAccountType__HasPermission();
+	EOperation getAccountType__HasPermission__Permission();
 
 	/**
-	 * Returns the meta object for the '{@link ClassDiagram.AccountType#hasPermissions() <em>Has Permissions</em>}' operation.
+	 * Returns the meta object for the '{@link ClassDiagram.AccountType#hasPermissions(org.eclipse.emf.common.util.EList) <em>Has Permissions</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Has Permissions</em>' operation.
-	 * @see ClassDiagram.AccountType#hasPermissions()
+	 * @see ClassDiagram.AccountType#hasPermissions(org.eclipse.emf.common.util.EList)
 	 * @generated
 	 */
-	EOperation getAccountType__HasPermissions();
+	EOperation getAccountType__HasPermissions__EList();
 
 	/**
 	 * Returns the meta object for the '{@link ClassDiagram.AccountType#clearPermissions() <em>Clear Permissions</em>}' operation.
@@ -3354,6 +3430,38 @@ public interface ClassDiagramPackage extends EPackage {
 		EOperation ROOM_BOOKING___CHECK_OUT__BILLINGINFORMATION = eINSTANCE.getRoomBooking__CheckOut__BillingInformation();
 
 		/**
+		 * The meta object literal for the '<em><b>Add Room</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ROOM_BOOKING___ADD_ROOM__ROOM = eINSTANCE.getRoomBooking__AddRoom__Room();
+
+		/**
+		 * The meta object literal for the '<em><b>Remove Room</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ROOM_BOOKING___REMOVE_ROOM__ROOM = eINSTANCE.getRoomBooking__RemoveRoom__Room();
+
+		/**
+		 * The meta object literal for the '<em><b>Add Room Type</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ROOM_BOOKING___ADD_ROOM_TYPE__ROOMTYPE = eINSTANCE.getRoomBooking__AddRoomType__RoomType();
+
+		/**
+		 * The meta object literal for the '<em><b>Remove Room Type</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ROOM_BOOKING___REMOVE_ROOM_TYPE__ROOMTYPE = eINSTANCE.getRoomBooking__RemoveRoomType__RoomType();
+
+		/**
 		 * The meta object literal for the '{@link ClassDiagram.impl.ItemImpl <em>Item</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3619,7 +3727,7 @@ public interface ClassDiagramPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation ACCOUNT___HAS_PERMISSION = eINSTANCE.getAccount__HasPermission();
+		EOperation ACCOUNT___HAS_PERMISSION__PERMISSION = eINSTANCE.getAccount__HasPermission__Permission();
 
 		/**
 		 * The meta object literal for the '<em><b>Has Permissions</b></em>' operation.
@@ -3627,7 +3735,7 @@ public interface ClassDiagramPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation ACCOUNT___HAS_PERMISSIONS = eINSTANCE.getAccount__HasPermissions();
+		EOperation ACCOUNT___HAS_PERMISSIONS__ELIST = eINSTANCE.getAccount__HasPermissions__EList();
 
 		/**
 		 * The meta object literal for the '{@link ClassDiagram.impl.AccountTypeImpl <em>Account Type</em>}' class.
@@ -3640,12 +3748,12 @@ public interface ClassDiagramPackage extends EPackage {
 		EClass ACCOUNT_TYPE = eINSTANCE.getAccountType();
 
 		/**
-		 * The meta object literal for the '<em><b>Permission</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Permissions</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ACCOUNT_TYPE__PERMISSION = eINSTANCE.getAccountType_Permission();
+		EAttribute ACCOUNT_TYPE__PERMISSIONS = eINSTANCE.getAccountType_Permissions();
 
 		/**
 		 * The meta object literal for the '<em><b>Add Permission</b></em>' operation.
@@ -3669,7 +3777,7 @@ public interface ClassDiagramPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation ACCOUNT_TYPE___HAS_PERMISSION = eINSTANCE.getAccountType__HasPermission();
+		EOperation ACCOUNT_TYPE___HAS_PERMISSION__PERMISSION = eINSTANCE.getAccountType__HasPermission__Permission();
 
 		/**
 		 * The meta object literal for the '<em><b>Has Permissions</b></em>' operation.
@@ -3677,7 +3785,7 @@ public interface ClassDiagramPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation ACCOUNT_TYPE___HAS_PERMISSIONS = eINSTANCE.getAccountType__HasPermissions();
+		EOperation ACCOUNT_TYPE___HAS_PERMISSIONS__ELIST = eINSTANCE.getAccountType__HasPermissions__EList();
 
 		/**
 		 * The meta object literal for the '<em><b>Clear Permissions</b></em>' operation.

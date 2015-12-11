@@ -108,17 +108,29 @@
     <eOperations name="checkOut" ordered="false" lowerBound="1">
       <eParameters name="info" ordered="false" lowerBound="1" eType="#//BillingInformation"/>
     </eOperations>
+    <eOperations name="addRoom" ordered="false" lowerBound="1">
+      <eParameters name="room" ordered="false" lowerBound="1" eType="#//Room"/>
+    </eOperations>
+    <eOperations name="removeRoom" ordered="false" lowerBound="1">
+      <eParameters name="room" ordered="false" lowerBound="1" eType="#//Room"/>
+    </eOperations>
+    <eOperations name="addRoomType" ordered="false" lowerBound="1">
+      <eParameters name="roomType" ordered="false" lowerBound="1" eType="#//RoomType"/>
+    </eOperations>
+    <eOperations name="removeRoomType" ordered="false" lowerBound="1">
+      <eParameters name="roomType" ordered="false" lowerBound="1" eType="#//RoomType"/>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="startDate" ordered="false"
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="endDate" ordered="false"
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="room" ordered="false" upperBound="-1"
-        eType="#//Room"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="roomType" ordered="false"
         upperBound="-1" eType="#//RoomType"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="numberOfGuests" ordered="false"
         lowerBound="1" eType="ecore:EDataType ../org.eclipse.uml2.types/model/Types.ecore#//Integer"
         changeable="false"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="room" ordered="false" upperBound="-1"
+        eType="#//Room"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BillingInformation" abstract="true"
       interface="true">
@@ -183,8 +195,12 @@
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Account">
-    <eOperations name="hasPermission" ordered="false" lowerBound="1" eType="ecore:EDataType ../org.eclipse.uml2.types/model/Types.ecore#//Boolean"/>
-    <eOperations name="hasPermissions" ordered="false" lowerBound="1" eType="ecore:EDataType ../org.eclipse.uml2.types/model/Types.ecore#//Boolean"/>
+    <eOperations name="hasPermission" ordered="false" lowerBound="1" eType="ecore:EDataType ../org.eclipse.uml2.types/model/Types.ecore#//Boolean">
+      <eParameters name="p" ordered="false" lowerBound="1" eType="#//Permission"/>
+    </eOperations>
+    <eOperations name="hasPermissions" ordered="false" lowerBound="1" eType="ecore:EDataType ../org.eclipse.uml2.types/model/Types.ecore#//Boolean">
+      <eParameters name="p" ordered="false" upperBound="-1" eType="#//Permission"/>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="username" ordered="false"
         lowerBound="1" eType="ecore:EDataType ../org.eclipse.uml2.types/model/Types.ecore#//String"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="password" ordered="false"
@@ -203,10 +219,14 @@
     <eOperations name="removePermission" ordered="false" lowerBound="1">
       <eParameters name="p" ordered="false" lowerBound="1" eType="#//Permission"/>
     </eOperations>
-    <eOperations name="hasPermission" ordered="false" lowerBound="1" eType="ecore:EDataType ../org.eclipse.uml2.types/model/Types.ecore#//Boolean"/>
-    <eOperations name="hasPermissions" ordered="false" lowerBound="1" eType="ecore:EDataType ../org.eclipse.uml2.types/model/Types.ecore#//Boolean"/>
+    <eOperations name="hasPermission" ordered="false" lowerBound="1" eType="ecore:EDataType ../org.eclipse.uml2.types/model/Types.ecore#//Boolean">
+      <eParameters name="p" ordered="false" lowerBound="1" eType="#//Permission"/>
+    </eOperations>
+    <eOperations name="hasPermissions" ordered="false" lowerBound="1" eType="ecore:EDataType ../org.eclipse.uml2.types/model/Types.ecore#//Boolean">
+      <eParameters name="p" ordered="false" upperBound="-1" eType="#//Permission"/>
+    </eOperations>
     <eOperations name="clearPermissions" ordered="false" lowerBound="1"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="permission" ordered="false"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="permissions" ordered="false"
         upperBound="-1" eType="#//Permission"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Permission"/>

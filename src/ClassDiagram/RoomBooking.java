@@ -19,9 +19,9 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link ClassDiagram.RoomBooking#getStartDate <em>Start Date</em>}</li>
  *   <li>{@link ClassDiagram.RoomBooking#getEndDate <em>End Date</em>}</li>
- *   <li>{@link ClassDiagram.RoomBooking#getRoom <em>Room</em>}</li>
  *   <li>{@link ClassDiagram.RoomBooking#getRoomType <em>Room Type</em>}</li>
  *   <li>{@link ClassDiagram.RoomBooking#getNumberOfGuests <em>Number Of Guests</em>}</li>
+ *   <li>{@link ClassDiagram.RoomBooking#getRoom <em>Room</em>}</li>
  * </ul>
  *
  * @see ClassDiagram.ClassDiagramPackage#getRoomBooking()
@@ -167,5 +167,37 @@ public interface RoomBooking extends EObject {
 	 * @generated
 	 */
 	void checkOut(BillingInformation info);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model roomRequired="true" roomOrdered="false"
+	 * @generated
+	 */
+	void addRoom(Room room);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model roomRequired="true" roomOrdered="false"
+	 * @generated
+	 */
+	void removeRoom(Room room);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model roomTypeRequired="true" roomTypeOrdered="false"
+	 * @generated
+	 */
+	void addRoomType(RoomType roomType);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model roomTypeRequired="true" roomTypeOrdered="false"
+	 * @generated
+	 */
+	void removeRoomType(RoomType roomType);
 
 } // RoomBooking

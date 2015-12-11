@@ -34,9 +34,9 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * <ul>
  *   <li>{@link ClassDiagram.impl.RoomBookingImpl#getStartDate <em>Start Date</em>}</li>
  *   <li>{@link ClassDiagram.impl.RoomBookingImpl#getEndDate <em>End Date</em>}</li>
- *   <li>{@link ClassDiagram.impl.RoomBookingImpl#getRoom <em>Room</em>}</li>
  *   <li>{@link ClassDiagram.impl.RoomBookingImpl#getRoomType <em>Room Type</em>}</li>
  *   <li>{@link ClassDiagram.impl.RoomBookingImpl#getNumberOfGuests <em>Number Of Guests</em>}</li>
+ *   <li>{@link ClassDiagram.impl.RoomBookingImpl#getRoom <em>Room</em>}</li>
  * </ul>
  *
  * @generated
@@ -83,16 +83,6 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 	protected Date endDate = END_DATE_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getRoom() <em>Room</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRoom()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Room> room;
-
-	/**
 	 * The cached value of the '{@link #getRoomType() <em>Room Type</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -121,6 +111,16 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 	 * @ordered
 	 */
 	protected int numberOfGuests = NUMBER_OF_GUESTS_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getRoom() <em>Room</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRoom()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Room> room;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -276,6 +276,50 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public void addRoom(Room room) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void removeRoom(Room room) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void addRoomType(RoomType roomType) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void removeRoomType(RoomType roomType) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -283,12 +327,12 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 				return getStartDate();
 			case ClassDiagramPackage.ROOM_BOOKING__END_DATE:
 				return getEndDate();
-			case ClassDiagramPackage.ROOM_BOOKING__ROOM:
-				return getRoom();
 			case ClassDiagramPackage.ROOM_BOOKING__ROOM_TYPE:
 				return getRoomType();
 			case ClassDiagramPackage.ROOM_BOOKING__NUMBER_OF_GUESTS:
 				return getNumberOfGuests();
+			case ClassDiagramPackage.ROOM_BOOKING__ROOM:
+				return getRoom();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -308,13 +352,13 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 			case ClassDiagramPackage.ROOM_BOOKING__END_DATE:
 				setEndDate((Date)newValue);
 				return;
-			case ClassDiagramPackage.ROOM_BOOKING__ROOM:
-				getRoom().clear();
-				getRoom().addAll((Collection<? extends Room>)newValue);
-				return;
 			case ClassDiagramPackage.ROOM_BOOKING__ROOM_TYPE:
 				getRoomType().clear();
 				getRoomType().addAll((Collection<? extends RoomType>)newValue);
+				return;
+			case ClassDiagramPackage.ROOM_BOOKING__ROOM:
+				getRoom().clear();
+				getRoom().addAll((Collection<? extends Room>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -334,11 +378,11 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 			case ClassDiagramPackage.ROOM_BOOKING__END_DATE:
 				setEndDate(END_DATE_EDEFAULT);
 				return;
-			case ClassDiagramPackage.ROOM_BOOKING__ROOM:
-				getRoom().clear();
-				return;
 			case ClassDiagramPackage.ROOM_BOOKING__ROOM_TYPE:
 				getRoomType().clear();
+				return;
+			case ClassDiagramPackage.ROOM_BOOKING__ROOM:
+				getRoom().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -356,12 +400,12 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 				return START_DATE_EDEFAULT == null ? startDate != null : !START_DATE_EDEFAULT.equals(startDate);
 			case ClassDiagramPackage.ROOM_BOOKING__END_DATE:
 				return END_DATE_EDEFAULT == null ? endDate != null : !END_DATE_EDEFAULT.equals(endDate);
-			case ClassDiagramPackage.ROOM_BOOKING__ROOM:
-				return room != null && !room.isEmpty();
 			case ClassDiagramPackage.ROOM_BOOKING__ROOM_TYPE:
 				return roomType != null && !roomType.isEmpty();
 			case ClassDiagramPackage.ROOM_BOOKING__NUMBER_OF_GUESTS:
 				return numberOfGuests != NUMBER_OF_GUESTS_EDEFAULT;
+			case ClassDiagramPackage.ROOM_BOOKING__ROOM:
+				return room != null && !room.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -388,6 +432,18 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 				return null;
 			case ClassDiagramPackage.ROOM_BOOKING___CHECK_OUT__BILLINGINFORMATION:
 				checkOut((BillingInformation)arguments.get(0));
+				return null;
+			case ClassDiagramPackage.ROOM_BOOKING___ADD_ROOM__ROOM:
+				addRoom((Room)arguments.get(0));
+				return null;
+			case ClassDiagramPackage.ROOM_BOOKING___REMOVE_ROOM__ROOM:
+				removeRoom((Room)arguments.get(0));
+				return null;
+			case ClassDiagramPackage.ROOM_BOOKING___ADD_ROOM_TYPE__ROOMTYPE:
+				addRoomType((RoomType)arguments.get(0));
+				return null;
+			case ClassDiagramPackage.ROOM_BOOKING___REMOVE_ROOM_TYPE__ROOMTYPE:
+				removeRoomType((RoomType)arguments.get(0));
 				return null;
 		}
 		return super.eInvoke(operationID, arguments);
