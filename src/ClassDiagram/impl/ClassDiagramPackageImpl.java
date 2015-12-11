@@ -1795,7 +1795,7 @@ public class ClassDiagramPackageImpl extends EPackageImpl implements ClassDiagra
 		initEReference(getFloorMap_Room(), this.getRoom(), null, "room", null, 0, -1, FloorMap.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(paymentEClass, Payment.class, "Payment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getPayment_Bill(), this.getBill(), null, "bill", null, 0, -1, Payment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getPayment_Bill(), this.getBill(), null, "bill", null, 1, 1, Payment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		op = initEOperation(getPayment__Merge__EList(), null, "merge", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getPayment(), "payment", 0, -1, IS_UNIQUE, !IS_ORDERED);

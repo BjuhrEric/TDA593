@@ -8,16 +8,14 @@ import ClassDiagram.ClassDiagramPackage;
 import ClassDiagram.Payment;
 
 import java.lang.reflect.InvocationTargetException;
-
-import java.util.Collection;
-
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -34,14 +32,14 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  */
 public class PaymentImpl extends MinimalEObjectImpl.Container implements Payment {
 	/**
-	 * The cached value of the '{@link #getBill() <em>Bill</em>}' reference list.
+	 * The cached value of the '{@link #getBill() <em>Bill</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getBill()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Bill> bill;
+	protected Bill bill;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -67,11 +65,37 @@ public class PaymentImpl extends MinimalEObjectImpl.Container implements Payment
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Bill> getBill() {
-		if (bill == null) {
-			bill = new EObjectResolvingEList<Bill>(Bill.class, this, ClassDiagramPackage.PAYMENT__BILL);
+	public Bill getBill() {
+		if (bill != null && bill.eIsProxy()) {
+			InternalEObject oldBill = (InternalEObject)bill;
+			bill = (Bill)eResolveProxy(oldBill);
+			if (bill != oldBill) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ClassDiagramPackage.PAYMENT__BILL, oldBill, bill));
+			}
 		}
 		return bill;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Bill basicGetBill() {
+		return bill;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setBill(Bill newBill) {
+		Bill oldBill = bill;
+		bill = newBill;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ClassDiagramPackage.PAYMENT__BILL, oldBill, bill));
 	}
 
 	/**
@@ -127,7 +151,8 @@ public class PaymentImpl extends MinimalEObjectImpl.Container implements Payment
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case ClassDiagramPackage.PAYMENT__BILL:
-				return getBill();
+				if (resolve) return getBill();
+				return basicGetBill();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -142,8 +167,7 @@ public class PaymentImpl extends MinimalEObjectImpl.Container implements Payment
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ClassDiagramPackage.PAYMENT__BILL:
-				getBill().clear();
-				getBill().addAll((Collection<? extends Bill>)newValue);
+				setBill((Bill)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -158,7 +182,7 @@ public class PaymentImpl extends MinimalEObjectImpl.Container implements Payment
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case ClassDiagramPackage.PAYMENT__BILL:
-				getBill().clear();
+				setBill((Bill)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -173,7 +197,7 @@ public class PaymentImpl extends MinimalEObjectImpl.Container implements Payment
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case ClassDiagramPackage.PAYMENT__BILL:
-				return bill != null && !bill.isEmpty();
+				return bill != null;
 		}
 		return super.eIsSet(featureID);
 	}

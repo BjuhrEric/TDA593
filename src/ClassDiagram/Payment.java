@@ -24,20 +24,30 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Payment extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Bill</b></em>' reference list.
-	 * The list contents are of type {@link ClassDiagram.Bill}.
+	 * Returns the value of the '<em><b>Bill</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Bill</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Bill</em>' reference list.
+	 * @return the value of the '<em>Bill</em>' reference.
+	 * @see #setBill(Bill)
 	 * @see ClassDiagram.ClassDiagramPackage#getPayment_Bill()
-	 * @model ordered="false"
+	 * @model required="true" ordered="false"
 	 * @generated
 	 */
-	EList<Bill> getBill();
+	Bill getBill();
+
+	/**
+	 * Sets the value of the '{@link ClassDiagram.Payment#getBill <em>Bill</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Bill</em>' reference.
+	 * @see #getBill()
+	 * @generated
+	 */
+	void setBill(Bill value);
 
 	/**
 	 * <!-- begin-user-doc -->

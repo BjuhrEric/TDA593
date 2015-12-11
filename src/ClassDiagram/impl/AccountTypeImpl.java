@@ -74,7 +74,7 @@ public class AccountTypeImpl extends MinimalEObjectImpl.Container implements Acc
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void addPermission(Permission p) {
 		permissions.add(p);
@@ -83,7 +83,7 @@ public class AccountTypeImpl extends MinimalEObjectImpl.Container implements Acc
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void removePermission(Permission p) {
 		permissions.remove(p);
@@ -92,7 +92,7 @@ public class AccountTypeImpl extends MinimalEObjectImpl.Container implements Acc
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public boolean hasPermission(Permission p) {
 		return permissions.contains(p);
@@ -101,7 +101,7 @@ public class AccountTypeImpl extends MinimalEObjectImpl.Container implements Acc
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public boolean hasPermissions(EList<Permission> p) {
 		boolean all = true;
@@ -115,7 +115,7 @@ public class AccountTypeImpl extends MinimalEObjectImpl.Container implements Acc
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void clearPermissions() {
 		permissions.clear();

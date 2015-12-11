@@ -494,12 +494,8 @@
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_I73BEJ3DEeWJ2YKRfJzR_A" name="Payment">
     <ownedAttribute xmi:type="uml:Property" xmi:id="_MqkugJ3DEeWJ2YKRfJzR_A" name="bill" type="_QLEo0JUHEeWictR9w7kxNQ" association="_MqiSQJ3DEeWJ2YKRfJzR_A">
-      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Dc7dwJ3EEeWJ2YKRfJzR_A"/>
-      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Dc96AJ3EEeWJ2YKRfJzR_A" value="*"/>
-    </ownedAttribute>
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_Qn3_oJ3FEeWJ2YKRfJzR_A" name="bill" type="_QLEo0JUHEeWictR9w7kxNQ" association="_Qn1jYJ3FEeWJ2YKRfJzR_A">
-      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_V_RiIJ3FEeWJ2YKRfJzR_A"/>
-      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_V_T-YJ3FEeWJ2YKRfJzR_A" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Dc7dwJ3EEeWJ2YKRfJzR_A" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Dc96AJ3EEeWJ2YKRfJzR_A" value="1"/>
     </ownedAttribute>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_TxK9wJ3DEeWJ2YKRfJzR_A" name="merge" visibility="public">
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_x4J_cJ3DEeWJ2YKRfJzR_A" name="payment" type="_I73BEJ3DEeWJ2YKRfJzR_A">
@@ -517,18 +513,12 @@
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_7dI8sJ3DEeWJ2YKRfJzR_A" name="info" type="_n4U5sJOFEeWai68V7lLhPw"/>
     </ownedOperation>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_GV-PIJULEeWictR9w7kxNQ" name="printReceipt"/>
-    <nestedClassifier xmi:type="uml:Association" xmi:id="_Qn1jYJ3FEeWJ2YKRfJzR_A" memberEnd="_Qn3_oJ3FEeWJ2YKRfJzR_A _Qn5NwJ3FEeWJ2YKRfJzR_A">
-      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Qn3YkJ3FEeWJ2YKRfJzR_A" source="org.eclipse.papyrus">
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Qn3YkZ3FEeWJ2YKRfJzR_A" key="nature" value="UML_Nature"/>
+    <nestedClassifier xmi:type="uml:Association" xmi:id="_MqiSQJ3DEeWJ2YKRfJzR_A" memberEnd="_MqkugJ3DEeWJ2YKRfJzR_A _Mql8oJ3DEeWJ2YKRfJzR_A">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_MqjgYJ3DEeWJ2YKRfJzR_A" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_MqjgYZ3DEeWJ2YKRfJzR_A" key="nature" value="UML_Nature"/>
       </eAnnotations>
-      <ownedEnd xmi:type="uml:Property" xmi:id="_Qn5NwJ3FEeWJ2YKRfJzR_A" name="payment" type="_I73BEJ3DEeWJ2YKRfJzR_A" association="_Qn1jYJ3FEeWJ2YKRfJzR_A"/>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_Mql8oJ3DEeWJ2YKRfJzR_A" name="payment" type="_I73BEJ3DEeWJ2YKRfJzR_A" association="_MqiSQJ3DEeWJ2YKRfJzR_A"/>
     </nestedClassifier>
-  </packagedElement>
-  <packagedElement xmi:type="uml:Association" xmi:id="_MqiSQJ3DEeWJ2YKRfJzR_A" memberEnd="_MqkugJ3DEeWJ2YKRfJzR_A _Mql8oJ3DEeWJ2YKRfJzR_A">
-    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_MqjgYJ3DEeWJ2YKRfJzR_A" source="org.eclipse.papyrus">
-      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_MqjgYZ3DEeWJ2YKRfJzR_A" key="nature" value="UML_Nature"/>
-    </eAnnotations>
-    <ownedEnd xmi:type="uml:Property" xmi:id="_Mql8oJ3DEeWJ2YKRfJzR_A" name="payment" type="_I73BEJ3DEeWJ2YKRfJzR_A" association="_MqiSQJ3DEeWJ2YKRfJzR_A"/>
   </packagedElement>
   <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_Lt_mQJUXEeWf7-9fzN2QKQ">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_LuCCgJUXEeWf7-9fzN2QKQ" source="http://www.eclipse.org/uml2/2.0.0/UML">

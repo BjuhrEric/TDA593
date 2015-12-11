@@ -1655,7 +1655,7 @@ public interface ClassDiagramPackage extends EPackage {
 	int PAYMENT = 21;
 
 	/**
-	 * The feature id for the '<em><b>Bill</b></em>' reference list.
+	 * The feature id for the '<em><b>Bill</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2929,10 +2929,10 @@ public interface ClassDiagramPackage extends EPackage {
 	EClass getPayment();
 
 	/**
-	 * Returns the meta object for the reference list '{@link ClassDiagram.Payment#getBill <em>Bill</em>}'.
+	 * Returns the meta object for the reference '{@link ClassDiagram.Payment#getBill <em>Bill</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Bill</em>'.
+	 * @return the meta object for the reference '<em>Bill</em>'.
 	 * @see ClassDiagram.Payment#getBill()
 	 * @see #getPayment()
 	 * @generated
@@ -3984,7 +3984,7 @@ public interface ClassDiagramPackage extends EPackage {
 		EClass PAYMENT = eINSTANCE.getPayment();
 
 		/**
-		 * The meta object literal for the '<em><b>Bill</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Bill</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
