@@ -17,6 +17,8 @@
         lowerBound="1" eType="#//RoomType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="bill" ordered="false" lowerBound="1"
         eType="#//Bill"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="roomNumber" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Guest" eSuperTypes="#//Person">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="status" ordered="false"
@@ -98,6 +100,8 @@
     <eOperations name="remove" ordered="false" lowerBound="1" eType="#//Bill"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="cost" ordered="false" upperBound="-1"
         eType="#//Cost"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" ordered="false" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RoomBooking">
     <eOperations name="cancel" ordered="false" lowerBound="1"/>
@@ -133,6 +137,8 @@
         changeable="false"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="rooms" ordered="false"
         upperBound="-1" eType="#//Room"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" ordered="false" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BillingInformation" abstract="true"
       interface="true">
@@ -195,6 +201,8 @@
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="endTime" ordered="false"
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" ordered="false" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Account">
     <eOperations name="hasPermission" ordered="false" lowerBound="1" eType="ecore:EDataType ../org.eclipse.uml2.types/model/Types.ecore#//Boolean">
@@ -256,6 +264,7 @@
     <eOperations name="addEventBooking" ordered="false" lowerBound="1">
       <eParameters name="eventBooking" ordered="false" lowerBound="1" eType="#//EventBooking"/>
     </eOperations>
+    <eOperations name="getID" ordered="false" lowerBound="1"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IndividualCustomer" eSuperTypes="#//Person #//Customer">
     <eStructuralFeatures xsi:type="ecore:EReference" name="billingInformation" ordered="false"

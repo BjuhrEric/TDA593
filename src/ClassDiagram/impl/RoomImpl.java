@@ -38,6 +38,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *   <li>{@link ClassDiagram.impl.RoomImpl#getCleaningStatus <em>Cleaning Status</em>}</li>
  *   <li>{@link ClassDiagram.impl.RoomImpl#getRoomType <em>Room Type</em>}</li>
  *   <li>{@link ClassDiagram.impl.RoomImpl#getBill <em>Bill</em>}</li>
+ *   <li>{@link ClassDiagram.impl.RoomImpl#getRoomNumber <em>Room Number</em>}</li>
  * </ul>
  *
  * @generated
@@ -112,6 +113,26 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * @ordered
 	 */
 	protected Bill bill;
+
+	/**
+	 * The default value of the '{@link #getRoomNumber() <em>Room Number</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRoomNumber()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int ROOM_NUMBER_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getRoomNumber() <em>Room Number</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRoomNumber()
+	 * @generated
+	 * @ordered
+	 */
+	protected int roomNumber = ROOM_NUMBER_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -265,6 +286,27 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public int getRoomNumber() {
+		return roomNumber;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setRoomNumber(int newRoomNumber) {
+		int oldRoomNumber = roomNumber;
+		roomNumber = newRoomNumber;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ClassDiagramPackage.ROOM__ROOM_NUMBER, oldRoomNumber, roomNumber));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
 	public int getNumberOfGuests() {
@@ -309,6 +351,8 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 			case ClassDiagramPackage.ROOM__BILL:
 				if (resolve) return getBill();
 				return basicGetBill();
+			case ClassDiagramPackage.ROOM__ROOM_NUMBER:
+				return getRoomNumber();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -338,6 +382,9 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 			case ClassDiagramPackage.ROOM__BILL:
 				setBill((Bill)newValue);
 				return;
+			case ClassDiagramPackage.ROOM__ROOM_NUMBER:
+				setRoomNumber((Integer)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -365,6 +412,9 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 			case ClassDiagramPackage.ROOM__BILL:
 				setBill((Bill)null);
 				return;
+			case ClassDiagramPackage.ROOM__ROOM_NUMBER:
+				setRoomNumber(ROOM_NUMBER_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -387,6 +437,8 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 				return roomType != null;
 			case ClassDiagramPackage.ROOM__BILL:
 				return bill != null;
+			case ClassDiagramPackage.ROOM__ROOM_NUMBER:
+				return roomNumber != ROOM_NUMBER_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -425,6 +477,8 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 		result.append(roomStatus);
 		result.append(", cleaningStatus: ");
 		result.append(cleaningStatus);
+		result.append(", roomNumber: ");
+		result.append(roomNumber);
 		result.append(')');
 		return result.toString();
 	}

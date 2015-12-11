@@ -57,4 +57,12 @@ public interface Customer extends EObject {
 	 */
 	void addEventBooking(EventBooking eventBooking);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation"
+	 * @generated
+	 */
+	void getID();
+
 } // Customer

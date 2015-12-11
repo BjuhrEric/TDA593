@@ -8,9 +8,11 @@ import ClassDiagram.Cost;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
@@ -23,6 +25,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * </p>
  * <ul>
  *   <li>{@link ClassDiagram.impl.BillImpl#getCost <em>Cost</em>}</li>
+ *   <li>{@link ClassDiagram.impl.BillImpl#getId <em>Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -37,6 +40,25 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 	 * @ordered
 	 */
 	protected EList<Cost> cost;
+
+	/**
+	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final long ID_EDEFAULT = 0L;
+	/**
+	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected long id = ID_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -67,6 +89,27 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 			cost = new EObjectResolvingEList<Cost>(Cost.class, this, ClassDiagramPackage.BILL__COST);
 		}
 		return cost;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public long getId() {
+		return id;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setId(long newId) {
+		long oldId = id;
+		id = newId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ClassDiagramPackage.BILL__ID, oldId, id));
 	}
 
 	/**
@@ -112,6 +155,8 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 		switch (featureID) {
 			case ClassDiagramPackage.BILL__COST:
 				return getCost();
+			case ClassDiagramPackage.BILL__ID:
+				return getId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -129,6 +174,9 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 				getCost().clear();
 				getCost().addAll((Collection<? extends Cost>)newValue);
 				return;
+			case ClassDiagramPackage.BILL__ID:
+				setId((Long)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -144,6 +192,9 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 			case ClassDiagramPackage.BILL__COST:
 				getCost().clear();
 				return;
+			case ClassDiagramPackage.BILL__ID:
+				setId(ID_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -158,6 +209,8 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 		switch (featureID) {
 			case ClassDiagramPackage.BILL__COST:
 				return cost != null && !cost.isEmpty();
+			case ClassDiagramPackage.BILL__ID:
+				return id != ID_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -181,6 +234,22 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 				return remove();
 		}
 		return super.eInvoke(operationID, arguments);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (id: ");
+		result.append(id);
+		result.append(')');
+		return result.toString();
 	}
 
 } //BillImpl

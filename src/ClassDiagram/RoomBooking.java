@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link ClassDiagram.RoomBooking#getRoomType <em>Room Type</em>}</li>
  *   <li>{@link ClassDiagram.RoomBooking#getNumberOfGuests <em>Number Of Guests</em>}</li>
  *   <li>{@link ClassDiagram.RoomBooking#getRooms <em>Rooms</em>}</li>
+ *   <li>{@link ClassDiagram.RoomBooking#getId <em>Id</em>}</li>
  * </ul>
  *
  * @see ClassDiagram.ClassDiagramPackage#getRoomBooking()
@@ -127,6 +128,32 @@ public interface RoomBooking extends EObject {
 	 * @generated
 	 */
 	EList<Room> getRooms();
+
+	/**
+	 * Returns the value of the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Id</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Id</em>' attribute.
+	 * @see #setId(long)
+	 * @see ClassDiagram.ClassDiagramPackage#getRoomBooking_Id()
+	 * @model required="true" ordered="false"
+	 * @generated
+	 */
+	long getId();
+
+	/**
+	 * Sets the value of the '{@link ClassDiagram.RoomBooking#getId <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Id</em>' attribute.
+	 * @see #getId()
+	 * @generated
+	 */
+	void setId(long value);
 
 	/**
 	 * <!-- begin-user-doc -->

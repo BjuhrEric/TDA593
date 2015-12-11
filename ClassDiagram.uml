@@ -9,6 +9,9 @@
     <ownedAttribute xmi:type="uml:Property" xmi:id="_Vzg3IJOKEeWai68V7lLhPw" name="cleaningStatus" type="_gUvPoJOJEeWai68V7lLhPw" association="_VzfpAJOKEeWai68V7lLhPw"/>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_n-_wIZOKEeWai68V7lLhPw" name="roomType" type="_kdDI0JOJEeWai68V7lLhPw" association="_n--iAJOKEeWai68V7lLhPw"/>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_mWWiwpUIEeWictR9w7kxNQ" name="bill" type="_QLEo0JUHEeWictR9w7kxNQ" association="_mWV7sJUIEeWictR9w7kxNQ"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_f-htcKAeEeWVP7497XArVA" name="roomNumber">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+    </ownedAttribute>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_1MUigJOJEeWai68V7lLhPw" name="getNumberOfGuests">
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_L8SHkJhREeW7U_6ODGI2HQ" name="return" direction="return">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
@@ -40,6 +43,9 @@
     <ownedAttribute xmi:type="uml:Property" xmi:id="_9reLAJOHEeWai68V7lLhPw" name="rooms" type="_dGX6YJOCEeWai68V7lLhPw" aggregation="shared" association="_9rc84JOHEeWai68V7lLhPw">
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_bX6lwJOIEeWai68V7lLhPw"/>
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_bX7z4JOIEeWai68V7lLhPw" value="*"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_jusMYKAeEeWVP7497XArVA" name="id">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
     </ownedAttribute>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_9a1F8JOSEeWai68V7lLhPw" name="cancel"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_I9YjIJOTEeWai68V7lLhPw" name="close"/>
@@ -272,6 +278,9 @@
     <ownedAttribute xmi:type="uml:Property" xmi:id="_piTAEJVlEeWBluaU4-si5w" name="endTime">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
     </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_cOtMwKAeEeWVP7497XArVA" name="id">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+    </ownedAttribute>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_qbT0sJUCEeWictR9w7kxNQ" name="cancel"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_tCy0UJUCEeWictR9w7kxNQ" name="close"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_9yVR0JbFEeWywcXnTB_lHw" name="generatePDF"/>
@@ -346,6 +355,9 @@
     <ownedAttribute xmi:type="uml:Property" xmi:id="_QoyDEJUIEeWictR9w7kxNQ" name="cost" type="_-XeEUJUGEeWictR9w7kxNQ" association="_QosjgJUIEeWictR9w7kxNQ">
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_WCMUQJ26EeWJ2YKRfJzR_A"/>
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_WCYhgJ26EeWJ2YKRfJzR_A" value="*"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_ikb_wKAeEeWVP7497XArVA" name="id">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
     </ownedAttribute>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_8Qvy8JUHEeWictR9w7kxNQ" name="addCost">
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_mhK2MJUJEeWictR9w7kxNQ" name="cost" type="_-XeEUJUGEeWictR9w7kxNQ">
@@ -425,6 +437,7 @@
     <ownedOperation xmi:type="uml:Operation" xmi:id="_KWTpUJUREeWictR9w7kxNQ" name="addEventBooking">
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_iuG6oJUREeWictR9w7kxNQ" name="eventBooking" type="_DngK8JOQEeWai68V7lLhPw"/>
     </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_qFE8IKAdEeWVP7497XArVA" name="getID"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_-7sboJUaEeWqN5aFuAz_Hg" name="IndividualCustomer">
     <generalization xmi:type="uml:Generalization" xmi:id="_MKN18JUcEeWqN5aFuAz_Hg" general="_oHzLAJODEeWai68V7lLhPw"/>

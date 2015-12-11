@@ -113,13 +113,22 @@ public interface ClassDiagramPackage extends EPackage {
 	int ROOM__BILL = 4;
 
 	/**
+	 * The feature id for the '<em><b>Room Number</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM__ROOM_NUMBER = 5;
+
+	/**
 	 * The number of structural features of the '<em>Room</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_FEATURE_COUNT = 5;
+	int ROOM_FEATURE_COUNT = 6;
 
 	/**
 	 * The operation id for the '<em>Get Number Of Guests</em>' operation.
@@ -442,13 +451,22 @@ public interface ClassDiagramPackage extends EPackage {
 	int BILL__COST = 0;
 
 	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILL__ID = 1;
+
+	/**
 	 * The number of structural features of the '<em>Bill</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BILL_FEATURE_COUNT = 1;
+	int BILL_FEATURE_COUNT = 2;
 
 	/**
 	 * The operation id for the '<em>Add Cost</em>' operation.
@@ -562,13 +580,22 @@ public interface ClassDiagramPackage extends EPackage {
 	int ROOM_BOOKING__ROOMS = 4;
 
 	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_BOOKING__ID = 5;
+
+	/**
 	 * The number of structural features of the '<em>Room Booking</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_BOOKING_FEATURE_COUNT = 5;
+	int ROOM_BOOKING_FEATURE_COUNT = 6;
 
 	/**
 	 * The operation id for the '<em>Cancel</em>' operation.
@@ -1053,13 +1080,22 @@ public interface ClassDiagramPackage extends EPackage {
 	int EVENT_BOOKING__END_TIME = 2;
 
 	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EVENT_BOOKING__ID = 3;
+
+	/**
 	 * The number of structural features of the '<em>Event Booking</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EVENT_BOOKING_FEATURE_COUNT = 3;
+	int EVENT_BOOKING_FEATURE_COUNT = 4;
 
 	/**
 	 * The operation id for the '<em>Cancel</em>' operation.
@@ -1317,13 +1353,22 @@ public interface ClassDiagramPackage extends EPackage {
 	int CUSTOMER___ADD_EVENT_BOOKING__EVENTBOOKING = 4;
 
 	/**
+	 * The operation id for the '<em>Get ID</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOMER___GET_ID = 5;
+
+	/**
 	 * The number of operations of the '<em>Customer</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CUSTOMER_OPERATION_COUNT = 5;
+	int CUSTOMER_OPERATION_COUNT = 6;
 
 	/**
 	 * The meta object id for the '{@link ClassDiagram.impl.OrganizationImpl <em>Organization</em>}' class.
@@ -1442,6 +1487,15 @@ public interface ClassDiagramPackage extends EPackage {
 	 * @ordered
 	 */
 	int ORGANIZATION___ADD_EVENT_BOOKING__EVENTBOOKING = CUSTOMER___ADD_EVENT_BOOKING__EVENTBOOKING;
+
+	/**
+	 * The operation id for the '<em>Get ID</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ORGANIZATION___GET_ID = CUSTOMER___GET_ID;
 
 	/**
 	 * The number of operations of the '<em>Organization</em>' class.
@@ -1571,13 +1625,22 @@ public interface ClassDiagramPackage extends EPackage {
 	int INDIVIDUAL_CUSTOMER___ADD_EVENT_BOOKING__EVENTBOOKING = PERSON_OPERATION_COUNT + 4;
 
 	/**
+	 * The operation id for the '<em>Get ID</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDIVIDUAL_CUSTOMER___GET_ID = PERSON_OPERATION_COUNT + 5;
+
+	/**
 	 * The number of operations of the '<em>Individual Customer</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INDIVIDUAL_CUSTOMER_OPERATION_COUNT = PERSON_OPERATION_COUNT + 5;
+	int INDIVIDUAL_CUSTOMER_OPERATION_COUNT = PERSON_OPERATION_COUNT + 6;
 
 	/**
 	 * The meta object id for the '{@link ClassDiagram.impl.BookingScheduleImpl <em>Booking Schedule</em>}' class.
@@ -1897,6 +1960,17 @@ public interface ClassDiagramPackage extends EPackage {
 	EReference getRoom_Bill();
 
 	/**
+	 * Returns the meta object for the attribute '{@link ClassDiagram.Room#getRoomNumber <em>Room Number</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Room Number</em>'.
+	 * @see ClassDiagram.Room#getRoomNumber()
+	 * @see #getRoom()
+	 * @generated
+	 */
+	EAttribute getRoom_RoomNumber();
+
+	/**
 	 * Returns the meta object for the '{@link ClassDiagram.Room#getNumberOfGuests() <em>Get Number Of Guests</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2088,6 +2162,17 @@ public interface ClassDiagramPackage extends EPackage {
 	EReference getBill_Cost();
 
 	/**
+	 * Returns the meta object for the attribute '{@link ClassDiagram.Bill#getId <em>Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Id</em>'.
+	 * @see ClassDiagram.Bill#getId()
+	 * @see #getBill()
+	 * @generated
+	 */
+	EAttribute getBill_Id();
+
+	/**
 	 * Returns the meta object for the '{@link ClassDiagram.Bill#addCost(ClassDiagram.Cost) <em>Add Cost</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2261,6 +2346,17 @@ public interface ClassDiagramPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getRoomBooking_Rooms();
+
+	/**
+	 * Returns the meta object for the attribute '{@link ClassDiagram.RoomBooking#getId <em>Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Id</em>'.
+	 * @see ClassDiagram.RoomBooking#getId()
+	 * @see #getRoomBooking()
+	 * @generated
+	 */
+	EAttribute getRoomBooking_Id();
 
 	/**
 	 * Returns the meta object for the '{@link ClassDiagram.RoomBooking#cancel() <em>Cancel</em>}' operation.
@@ -2612,6 +2708,17 @@ public interface ClassDiagramPackage extends EPackage {
 	EAttribute getEventBooking_EndTime();
 
 	/**
+	 * Returns the meta object for the attribute '{@link ClassDiagram.EventBooking#getId <em>Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Id</em>'.
+	 * @see ClassDiagram.EventBooking#getId()
+	 * @see #getEventBooking()
+	 * @generated
+	 */
+	EAttribute getEventBooking_Id();
+
+	/**
 	 * Returns the meta object for the '{@link ClassDiagram.EventBooking#cancel() <em>Cancel</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2910,6 +3017,16 @@ public interface ClassDiagramPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getCustomer__AddEventBooking__EventBooking();
+
+	/**
+	 * Returns the meta object for the '{@link ClassDiagram.Customer#getID() <em>Get ID</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get ID</em>' operation.
+	 * @see ClassDiagram.Customer#getID()
+	 * @generated
+	 */
+	EOperation getCustomer__GetID();
 
 	/**
 	 * Returns the meta object for class '{@link ClassDiagram.IndividualCustomer <em>Individual Customer</em>}'.
@@ -3241,6 +3358,14 @@ public interface ClassDiagramPackage extends EPackage {
 		EReference ROOM__BILL = eINSTANCE.getRoom_Bill();
 
 		/**
+		 * The meta object literal for the '<em><b>Room Number</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ROOM__ROOM_NUMBER = eINSTANCE.getRoom_RoomNumber();
+
+		/**
 		 * The meta object literal for the '<em><b>Get Number Of Guests</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3393,6 +3518,14 @@ public interface ClassDiagramPackage extends EPackage {
 		EReference BILL__COST = eINSTANCE.getBill_Cost();
 
 		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute BILL__ID = eINSTANCE.getBill_Id();
+
+		/**
 		 * The meta object literal for the '<em><b>Add Cost</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3535,6 +3668,14 @@ public interface ClassDiagramPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ROOM_BOOKING__ROOMS = eINSTANCE.getRoomBooking_Rooms();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ROOM_BOOKING__ID = eINSTANCE.getRoomBooking_Id();
 
 		/**
 		 * The meta object literal for the '<em><b>Cancel</b></em>' operation.
@@ -3811,6 +3952,14 @@ public interface ClassDiagramPackage extends EPackage {
 		EAttribute EVENT_BOOKING__END_TIME = eINSTANCE.getEventBooking_EndTime();
 
 		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EVENT_BOOKING__ID = eINSTANCE.getEventBooking_Id();
+
+		/**
 		 * The meta object literal for the '<em><b>Cancel</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4049,6 +4198,14 @@ public interface ClassDiagramPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation CUSTOMER___ADD_EVENT_BOOKING__EVENTBOOKING = eINSTANCE.getCustomer__AddEventBooking__EventBooking();
+
+		/**
+		 * The meta object literal for the '<em><b>Get ID</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CUSTOMER___GET_ID = eINSTANCE.getCustomer__GetID();
 
 		/**
 		 * The meta object literal for the '{@link ClassDiagram.impl.IndividualCustomerImpl <em>Individual Customer</em>}' class.

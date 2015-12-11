@@ -37,6 +37,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *   <li>{@link ClassDiagram.impl.RoomBookingImpl#getRoomType <em>Room Type</em>}</li>
  *   <li>{@link ClassDiagram.impl.RoomBookingImpl#getNumberOfGuests <em>Number Of Guests</em>}</li>
  *   <li>{@link ClassDiagram.impl.RoomBookingImpl#getRooms <em>Rooms</em>}</li>
+ *   <li>{@link ClassDiagram.impl.RoomBookingImpl#getId <em>Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -121,6 +122,26 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 	 * @ordered
 	 */
 	protected EList<Room> rooms;
+
+	/**
+	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final long ID_EDEFAULT = 0L;
+
+	/**
+	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected long id = ID_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -214,6 +235,27 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 			rooms = new EObjectResolvingEList<Room>(Room.class, this, ClassDiagramPackage.ROOM_BOOKING__ROOMS);
 		}
 		return rooms;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public long getId() {
+		return id;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setId(long newId) {
+		long oldId = id;
+		id = newId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ClassDiagramPackage.ROOM_BOOKING__ID, oldId, id));
 	}
 
 	/**
@@ -333,6 +375,8 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 				return getNumberOfGuests();
 			case ClassDiagramPackage.ROOM_BOOKING__ROOMS:
 				return getRooms();
+			case ClassDiagramPackage.ROOM_BOOKING__ID:
+				return getId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -360,6 +404,9 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 				getRooms().clear();
 				getRooms().addAll((Collection<? extends Room>)newValue);
 				return;
+			case ClassDiagramPackage.ROOM_BOOKING__ID:
+				setId((Long)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -384,6 +431,9 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 			case ClassDiagramPackage.ROOM_BOOKING__ROOMS:
 				getRooms().clear();
 				return;
+			case ClassDiagramPackage.ROOM_BOOKING__ID:
+				setId(ID_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -406,6 +456,8 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 				return numberOfGuests != NUMBER_OF_GUESTS_EDEFAULT;
 			case ClassDiagramPackage.ROOM_BOOKING__ROOMS:
 				return rooms != null && !rooms.isEmpty();
+			case ClassDiagramPackage.ROOM_BOOKING__ID:
+				return id != ID_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -465,6 +517,8 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 		result.append(endDate);
 		result.append(", numberOfGuests: ");
 		result.append(numberOfGuests);
+		result.append(", id: ");
+		result.append(id);
 		result.append(')');
 		return result.toString();
 	}

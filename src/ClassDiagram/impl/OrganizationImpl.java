@@ -275,6 +275,17 @@ public class OrganizationImpl extends MinimalEObjectImpl.Container implements Or
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public void getID() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -396,6 +407,9 @@ public class OrganizationImpl extends MinimalEObjectImpl.Container implements Or
 				return null;
 			case ClassDiagramPackage.ORGANIZATION___ADD_EVENT_BOOKING__EVENTBOOKING:
 				addEventBooking((EventBooking)arguments.get(0));
+				return null;
+			case ClassDiagramPackage.ORGANIZATION___GET_ID:
+				getID();
 				return null;
 		}
 		return super.eInvoke(operationID, arguments);

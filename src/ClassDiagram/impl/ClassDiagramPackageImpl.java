@@ -361,6 +361,15 @@ public class ClassDiagramPackageImpl extends EPackageImpl implements ClassDiagra
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getRoom_RoomNumber() {
+		return (EAttribute)roomEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EOperation getRoom__GetNumberOfGuests() {
 		return roomEClass.getEOperations().get(0);
 	}
@@ -523,6 +532,15 @@ public class ClassDiagramPackageImpl extends EPackageImpl implements ClassDiagra
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getBill_Id() {
+		return (EAttribute)billEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EOperation getBill__AddCost__Cost() {
 		return billEClass.getEOperations().get(0);
 	}
@@ -669,6 +687,15 @@ public class ClassDiagramPackageImpl extends EPackageImpl implements ClassDiagra
 	 */
 	public EReference getRoomBooking_Rooms() {
 		return (EReference)roomBookingEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getRoomBooking_Id() {
+		return (EAttribute)roomBookingEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -973,6 +1000,15 @@ public class ClassDiagramPackageImpl extends EPackageImpl implements ClassDiagra
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getEventBooking_Id() {
+		return (EAttribute)eventBookingEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EOperation getEventBooking__Cancel() {
 		return eventBookingEClass.getEOperations().get(0);
 	}
@@ -1234,6 +1270,15 @@ public class ClassDiagramPackageImpl extends EPackageImpl implements ClassDiagra
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getCustomer__GetID() {
+		return customerEClass.getEOperations().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getIndividualCustomer() {
 		return individualCustomerEClass;
 	}
@@ -1488,6 +1533,7 @@ public class ClassDiagramPackageImpl extends EPackageImpl implements ClassDiagra
 		createEAttribute(roomEClass, ROOM__CLEANING_STATUS);
 		createEReference(roomEClass, ROOM__ROOM_TYPE);
 		createEReference(roomEClass, ROOM__BILL);
+		createEAttribute(roomEClass, ROOM__ROOM_NUMBER);
 		createEOperation(roomEClass, ROOM___GET_NUMBER_OF_GUESTS);
 		createEOperation(roomEClass, ROOM___CHECK_OUT);
 		createEOperation(roomEClass, ROOM___ADD_GUEST__GUEST);
@@ -1514,6 +1560,7 @@ public class ClassDiagramPackageImpl extends EPackageImpl implements ClassDiagra
 
 		billEClass = createEClass(BILL);
 		createEReference(billEClass, BILL__COST);
+		createEAttribute(billEClass, BILL__ID);
 		createEOperation(billEClass, BILL___ADD_COST__COST);
 		createEOperation(billEClass, BILL___REMOVE_COST__COST);
 		createEOperation(billEClass, BILL___REMOVE);
@@ -1524,6 +1571,7 @@ public class ClassDiagramPackageImpl extends EPackageImpl implements ClassDiagra
 		createEReference(roomBookingEClass, ROOM_BOOKING__ROOM_TYPE);
 		createEAttribute(roomBookingEClass, ROOM_BOOKING__NUMBER_OF_GUESTS);
 		createEReference(roomBookingEClass, ROOM_BOOKING__ROOMS);
+		createEAttribute(roomBookingEClass, ROOM_BOOKING__ID);
 		createEOperation(roomBookingEClass, ROOM_BOOKING___CANCEL);
 		createEOperation(roomBookingEClass, ROOM_BOOKING___CLOSE);
 		createEOperation(roomBookingEClass, ROOM_BOOKING___GENERATE_PDF);
@@ -1569,6 +1617,7 @@ public class ClassDiagramPackageImpl extends EPackageImpl implements ClassDiagra
 		createEReference(eventBookingEClass, EVENT_BOOKING__BILL);
 		createEAttribute(eventBookingEClass, EVENT_BOOKING__START_TIME);
 		createEAttribute(eventBookingEClass, EVENT_BOOKING__END_TIME);
+		createEAttribute(eventBookingEClass, EVENT_BOOKING__ID);
 		createEOperation(eventBookingEClass, EVENT_BOOKING___CANCEL);
 		createEOperation(eventBookingEClass, EVENT_BOOKING___CLOSE);
 		createEOperation(eventBookingEClass, EVENT_BOOKING___GENERATE_PDF);
@@ -1602,6 +1651,7 @@ public class ClassDiagramPackageImpl extends EPackageImpl implements ClassDiagra
 		createEOperation(customerEClass, CUSTOMER___GET_EVENT_BOOKINGS);
 		createEOperation(customerEClass, CUSTOMER___ADD_ROOM_BOOKING__ROOMBOOKING);
 		createEOperation(customerEClass, CUSTOMER___ADD_EVENT_BOOKING__EVENTBOOKING);
+		createEOperation(customerEClass, CUSTOMER___GET_ID);
 
 		individualCustomerEClass = createEClass(INDIVIDUAL_CUSTOMER);
 		createEReference(individualCustomerEClass, INDIVIDUAL_CUSTOMER__BILLING_INFORMATION);
@@ -1681,6 +1731,7 @@ public class ClassDiagramPackageImpl extends EPackageImpl implements ClassDiagra
 		initEAttribute(getRoom_CleaningStatus(), this.getCleaningStatus(), "cleaningStatus", null, 1, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getRoom_RoomType(), this.getRoomType(), null, "roomType", null, 1, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getRoom_Bill(), this.getBill(), null, "bill", null, 1, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getRoom_RoomNumber(), ecorePackage.getEInt(), "roomNumber", null, 1, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEOperation(getRoom__GetNumberOfGuests(), theTypesPackage.getInteger(), "getNumberOfGuests", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
@@ -1713,6 +1764,7 @@ public class ClassDiagramPackageImpl extends EPackageImpl implements ClassDiagra
 
 		initEClass(billEClass, Bill.class, "Bill", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getBill_Cost(), this.getCost(), null, "cost", null, 0, -1, Bill.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getBill_Id(), ecorePackage.getELong(), "id", null, 1, 1, Bill.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		op = initEOperation(getBill__AddCost__Cost(), null, "addCost", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getCost(), "cost", 1, 1, IS_UNIQUE, !IS_ORDERED);
@@ -1728,6 +1780,7 @@ public class ClassDiagramPackageImpl extends EPackageImpl implements ClassDiagra
 		initEReference(getRoomBooking_RoomType(), this.getRoomType(), null, "roomType", null, 0, -1, RoomBooking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getRoomBooking_NumberOfGuests(), theTypesPackage.getInteger(), "numberOfGuests", null, 1, 1, RoomBooking.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getRoomBooking_Rooms(), this.getRoom(), null, "rooms", null, 0, -1, RoomBooking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getRoomBooking_Id(), ecorePackage.getELong(), "id", null, 1, 1, RoomBooking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEOperation(getRoomBooking__Cancel(), null, "cancel", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
@@ -1793,6 +1846,7 @@ public class ClassDiagramPackageImpl extends EPackageImpl implements ClassDiagra
 		initEReference(getEventBooking_Bill(), this.getBill(), null, "bill", null, 1, 1, EventBooking.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getEventBooking_StartTime(), ecorePackage.getEDate(), "startTime", null, 1, 1, EventBooking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getEventBooking_EndTime(), ecorePackage.getEDate(), "endTime", null, 1, 1, EventBooking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getEventBooking_Id(), ecorePackage.getELong(), "id", null, 1, 1, EventBooking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEOperation(getEventBooking__Cancel(), null, "cancel", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
@@ -1849,6 +1903,8 @@ public class ClassDiagramPackageImpl extends EPackageImpl implements ClassDiagra
 
 		op = initEOperation(getCustomer__AddEventBooking__EventBooking(), null, "addEventBooking", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getEventBooking(), "eventBooking", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		initEOperation(getCustomer__GetID(), null, "getID", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(individualCustomerEClass, IndividualCustomer.class, "IndividualCustomer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getIndividualCustomer_BillingInformation(), this.getBillingInformation(), null, "billingInformation", null, 0, -1, IndividualCustomer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);

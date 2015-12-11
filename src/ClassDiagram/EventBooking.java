@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link ClassDiagram.EventBooking#getBill <em>Bill</em>}</li>
  *   <li>{@link ClassDiagram.EventBooking#getStartTime <em>Start Time</em>}</li>
  *   <li>{@link ClassDiagram.EventBooking#getEndTime <em>End Time</em>}</li>
+ *   <li>{@link ClassDiagram.EventBooking#getId <em>Id</em>}</li>
  * </ul>
  *
  * @see ClassDiagram.ClassDiagramPackage#getEventBooking()
@@ -91,6 +92,32 @@ public interface EventBooking extends EObject {
 	 * @generated
 	 */
 	void setEndTime(Date value);
+
+	/**
+	 * Returns the value of the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Id</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Id</em>' attribute.
+	 * @see #setId(long)
+	 * @see ClassDiagram.ClassDiagramPackage#getEventBooking_Id()
+	 * @model required="true" ordered="false"
+	 * @generated
+	 */
+	long getId();
+
+	/**
+	 * Sets the value of the '{@link ClassDiagram.EventBooking#getId <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Id</em>' attribute.
+	 * @see #getId()
+	 * @generated
+	 */
+	void setId(long value);
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -147,6 +147,17 @@ public class IndividualCustomerImpl extends PersonImpl implements IndividualCust
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public void getID() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -238,6 +249,7 @@ public class IndividualCustomerImpl extends PersonImpl implements IndividualCust
 				case ClassDiagramPackage.CUSTOMER___GET_EVENT_BOOKINGS: return ClassDiagramPackage.INDIVIDUAL_CUSTOMER___GET_EVENT_BOOKINGS;
 				case ClassDiagramPackage.CUSTOMER___ADD_ROOM_BOOKING__ROOMBOOKING: return ClassDiagramPackage.INDIVIDUAL_CUSTOMER___ADD_ROOM_BOOKING__ROOMBOOKING;
 				case ClassDiagramPackage.CUSTOMER___ADD_EVENT_BOOKING__EVENTBOOKING: return ClassDiagramPackage.INDIVIDUAL_CUSTOMER___ADD_EVENT_BOOKING__EVENTBOOKING;
+				case ClassDiagramPackage.CUSTOMER___GET_ID: return ClassDiagramPackage.INDIVIDUAL_CUSTOMER___GET_ID;
 				default: return -1;
 			}
 		}
@@ -257,6 +269,9 @@ public class IndividualCustomerImpl extends PersonImpl implements IndividualCust
 				return null;
 			case ClassDiagramPackage.INDIVIDUAL_CUSTOMER___ADD_EVENT_BOOKING__EVENTBOOKING:
 				addEventBooking((EventBooking)arguments.get(0));
+				return null;
+			case ClassDiagramPackage.INDIVIDUAL_CUSTOMER___GET_ID:
+				getID();
 				return null;
 		}
 		return super.eInvoke(operationID, arguments);

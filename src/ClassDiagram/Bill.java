@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link ClassDiagram.Bill#getCost <em>Cost</em>}</li>
+ *   <li>{@link ClassDiagram.Bill#getId <em>Id</em>}</li>
  * </ul>
  *
  * @see ClassDiagram.ClassDiagramPackage#getBill()
@@ -38,6 +39,32 @@ public interface Bill extends EObject {
 	 * @generated
 	 */
 	EList<Cost> getCost();
+
+	/**
+	 * Returns the value of the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Id</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Id</em>' attribute.
+	 * @see #setId(long)
+	 * @see ClassDiagram.ClassDiagramPackage#getBill_Id()
+	 * @model required="true" ordered="false"
+	 * @generated
+	 */
+	long getId();
+
+	/**
+	 * Sets the value of the '{@link ClassDiagram.Bill#getId <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Id</em>' attribute.
+	 * @see #getId()
+	 * @generated
+	 */
+	void setId(long value);
 
 	/**
 	 * <!-- begin-user-doc -->
