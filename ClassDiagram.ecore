@@ -95,6 +95,7 @@
     <eOperations name="removeCost" ordered="false" lowerBound="1">
       <eParameters name="cost" ordered="false" lowerBound="1" eType="#//Cost"/>
     </eOperations>
+    <eOperations name="remove" ordered="false" lowerBound="1" eType="#//Bill"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="cost" ordered="false" upperBound="-1"
         eType="#//Cost"/>
   </eClassifiers>
@@ -230,7 +231,20 @@
         upperBound="-1" eType="#//Permission"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Permission"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Organization" eSuperTypes="#//Customer"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Organization" eSuperTypes="#//Customer">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="billingInformation" ordered="false"
+        upperBound="-1" eType="#//BillingInformation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="roomBookings" ordered="false"
+        upperBound="-1" eType="#//RoomBooking"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="eventBookings" ordered="false"
+        upperBound="-1" eType="#//EventBooking"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" lowerBound="1"
+        eType="ecore:EDataType ../org.eclipse.uml2.types/model/Types.ecore#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="address" ordered="false"
+        lowerBound="1" eType="ecore:EDataType ../org.eclipse.uml2.types/model/Types.ecore#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="responsiblePerson" ordered="false"
+        lowerBound="1" eType="#//Person"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Customer" abstract="true" interface="true">
     <eOperations name="getBillingInformation" ordered="false" upperBound="-1" eType="#//BillingInformation"/>
     <eOperations name="getRoomBookings" ordered="false" upperBound="-1" eType="#//RoomBooking"/>

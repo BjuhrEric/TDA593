@@ -55,4 +55,12 @@ public interface Bill extends EObject {
 	 */
 	void removeCost(Cost cost);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" ordered="false"
+	 * @generated
+	 */
+	Bill remove();
+
 } // Bill

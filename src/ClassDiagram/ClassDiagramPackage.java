@@ -469,13 +469,22 @@ public interface ClassDiagramPackage extends EPackage {
 	int BILL___REMOVE_COST__COST = 1;
 
 	/**
+	 * The operation id for the '<em>Remove</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILL___REMOVE = 2;
+
+	/**
 	 * The number of operations of the '<em>Bill</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BILL_OPERATION_COUNT = 2;
+	int BILL_OPERATION_COUNT = 3;
 
 	/**
 	 * The meta object id for the '{@link ClassDiagram.BillingInformation <em>Billing Information</em>}' class.
@@ -1327,13 +1336,67 @@ public interface ClassDiagramPackage extends EPackage {
 	int ORGANIZATION = 16;
 
 	/**
+	 * The feature id for the '<em><b>Billing Information</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ORGANIZATION__BILLING_INFORMATION = CUSTOMER_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Room Bookings</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ORGANIZATION__ROOM_BOOKINGS = CUSTOMER_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Event Bookings</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ORGANIZATION__EVENT_BOOKINGS = CUSTOMER_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ORGANIZATION__NAME = CUSTOMER_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Address</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ORGANIZATION__ADDRESS = CUSTOMER_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Responsible Person</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ORGANIZATION__RESPONSIBLE_PERSON = CUSTOMER_FEATURE_COUNT + 5;
+
+	/**
 	 * The number of structural features of the '<em>Organization</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ORGANIZATION_FEATURE_COUNT = CUSTOMER_FEATURE_COUNT + 0;
+	int ORGANIZATION_FEATURE_COUNT = CUSTOMER_FEATURE_COUNT + 6;
 
 	/**
 	 * The operation id for the '<em>Get Billing Information</em>' operation.
@@ -2045,6 +2108,16 @@ public interface ClassDiagramPackage extends EPackage {
 	EOperation getBill__RemoveCost__Cost();
 
 	/**
+	 * Returns the meta object for the '{@link ClassDiagram.Bill#remove() <em>Remove</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Remove</em>' operation.
+	 * @see ClassDiagram.Bill#remove()
+	 * @generated
+	 */
+	EOperation getBill__Remove();
+
+	/**
 	 * Returns the meta object for class '{@link ClassDiagram.Cost <em>Cost</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2713,6 +2786,72 @@ public interface ClassDiagramPackage extends EPackage {
 	EClass getOrganization();
 
 	/**
+	 * Returns the meta object for the reference list '{@link ClassDiagram.Organization#getBillingInformation <em>Billing Information</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Billing Information</em>'.
+	 * @see ClassDiagram.Organization#getBillingInformation()
+	 * @see #getOrganization()
+	 * @generated
+	 */
+	EReference getOrganization_BillingInformation();
+
+	/**
+	 * Returns the meta object for the reference list '{@link ClassDiagram.Organization#getRoomBookings <em>Room Bookings</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Room Bookings</em>'.
+	 * @see ClassDiagram.Organization#getRoomBookings()
+	 * @see #getOrganization()
+	 * @generated
+	 */
+	EReference getOrganization_RoomBookings();
+
+	/**
+	 * Returns the meta object for the reference list '{@link ClassDiagram.Organization#getEventBookings <em>Event Bookings</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Event Bookings</em>'.
+	 * @see ClassDiagram.Organization#getEventBookings()
+	 * @see #getOrganization()
+	 * @generated
+	 */
+	EReference getOrganization_EventBookings();
+
+	/**
+	 * Returns the meta object for the attribute '{@link ClassDiagram.Organization#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see ClassDiagram.Organization#getName()
+	 * @see #getOrganization()
+	 * @generated
+	 */
+	EAttribute getOrganization_Name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link ClassDiagram.Organization#getAddress <em>Address</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Address</em>'.
+	 * @see ClassDiagram.Organization#getAddress()
+	 * @see #getOrganization()
+	 * @generated
+	 */
+	EAttribute getOrganization_Address();
+
+	/**
+	 * Returns the meta object for the reference '{@link ClassDiagram.Organization#getResponsiblePerson <em>Responsible Person</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Responsible Person</em>'.
+	 * @see ClassDiagram.Organization#getResponsiblePerson()
+	 * @see #getOrganization()
+	 * @generated
+	 */
+	EReference getOrganization_ResponsiblePerson();
+
+	/**
 	 * Returns the meta object for class '{@link ClassDiagram.Customer <em>Customer</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3270,6 +3409,14 @@ public interface ClassDiagramPackage extends EPackage {
 		EOperation BILL___REMOVE_COST__COST = eINSTANCE.getBill__RemoveCost__Cost();
 
 		/**
+		 * The meta object literal for the '<em><b>Remove</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation BILL___REMOVE = eINSTANCE.getBill__Remove();
+
+		/**
 		 * The meta object literal for the '{@link ClassDiagram.Cost <em>Cost</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3804,6 +3951,54 @@ public interface ClassDiagramPackage extends EPackage {
 		 * @generated
 		 */
 		EClass ORGANIZATION = eINSTANCE.getOrganization();
+
+		/**
+		 * The meta object literal for the '<em><b>Billing Information</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ORGANIZATION__BILLING_INFORMATION = eINSTANCE.getOrganization_BillingInformation();
+
+		/**
+		 * The meta object literal for the '<em><b>Room Bookings</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ORGANIZATION__ROOM_BOOKINGS = eINSTANCE.getOrganization_RoomBookings();
+
+		/**
+		 * The meta object literal for the '<em><b>Event Bookings</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ORGANIZATION__EVENT_BOOKINGS = eINSTANCE.getOrganization_EventBookings();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ORGANIZATION__NAME = eINSTANCE.getOrganization_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Address</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ORGANIZATION__ADDRESS = eINSTANCE.getOrganization_Address();
+
+		/**
+		 * The meta object literal for the '<em><b>Responsible Person</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ORGANIZATION__RESPONSIBLE_PERSON = eINSTANCE.getOrganization_ResponsiblePerson();
 
 		/**
 		 * The meta object literal for the '{@link ClassDiagram.Customer <em>Customer</em>}' class.

@@ -96,6 +96,17 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Bill remove() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -166,6 +177,8 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 			case ClassDiagramPackage.BILL___REMOVE_COST__COST:
 				removeCost((Cost)arguments.get(0));
 				return null;
+			case ClassDiagramPackage.BILL___REMOVE:
+				return remove();
 		}
 		return super.eInvoke(operationID, arguments);
 	}

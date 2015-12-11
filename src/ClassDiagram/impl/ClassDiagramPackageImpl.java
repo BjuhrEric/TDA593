@@ -541,6 +541,15 @@ public class ClassDiagramPackageImpl extends EPackageImpl implements ClassDiagra
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getBill__Remove() {
+		return billEClass.getEOperations().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getCost() {
 		return costEClass;
 	}
@@ -1117,6 +1126,60 @@ public class ClassDiagramPackageImpl extends EPackageImpl implements ClassDiagra
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getOrganization_BillingInformation() {
+		return (EReference)organizationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getOrganization_RoomBookings() {
+		return (EReference)organizationEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getOrganization_EventBookings() {
+		return (EReference)organizationEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getOrganization_Name() {
+		return (EAttribute)organizationEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getOrganization_Address() {
+		return (EAttribute)organizationEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getOrganization_ResponsiblePerson() {
+		return (EReference)organizationEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getCustomer() {
 		return customerEClass;
 	}
@@ -1453,6 +1516,7 @@ public class ClassDiagramPackageImpl extends EPackageImpl implements ClassDiagra
 		createEReference(billEClass, BILL__COST);
 		createEOperation(billEClass, BILL___ADD_COST__COST);
 		createEOperation(billEClass, BILL___REMOVE_COST__COST);
+		createEOperation(billEClass, BILL___REMOVE);
 
 		roomBookingEClass = createEClass(ROOM_BOOKING);
 		createEAttribute(roomBookingEClass, ROOM_BOOKING__START_DATE);
@@ -1525,6 +1589,12 @@ public class ClassDiagramPackageImpl extends EPackageImpl implements ClassDiagra
 		createEOperation(accountTypeEClass, ACCOUNT_TYPE___CLEAR_PERMISSIONS);
 
 		organizationEClass = createEClass(ORGANIZATION);
+		createEReference(organizationEClass, ORGANIZATION__BILLING_INFORMATION);
+		createEReference(organizationEClass, ORGANIZATION__ROOM_BOOKINGS);
+		createEReference(organizationEClass, ORGANIZATION__EVENT_BOOKINGS);
+		createEAttribute(organizationEClass, ORGANIZATION__NAME);
+		createEAttribute(organizationEClass, ORGANIZATION__ADDRESS);
+		createEReference(organizationEClass, ORGANIZATION__RESPONSIBLE_PERSON);
 
 		customerEClass = createEClass(CUSTOMER);
 		createEOperation(customerEClass, CUSTOMER___GET_BILLING_INFORMATION);
@@ -1650,6 +1720,8 @@ public class ClassDiagramPackageImpl extends EPackageImpl implements ClassDiagra
 		op = initEOperation(getBill__RemoveCost__Cost(), null, "removeCost", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getCost(), "cost", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
+		initEOperation(getBill__Remove(), this.getBill(), "remove", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
 		initEClass(roomBookingEClass, RoomBooking.class, "RoomBooking", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRoomBooking_StartDate(), ecorePackage.getEDate(), "startDate", null, 1, 1, RoomBooking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getRoomBooking_EndDate(), ecorePackage.getEDate(), "endDate", null, 1, 1, RoomBooking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -1756,6 +1828,12 @@ public class ClassDiagramPackageImpl extends EPackageImpl implements ClassDiagra
 		initEOperation(getAccountType__ClearPermissions(), null, "clearPermissions", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(organizationEClass, Organization.class, "Organization", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getOrganization_BillingInformation(), this.getBillingInformation(), null, "billingInformation", null, 0, -1, Organization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getOrganization_RoomBookings(), this.getRoomBooking(), null, "roomBookings", null, 0, -1, Organization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getOrganization_EventBookings(), this.getEventBooking(), null, "eventBookings", null, 0, -1, Organization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getOrganization_Name(), theTypesPackage.getString(), "name", null, 1, 1, Organization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getOrganization_Address(), theTypesPackage.getString(), "address", null, 1, 1, Organization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getOrganization_ResponsiblePerson(), this.getPerson(), null, "responsiblePerson", null, 1, 1, Organization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(customerEClass, Customer.class, "Customer", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

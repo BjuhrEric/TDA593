@@ -2,6 +2,7 @@
  */
 package ClassDiagram;
 
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,7 +15,7 @@ package ClassDiagram;
  *        annotation="http://www.eclipse.org/uml2/2.0.0/UML originalName='Billing Information'"
  * @generated NOT
  */
-public interface BillingInformation {
+public interface BillingInformation extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -2,6 +2,7 @@
  */
 package ClassDiagram;
 
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,7 +15,7 @@ package ClassDiagram;
  *        annotation="http://www.eclipse.org/uml2/2.0.0/UML originalName='Payment Strategy'"
  * @generated NOT
  */
-public interface PaymentStrategy {
+public interface PaymentStrategy extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
