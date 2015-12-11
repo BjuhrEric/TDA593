@@ -92,6 +92,7 @@
         <type xmi:type="uml:Class" href="ClassDiagram.uml#_QLEo0JUHEeWictR9w7kxNQ"/>
       </ownedParameter>
     </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_HGJqMKAUEeWyRqBnIRQHZw" name="room"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Interface" xmi:id="_yzbEcJUpEeW_s7g45KehCA" name="RequiresRoom">
     <ownedOperation xmi:type="uml:Operation" xmi:id="_yzbEcZUpEeW_s7g45KehCA" name="checkAvailableRooms">
