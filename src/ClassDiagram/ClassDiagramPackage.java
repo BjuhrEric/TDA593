@@ -1178,7 +1178,7 @@ public interface ClassDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACCOUNT_TYPE___HAS_PERMISSION__BOOLEAN = 2;
+	int ACCOUNT_TYPE___HAS_PERMISSION = 2;
 
 	/**
 	 * The operation id for the '<em>Has Permissions</em>' operation.
@@ -2597,14 +2597,14 @@ public interface ClassDiagramPackage extends EPackage {
 	EOperation getAccountType__RemovePermission__Permission();
 
 	/**
-	 * Returns the meta object for the '{@link ClassDiagram.AccountType#hasPermission(boolean) <em>Has Permission</em>}' operation.
+	 * Returns the meta object for the '{@link ClassDiagram.AccountType#hasPermission() <em>Has Permission</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Has Permission</em>' operation.
-	 * @see ClassDiagram.AccountType#hasPermission(boolean)
+	 * @see ClassDiagram.AccountType#hasPermission()
 	 * @generated
 	 */
-	EOperation getAccountType__HasPermission__boolean();
+	EOperation getAccountType__HasPermission();
 
 	/**
 	 * Returns the meta object for the '{@link ClassDiagram.AccountType#hasPermissions() <em>Has Permissions</em>}' operation.
@@ -3669,7 +3669,7 @@ public interface ClassDiagramPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation ACCOUNT_TYPE___HAS_PERMISSION__BOOLEAN = eINSTANCE.getAccountType__HasPermission__boolean();
+		EOperation ACCOUNT_TYPE___HAS_PERMISSION = eINSTANCE.getAccountType__HasPermission();
 
 		/**
 		 * The meta object literal for the '<em><b>Has Permissions</b></em>' operation.

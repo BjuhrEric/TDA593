@@ -99,7 +99,7 @@ public class AccountTypeImpl extends MinimalEObjectImpl.Container implements Acc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void hasPermission(boolean return_) {
+	public boolean hasPermission() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -201,9 +201,8 @@ public class AccountTypeImpl extends MinimalEObjectImpl.Container implements Acc
 			case ClassDiagramPackage.ACCOUNT_TYPE___REMOVE_PERMISSION__PERMISSION:
 				removePermission((Permission)arguments.get(0));
 				return null;
-			case ClassDiagramPackage.ACCOUNT_TYPE___HAS_PERMISSION__BOOLEAN:
-				hasPermission((Boolean)arguments.get(0));
-				return null;
+			case ClassDiagramPackage.ACCOUNT_TYPE___HAS_PERMISSION:
+				return hasPermission();
 			case ClassDiagramPackage.ACCOUNT_TYPE___HAS_PERMISSIONS:
 				return hasPermissions();
 			case ClassDiagramPackage.ACCOUNT_TYPE___CLEAR_PERMISSIONS:

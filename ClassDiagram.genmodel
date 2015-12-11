@@ -192,9 +192,7 @@
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ClassDiagram.ecore#//AccountType/removePermission">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ClassDiagram.ecore#//AccountType/removePermission/p"/>
       </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ClassDiagram.ecore#//AccountType/hasPermission">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="ClassDiagram.ecore#//AccountType/hasPermission/return"/>
-      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ClassDiagram.ecore#//AccountType/hasPermission"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ClassDiagram.ecore#//AccountType/hasPermissions"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ClassDiagram.ecore#//AccountType/clearPermissions"/>
     </genClasses>

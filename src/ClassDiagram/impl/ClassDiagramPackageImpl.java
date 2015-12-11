@@ -1045,7 +1045,7 @@ public class ClassDiagramPackageImpl extends EPackageImpl implements ClassDiagra
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getAccountType__HasPermission__boolean() {
+	public EOperation getAccountType__HasPermission() {
 		return accountTypeEClass.getEOperations().get(2);
 	}
 
@@ -1480,7 +1480,7 @@ public class ClassDiagramPackageImpl extends EPackageImpl implements ClassDiagra
 		createEAttribute(accountTypeEClass, ACCOUNT_TYPE__PERMISSION);
 		createEOperation(accountTypeEClass, ACCOUNT_TYPE___ADD_PERMISSION__PERMISSION);
 		createEOperation(accountTypeEClass, ACCOUNT_TYPE___REMOVE_PERMISSION__PERMISSION);
-		createEOperation(accountTypeEClass, ACCOUNT_TYPE___HAS_PERMISSION__BOOLEAN);
+		createEOperation(accountTypeEClass, ACCOUNT_TYPE___HAS_PERMISSION);
 		createEOperation(accountTypeEClass, ACCOUNT_TYPE___HAS_PERMISSIONS);
 		createEOperation(accountTypeEClass, ACCOUNT_TYPE___CLEAR_PERMISSIONS);
 
@@ -1693,8 +1693,7 @@ public class ClassDiagramPackageImpl extends EPackageImpl implements ClassDiagra
 		op = initEOperation(getAccountType__RemovePermission__Permission(), null, "removePermission", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getPermission(), "p", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getAccountType__HasPermission__boolean(), null, "hasPermission", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, theTypesPackage.getBoolean(), "return_", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		initEOperation(getAccountType__HasPermission(), theTypesPackage.getBoolean(), "hasPermission", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEOperation(getAccountType__HasPermissions(), theTypesPackage.getBoolean(), "hasPermissions", 1, 1, IS_UNIQUE, !IS_ORDERED);
 

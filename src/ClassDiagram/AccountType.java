@@ -60,10 +60,10 @@ public interface AccountType extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model returnDataType="org.eclipse.uml2.types.Boolean" returnRequired="true" returnOrdered="false"
+	 * @model dataType="org.eclipse.uml2.types.Boolean" required="true" ordered="false"
 	 * @generated
 	 */
-	void hasPermission(boolean return_);
+	boolean hasPermission();
 
 	/**
 	 * <!-- begin-user-doc -->

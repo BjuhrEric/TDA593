@@ -459,7 +459,7 @@
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_n7vTEKAHEeWVP7497XArVA" name="p" type="_NSKngJOSEeWai68V7lLhPw"/>
     </ownedOperation>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_B2Hm4KAHEeWVP7497XArVA" name="hasPermission">
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_a4NLUKAHEeWVP7497XArVA" name="return">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_a4NLUKAHEeWVP7497XArVA" name="return" direction="return">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
       </ownedParameter>
     </ownedOperation>
