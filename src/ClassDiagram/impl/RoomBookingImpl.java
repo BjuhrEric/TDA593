@@ -254,7 +254,7 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void checkIn(Guest guest) {
+	public void checkIn(Guest guest, Room room) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -427,8 +427,8 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 			case ClassDiagramPackage.ROOM_BOOKING___GENERATE_PDF:
 				generatePDF();
 				return null;
-			case ClassDiagramPackage.ROOM_BOOKING___CHECK_IN__GUEST:
-				checkIn((Guest)arguments.get(0));
+			case ClassDiagramPackage.ROOM_BOOKING___CHECK_IN__GUEST_ROOM:
+				checkIn((Guest)arguments.get(0), (Room)arguments.get(1));
 				return null;
 			case ClassDiagramPackage.ROOM_BOOKING___CHECK_OUT__BILLINGINFORMATION:
 				checkOut((BillingInformation)arguments.get(0));

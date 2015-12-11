@@ -703,7 +703,7 @@ public class ClassDiagramPackageImpl extends EPackageImpl implements ClassDiagra
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getRoomBooking__CheckIn__Guest() {
+	public EOperation getRoomBooking__CheckIn__Guest_Room() {
 		return roomBookingEClass.getEOperations().get(3);
 	}
 
@@ -1527,7 +1527,7 @@ public class ClassDiagramPackageImpl extends EPackageImpl implements ClassDiagra
 		createEOperation(roomBookingEClass, ROOM_BOOKING___CANCEL);
 		createEOperation(roomBookingEClass, ROOM_BOOKING___CLOSE);
 		createEOperation(roomBookingEClass, ROOM_BOOKING___GENERATE_PDF);
-		createEOperation(roomBookingEClass, ROOM_BOOKING___CHECK_IN__GUEST);
+		createEOperation(roomBookingEClass, ROOM_BOOKING___CHECK_IN__GUEST_ROOM);
 		createEOperation(roomBookingEClass, ROOM_BOOKING___CHECK_OUT__BILLINGINFORMATION);
 		createEOperation(roomBookingEClass, ROOM_BOOKING___ADD_ROOM__ROOM);
 		createEOperation(roomBookingEClass, ROOM_BOOKING___REMOVE_ROOM__ROOM);
@@ -1735,8 +1735,9 @@ public class ClassDiagramPackageImpl extends EPackageImpl implements ClassDiagra
 
 		initEOperation(getRoomBooking__GeneratePDF(), null, "generatePDF", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getRoomBooking__CheckIn__Guest(), null, "checkIn", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getRoomBooking__CheckIn__Guest_Room(), null, "checkIn", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getGuest(), "guest", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getRoom(), "room", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = initEOperation(getRoomBooking__CheckOut__BillingInformation(), null, "checkOut", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getBillingInformation(), "info", 1, 1, IS_UNIQUE, !IS_ORDERED);

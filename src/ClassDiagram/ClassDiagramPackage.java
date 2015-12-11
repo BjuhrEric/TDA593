@@ -604,7 +604,7 @@ public interface ClassDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_BOOKING___CHECK_IN__GUEST = 3;
+	int ROOM_BOOKING___CHECK_IN__GUEST_ROOM = 3;
 
 	/**
 	 * The operation id for the '<em>Check Out</em>' operation.
@@ -2293,14 +2293,14 @@ public interface ClassDiagramPackage extends EPackage {
 	EOperation getRoomBooking__GeneratePDF();
 
 	/**
-	 * Returns the meta object for the '{@link ClassDiagram.RoomBooking#checkIn(ClassDiagram.Guest) <em>Check In</em>}' operation.
+	 * Returns the meta object for the '{@link ClassDiagram.RoomBooking#checkIn(ClassDiagram.Guest, ClassDiagram.Room) <em>Check In</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Check In</em>' operation.
-	 * @see ClassDiagram.RoomBooking#checkIn(ClassDiagram.Guest)
+	 * @see ClassDiagram.RoomBooking#checkIn(ClassDiagram.Guest, ClassDiagram.Room)
 	 * @generated
 	 */
-	EOperation getRoomBooking__CheckIn__Guest();
+	EOperation getRoomBooking__CheckIn__Guest_Room();
 
 	/**
 	 * Returns the meta object for the '{@link ClassDiagram.RoomBooking#checkOut(ClassDiagram.BillingInformation) <em>Check Out</em>}' operation.
@@ -3566,7 +3566,7 @@ public interface ClassDiagramPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation ROOM_BOOKING___CHECK_IN__GUEST = eINSTANCE.getRoomBooking__CheckIn__Guest();
+		EOperation ROOM_BOOKING___CHECK_IN__GUEST_ROOM = eINSTANCE.getRoomBooking__CheckIn__Guest_Room();
 
 		/**
 		 * The meta object literal for the '<em><b>Check Out</b></em>' operation.

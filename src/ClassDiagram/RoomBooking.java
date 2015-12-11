@@ -155,10 +155,10 @@ public interface RoomBooking extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model guestRequired="true" guestOrdered="false"
+	 * @model guestRequired="true" guestOrdered="false" roomRequired="true" roomOrdered="false"
 	 * @generated
 	 */
-	void checkIn(Guest guest);
+	void checkIn(Guest guest, Room room);
 
 	/**
 	 * <!-- begin-user-doc -->

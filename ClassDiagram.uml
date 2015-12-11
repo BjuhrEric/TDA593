@@ -46,6 +46,7 @@
     <ownedOperation xmi:type="uml:Operation" xmi:id="_CN43IJbGEeWywcXnTB_lHw" name="generatePDF"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_IDOiMJ2-EeWJ2YKRfJzR_A" name="checkIn">
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_jBpQcJ2-EeWJ2YKRfJzR_A" name="guest" type="_d1iGcJOCEeWai68V7lLhPw"/>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_0Nxx0KAaEeWVP7497XArVA" name="room" type="_dGX6YJOCEeWai68V7lLhPw"/>
     </ownedOperation>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_mqBdoJ3EEeWJ2YKRfJzR_A" name="checkOut">
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_sz0GYJ3EEeWJ2YKRfJzR_A" name="info" type="_n4U5sJOFEeWai68V7lLhPw"/>
