@@ -5,6 +5,7 @@ package ClassDiagram.impl;
 import ClassDiagram.BillingInformation;
 import ClassDiagram.ClassDiagramPackage;
 import ClassDiagram.Guest;
+import ClassDiagram.GuestStatus;
 import ClassDiagram.Room;
 import ClassDiagram.RoomBooking;
 import ClassDiagram.RoomType;
@@ -217,6 +218,14 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 	}
 
 	/**
+	 * @generated NOT
+	 */
+	public void setNumberOfGuests(final int numberOfGuests) {
+		this.numberOfGuests = numberOfGuests;
+	}
+	
+	
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -297,10 +306,10 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 	 * @generated
 	 */
 	public void checkIn(Guest guest, Room room) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+
+		guest.setStatus(GuestStatus.CHECKED_IN);
 	}
+
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -316,45 +325,47 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void addRoom(Room room) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		if(this.rooms==null) {
+			this.rooms = new EObjectResolvingEList<Room>(Room.class, this, ClassDiagramPackage.ROOM_BOOKING__ROOMS);
+		}
+		this.rooms.add(room);
+		// TODO
+		//Database.updateBooking(this);	
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void removeRoom(Room room) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		this.rooms.remove(room);
+		// TODO
+		//Database.updateBooking(this);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void addRoomType(RoomType roomType) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		if(this.roomType == null) {
+			this.roomType = new EObjectResolvingEList<RoomType>(RoomType.class, this, ClassDiagramPackage.ROOM_BOOKING__ROOM_TYPE); 
+		}
+			this.roomType.add(roomType);	
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void removeRoomType(RoomType roomType) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		this.roomType.remove(roomType);
 	}
 
 	/**

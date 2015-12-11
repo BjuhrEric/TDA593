@@ -310,7 +310,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * @generated NOT
 	 */
 	public int getNumberOfGuests() {
-		return guest.size();
+		return guests.size();
 	}
 
 	/**
@@ -319,7 +319,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * @generated NOT
 	 */
 	public void checkOut() {
-		guest.clear();
+		guests.clear();
 	}
 
 	/**
@@ -328,7 +328,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * @generated NOT
 	 */
 	public void addGuest(Guest guest) {
-		this.guest.add(guest);
+		this.guests.add(guest);
 	}
 
 	/**
