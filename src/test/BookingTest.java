@@ -48,7 +48,7 @@ public class BookingTest {
 		
 		//Test getRoom
 		roomBook.addRoom(room);
-		testResult = roomBook.getRoom().contains(room);
+		testResult = roomBook.getRooms().contains(room);
 		
 		assertTrue(testResult);
 		//-----------------

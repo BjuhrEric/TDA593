@@ -6,8 +6,10 @@ import ClassDiagram.BillingInformation;
 import ClassDiagram.ClassDiagramPackage;
 import ClassDiagram.Guest;
 import ClassDiagram.GuestStatus;
+import ClassDiagram.Payment;
 import ClassDiagram.Room;
 import ClassDiagram.RoomBooking;
+import ClassDiagram.RoomStatus;
 import ClassDiagram.RoomType;
 
 import java.lang.reflect.InvocationTargetException;
@@ -303,23 +305,31 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void checkIn(Guest guest, Room room) {
-
-		guest.setStatus(GuestStatus.CHECKED_IN);
+		if(rooms.contains(room)) {
+			room.setRoomStatus(RoomStatus.OCCUPIED);
+			guest.setStatus(GuestStatus.CHECKED_IN);
+			room.addGuest(guest);
+		}
+		
 	}
 
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void checkOut(BillingInformation info) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+			for(Room room: rooms ) {
+			room.checkOut();
+			final Payment p = ClassDiagramFactoryImpl.eINSTANCE.createPayment();
+			p.setBill(room.getBill());
+			p.performPayment(info);
+		}
+	
 	}
 
 	/**
