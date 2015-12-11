@@ -33,7 +33,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link ClassDiagram.impl.RoomImpl#getGuest <em>Guest</em>}</li>
+ *   <li>{@link ClassDiagram.impl.RoomImpl#getGuests <em>Guests</em>}</li>
  *   <li>{@link ClassDiagram.impl.RoomImpl#getRoomStatus <em>Room Status</em>}</li>
  *   <li>{@link ClassDiagram.impl.RoomImpl#getCleaningStatus <em>Cleaning Status</em>}</li>
  *   <li>{@link ClassDiagram.impl.RoomImpl#getRoomType <em>Room Type</em>}</li>
@@ -44,14 +44,14 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  */
 public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	/**
-	 * The cached value of the '{@link #getGuest() <em>Guest</em>}' reference list.
+	 * The cached value of the '{@link #getGuests() <em>Guests</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getGuest()
+	 * @see #getGuests()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Guest> guest;
+	protected EList<Guest> guests;
 
 	/**
 	 * The default value of the '{@link #getRoomStatus() <em>Room Status</em>}' attribute.
@@ -137,11 +137,11 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Guest> getGuest() {
-		if (guest == null) {
-			guest = new EObjectResolvingEList<Guest>(Guest.class, this, ClassDiagramPackage.ROOM__GUEST);
+	public EList<Guest> getGuests() {
+		if (guests == null) {
+			guests = new EObjectResolvingEList<Guest>(Guest.class, this, ClassDiagramPackage.ROOM__GUESTS);
 		}
-		return guest;
+		return guests;
 	}
 
 	/**
@@ -297,8 +297,8 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ClassDiagramPackage.ROOM__GUEST:
-				return getGuest();
+			case ClassDiagramPackage.ROOM__GUESTS:
+				return getGuests();
 			case ClassDiagramPackage.ROOM__ROOM_STATUS:
 				return getRoomStatus();
 			case ClassDiagramPackage.ROOM__CLEANING_STATUS:
@@ -322,9 +322,9 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 		@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ClassDiagramPackage.ROOM__GUEST:
-				getGuest().clear();
-				getGuest().addAll((Collection<? extends Guest>)newValue);
+			case ClassDiagramPackage.ROOM__GUESTS:
+				getGuests().clear();
+				getGuests().addAll((Collection<? extends Guest>)newValue);
 				return;
 			case ClassDiagramPackage.ROOM__ROOM_STATUS:
 				setRoomStatus((RoomStatus)newValue);
@@ -350,8 +350,8 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ClassDiagramPackage.ROOM__GUEST:
-				getGuest().clear();
+			case ClassDiagramPackage.ROOM__GUESTS:
+				getGuests().clear();
 				return;
 			case ClassDiagramPackage.ROOM__ROOM_STATUS:
 				setRoomStatus(ROOM_STATUS_EDEFAULT);
@@ -377,8 +377,8 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ClassDiagramPackage.ROOM__GUEST:
-				return guest != null && !guest.isEmpty();
+			case ClassDiagramPackage.ROOM__GUESTS:
+				return guests != null && !guests.isEmpty();
 			case ClassDiagramPackage.ROOM__ROOM_STATUS:
 				return roomStatus != ROOM_STATUS_EDEFAULT;
 			case ClassDiagramPackage.ROOM__CLEANING_STATUS:

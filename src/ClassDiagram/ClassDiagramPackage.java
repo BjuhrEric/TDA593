@@ -68,13 +68,13 @@ public interface ClassDiagramPackage extends EPackage {
 	int ROOM = 0;
 
 	/**
-	 * The feature id for the '<em><b>Guest</b></em>' reference list.
+	 * The feature id for the '<em><b>Guests</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM__GUEST = 0;
+	int ROOM__GUESTS = 0;
 
 	/**
 	 * The feature id for the '<em><b>Room Status</b></em>' attribute.
@@ -553,13 +553,13 @@ public interface ClassDiagramPackage extends EPackage {
 	int ROOM_BOOKING__NUMBER_OF_GUESTS = 3;
 
 	/**
-	 * The feature id for the '<em><b>Room</b></em>' reference list.
+	 * The feature id for the '<em><b>Rooms</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_BOOKING__ROOM = 4;
+	int ROOM_BOOKING__ROOMS = 4;
 
 	/**
 	 * The number of structural features of the '<em>Room Booking</em>' class.
@@ -1842,15 +1842,15 @@ public interface ClassDiagramPackage extends EPackage {
 	EClass getRoom();
 
 	/**
-	 * Returns the meta object for the reference list '{@link ClassDiagram.Room#getGuest <em>Guest</em>}'.
+	 * Returns the meta object for the reference list '{@link ClassDiagram.Room#getGuests <em>Guests</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Guest</em>'.
-	 * @see ClassDiagram.Room#getGuest()
+	 * @return the meta object for the reference list '<em>Guests</em>'.
+	 * @see ClassDiagram.Room#getGuests()
 	 * @see #getRoom()
 	 * @generated
 	 */
-	EReference getRoom_Guest();
+	EReference getRoom_Guests();
 
 	/**
 	 * Returns the meta object for the attribute '{@link ClassDiagram.Room#getRoomStatus <em>Room Status</em>}'.
@@ -2230,17 +2230,6 @@ public interface ClassDiagramPackage extends EPackage {
 	EAttribute getRoomBooking_EndDate();
 
 	/**
-	 * Returns the meta object for the reference list '{@link ClassDiagram.RoomBooking#getRoom <em>Room</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Room</em>'.
-	 * @see ClassDiagram.RoomBooking#getRoom()
-	 * @see #getRoomBooking()
-	 * @generated
-	 */
-	EReference getRoomBooking_Room();
-
-	/**
 	 * Returns the meta object for the reference list '{@link ClassDiagram.RoomBooking#getRoomType <em>Room Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2261,6 +2250,17 @@ public interface ClassDiagramPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getRoomBooking_NumberOfGuests();
+
+	/**
+	 * Returns the meta object for the reference list '{@link ClassDiagram.RoomBooking#getRooms <em>Rooms</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Rooms</em>'.
+	 * @see ClassDiagram.RoomBooking#getRooms()
+	 * @see #getRoomBooking()
+	 * @generated
+	 */
+	EReference getRoomBooking_Rooms();
 
 	/**
 	 * Returns the meta object for the '{@link ClassDiagram.RoomBooking#cancel() <em>Cancel</em>}' operation.
@@ -3201,12 +3201,12 @@ public interface ClassDiagramPackage extends EPackage {
 		EClass ROOM = eINSTANCE.getRoom();
 
 		/**
-		 * The meta object literal for the '<em><b>Guest</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Guests</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ROOM__GUEST = eINSTANCE.getRoom_Guest();
+		EReference ROOM__GUESTS = eINSTANCE.getRoom_Guests();
 
 		/**
 		 * The meta object literal for the '<em><b>Room Status</b></em>' attribute feature.
@@ -3513,14 +3513,6 @@ public interface ClassDiagramPackage extends EPackage {
 		EAttribute ROOM_BOOKING__END_DATE = eINSTANCE.getRoomBooking_EndDate();
 
 		/**
-		 * The meta object literal for the '<em><b>Room</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ROOM_BOOKING__ROOM = eINSTANCE.getRoomBooking_Room();
-
-		/**
 		 * The meta object literal for the '<em><b>Room Type</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3535,6 +3527,14 @@ public interface ClassDiagramPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ROOM_BOOKING__NUMBER_OF_GUESTS = eINSTANCE.getRoomBooking_NumberOfGuests();
+
+		/**
+		 * The meta object literal for the '<em><b>Rooms</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROOM_BOOKING__ROOMS = eINSTANCE.getRoomBooking_Rooms();
 
 		/**
 		 * The meta object literal for the '<em><b>Cancel</b></em>' operation.

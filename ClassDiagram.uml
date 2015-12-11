@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <uml:Package xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_JI3k8JOUEeWai68V7lLhPw" name="ClassDiagram">
   <packagedElement xmi:type="uml:Class" xmi:id="_dGX6YJOCEeWai68V7lLhPw" name="Room">
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_-uNIcJOJEeWai68V7lLhPw" name="guest" type="_d1iGcJOCEeWai68V7lLhPw" association="_-uL6UJOJEeWai68V7lLhPw">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_-uNIcJOJEeWai68V7lLhPw" name="guests" type="_d1iGcJOCEeWai68V7lLhPw" association="_-uL6UJOJEeWai68V7lLhPw">
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_BB6QcJOKEeWai68V7lLhPw"/>
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_BB960JOKEeWai68V7lLhPw" value="*"/>
     </ownedAttribute>
@@ -37,7 +37,7 @@
     <ownedAttribute xmi:type="uml:Property" xmi:id="__EaNEJ29EeWJ2YKRfJzR_A" name="numberOfGuests" isReadOnly="true">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
     </ownedAttribute>
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_9reLAJOHEeWai68V7lLhPw" name="room" type="_dGX6YJOCEeWai68V7lLhPw" aggregation="shared" association="_9rc84JOHEeWai68V7lLhPw">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_9reLAJOHEeWai68V7lLhPw" name="rooms" type="_dGX6YJOCEeWai68V7lLhPw" aggregation="shared" association="_9rc84JOHEeWai68V7lLhPw">
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_bX6lwJOIEeWai68V7lLhPw"/>
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_bX7z4JOIEeWai68V7lLhPw" value="*"/>
     </ownedAttribute>

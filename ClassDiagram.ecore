@@ -7,7 +7,7 @@
     <eOperations name="addGuest" ordered="false" lowerBound="1">
       <eParameters name="guest" ordered="false" lowerBound="1" eType="#//Guest"/>
     </eOperations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="guest" ordered="false"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="guests" ordered="false"
         upperBound="-1" eType="#//Guest"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="roomStatus" ordered="false"
         lowerBound="1" eType="#//RoomStatus"/>
@@ -130,8 +130,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="numberOfGuests" ordered="false"
         lowerBound="1" eType="ecore:EDataType ../org.eclipse.uml2.types/model/Types.ecore#//Integer"
         changeable="false"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="room" ordered="false" upperBound="-1"
-        eType="#//Room"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rooms" ordered="false"
+        upperBound="-1" eType="#//Room"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BillingInformation" abstract="true"
       interface="true">

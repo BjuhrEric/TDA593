@@ -60,7 +60,7 @@
     <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="ClassDiagram.ecore#//Permission"/>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="ClassDiagram.ecore#//Room">
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-          propertySortChoices="true" ecoreFeature="ecore:EReference ClassDiagram.ecore#//Room/guest"/>
+          propertySortChoices="true" ecoreFeature="ecore:EReference ClassDiagram.ecore#//Room/guests"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute ClassDiagram.ecore#//Room/roomStatus"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute ClassDiagram.ecore#//Room/cleaningStatus"/>
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
@@ -120,7 +120,7 @@
       <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" createChild="false"
           ecoreFeature="ecore:EAttribute ClassDiagram.ecore#//RoomBooking/numberOfGuests"/>
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-          propertySortChoices="true" ecoreFeature="ecore:EReference ClassDiagram.ecore#//RoomBooking/room"/>
+          propertySortChoices="true" ecoreFeature="ecore:EReference ClassDiagram.ecore#//RoomBooking/rooms"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ClassDiagram.ecore#//RoomBooking/cancel"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ClassDiagram.ecore#//RoomBooking/close"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="ClassDiagram.ecore#//RoomBooking/generatePDF"/>

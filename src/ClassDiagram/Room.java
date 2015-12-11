@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link ClassDiagram.Room#getGuest <em>Guest</em>}</li>
+ *   <li>{@link ClassDiagram.Room#getGuests <em>Guests</em>}</li>
  *   <li>{@link ClassDiagram.Room#getRoomStatus <em>Room Status</em>}</li>
  *   <li>{@link ClassDiagram.Room#getCleaningStatus <em>Cleaning Status</em>}</li>
  *   <li>{@link ClassDiagram.Room#getRoomType <em>Room Type</em>}</li>
@@ -28,20 +28,20 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Room extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Guest</b></em>' reference list.
+	 * Returns the value of the '<em><b>Guests</b></em>' reference list.
 	 * The list contents are of type {@link ClassDiagram.Guest}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Guest</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Guests</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Guest</em>' reference list.
-	 * @see ClassDiagram.ClassDiagramPackage#getRoom_Guest()
+	 * @return the value of the '<em>Guests</em>' reference list.
+	 * @see ClassDiagram.ClassDiagramPackage#getRoom_Guests()
 	 * @model ordered="false"
 	 * @generated
 	 */
-	EList<Guest> getGuest();
+	EList<Guest> getGuests();
 
 	/**
 	 * Returns the value of the '<em><b>Room Status</b></em>' attribute.

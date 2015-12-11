@@ -21,7 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link ClassDiagram.RoomBooking#getEndDate <em>End Date</em>}</li>
  *   <li>{@link ClassDiagram.RoomBooking#getRoomType <em>Room Type</em>}</li>
  *   <li>{@link ClassDiagram.RoomBooking#getNumberOfGuests <em>Number Of Guests</em>}</li>
- *   <li>{@link ClassDiagram.RoomBooking#getRoom <em>Room</em>}</li>
+ *   <li>{@link ClassDiagram.RoomBooking#getRooms <em>Rooms</em>}</li>
  * </ul>
  *
  * @see ClassDiagram.ClassDiagramPackage#getRoomBooking()
@@ -82,22 +82,6 @@ public interface RoomBooking extends EObject {
 	void setEndDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Room</b></em>' reference list.
-	 * The list contents are of type {@link ClassDiagram.Room}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Room</em>' reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Room</em>' reference list.
-	 * @see ClassDiagram.ClassDiagramPackage#getRoomBooking_Room()
-	 * @model ordered="false"
-	 * @generated
-	 */
-	EList<Room> getRoom();
-
-	/**
 	 * Returns the value of the '<em><b>Room Type</b></em>' reference list.
 	 * The list contents are of type {@link ClassDiagram.RoomType}.
 	 * <!-- begin-user-doc -->
@@ -127,6 +111,22 @@ public interface RoomBooking extends EObject {
 	 * @generated
 	 */
 	int getNumberOfGuests();
+
+	/**
+	 * Returns the value of the '<em><b>Rooms</b></em>' reference list.
+	 * The list contents are of type {@link ClassDiagram.Room}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Rooms</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Rooms</em>' reference list.
+	 * @see ClassDiagram.ClassDiagramPackage#getRoomBooking_Rooms()
+	 * @model ordered="false"
+	 * @generated
+	 */
+	EList<Room> getRooms();
 
 	/**
 	 * <!-- begin-user-doc -->
