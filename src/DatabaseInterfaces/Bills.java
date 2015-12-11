@@ -1,8 +1,8 @@
 package DatabaseInterfaces;
 
-import java.rmi.server.UID;
 import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 
 import ClassDiagram.Bill;
 
@@ -10,7 +10,7 @@ public interface Bills {
 
 	boolean saveBill (Bill bill);
 	boolean removeBill (Bill bill);
-	boolean getBill (UID billId);
+	boolean getBill (UUID billId);
 	
 	/**
 	 * Returns a list of bills associated with the given room no.
@@ -18,5 +18,4 @@ public interface Bills {
 	 * with the room at that time.
 	 */
 	List<Bill> getBill(int roomNo, Date date);
-	
 }
