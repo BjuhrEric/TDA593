@@ -251,23 +251,19 @@ public class OrganizationImpl extends MinimalEObjectImpl.Container implements Or
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void addRoomBooking(RoomBooking roomBooking) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		roomBookings.add(roomBooking);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void addEventBooking(EventBooking eventBooking) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		eventBookings.add(eventBooking);
 	}
 
 	/**
@@ -279,6 +275,15 @@ public class OrganizationImpl extends MinimalEObjectImpl.Container implements Or
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public void addBillingInformation(BillingInformation info) {
+		billingInformation.add(info);
 	}
 
 	/**
@@ -410,6 +415,9 @@ public class OrganizationImpl extends MinimalEObjectImpl.Container implements Or
 				return null;
 			case ClassDiagramPackage.ORGANIZATION___GET_ID:
 				getID();
+				return null;
+			case ClassDiagramPackage.ORGANIZATION___ADD_BILLING_INFORMATION__BILLINGINFORMATION:
+				addBillingInformation((BillingInformation)arguments.get(0));
 				return null;
 		}
 		return super.eInvoke(operationID, arguments);

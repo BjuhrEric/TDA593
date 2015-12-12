@@ -153,4 +153,12 @@ public interface Organization extends Customer {
 	 * @generated
 	 */
 	void setResponsiblePerson(Person value);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model infoRequired="true" infoOrdered="false"
+	 * @generated
+	 */
+	void addBillingInformation(BillingInformation info);
 } // Organization

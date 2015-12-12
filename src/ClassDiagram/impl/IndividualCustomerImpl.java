@@ -123,23 +123,19 @@ public class IndividualCustomerImpl extends PersonImpl implements IndividualCust
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void addRoomBooking(RoomBooking roomBooking) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		roomBookings.add(roomBooking);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void addEventBooking(EventBooking eventBooking) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		eventBookings.add(eventBooking);
 	}
 
 	/**
@@ -151,6 +147,15 @@ public class IndividualCustomerImpl extends PersonImpl implements IndividualCust
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public void addBillingInformation(BillingInformation info) {
+		billingInformation.add(info);
 	}
 
 	/**
@@ -272,6 +277,9 @@ public class IndividualCustomerImpl extends PersonImpl implements IndividualCust
 				return null;
 			case ClassDiagramPackage.INDIVIDUAL_CUSTOMER___GET_ID:
 				getID();
+				return null;
+			case ClassDiagramPackage.INDIVIDUAL_CUSTOMER___ADD_BILLING_INFORMATION__BILLINGINFORMATION:
+				addBillingInformation((BillingInformation)arguments.get(0));
 				return null;
 		}
 		return super.eInvoke(operationID, arguments);

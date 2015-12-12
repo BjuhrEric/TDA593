@@ -1216,6 +1216,15 @@ public class ClassDiagramPackageImpl extends EPackageImpl implements ClassDiagra
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getOrganization__AddBillingInformation__BillingInformation() {
+		return organizationEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getCustomer() {
 		return customerEClass;
 	}
@@ -1308,6 +1317,15 @@ public class ClassDiagramPackageImpl extends EPackageImpl implements ClassDiagra
 	 */
 	public EReference getIndividualCustomer_EventBookings() {
 		return (EReference)individualCustomerEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getIndividualCustomer__AddBillingInformation__BillingInformation() {
+		return individualCustomerEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -1644,6 +1662,7 @@ public class ClassDiagramPackageImpl extends EPackageImpl implements ClassDiagra
 		createEAttribute(organizationEClass, ORGANIZATION__NAME);
 		createEAttribute(organizationEClass, ORGANIZATION__ADDRESS);
 		createEReference(organizationEClass, ORGANIZATION__RESPONSIBLE_PERSON);
+		createEOperation(organizationEClass, ORGANIZATION___ADD_BILLING_INFORMATION__BILLINGINFORMATION);
 
 		customerEClass = createEClass(CUSTOMER);
 		createEOperation(customerEClass, CUSTOMER___GET_BILLING_INFORMATION);
@@ -1657,6 +1676,7 @@ public class ClassDiagramPackageImpl extends EPackageImpl implements ClassDiagra
 		createEReference(individualCustomerEClass, INDIVIDUAL_CUSTOMER__BILLING_INFORMATION);
 		createEReference(individualCustomerEClass, INDIVIDUAL_CUSTOMER__ROOM_BOOKINGS);
 		createEReference(individualCustomerEClass, INDIVIDUAL_CUSTOMER__EVENT_BOOKINGS);
+		createEOperation(individualCustomerEClass, INDIVIDUAL_CUSTOMER___ADD_BILLING_INFORMATION__BILLINGINFORMATION);
 
 		bookingScheduleEClass = createEClass(BOOKING_SCHEDULE);
 		createEReference(bookingScheduleEClass, BOOKING_SCHEDULE__ROOM_BOOKINGS);
@@ -1890,6 +1910,9 @@ public class ClassDiagramPackageImpl extends EPackageImpl implements ClassDiagra
 		initEAttribute(getOrganization_Address(), theTypesPackage.getString(), "address", null, 1, 1, Organization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getOrganization_ResponsiblePerson(), this.getPerson(), null, "responsiblePerson", null, 1, 1, Organization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
+		op = initEOperation(getOrganization__AddBillingInformation__BillingInformation(), null, "addBillingInformation", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getBillingInformation(), "info", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
 		initEClass(customerEClass, Customer.class, "Customer", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEOperation(getCustomer__GetBillingInformation(), this.getBillingInformation(), "getBillingInformation", 0, -1, IS_UNIQUE, !IS_ORDERED);
@@ -1910,6 +1933,9 @@ public class ClassDiagramPackageImpl extends EPackageImpl implements ClassDiagra
 		initEReference(getIndividualCustomer_BillingInformation(), this.getBillingInformation(), null, "billingInformation", null, 0, -1, IndividualCustomer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getIndividualCustomer_RoomBookings(), this.getRoomBooking(), null, "roomBookings", null, 0, -1, IndividualCustomer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getIndividualCustomer_EventBookings(), this.getEventBooking(), null, "eventBookings", null, 0, -1, IndividualCustomer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		op = initEOperation(getIndividualCustomer__AddBillingInformation__BillingInformation(), null, "addBillingInformation", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getBillingInformation(), "info", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(bookingScheduleEClass, BookingSchedule.class, "BookingSchedule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getBookingSchedule_RoomBookings(), this.getRoomBooking(), null, "roomBookings", null, 0, -1, BookingSchedule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);

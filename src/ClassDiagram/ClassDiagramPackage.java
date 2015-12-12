@@ -1498,13 +1498,22 @@ public interface ClassDiagramPackage extends EPackage {
 	int ORGANIZATION___GET_ID = CUSTOMER___GET_ID;
 
 	/**
+	 * The operation id for the '<em>Add Billing Information</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ORGANIZATION___ADD_BILLING_INFORMATION__BILLINGINFORMATION = CUSTOMER_OPERATION_COUNT + 0;
+
+	/**
 	 * The number of operations of the '<em>Organization</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ORGANIZATION_OPERATION_COUNT = CUSTOMER_OPERATION_COUNT + 0;
+	int ORGANIZATION_OPERATION_COUNT = CUSTOMER_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link ClassDiagram.impl.IndividualCustomerImpl <em>Individual Customer</em>}' class.
@@ -1634,13 +1643,22 @@ public interface ClassDiagramPackage extends EPackage {
 	int INDIVIDUAL_CUSTOMER___GET_ID = PERSON_OPERATION_COUNT + 5;
 
 	/**
+	 * The operation id for the '<em>Add Billing Information</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDIVIDUAL_CUSTOMER___ADD_BILLING_INFORMATION__BILLINGINFORMATION = PERSON_OPERATION_COUNT + 6;
+
+	/**
 	 * The number of operations of the '<em>Individual Customer</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INDIVIDUAL_CUSTOMER_OPERATION_COUNT = PERSON_OPERATION_COUNT + 6;
+	int INDIVIDUAL_CUSTOMER_OPERATION_COUNT = PERSON_OPERATION_COUNT + 7;
 
 	/**
 	 * The meta object id for the '{@link ClassDiagram.impl.BookingScheduleImpl <em>Booking Schedule</em>}' class.
@@ -2959,6 +2977,16 @@ public interface ClassDiagramPackage extends EPackage {
 	EReference getOrganization_ResponsiblePerson();
 
 	/**
+	 * Returns the meta object for the '{@link ClassDiagram.Organization#addBillingInformation(ClassDiagram.BillingInformation) <em>Add Billing Information</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Add Billing Information</em>' operation.
+	 * @see ClassDiagram.Organization#addBillingInformation(ClassDiagram.BillingInformation)
+	 * @generated
+	 */
+	EOperation getOrganization__AddBillingInformation__BillingInformation();
+
+	/**
 	 * Returns the meta object for class '{@link ClassDiagram.Customer <em>Customer</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3070,6 +3098,16 @@ public interface ClassDiagramPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getIndividualCustomer_EventBookings();
+
+	/**
+	 * Returns the meta object for the '{@link ClassDiagram.IndividualCustomer#addBillingInformation(ClassDiagram.BillingInformation) <em>Add Billing Information</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Add Billing Information</em>' operation.
+	 * @see ClassDiagram.IndividualCustomer#addBillingInformation(ClassDiagram.BillingInformation)
+	 * @generated
+	 */
+	EOperation getIndividualCustomer__AddBillingInformation__BillingInformation();
 
 	/**
 	 * Returns the meta object for class '{@link ClassDiagram.BookingSchedule <em>Booking Schedule</em>}'.
@@ -4150,6 +4188,14 @@ public interface ClassDiagramPackage extends EPackage {
 		EReference ORGANIZATION__RESPONSIBLE_PERSON = eINSTANCE.getOrganization_ResponsiblePerson();
 
 		/**
+		 * The meta object literal for the '<em><b>Add Billing Information</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ORGANIZATION___ADD_BILLING_INFORMATION__BILLINGINFORMATION = eINSTANCE.getOrganization__AddBillingInformation__BillingInformation();
+
+		/**
 		 * The meta object literal for the '{@link ClassDiagram.Customer <em>Customer</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4240,6 +4286,14 @@ public interface ClassDiagramPackage extends EPackage {
 		 * @generated
 		 */
 		EReference INDIVIDUAL_CUSTOMER__EVENT_BOOKINGS = eINSTANCE.getIndividualCustomer_EventBookings();
+
+		/**
+		 * The meta object literal for the '<em><b>Add Billing Information</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation INDIVIDUAL_CUSTOMER___ADD_BILLING_INFORMATION__BILLINGINFORMATION = eINSTANCE.getIndividualCustomer__AddBillingInformation__BillingInformation();
 
 		/**
 		 * The meta object literal for the '{@link ClassDiagram.impl.BookingScheduleImpl <em>Booking Schedule</em>}' class.
