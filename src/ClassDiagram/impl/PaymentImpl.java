@@ -120,14 +120,21 @@ public class PaymentImpl extends MinimalEObjectImpl.Container implements Payment
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	public EList<Payment> split() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public Payment split(EList<Cost> costs) {
+		Payment p = ClassDiagramFactoryImpl.eINSTANCE.createPayment();
+		Bill b = ClassDiagramFactoryImpl.eINSTANCE.createBill();
+		for (Cost c : costs) {
+			if (bill.getCost().contains(c)) {
+				b.addCost(c);
+				bill.removeCost(c);
+			}
+		}
+		
+		p.setBill(b);
+		return p;
 	}
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -140,12 +147,12 @@ public class PaymentImpl extends MinimalEObjectImpl.Container implements Payment
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void printReceipt() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		System.out.println();
+		System.out.println("Receipt:");
+		bill.getCost().forEach((cost) -> System.out.println(cost)); 
 	}
 
 	/**
@@ -220,8 +227,8 @@ public class PaymentImpl extends MinimalEObjectImpl.Container implements Payment
 			case ClassDiagramPackage.PAYMENT___MERGE__ELIST:
 				merge((EList<Payment>)arguments.get(0));
 				return null;
-			case ClassDiagramPackage.PAYMENT___SPLIT:
-				return split();
+			case ClassDiagramPackage.PAYMENT___SPLIT__ELIST:
+				return split((EList<Cost>)arguments.get(0));
 			case ClassDiagramPackage.PAYMENT___PERFORM_PAYMENT__BILLINGINFORMATION:
 				performPayment((BillingInformation)arguments.get(0));
 				return null;

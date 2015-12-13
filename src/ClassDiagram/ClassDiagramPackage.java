@@ -1832,7 +1832,7 @@ public interface ClassDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYMENT___SPLIT = 1;
+	int PAYMENT___SPLIT__ELIST = 1;
 
 	/**
 	 * The operation id for the '<em>Perform Payment</em>' operation.
@@ -3244,14 +3244,14 @@ public interface ClassDiagramPackage extends EPackage {
 	EOperation getPayment__Merge__EList();
 
 	/**
-	 * Returns the meta object for the '{@link ClassDiagram.Payment#split() <em>Split</em>}' operation.
+	 * Returns the meta object for the '{@link ClassDiagram.Payment#split(org.eclipse.emf.common.util.EList) <em>Split</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Split</em>' operation.
-	 * @see ClassDiagram.Payment#split()
+	 * @see ClassDiagram.Payment#split(org.eclipse.emf.common.util.EList)
 	 * @generated
 	 */
-	EOperation getPayment__Split();
+	EOperation getPayment__Split__EList();
 
 	/**
 	 * Returns the meta object for the '{@link ClassDiagram.Payment#performPayment(ClassDiagram.BillingInformation) <em>Perform Payment</em>}' operation.
@@ -4411,7 +4411,7 @@ public interface ClassDiagramPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation PAYMENT___SPLIT = eINSTANCE.getPayment__Split();
+		EOperation PAYMENT___SPLIT__ELIST = eINSTANCE.getPayment__Split__EList();
 
 		/**
 		 * The meta object literal for the '<em><b>Perform Payment</b></em>' operation.

@@ -301,7 +301,9 @@
     <eOperations name="merge" ordered="false" lowerBound="1">
       <eParameters name="payment" ordered="false" upperBound="-1" eType="#//Payment"/>
     </eOperations>
-    <eOperations name="split" ordered="false" upperBound="-1" eType="#//Payment"/>
+    <eOperations name="split" ordered="false" lowerBound="1" eType="#//Payment">
+      <eParameters name="cost" ordered="false" upperBound="-1" eType="#//Cost"/>
+    </eOperations>
     <eOperations name="performPayment" ordered="false" lowerBound="1">
       <eParameters name="info" ordered="false" lowerBound="1" eType="#//BillingInformation"/>
     </eOperations>

@@ -547,8 +547,12 @@
     </ownedOperation>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_VD5J4J3DEeWJ2YKRfJzR_A" name="split">
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_gqjD8J3DEeWJ2YKRfJzR_A" name="return" type="_I73BEJ3DEeWJ2YKRfJzR_A" direction="return">
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_l7_IYJ3DEeWJ2YKRfJzR_A"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_l8A9kJ3DEeWJ2YKRfJzR_A" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_l7_IYJ3DEeWJ2YKRfJzR_A" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_l8A9kJ3DEeWJ2YKRfJzR_A" value="1"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_0b0N4KHHEeWDuemzDuFrqw" name="cost" type="_-XeEUJUGEeWictR9w7kxNQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_2L2BEKHHEeWDuemzDuFrqw"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_2L6SgKHHEeWDuemzDuFrqw" value="*"/>
       </ownedParameter>
     </ownedOperation>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_Vzgo8J3DEeWJ2YKRfJzR_A" name="performPayment">

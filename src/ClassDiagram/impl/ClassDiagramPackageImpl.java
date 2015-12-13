@@ -1450,7 +1450,7 @@ public class ClassDiagramPackageImpl extends EPackageImpl implements ClassDiagra
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getPayment__Split() {
+	public EOperation getPayment__Split__EList() {
 		return paymentEClass.getEOperations().get(1);
 	}
 
@@ -1693,7 +1693,7 @@ public class ClassDiagramPackageImpl extends EPackageImpl implements ClassDiagra
 		paymentEClass = createEClass(PAYMENT);
 		createEReference(paymentEClass, PAYMENT__BILL);
 		createEOperation(paymentEClass, PAYMENT___MERGE__ELIST);
-		createEOperation(paymentEClass, PAYMENT___SPLIT);
+		createEOperation(paymentEClass, PAYMENT___SPLIT__ELIST);
 		createEOperation(paymentEClass, PAYMENT___PERFORM_PAYMENT__BILLINGINFORMATION);
 		createEOperation(paymentEClass, PAYMENT___PRINT_RECEIPT);
 
@@ -1961,7 +1961,8 @@ public class ClassDiagramPackageImpl extends EPackageImpl implements ClassDiagra
 		op = initEOperation(getPayment__Merge__EList(), null, "merge", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getPayment(), "payment", 0, -1, IS_UNIQUE, !IS_ORDERED);
 
-		initEOperation(getPayment__Split(), this.getPayment(), "split", 0, -1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getPayment__Split__EList(), this.getPayment(), "split", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getCost(), "cost", 0, -1, IS_UNIQUE, !IS_ORDERED);
 
 		op = initEOperation(getPayment__PerformPayment__BillingInformation(), null, "performPayment", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getBillingInformation(), "info", 1, 1, IS_UNIQUE, !IS_ORDERED);

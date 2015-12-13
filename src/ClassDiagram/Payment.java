@@ -60,10 +60,10 @@ public interface Payment extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model ordered="false"
+	 * @model required="true" ordered="false" costMany="true" costOrdered="false"
 	 * @generated
 	 */
-	EList<Payment> split();
+	Payment split(EList<Cost> cost);
 
 	/**
 	 * <!-- begin-user-doc -->
