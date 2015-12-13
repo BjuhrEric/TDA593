@@ -5,6 +5,7 @@ package ClassDiagram.impl;
 import ClassDiagram.Bill;
 import ClassDiagram.BillingInformation;
 import ClassDiagram.ClassDiagramPackage;
+import ClassDiagram.Cost;
 import ClassDiagram.Payment;
 
 import java.lang.reflect.InvocationTargetException;
@@ -48,6 +49,9 @@ public class PaymentImpl extends MinimalEObjectImpl.Container implements Payment
 	 */
 	protected PaymentImpl() {
 		super();
+	}
+	protected PaymentImpl(Bill bill){
+		this.bill = bill;
 	}
 
 	/**
@@ -101,12 +105,16 @@ public class PaymentImpl extends MinimalEObjectImpl.Container implements Payment
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void merge(EList<Payment> payment) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		for(Payment e : payment){
+			EList<Cost> costs = e.getBill().getCost();
+			for(Cost c : costs){
+				bill.addCost(c);
+			}
+			e.getBill().remove();
+		}
 	}
 
 	/**
@@ -123,12 +131,10 @@ public class PaymentImpl extends MinimalEObjectImpl.Container implements Payment
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void performPayment(BillingInformation info) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		info.getPaymentStrategy().pay(bill);
 	}
 
 	/**
