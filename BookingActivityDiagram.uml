@@ -68,6 +68,7 @@
     <edge xmi:type="uml:ControlFlow" xmi:id="_o0_6YJVTEeW-POIVNUUPvA" name="The booking doesn't contain specific rooms" target="_Ksx70JEwEeWZdZttSEAxCA" source="_k2CxgJVTEeW-POIVNUUPvA"/>
     <edge xmi:type="uml:ControlFlow" xmi:id="_6PUcMJVTEeW-POIVNUUPvA" name="The booking contains specific rooms" target="_O6Sa4JEsEeWZdZttSEAxCA" source="_k2CxgJVTEeW-POIVNUUPvA"/>
     <edge xmi:type="uml:ControlFlow" xmi:id="_oWm4wJVUEeW-POIVNUUPvA" target="_Ksx70JEwEeWZdZttSEAxCA" source="_O6Sa4JEsEeWZdZttSEAxCA"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_d_GNIKJfEeWFmoKVJwX35w" target="_MfNNsJVMEeW-POIVNUUPvA" source="_l925sJVJEeW-POIVNUUPvA"/>
     <node xmi:type="uml:OpaqueAction" xmi:id="_ibWwcI-wEeWZdZttSEAxCA" name="Actor enter the number of rooms he/she wants to book, the number of people staying in each room and the arrival and departure date." incoming="_pe_gYI-yEeWZdZttSEAxCA _8Z7SkJBxEeWZdZttSEAxCA" outgoing="_xLkKgI-yEeWZdZttSEAxCA"/>
     <node xmi:type="uml:InitialNode" xmi:id="_OrtrII-yEeWZdZttSEAxCA" name="InitialNode" outgoing="_pe_gYI-yEeWZdZttSEAxCA"/>
     <node xmi:type="uml:OpaqueAction" xmi:id="_eWbQgI-yEeWZdZttSEAxCA" name="The system provides a list of available room types for each room based on the capacity of the room type and a list of available packages that is suitable." incoming="_xLkKgI-yEeWZdZttSEAxCA" outgoing="_ERWMsJBwEeWZdZttSEAxCA"/>
@@ -115,12 +116,12 @@
     <node xmi:type="uml:DecisionNode" xmi:id="_-_OGYJU-EeW-POIVNUUPvA" incoming="_AX2isJU-EeW-POIVNUUPvA" outgoing="_KaYiIJU_EeW-POIVNUUPvA _OYbsEJU_EeW-POIVNUUPvA"/>
     <node xmi:type="uml:OpaqueAction" xmi:id="_J1n9UJVBEeW-POIVNUUPvA" name="Actor updates the customer information that needs to be updated" incoming="_qtP2cJVIEeW-POIVNUUPvA" outgoing="_YGdsEJVJEeW-POIVNUUPvA"/>
     <node xmi:type="uml:OpaqueAction" xmi:id="_Pza30JVJEeW-POIVNUUPvA" name="The system updates the customer information" incoming="_YGdsEJVJEeW-POIVNUUPvA" outgoing="_ZijPkJVJEeW-POIVNUUPvA"/>
-    <node xmi:type="uml:OpaqueAction" xmi:id="_l925sJVJEeW-POIVNUUPvA" name="System asks for the social security number of the customer" incoming="_05CfkJVJEeW-POIVNUUPvA"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_l925sJVJEeW-POIVNUUPvA" name="System asks for the social security number of the customer" incoming="_05CfkJVJEeW-POIVNUUPvA" outgoing="_d_GNIKJfEeWFmoKVJwX35w"/>
     <node xmi:type="uml:OpaqueAction" xmi:id="_mhmf8JVJEeW-POIVNUUPvA" name="The system asks for the organisation number" incoming="_5Ofc4JVJEeW-POIVNUUPvA" outgoing="_H0hAMJVMEeW-POIVNUUPvA"/>
     <node xmi:type="uml:DecisionNode" xmi:id="_uRPFIJVJEeW-POIVNUUPvA" incoming="_vc2jsJVJEeW-POIVNUUPvA" outgoing="_05CfkJVJEeW-POIVNUUPvA _5Ofc4JVJEeW-POIVNUUPvA"/>
     <node xmi:type="uml:OpaqueAction" xmi:id="_zyWu4JVKEeW-POIVNUUPvA" name="Actor provides organisation number" incoming="_H0hAMJVMEeW-POIVNUUPvA" outgoing="_IrRCAJVMEeW-POIVNUUPvA"/>
     <node xmi:type="uml:OpaqueAction" xmi:id="_yiM5IJVLEeW-POIVNUUPvA" name="System sends a request to validate the customer credit record" incoming="_IrRCAJVMEeW-POIVNUUPvA _a8pusJVMEeW-POIVNUUPvA" outgoing="_DIv0oJVMEeW-POIVNUUPvA"/>
-    <node xmi:type="uml:OpaqueAction" xmi:id="_MfNNsJVMEeW-POIVNUUPvA" name="Actor provides the social security number" outgoing="_a8pusJVMEeW-POIVNUUPvA"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_MfNNsJVMEeW-POIVNUUPvA" name="Actor provides the social security number" incoming="_d_GNIKJfEeWFmoKVJwX35w" outgoing="_a8pusJVMEeW-POIVNUUPvA"/>
     <node xmi:type="uml:DecisionNode" xmi:id="_DPOaoJVNEeW-POIVNUUPvA" incoming="_zuuhMJVMEeW-POIVNUUPvA" outgoing="_rXcGIJVMEeW-POIVNUUPvA _cqJV0JVNEeW-POIVNUUPvA"/>
     <node xmi:type="uml:ActivityFinalNode" xmi:id="_W9et8JVNEeW-POIVNUUPvA" name="ActivityFinalNode5" incoming="_cqJV0JVNEeW-POIVNUUPvA"/>
     <node xmi:type="uml:DecisionNode" xmi:id="_k2CxgJVTEeW-POIVNUUPvA" incoming="_2od8AJUsEeW-POIVNUUPvA" outgoing="_o0_6YJVTEeW-POIVNUUPvA _6PUcMJVTEeW-POIVNUUPvA"/>
