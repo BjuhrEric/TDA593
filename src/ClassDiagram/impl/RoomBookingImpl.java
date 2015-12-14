@@ -308,11 +308,10 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 	 */
 	public void checkIn(Guest guest, Room room) {
 		if(rooms.contains(room)) {
-			room.setRoomStatus(RoomStatus.OCCUPIED);
-			guest.setStatus(GuestStatus.CHECKED_IN);
 			room.addGuest(guest);
+		} else {
+			//TODO Handle this
 		}
-		
 	}
 
 	/**

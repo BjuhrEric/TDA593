@@ -4,6 +4,7 @@ import static org.junit.Assert.*;
 
 import java.util.Date;
 
+import ClassDiagram.GuestStatus;
 import ClassDiagram.impl.*;
 
 
@@ -20,14 +21,16 @@ public class BookingTest {
 	@Test
 	public void test() {
 
-		// setup
+		//Setup
 		ClassDiagramFactoryImpl factory = new ClassDiagramFactoryImpl();
 		RoomBookingImpl roomBook = (RoomBookingImpl) factory.createRoomBooking();
 		RoomImpl room = (RoomImpl)factory.createRoom();
 		RoomTypeImpl roomType = (RoomTypeImpl) factory.createRoomType();
 		RoomTypeImpl roomType2 = (RoomTypeImpl) factory.createRoomType();
+		GuestImpl guest = (GuestImpl)factory.createGuest();
 		
-		// Test Start date
+		
+		//Start date
 		Date startDate = new Date(2015,12,24);
 		roomBook.setStartDate(startDate);
 		Boolean testResult;
@@ -37,7 +40,7 @@ public class BookingTest {
 		assertTrue(testResult);
 		//-----------------
 		
-		// Test End date
+		//End date
 		Date endDate = new Date(2016,01,01);
 		roomBook.setEndDate(endDate);
 		int y = roomBook.getEndDate().compareTo(new Date(2016,01,01));
@@ -46,14 +49,14 @@ public class BookingTest {
 		assertTrue(testResult);
 		//-----------------
 		
-		//Test getRoom
+		//getRoom
 		roomBook.addRoom(room);
 		testResult = roomBook.getRooms().contains(room);
 		
 		assertTrue(testResult);
 		//-----------------
 		
-		//TEST RoomType
+		//RoomType
 		roomBook.addRoomType(roomType);
 		testResult = roomBook.getRoomType().contains(roomType);
 		
@@ -66,6 +69,9 @@ public class BookingTest {
 		
 		assertTrue(testResult);
 		//-----------------
+		
+		
+		//Check out
 		
 		
 	}
