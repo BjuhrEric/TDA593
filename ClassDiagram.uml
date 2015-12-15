@@ -17,7 +17,9 @@
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
       </ownedParameter>
     </ownedOperation>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_VnATwJUMEeWictR9w7kxNQ" name="checkOut"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_VnATwJUMEeWictR9w7kxNQ" name="checkOut">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_Ua-sUKNAEeW3Qrni0OtA1A" name="return" type="_I73BEJ3DEeWJ2YKRfJzR_A" direction="return"/>
+    </ownedOperation>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_x6_qUJ2-EeWJ2YKRfJzR_A" name="addGuest">
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_1v-X0J2-EeWJ2YKRfJzR_A" name="guest" type="_d1iGcJOCEeWai68V7lLhPw"/>
     </ownedOperation>
@@ -55,7 +57,10 @@
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_0Nxx0KAaEeWVP7497XArVA" name="room" type="_dGX6YJOCEeWai68V7lLhPw"/>
     </ownedOperation>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_mqBdoJ3EEeWJ2YKRfJzR_A" name="checkOut">
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_sz0GYJ3EEeWJ2YKRfJzR_A" name="info" type="_n4U5sJOFEeWai68V7lLhPw"/>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_MnI8kKNAEeW3Qrni0OtA1A" name="return" type="_I73BEJ3DEeWJ2YKRfJzR_A" direction="return">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_N9j88KNAEeW3Qrni0OtA1A"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_N9nAQKNAEeW3Qrni0OtA1A" value="*"/>
+      </ownedParameter>
     </ownedOperation>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_HmYN8KAKEeWVP7497XArVA" name="addRoom">
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_QtaOcKALEeWVP7497XArVA" name="room" type="_dGX6YJOCEeWai68V7lLhPw"/>

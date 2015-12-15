@@ -739,7 +739,7 @@ public class ClassDiagramPackageImpl extends EPackageImpl implements ClassDiagra
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getRoomBooking__CheckOut__BillingInformation() {
+	public EOperation getRoomBooking__CheckOut() {
 		return roomBookingEClass.getEOperations().get(4);
 	}
 
@@ -1583,6 +1583,20 @@ public class ClassDiagramPackageImpl extends EPackageImpl implements ClassDiagra
 		createEOperation(billEClass, BILL___REMOVE_COST__COST);
 		createEOperation(billEClass, BILL___REMOVE);
 
+		paymentEClass = createEClass(PAYMENT);
+		createEReference(paymentEClass, PAYMENT__BILL);
+		createEOperation(paymentEClass, PAYMENT___MERGE__ELIST);
+		createEOperation(paymentEClass, PAYMENT___SPLIT__ELIST);
+		createEOperation(paymentEClass, PAYMENT___PERFORM_PAYMENT__BILLINGINFORMATION);
+		createEOperation(paymentEClass, PAYMENT___PRINT_RECEIPT);
+
+		billingInformationEClass = createEClass(BILLING_INFORMATION);
+		createEOperation(billingInformationEClass, BILLING_INFORMATION___VALIDATE);
+		createEOperation(billingInformationEClass, BILLING_INFORMATION___GET_PAYMENT_STRATEGY);
+
+		paymentStrategyEClass = createEClass(PAYMENT_STRATEGY);
+		createEOperation(paymentStrategyEClass, PAYMENT_STRATEGY___PAY__BILL);
+
 		roomBookingEClass = createEClass(ROOM_BOOKING);
 		createEAttribute(roomBookingEClass, ROOM_BOOKING__START_DATE);
 		createEAttribute(roomBookingEClass, ROOM_BOOKING__END_DATE);
@@ -1594,18 +1608,11 @@ public class ClassDiagramPackageImpl extends EPackageImpl implements ClassDiagra
 		createEOperation(roomBookingEClass, ROOM_BOOKING___CLOSE);
 		createEOperation(roomBookingEClass, ROOM_BOOKING___GENERATE_PDF);
 		createEOperation(roomBookingEClass, ROOM_BOOKING___CHECK_IN__GUEST_ROOM);
-		createEOperation(roomBookingEClass, ROOM_BOOKING___CHECK_OUT__BILLINGINFORMATION);
+		createEOperation(roomBookingEClass, ROOM_BOOKING___CHECK_OUT);
 		createEOperation(roomBookingEClass, ROOM_BOOKING___ADD_ROOM__ROOM);
 		createEOperation(roomBookingEClass, ROOM_BOOKING___REMOVE_ROOM__ROOM);
 		createEOperation(roomBookingEClass, ROOM_BOOKING___ADD_ROOM_TYPE__ROOMTYPE);
 		createEOperation(roomBookingEClass, ROOM_BOOKING___REMOVE_ROOM_TYPE__ROOMTYPE);
-
-		billingInformationEClass = createEClass(BILLING_INFORMATION);
-		createEOperation(billingInformationEClass, BILLING_INFORMATION___VALIDATE);
-		createEOperation(billingInformationEClass, BILLING_INFORMATION___GET_PAYMENT_STRATEGY);
-
-		paymentStrategyEClass = createEClass(PAYMENT_STRATEGY);
-		createEOperation(paymentStrategyEClass, PAYMENT_STRATEGY___PAY__BILL);
 
 		itemEClass = createEClass(ITEM);
 		createEAttribute(itemEClass, ITEM__NAME);
@@ -1690,13 +1697,6 @@ public class ClassDiagramPackageImpl extends EPackageImpl implements ClassDiagra
 		floorMapEClass = createEClass(FLOOR_MAP);
 		createEReference(floorMapEClass, FLOOR_MAP__ROOM);
 
-		paymentEClass = createEClass(PAYMENT);
-		createEReference(paymentEClass, PAYMENT__BILL);
-		createEOperation(paymentEClass, PAYMENT___MERGE__ELIST);
-		createEOperation(paymentEClass, PAYMENT___SPLIT__ELIST);
-		createEOperation(paymentEClass, PAYMENT___PERFORM_PAYMENT__BILLINGINFORMATION);
-		createEOperation(paymentEClass, PAYMENT___PRINT_RECEIPT);
-
 		// Create enums
 		titleEEnum = createEEnum(TITLE);
 		guestStatusEEnum = createEEnum(GUEST_STATUS);
@@ -1755,7 +1755,7 @@ public class ClassDiagramPackageImpl extends EPackageImpl implements ClassDiagra
 
 		initEOperation(getRoom__GetNumberOfGuests(), theTypesPackage.getInteger(), "getNumberOfGuests", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		initEOperation(getRoom__CheckOut(), null, "checkOut", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		initEOperation(getRoom__CheckOut(), this.getPayment(), "checkOut", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		EOperation op = initEOperation(getRoom__AddGuest__Guest(), null, "addGuest", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getGuest(), "guest", 1, 1, IS_UNIQUE, !IS_ORDERED);
@@ -1794,6 +1794,31 @@ public class ClassDiagramPackageImpl extends EPackageImpl implements ClassDiagra
 
 		initEOperation(getBill__Remove(), this.getBill(), "remove", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
+		initEClass(paymentEClass, Payment.class, "Payment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getPayment_Bill(), this.getBill(), null, "bill", null, 1, 1, Payment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		op = initEOperation(getPayment__Merge__EList(), null, "merge", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getPayment(), "payment", 0, -1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getPayment__Split__EList(), this.getPayment(), "split", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getCost(), "cost", 0, -1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getPayment__PerformPayment__BillingInformation(), null, "performPayment", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getBillingInformation(), "info", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		initEOperation(getPayment__PrintReceipt(), null, "printReceipt", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		initEClass(billingInformationEClass, BillingInformation.class, "BillingInformation", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEOperation(getBillingInformation__Validate(), theTypesPackage.getBoolean(), "validate", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		initEOperation(getBillingInformation__GetPaymentStrategy(), this.getPaymentStrategy(), "getPaymentStrategy", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		initEClass(paymentStrategyEClass, PaymentStrategy.class, "PaymentStrategy", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		op = initEOperation(getPaymentStrategy__Pay__Bill(), null, "pay", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getBill(), "bill", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
 		initEClass(roomBookingEClass, RoomBooking.class, "RoomBooking", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRoomBooking_StartDate(), ecorePackage.getEDate(), "startDate", null, 1, 1, RoomBooking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getRoomBooking_EndDate(), ecorePackage.getEDate(), "endDate", null, 1, 1, RoomBooking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -1812,8 +1837,7 @@ public class ClassDiagramPackageImpl extends EPackageImpl implements ClassDiagra
 		addEParameter(op, this.getGuest(), "guest", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getRoom(), "room", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getRoomBooking__CheckOut__BillingInformation(), null, "checkOut", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, this.getBillingInformation(), "info", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		initEOperation(getRoomBooking__CheckOut(), this.getPayment(), "checkOut", 0, -1, IS_UNIQUE, !IS_ORDERED);
 
 		op = initEOperation(getRoomBooking__AddRoom__Room(), null, "addRoom", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getRoom(), "room", 1, 1, IS_UNIQUE, !IS_ORDERED);
@@ -1826,17 +1850,6 @@ public class ClassDiagramPackageImpl extends EPackageImpl implements ClassDiagra
 
 		op = initEOperation(getRoomBooking__RemoveRoomType__RoomType(), null, "removeRoomType", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getRoomType(), "roomType", 1, 1, IS_UNIQUE, !IS_ORDERED);
-
-		initEClass(billingInformationEClass, BillingInformation.class, "BillingInformation", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEOperation(getBillingInformation__Validate(), theTypesPackage.getBoolean(), "validate", 1, 1, IS_UNIQUE, !IS_ORDERED);
-
-		initEOperation(getBillingInformation__GetPaymentStrategy(), this.getPaymentStrategy(), "getPaymentStrategy", 1, 1, IS_UNIQUE, !IS_ORDERED);
-
-		initEClass(paymentStrategyEClass, PaymentStrategy.class, "PaymentStrategy", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		op = initEOperation(getPaymentStrategy__Pay__Bill(), null, "pay", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, this.getBill(), "bill", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(itemEClass, Item.class, "Item", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getItem_Name(), theTypesPackage.getString(), "name", null, 1, 1, Item.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -1954,20 +1967,6 @@ public class ClassDiagramPackageImpl extends EPackageImpl implements ClassDiagra
 
 		initEClass(floorMapEClass, FloorMap.class, "FloorMap", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getFloorMap_Room(), this.getRoom(), null, "room", null, 0, -1, FloorMap.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
-		initEClass(paymentEClass, Payment.class, "Payment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getPayment_Bill(), this.getBill(), null, "bill", null, 1, 1, Payment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
-		op = initEOperation(getPayment__Merge__EList(), null, "merge", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, this.getPayment(), "payment", 0, -1, IS_UNIQUE, !IS_ORDERED);
-
-		op = initEOperation(getPayment__Split__EList(), this.getPayment(), "split", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, this.getCost(), "cost", 0, -1, IS_UNIQUE, !IS_ORDERED);
-
-		op = initEOperation(getPayment__PerformPayment__BillingInformation(), null, "performPayment", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, this.getBillingInformation(), "info", 1, 1, IS_UNIQUE, !IS_ORDERED);
-
-		initEOperation(getPayment__PrintReceipt(), null, "printReceipt", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(titleEEnum, Title.class, "Title");

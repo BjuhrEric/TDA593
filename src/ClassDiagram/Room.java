@@ -191,10 +191,10 @@ public interface Room extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model required="true" ordered="false"
 	 * @generated
 	 */
-	void checkOut();
+	Payment checkOut();
 
 	/**
 	 * <!-- begin-user-doc -->

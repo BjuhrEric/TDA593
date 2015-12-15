@@ -316,20 +316,17 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 		
 	}
 
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public void checkOut(BillingInformation info) {
-			for(Room room: rooms ) {
-			room.checkOut();
-			final Payment p = ClassDiagramFactoryImpl.eINSTANCE.createPayment();
-			p.setBill(room.getBill());
-			p.performPayment(info);
+	public EList<Payment> checkOut() {
+		final EList<Payment> payments = new EObjectResolvingEList<Payment>(Payment.class, this, ClassDiagramPackage.PAYMENT);
+		for (Room room : rooms) {
+			payments.add(room.checkOut());
 		}
-	
+		return payments;
 	}
 
 	/**
@@ -503,9 +500,8 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 			case ClassDiagramPackage.ROOM_BOOKING___CHECK_IN__GUEST_ROOM:
 				checkIn((Guest)arguments.get(0), (Room)arguments.get(1));
 				return null;
-			case ClassDiagramPackage.ROOM_BOOKING___CHECK_OUT__BILLINGINFORMATION:
-				checkOut((BillingInformation)arguments.get(0));
-				return null;
+			case ClassDiagramPackage.ROOM_BOOKING___CHECK_OUT:
+				return checkOut();
 			case ClassDiagramPackage.ROOM_BOOKING___ADD_ROOM__ROOM:
 				addRoom((Room)arguments.get(0));
 				return null;

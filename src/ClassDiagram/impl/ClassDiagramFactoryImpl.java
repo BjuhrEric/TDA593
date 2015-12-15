@@ -85,6 +85,7 @@ public class ClassDiagramFactoryImpl extends EFactoryImpl implements ClassDiagra
 			case ClassDiagramPackage.PERSON: return createPerson();
 			case ClassDiagramPackage.ROOM_TYPE: return createRoomType();
 			case ClassDiagramPackage.BILL: return createBill();
+			case ClassDiagramPackage.PAYMENT: return createPayment();
 			case ClassDiagramPackage.ROOM_BOOKING: return createRoomBooking();
 			case ClassDiagramPackage.ITEM: return createItem();
 			case ClassDiagramPackage.EVENT: return createEvent();
@@ -97,7 +98,6 @@ public class ClassDiagramFactoryImpl extends EFactoryImpl implements ClassDiagra
 			case ClassDiagramPackage.INDIVIDUAL_CUSTOMER: return createIndividualCustomer();
 			case ClassDiagramPackage.BOOKING_SCHEDULE: return createBookingSchedule();
 			case ClassDiagramPackage.FLOOR_MAP: return createFloorMap();
-			case ClassDiagramPackage.PAYMENT: return createPayment();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}

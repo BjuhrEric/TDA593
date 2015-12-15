@@ -190,10 +190,10 @@ public interface RoomBooking extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model infoRequired="true" infoOrdered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
-	void checkOut(BillingInformation info);
+	EList<Payment> checkOut();
 
 	/**
 	 * <!-- begin-user-doc -->

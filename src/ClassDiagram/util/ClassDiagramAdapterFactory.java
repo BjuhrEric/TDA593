@@ -113,8 +113,8 @@ public class ClassDiagramAdapterFactory extends AdapterFactoryImpl {
 				return createBillAdapter();
 			}
 			@Override
-			public Adapter caseRoomBooking(RoomBooking object) {
-				return createRoomBookingAdapter();
+			public Adapter casePayment(Payment object) {
+				return createPaymentAdapter();
 			}
 			@Override
 			public Adapter caseBillingInformation(BillingInformation object) {
@@ -123,6 +123,10 @@ public class ClassDiagramAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter casePaymentStrategy(PaymentStrategy object) {
 				return createPaymentStrategyAdapter();
+			}
+			@Override
+			public Adapter caseRoomBooking(RoomBooking object) {
+				return createRoomBookingAdapter();
 			}
 			@Override
 			public Adapter caseItem(Item object) {
@@ -171,10 +175,6 @@ public class ClassDiagramAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseFloorMap(FloorMap object) {
 				return createFloorMapAdapter();
-			}
-			@Override
-			public Adapter casePayment(Payment object) {
-				return createPaymentAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
