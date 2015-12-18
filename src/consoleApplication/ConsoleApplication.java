@@ -4,6 +4,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
+import consoleApplication.AccountManager;
+
 import ClassDiagram.Account;
 import ClassDiagram.AccountType;
 import ClassDiagram.impl.ClassDiagramFactoryImpl;
@@ -11,6 +13,7 @@ import ClassDiagram.impl.ClassDiagramFactoryImpl;
 public class ConsoleApplication {
 	
 	static Scanner userInput;
+	static AccountManager accountManager;
 	static List<Account> accounts;
 	static List<AccountType> accountTypes;
 	
@@ -18,6 +21,7 @@ public class ConsoleApplication {
 		userInput = new Scanner(System.in);
 		accounts = new LinkedList<Account>();
 		accountTypes = new LinkedList<AccountType>();
+		accountManager = new AccountManager(userInput, accounts, accountTypes);
 		
 		ClassDiagramFactoryImpl factory = new ClassDiagramFactoryImpl();
 		
@@ -96,70 +100,7 @@ public class ConsoleApplication {
 			System.out.println("Incorrect function!");
 			break;
 		case 1:
-			manageAccounts();
-			break;
-		}
-	}
-	
-	static void createNewAccount() {
-		
-		String username = "";
-		
-		System.out.println();
-		
-		do {
-			System.out.print("New account's username: ");
-			username = userInput.next();
-			
-			if (username.equals("quit"))
-				System.out.println("Username cannot be 'quit', it is a command of the system!");
-			
-		} while (username.equals("quit"));
-		
-		System.out.print("New account's password: ");
-		String password = userInput.next();
-		
-		ClassDiagramFactoryImpl factory = new ClassDiagramFactoryImpl();
-		Account newAccount = factory.createAccount();
-		newAccount.setAccounttype(accountTypes.get(0)); //TODO ask what type it is
-		newAccount.setUsername(username);
-		newAccount.setPassword(password);
-		accounts.add(newAccount);
-		
-		System.out.println();
-		System.out.print("Account '" + username + "' created.");
-		System.out.println();
-	}
-	
-	static void modifyAccount() {
-		//TODO
-	}	
-	
-	static void removeAccount() {
-		//TODO
-	}
-	static void manageAccounts() {
-		
-		System.out.println();
-		System.out.println("1. Create a new account");
-		System.out.println("2. Modify and existing account");
-		System.out.println("3. Remove and existing account");
-		System.out.println("4. Back");
-		System.out.println();
-		System.out.print("Please select a function: ");
-		
-		int choice = userInput.nextInt();
-		if (choice < 1 || choice > 4) choice = 4;
-		
-		switch(choice) {
-		case 1:
-			createNewAccount();
-			break;
-		case 2:
-			modifyAccount();
-			break;
-		case 3:
-			removeAccount();
+			accountManager.start();
 			break;
 		}
 	}
