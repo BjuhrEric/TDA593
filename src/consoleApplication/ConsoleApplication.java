@@ -5,23 +5,33 @@ import java.util.List;
 import java.util.Scanner;
 
 import consoleApplication.AccountManager;
+import consoleApplication.RoomManager;
 
 import ClassDiagram.Account;
 import ClassDiagram.AccountType;
+import ClassDiagram.Room;
+import ClassDiagram.RoomType;
 import ClassDiagram.impl.ClassDiagramFactoryImpl;
 
 public class ConsoleApplication {
 	
 	static Scanner userInput;
 	static AccountManager accountManager;
+	static RoomManager roomManager;
 	static List<Account> accounts;
 	static List<AccountType> accountTypes;
+	static List<RoomType> roomTypes;
+	static List<Room> rooms;
 	
 	static void init() {
 		userInput = new Scanner(System.in);
 		accounts = new LinkedList<Account>();
 		accountTypes = new LinkedList<AccountType>();
+		roomTypes = new LinkedList<RoomType>();
+		rooms = new LinkedList<Room>();
+		
 		accountManager = new AccountManager(userInput, accounts, accountTypes);
+		roomManager = new RoomManager(userInput, rooms, roomTypes);
 		
 		ClassDiagramFactoryImpl factory = new ClassDiagramFactoryImpl();
 		
@@ -80,7 +90,7 @@ public class ConsoleApplication {
 		
 		if (loggedInAccount.getAccounttype().equals(accountTypes.get(0))) { //admin
 			System.out.println("1. Manage accounts");
-			System.out.println("2. Manage rooms");
+			System.out.println("2. Manage rooms and room types");
 			System.out.println("3. Manage items");
 			System.out.println("4. Manage bookings");
 			System.out.println("5. Manage guests");
@@ -101,6 +111,9 @@ public class ConsoleApplication {
 			break;
 		case 1:
 			accountManager.start();
+			break;
+		case 2:
+			roomManager.start();
 			break;
 		}
 	}

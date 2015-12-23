@@ -221,6 +221,30 @@ public class RoomTypeImpl extends MinimalEObjectImpl.Container implements RoomTy
 		return description;
 	}
 
+	public void setName(String value) {
+		name = value;
+	}
+	
+	public void setPrice(double value) {
+		price = value;
+	}
+	
+	public void setGuestCapacity(int value) {
+		guestCapacity = value;
+	}
+	
+	public void setNumberOfBeds(int value) {
+		numberOfBeds = value;
+	}
+	
+	public void setNumberOfExtraBeds(int value) {
+		numberOfExtraBeds = value;
+	}
+	
+	public void setDescription(String value) {
+		description = value;
+	}
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
