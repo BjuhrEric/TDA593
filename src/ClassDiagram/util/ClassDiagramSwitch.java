@@ -123,9 +123,9 @@ public class ClassDiagramSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ClassDiagramPackage.ROOM_BOOKING: {
-				RoomBooking roomBooking = (RoomBooking)theEObject;
-				T result = caseRoomBooking(roomBooking);
+			case ClassDiagramPackage.PAYMENT: {
+				Payment payment = (Payment)theEObject;
+				T result = casePayment(payment);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -138,6 +138,12 @@ public class ClassDiagramSwitch<T> extends Switch<T> {
 			case ClassDiagramPackage.PAYMENT_STRATEGY: {
 				PaymentStrategy paymentStrategy = (PaymentStrategy)theEObject;
 				T result = casePaymentStrategy(paymentStrategy);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ClassDiagramPackage.ROOM_BOOKING: {
+				RoomBooking roomBooking = (RoomBooking)theEObject;
+				T result = caseRoomBooking(roomBooking);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -215,12 +221,6 @@ public class ClassDiagramSwitch<T> extends Switch<T> {
 			case ClassDiagramPackage.FLOOR_MAP: {
 				FloorMap floorMap = (FloorMap)theEObject;
 				T result = caseFloorMap(floorMap);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ClassDiagramPackage.PAYMENT: {
-				Payment payment = (Payment)theEObject;
-				T result = casePayment(payment);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

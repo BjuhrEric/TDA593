@@ -532,7 +532,263 @@ public interface ClassDiagramPackage extends EPackage {
 	 * @see ClassDiagram.impl.ClassDiagramPackageImpl#getRoomBooking()
 	 * @generated
 	 */
-	int ROOM_BOOKING = 6;
+	int ROOM_BOOKING = 9;
+
+	/**
+	 * The meta object id for the '{@link ClassDiagram.impl.ItemImpl <em>Item</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ClassDiagram.impl.ItemImpl
+	 * @see ClassDiagram.impl.ClassDiagramPackageImpl#getItem()
+	 * @generated
+	 */
+	int ITEM = 10;
+
+	/**
+	 * The meta object id for the '{@link ClassDiagram.impl.EventImpl <em>Event</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ClassDiagram.impl.EventImpl
+	 * @see ClassDiagram.impl.ClassDiagramPackageImpl#getEvent()
+	 * @generated
+	 */
+	int EVENT = 11;
+
+	/**
+	 * The meta object id for the '{@link ClassDiagram.impl.VenueImpl <em>Venue</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ClassDiagram.impl.VenueImpl
+	 * @see ClassDiagram.impl.ClassDiagramPackageImpl#getVenue()
+	 * @generated
+	 */
+	int VENUE = 12;
+
+	/**
+	 * The meta object id for the '{@link ClassDiagram.impl.PackageImpl <em>Package</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ClassDiagram.impl.PackageImpl
+	 * @see ClassDiagram.impl.ClassDiagramPackageImpl#getPackage()
+	 * @generated
+	 */
+	int PACKAGE = 13;
+
+	/**
+	 * The meta object id for the '{@link ClassDiagram.impl.EventBookingImpl <em>Event Booking</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ClassDiagram.impl.EventBookingImpl
+	 * @see ClassDiagram.impl.ClassDiagramPackageImpl#getEventBooking()
+	 * @generated
+	 */
+	int EVENT_BOOKING = 14;
+
+	/**
+	 * The meta object id for the '{@link ClassDiagram.impl.AccountImpl <em>Account</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ClassDiagram.impl.AccountImpl
+	 * @see ClassDiagram.impl.ClassDiagramPackageImpl#getAccount()
+	 * @generated
+	 */
+	int ACCOUNT = 15;
+
+	/**
+	 * The meta object id for the '{@link ClassDiagram.impl.AccountTypeImpl <em>Account Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ClassDiagram.impl.AccountTypeImpl
+	 * @see ClassDiagram.impl.ClassDiagramPackageImpl#getAccountType()
+	 * @generated
+	 */
+	int ACCOUNT_TYPE = 16;
+
+	/**
+	 * The meta object id for the '{@link ClassDiagram.Customer <em>Customer</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ClassDiagram.Customer
+	 * @see ClassDiagram.impl.ClassDiagramPackageImpl#getCustomer()
+	 * @generated
+	 */
+	int CUSTOMER = 18;
+
+	/**
+	 * The meta object id for the '{@link ClassDiagram.impl.OrganizationImpl <em>Organization</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ClassDiagram.impl.OrganizationImpl
+	 * @see ClassDiagram.impl.ClassDiagramPackageImpl#getOrganization()
+	 * @generated
+	 */
+	int ORGANIZATION = 17;
+
+	/**
+	 * The meta object id for the '{@link ClassDiagram.impl.IndividualCustomerImpl <em>Individual Customer</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ClassDiagram.impl.IndividualCustomerImpl
+	 * @see ClassDiagram.impl.ClassDiagramPackageImpl#getIndividualCustomer()
+	 * @generated
+	 */
+	int INDIVIDUAL_CUSTOMER = 19;
+
+	/**
+	 * The meta object id for the '{@link ClassDiagram.impl.BookingScheduleImpl <em>Booking Schedule</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ClassDiagram.impl.BookingScheduleImpl
+	 * @see ClassDiagram.impl.ClassDiagramPackageImpl#getBookingSchedule()
+	 * @generated
+	 */
+	int BOOKING_SCHEDULE = 20;
+
+	/**
+	 * The meta object id for the '{@link ClassDiagram.impl.FloorMapImpl <em>Floor Map</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ClassDiagram.impl.FloorMapImpl
+	 * @see ClassDiagram.impl.ClassDiagramPackageImpl#getFloorMap()
+	 * @generated
+	 */
+	int FLOOR_MAP = 21;
+
+	/**
+	 * The meta object id for the '{@link ClassDiagram.impl.PaymentImpl <em>Payment</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ClassDiagram.impl.PaymentImpl
+	 * @see ClassDiagram.impl.ClassDiagramPackageImpl#getPayment()
+	 * @generated
+	 */
+	int PAYMENT = 6;
+
+	/**
+	 * The feature id for the '<em><b>Bill</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT__BILL = 0;
+
+	/**
+	 * The number of structural features of the '<em>Payment</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_FEATURE_COUNT = 1;
+
+	/**
+	 * The operation id for the '<em>Merge</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT___MERGE__ELIST = 0;
+
+	/**
+	 * The operation id for the '<em>Split</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT___SPLIT__ELIST = 1;
+
+	/**
+	 * The operation id for the '<em>Perform Payment</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT___PERFORM_PAYMENT__BILLINGINFORMATION = 2;
+
+	/**
+	 * The operation id for the '<em>Print Receipt</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT___PRINT_RECEIPT = 3;
+
+	/**
+	 * The number of operations of the '<em>Payment</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_OPERATION_COUNT = 4;
+
+	/**
+	 * The number of structural features of the '<em>Billing Information</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILLING_INFORMATION_FEATURE_COUNT = 0;
+
+	/**
+	 * The operation id for the '<em>Validate</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILLING_INFORMATION___VALIDATE = 0;
+
+	/**
+	 * The operation id for the '<em>Get Payment Strategy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILLING_INFORMATION___GET_PAYMENT_STRATEGY = 1;
+
+	/**
+	 * The number of operations of the '<em>Billing Information</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILLING_INFORMATION_OPERATION_COUNT = 2;
+
+	/**
+	 * The number of structural features of the '<em>Payment Strategy</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_STRATEGY_FEATURE_COUNT = 0;
+
+	/**
+	 * The operation id for the '<em>Pay</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_STRATEGY___PAY__BILL = 0;
+
+	/**
+	 * The number of operations of the '<em>Payment Strategy</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYMENT_STRATEGY_OPERATION_COUNT = 1;
 
 	/**
 	 * The feature id for the '<em><b>Start Date</b></em>' attribute.
@@ -640,7 +896,7 @@ public interface ClassDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_BOOKING___CHECK_OUT__BILLINGINFORMATION = 4;
+	int ROOM_BOOKING___CHECK_OUT = 4;
 
 	/**
 	 * The operation id for the '<em>Add Room</em>' operation.
@@ -686,79 +942,6 @@ public interface ClassDiagramPackage extends EPackage {
 	 * @ordered
 	 */
 	int ROOM_BOOKING_OPERATION_COUNT = 9;
-
-	/**
-	 * The number of structural features of the '<em>Billing Information</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BILLING_INFORMATION_FEATURE_COUNT = 0;
-
-	/**
-	 * The operation id for the '<em>Validate</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BILLING_INFORMATION___VALIDATE = 0;
-
-	/**
-	 * The operation id for the '<em>Get Payment Strategy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BILLING_INFORMATION___GET_PAYMENT_STRATEGY = 1;
-
-	/**
-	 * The number of operations of the '<em>Billing Information</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BILLING_INFORMATION_OPERATION_COUNT = 2;
-
-	/**
-	 * The number of structural features of the '<em>Payment Strategy</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAYMENT_STRATEGY_FEATURE_COUNT = 0;
-
-	/**
-	 * The operation id for the '<em>Pay</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAYMENT_STRATEGY___PAY__BILL = 0;
-
-	/**
-	 * The number of operations of the '<em>Payment Strategy</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAYMENT_STRATEGY_OPERATION_COUNT = 1;
-
-	/**
-	 * The meta object id for the '{@link ClassDiagram.impl.ItemImpl <em>Item</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see ClassDiagram.impl.ItemImpl
-	 * @see ClassDiagram.impl.ClassDiagramPackageImpl#getItem()
-	 * @generated
-	 */
-	int ITEM = 9;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -813,16 +996,6 @@ public interface ClassDiagramPackage extends EPackage {
 	 * @ordered
 	 */
 	int ITEM_OPERATION_COUNT = COST_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link ClassDiagram.impl.EventImpl <em>Event</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see ClassDiagram.impl.EventImpl
-	 * @see ClassDiagram.impl.ClassDiagramPackageImpl#getEvent()
-	 * @generated
-	 */
-	int EVENT = 10;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -933,16 +1106,6 @@ public interface ClassDiagramPackage extends EPackage {
 	int EVENT_OPERATION_COUNT = COST_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link ClassDiagram.impl.VenueImpl <em>Venue</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see ClassDiagram.impl.VenueImpl
-	 * @see ClassDiagram.impl.ClassDiagramPackageImpl#getVenue()
-	 * @generated
-	 */
-	int VENUE = 11;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -988,16 +1151,6 @@ public interface ClassDiagramPackage extends EPackage {
 	int VENUE_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link ClassDiagram.impl.PackageImpl <em>Package</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see ClassDiagram.impl.PackageImpl
-	 * @see ClassDiagram.impl.ClassDiagramPackageImpl#getPackage()
-	 * @generated
-	 */
-	int PACKAGE = 12;
-
-	/**
 	 * The feature id for the '<em><b>Event</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1041,16 +1194,6 @@ public interface ClassDiagramPackage extends EPackage {
 	 * @ordered
 	 */
 	int PACKAGE_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link ClassDiagram.impl.EventBookingImpl <em>Event Booking</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see ClassDiagram.impl.EventBookingImpl
-	 * @see ClassDiagram.impl.ClassDiagramPackageImpl#getEventBooking()
-	 * @generated
-	 */
-	int EVENT_BOOKING = 13;
 
 	/**
 	 * The feature id for the '<em><b>Bill</b></em>' reference.
@@ -1134,16 +1277,6 @@ public interface ClassDiagramPackage extends EPackage {
 	int EVENT_BOOKING_OPERATION_COUNT = 3;
 
 	/**
-	 * The meta object id for the '{@link ClassDiagram.impl.AccountImpl <em>Account</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see ClassDiagram.impl.AccountImpl
-	 * @see ClassDiagram.impl.ClassDiagramPackageImpl#getAccount()
-	 * @generated
-	 */
-	int ACCOUNT = 14;
-
-	/**
 	 * The feature id for the '<em><b>Username</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1205,16 +1338,6 @@ public interface ClassDiagramPackage extends EPackage {
 	 * @ordered
 	 */
 	int ACCOUNT_OPERATION_COUNT = 2;
-
-	/**
-	 * The meta object id for the '{@link ClassDiagram.impl.AccountTypeImpl <em>Account Type</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see ClassDiagram.impl.AccountTypeImpl
-	 * @see ClassDiagram.impl.ClassDiagramPackageImpl#getAccountType()
-	 * @generated
-	 */
-	int ACCOUNT_TYPE = 15;
 
 	/**
 	 * The feature id for the '<em><b>Permissions</b></em>' attribute list.
@@ -1289,16 +1412,6 @@ public interface ClassDiagramPackage extends EPackage {
 	int ACCOUNT_TYPE_OPERATION_COUNT = 5;
 
 	/**
-	 * The meta object id for the '{@link ClassDiagram.Customer <em>Customer</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see ClassDiagram.Customer
-	 * @see ClassDiagram.impl.ClassDiagramPackageImpl#getCustomer()
-	 * @generated
-	 */
-	int CUSTOMER = 17;
-
-	/**
 	 * The number of structural features of the '<em>Customer</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1369,16 +1482,6 @@ public interface ClassDiagramPackage extends EPackage {
 	 * @ordered
 	 */
 	int CUSTOMER_OPERATION_COUNT = 6;
-
-	/**
-	 * The meta object id for the '{@link ClassDiagram.impl.OrganizationImpl <em>Organization</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see ClassDiagram.impl.OrganizationImpl
-	 * @see ClassDiagram.impl.ClassDiagramPackageImpl#getOrganization()
-	 * @generated
-	 */
-	int ORGANIZATION = 16;
 
 	/**
 	 * The feature id for the '<em><b>Billing Information</b></em>' reference list.
@@ -1516,16 +1619,6 @@ public interface ClassDiagramPackage extends EPackage {
 	int ORGANIZATION_OPERATION_COUNT = CUSTOMER_OPERATION_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link ClassDiagram.impl.IndividualCustomerImpl <em>Individual Customer</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see ClassDiagram.impl.IndividualCustomerImpl
-	 * @see ClassDiagram.impl.ClassDiagramPackageImpl#getIndividualCustomer()
-	 * @generated
-	 */
-	int INDIVIDUAL_CUSTOMER = 18;
-
-	/**
 	 * The feature id for the '<em><b>First Names</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1661,16 +1754,6 @@ public interface ClassDiagramPackage extends EPackage {
 	int INDIVIDUAL_CUSTOMER_OPERATION_COUNT = PERSON_OPERATION_COUNT + 7;
 
 	/**
-	 * The meta object id for the '{@link ClassDiagram.impl.BookingScheduleImpl <em>Booking Schedule</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see ClassDiagram.impl.BookingScheduleImpl
-	 * @see ClassDiagram.impl.ClassDiagramPackageImpl#getBookingSchedule()
-	 * @generated
-	 */
-	int BOOKING_SCHEDULE = 19;
-
-	/**
 	 * The feature id for the '<em><b>Room Bookings</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1752,16 +1835,6 @@ public interface ClassDiagramPackage extends EPackage {
 	int BOOKING_SCHEDULE_OPERATION_COUNT = 5;
 
 	/**
-	 * The meta object id for the '{@link ClassDiagram.impl.FloorMapImpl <em>Floor Map</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see ClassDiagram.impl.FloorMapImpl
-	 * @see ClassDiagram.impl.ClassDiagramPackageImpl#getFloorMap()
-	 * @generated
-	 */
-	int FLOOR_MAP = 20;
-
-	/**
 	 * The feature id for the '<em><b>Room</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1787,79 +1860,6 @@ public interface ClassDiagramPackage extends EPackage {
 	 * @ordered
 	 */
 	int FLOOR_MAP_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link ClassDiagram.impl.PaymentImpl <em>Payment</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see ClassDiagram.impl.PaymentImpl
-	 * @see ClassDiagram.impl.ClassDiagramPackageImpl#getPayment()
-	 * @generated
-	 */
-	int PAYMENT = 21;
-
-	/**
-	 * The feature id for the '<em><b>Bill</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAYMENT__BILL = 0;
-
-	/**
-	 * The number of structural features of the '<em>Payment</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAYMENT_FEATURE_COUNT = 1;
-
-	/**
-	 * The operation id for the '<em>Merge</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAYMENT___MERGE__ELIST = 0;
-
-	/**
-	 * The operation id for the '<em>Split</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAYMENT___SPLIT__ELIST = 1;
-
-	/**
-	 * The operation id for the '<em>Perform Payment</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAYMENT___PERFORM_PAYMENT__BILLINGINFORMATION = 2;
-
-	/**
-	 * The operation id for the '<em>Print Receipt</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAYMENT___PRINT_RECEIPT = 3;
-
-	/**
-	 * The number of operations of the '<em>Payment</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAYMENT_OPERATION_COUNT = 4;
 
 	/**
 	 * The meta object id for the '{@link ClassDiagram.Title <em>Title</em>}' enum.
@@ -2417,14 +2417,14 @@ public interface ClassDiagramPackage extends EPackage {
 	EOperation getRoomBooking__CheckIn__Guest_Room();
 
 	/**
-	 * Returns the meta object for the '{@link ClassDiagram.RoomBooking#checkOut(ClassDiagram.BillingInformation) <em>Check Out</em>}' operation.
+	 * Returns the meta object for the '{@link ClassDiagram.RoomBooking#checkOut() <em>Check Out</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Check Out</em>' operation.
-	 * @see ClassDiagram.RoomBooking#checkOut(ClassDiagram.BillingInformation)
+	 * @see ClassDiagram.RoomBooking#checkOut()
 	 * @generated
 	 */
-	EOperation getRoomBooking__CheckOut__BillingInformation();
+	EOperation getRoomBooking__CheckOut();
 
 	/**
 	 * Returns the meta object for the '{@link ClassDiagram.RoomBooking#addRoom(ClassDiagram.Room) <em>Add Room</em>}' operation.
@@ -3753,7 +3753,7 @@ public interface ClassDiagramPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation ROOM_BOOKING___CHECK_OUT__BILLINGINFORMATION = eINSTANCE.getRoomBooking__CheckOut__BillingInformation();
+		EOperation ROOM_BOOKING___CHECK_OUT = eINSTANCE.getRoomBooking__CheckOut();
 
 		/**
 		 * The meta object literal for the '<em><b>Add Room</b></em>' operation.

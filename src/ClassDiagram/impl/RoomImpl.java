@@ -6,6 +6,7 @@ import ClassDiagram.Bill;
 import ClassDiagram.ClassDiagramPackage;
 import ClassDiagram.CleaningStatus;
 import ClassDiagram.Guest;
+import ClassDiagram.Payment;
 import ClassDiagram.Room;
 import ClassDiagram.RoomStatus;
 import ClassDiagram.RoomType;
@@ -318,8 +319,11 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public void checkOut() {
+	public Payment checkOut() {
+		Payment p = ClassDiagramFactoryImpl.eINSTANCE.createPayment();
+		p.setBill(bill);
 		guests.clear();
+		return p;
 	}
 
 	/**
@@ -454,8 +458,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 			case ClassDiagramPackage.ROOM___GET_NUMBER_OF_GUESTS:
 				return getNumberOfGuests();
 			case ClassDiagramPackage.ROOM___CHECK_OUT:
-				checkOut();
-				return null;
+				return checkOut();
 			case ClassDiagramPackage.ROOM___ADD_GUEST__GUEST:
 				addGuest((Guest)arguments.get(0));
 				return null;

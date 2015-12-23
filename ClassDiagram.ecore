@@ -3,7 +3,7 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="ClassDiagram" nsURI="http:///ClassDiagram.ecore" nsPrefix="ClassDiagram">
   <eClassifiers xsi:type="ecore:EClass" name="Room">
     <eOperations name="getNumberOfGuests" ordered="false" lowerBound="1" eType="ecore:EDataType ../org.eclipse.uml2.types/model/Types.ecore#//Integer"/>
-    <eOperations name="checkOut" ordered="false" lowerBound="1"/>
+    <eOperations name="checkOut" ordered="false" lowerBound="1" eType="#//Payment"/>
     <eOperations name="addGuest" ordered="false" lowerBound="1">
       <eParameters name="guest" ordered="false" lowerBound="1" eType="#//Guest"/>
     </eOperations>
@@ -103,6 +103,30 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" ordered="false" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Payment">
+    <eOperations name="merge" ordered="false" lowerBound="1">
+      <eParameters name="payment" ordered="false" upperBound="-1" eType="#//Payment"/>
+    </eOperations>
+    <eOperations name="split" ordered="false" lowerBound="1" eType="#//Payment">
+      <eParameters name="cost" ordered="false" upperBound="-1" eType="#//Cost"/>
+    </eOperations>
+    <eOperations name="performPayment" ordered="false" lowerBound="1">
+      <eParameters name="info" ordered="false" lowerBound="1" eType="#//BillingInformation"/>
+    </eOperations>
+    <eOperations name="printReceipt" ordered="false" lowerBound="1"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bill" ordered="false" lowerBound="1"
+        eType="#//Bill"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BillingInformation" abstract="true"
+      interface="true">
+    <eOperations name="validate" ordered="false" lowerBound="1" eType="ecore:EDataType ../org.eclipse.uml2.types/model/Types.ecore#//Boolean"/>
+    <eOperations name="getPaymentStrategy" ordered="false" lowerBound="1" eType="#//PaymentStrategy"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PaymentStrategy" abstract="true" interface="true">
+    <eOperations name="pay" ordered="false" lowerBound="1">
+      <eParameters name="bill" ordered="false" lowerBound="1" eType="#//Bill"/>
+    </eOperations>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RoomBooking">
     <eOperations name="cancel" ordered="false" lowerBound="1"/>
     <eOperations name="close" ordered="false" lowerBound="1"/>
@@ -111,9 +135,7 @@
       <eParameters name="guest" ordered="false" lowerBound="1" eType="#//Guest"/>
       <eParameters name="room" ordered="false" lowerBound="1" eType="#//Room"/>
     </eOperations>
-    <eOperations name="checkOut" ordered="false" lowerBound="1">
-      <eParameters name="info" ordered="false" lowerBound="1" eType="#//BillingInformation"/>
-    </eOperations>
+    <eOperations name="checkOut" ordered="false" upperBound="-1" eType="#//Payment"/>
     <eOperations name="addRoom" ordered="false" lowerBound="1">
       <eParameters name="room" ordered="false" lowerBound="1" eType="#//Room"/>
     </eOperations>
@@ -139,16 +161,6 @@
         upperBound="-1" eType="#//Room"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" ordered="false" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="BillingInformation" abstract="true"
-      interface="true">
-    <eOperations name="validate" ordered="false" lowerBound="1" eType="ecore:EDataType ../org.eclipse.uml2.types/model/Types.ecore#//Boolean"/>
-    <eOperations name="getPaymentStrategy" ordered="false" lowerBound="1" eType="#//PaymentStrategy"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PaymentStrategy" abstract="true" interface="true">
-    <eOperations name="pay" ordered="false" lowerBound="1">
-      <eParameters name="bill" ordered="false" lowerBound="1" eType="#//Bill"/>
-    </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Item" eSuperTypes="#//Cost">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" lowerBound="1"
@@ -296,19 +308,5 @@
   <eClassifiers xsi:type="ecore:EClass" name="FloorMap">
     <eStructuralFeatures xsi:type="ecore:EReference" name="room" ordered="false" upperBound="-1"
         eType="#//Room"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Payment">
-    <eOperations name="merge" ordered="false" lowerBound="1">
-      <eParameters name="payment" ordered="false" upperBound="-1" eType="#//Payment"/>
-    </eOperations>
-    <eOperations name="split" ordered="false" lowerBound="1" eType="#//Payment">
-      <eParameters name="cost" ordered="false" upperBound="-1" eType="#//Cost"/>
-    </eOperations>
-    <eOperations name="performPayment" ordered="false" lowerBound="1">
-      <eParameters name="info" ordered="false" lowerBound="1" eType="#//BillingInformation"/>
-    </eOperations>
-    <eOperations name="printReceipt" ordered="false" lowerBound="1"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="bill" ordered="false" lowerBound="1"
-        eType="#//Bill"/>
   </eClassifiers>
 </ecore:EPackage>
