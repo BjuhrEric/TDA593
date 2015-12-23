@@ -112,6 +112,11 @@ public interface RoomBooking extends EObject {
 	 * @generated
 	 */
 	int getNumberOfGuests();
+	
+	/**
+	 * @generated NOT
+	 */
+	void setNumberOfGuests(final int numberOfGuests);
 
 	/**
 	 * Returns the value of the '<em><b>Rooms</b></em>' reference list.

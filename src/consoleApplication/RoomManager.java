@@ -28,6 +28,26 @@ public class RoomManager {
 		return -1;
 	}
 	
+	private void listRoomTypes() {
+		System.out.println();
+		System.out.println("Current room types in the system:");
+		System.out.println();
+		
+		System.out.println("No. Name\tPrice\tBeds#\tExtra beds#\tGuest Capacity\tDescription");
+		
+		for (int i = 0; i < roomTypes.size(); ++i) {
+			RoomType elem = roomTypes.get(i);
+			System.out.println((i+1) + ". " + elem.getName()
+									 + "\t" + elem.getPrice()
+									 + "\t" + elem.getNumberOfBeds()
+									 + "\t" + elem.getNumberOfExtraBeds() + "\t"
+									 + "\t" + elem.getGuestCapacity() + "\t"
+									 + "\t" + elem.getDescription());
+		}
+		
+		System.out.println();
+	}
+	
 	private int findRoom(int roomNumber) {
 		
 		for (int i = 0; i < rooms.size(); ++i)
@@ -36,6 +56,27 @@ public class RoomManager {
 		
 		return -1;
 	}	
+	
+	private void listRooms() {
+		System.out.println();
+		System.out.println("Current rooms in the system:");
+		System.out.println();
+		
+		System.out.println("No. Number\tType\tStatus\t\tCleaning Status");
+		
+		for (int i = 0; i < rooms.size(); ++i) {
+			Room elem = rooms.get(i);
+			/*elem.getBill()
+			elem.getGuests()
+			elem.getNumberOfGuests()*/
+			System.out.println((i+1) + ". #" + elem.getRoomNumber() + "\t"
+									 + "\t" + elem.getRoomType().getName()
+									 + "\t" + elem.getRoomStatus().getName()
+									 + "\t" + elem.getCleaningStatus().getName());
+		}
+		
+		System.out.println();
+	}
 	
 	private void createRoomType() {
 		ClassDiagramFactoryImpl factory = new ClassDiagramFactoryImpl();
@@ -149,7 +190,7 @@ public class RoomManager {
 	
 	private void createRoom() {
 		if (roomTypes.isEmpty()) {
-			System.out.println("ERROR! There are no room types in the system. Add a room type and try again!");
+			System.out.println("ERROR! There are no room types in the system. Create a room type and try again!");
 			return;
 		}
 		
@@ -197,7 +238,7 @@ public class RoomManager {
 	
 	private void modifyRoom() {
 		if (roomTypes.isEmpty()) {
-			System.out.println("ERROR! There are no room types in the system. Add a room type and try again!");
+			System.out.println("ERROR! There are no room types in the system. Create a room type and try again!");
 			return;
 		}
 		
@@ -267,36 +308,44 @@ public class RoomManager {
 	
 	public void start() {
 		System.out.println();
-		System.out.println("1. Create a new room type");
-		System.out.println("2. Modify an existing room type");
-		System.out.println("3. Remove an existing room type");
-		System.out.println("4. Create a new room");
-		System.out.println("5. Modify an existing room");
-		System.out.println("6. Remove an existing room");
-		System.out.println("7. Back");
+		System.out.println("1. List existing room types");
+		System.out.println("2. Create a new room type");
+		System.out.println("3. Modify an existing room type");
+		System.out.println("4. Remove an existing room type");
+		System.out.println("5. List existing rooms");
+		System.out.println("6. Create a new room");
+		System.out.println("7. Modify an existing room");
+		System.out.println("8. Remove an existing room");
+		System.out.println("9. Back");
 		System.out.println();
 		System.out.print("Please select a function: ");
 		
 		int choice = userInput.nextInt();
-		if (choice < 1 || choice > 7) choice = 7;
+		if (choice < 1 || choice > 9) choice = 9;
 		
 		switch(choice) {
 		case 1:
-			createRoomType();
+			listRoomTypes();
 			break;
 		case 2:
-			modifyRoomType();
+			createRoomType();
 			break;
 		case 3:
-			removeRoomType();
+			modifyRoomType();
 			break;
 		case 4:
-			createRoom();
+			removeRoomType();
 			break;
 		case 5:
-			modifyRoom();
+			listRooms();
 			break;
 		case 6:
+			createRoom();
+			break;
+		case 7:
+			modifyRoom();
+			break;
+		case 8:
 			removeRoom();
 			break;
 		}

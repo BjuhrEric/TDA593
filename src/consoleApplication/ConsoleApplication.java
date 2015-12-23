@@ -9,7 +9,10 @@ import consoleApplication.RoomManager;
 
 import ClassDiagram.Account;
 import ClassDiagram.AccountType;
+import ClassDiagram.Guest;
+import ClassDiagram.Item;
 import ClassDiagram.Room;
+import ClassDiagram.RoomBooking;
 import ClassDiagram.RoomType;
 import ClassDiagram.impl.ClassDiagramFactoryImpl;
 
@@ -18,10 +21,16 @@ public class ConsoleApplication {
 	static Scanner userInput;
 	static AccountManager accountManager;
 	static RoomManager roomManager;
+	static ItemManager itemManager;
+	static BookingManager bookingManager;
+	
 	static List<Account> accounts;
 	static List<AccountType> accountTypes;
 	static List<RoomType> roomTypes;
 	static List<Room> rooms;
+	static List<Item> items;
+	static List<RoomBooking> bookings;
+	static List<Guest> guests;
 	
 	static void init() {
 		userInput = new Scanner(System.in);
@@ -29,9 +38,13 @@ public class ConsoleApplication {
 		accountTypes = new LinkedList<AccountType>();
 		roomTypes = new LinkedList<RoomType>();
 		rooms = new LinkedList<Room>();
+		items = new LinkedList<Item>();
+		guests = new LinkedList<Guest>();
 		
 		accountManager = new AccountManager(userInput, accounts, accountTypes);
 		roomManager = new RoomManager(userInput, rooms, roomTypes);
+		itemManager = new ItemManager(userInput, items);
+		bookingManager = new BookingManager(userInput, bookings, guests);
 		
 		ClassDiagramFactoryImpl factory = new ClassDiagramFactoryImpl();
 		
@@ -114,6 +127,12 @@ public class ConsoleApplication {
 			break;
 		case 2:
 			roomManager.start();
+			break;
+		case 3:
+			itemManager.start();
+			break;
+		case 4:
+			bookingManager.start();
 			break;
 		}
 	}
