@@ -28,7 +28,7 @@ public class AccountManager {
 		return -1;
 	}
 	
-	private void createNewAccount() {
+	private void createAccount() {
 		
 		String username = "";
 		int searchResult = -1;
@@ -88,7 +88,7 @@ public class AccountManager {
 					System.out.println("ERROR! Username cannot be 'quit', it is a command of the system!");
 				
 				if (searchResult2 >= 0 && searchResult2 != searchResult)
-					System.out.println("ERROR! Username '" + username + "' is already taken!");
+					System.out.println("ERROR! Username '" + newUsername + "' is already taken!");
 				
 			} while (newUsername.equals("quit") || (searchResult2 >= 0 && searchResult2 != searchResult));
 			
@@ -131,8 +131,8 @@ public class AccountManager {
 		
 		System.out.println();
 		System.out.println("1. Create a new account");
-		System.out.println("2. Modify and existing account");
-		System.out.println("3. Remove and existing account");
+		System.out.println("2. Modify an existing account");
+		System.out.println("3. Remove an existing account");
 		System.out.println("4. Back");
 		System.out.println();
 		System.out.print("Please select a function: ");
@@ -142,7 +142,7 @@ public class AccountManager {
 		
 		switch(choice) {
 		case 1:
-			createNewAccount();
+			createAccount();
 			break;
 		case 2:
 			modifyAccount();

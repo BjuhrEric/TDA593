@@ -113,5 +113,35 @@ public interface RoomType extends Cost {
 	 * @generated
 	 */
 	String getDescription();
+	
+	/**
+	 * @generated NOT
+	 */
+	void setName(String value);
+	
+	/**
+	 * @generated NOT
+	 */
+	void setPrice(double value);
+	
+	/**
+	 * @generated NOT
+	 */
+	void setGuestCapacity(int value);
+	
+	/**
+	 * @generated NOT
+	 */
+	void setNumberOfBeds(int value);
+	
+	/**
+	 * @generated NOT
+	 */
+	void setNumberOfExtraBeds(int value);
+	
+	/**
+	 * @generated NOT
+	 */
+	void setDescription(String value);
 
 } // RoomType
