@@ -4,12 +4,9 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
-import consoleApplication.AccountManager;
-import consoleApplication.RoomManager;
-
 import ClassDiagram.Account;
 import ClassDiagram.AccountType;
-import ClassDiagram.Guest;
+import ClassDiagram.Customer;
 import ClassDiagram.Item;
 import ClassDiagram.Room;
 import ClassDiagram.RoomBooking;
@@ -23,14 +20,15 @@ public class ConsoleApplication {
 	static RoomManager roomManager;
 	static ItemManager itemManager;
 	static BookingManager bookingManager;
+	static CustomerManager customerManager;
 	
 	static List<Account> accounts;
 	static List<AccountType> accountTypes;
 	static List<RoomType> roomTypes;
 	static List<Room> rooms;
 	static List<Item> items;
+	static List<Customer> customers;
 	static List<RoomBooking> bookings;
-	static List<Guest> guests;
 	
 	static void init() {
 		userInput = new Scanner(System.in);
@@ -39,12 +37,14 @@ public class ConsoleApplication {
 		roomTypes = new LinkedList<RoomType>();
 		rooms = new LinkedList<Room>();
 		items = new LinkedList<Item>();
-		guests = new LinkedList<Guest>();
+		customers = new LinkedList<Customer>();
+		bookings = new LinkedList<RoomBooking>();
 		
 		accountManager = new AccountManager(userInput, accounts, accountTypes);
 		roomManager = new RoomManager(userInput, rooms, roomTypes);
 		itemManager = new ItemManager(userInput, items);
-		bookingManager = new BookingManager(userInput, bookings, guests);
+		customerManager = new CustomerManager(userInput, customers);
+		bookingManager = new BookingManager(userInput, bookings, roomTypes);
 		
 		ClassDiagramFactoryImpl factory = new ClassDiagramFactoryImpl();
 		
@@ -105,8 +105,8 @@ public class ConsoleApplication {
 			System.out.println("1. Manage accounts");
 			System.out.println("2. Manage rooms and room types");
 			System.out.println("3. Manage items");
-			System.out.println("4. Manage bookings");
-			System.out.println("5. Manage guests");
+			System.out.println("4. Manage customers");
+			System.out.println("5. Manage bookings");
 			System.out.println("6. Check-in guest");
 			System.out.println("7. Check-out guest");
 		}
@@ -132,6 +132,9 @@ public class ConsoleApplication {
 			itemManager.start();
 			break;
 		case 4:
+			customerManager.start();
+			break;
+		case 5:
 			bookingManager.start();
 			break;
 		}
