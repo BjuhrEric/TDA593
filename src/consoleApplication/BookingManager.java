@@ -40,7 +40,7 @@ public class BookingManager {
 		
 		for (int i = 0; i < bookings.size(); ++i) {
 			RoomBooking elem = bookings.get(i);
-			System.out.println((i+1) + ". " + elem.getId()
+			System.out.println((i+1) + ". #" + elem.getId()
 									 + "\t" + elem.getStartDate().toString()
 									 + "\t" + elem.getEndDate().toString());
 			//TODO Print out room types too?

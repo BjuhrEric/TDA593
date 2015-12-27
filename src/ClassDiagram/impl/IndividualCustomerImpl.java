@@ -70,6 +70,29 @@ public class IndividualCustomerImpl extends PersonImpl implements IndividualCust
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	
+	/**
+	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * Added by thszabi
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated NOT
+	 * @ordered
+	 */
+	protected static final long ID_EDEFAULT = 0L;
+
+	/**
+	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * Added by thszabi
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated NOT
+	 * @ordered
+	 */
+	protected long id = ID_EDEFAULT;
+	
 	protected IndividualCustomerImpl() {
 		super();
 	}
@@ -141,12 +164,23 @@ public class IndividualCustomerImpl extends PersonImpl implements IndividualCust
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	public void getID() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public long getID() {
+		return id;
+	}
+	
+	/**
+	 * <!-- begin-user-doc -->
+	 * Added by thszabi
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public void setID(long newID) {
+		//long oldID = id;
+		id = newID;
+		//if (eNotificationRequired())
+		//	eNotify(new ENotificationImpl(this, Notification.SET, ClassDiagramPackage.ORGANIZATION_ID, oldID, id));
 	}
 
 	/**
@@ -155,6 +189,9 @@ public class IndividualCustomerImpl extends PersonImpl implements IndividualCust
 	 * @generated NOT
 	 */
 	public void addBillingInformation(BillingInformation info) {
+		if (billingInformation == null) {
+			billingInformation = new EObjectResolvingEList<BillingInformation>(BillingInformation.class, this, ClassDiagramPackage.INDIVIDUAL_CUSTOMER__BILLING_INFORMATION);
+		}
 		billingInformation.add(info);
 	}
 

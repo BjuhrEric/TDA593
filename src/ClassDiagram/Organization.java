@@ -2,7 +2,7 @@
  */
 package ClassDiagram;
 
-import org.eclipse.emf.common.util.EList;
+//import org.eclipse.emf.common.util.EList; //Commented out by thszabi
 
 
 /**
@@ -35,6 +35,7 @@ public interface Organization extends Customer {
 	 * <p>
 	 * If the meaning of the '<em>Billing Information</em>' reference isn't clear,
 	 * there really should be more of a description here...
+	 * Moved to interface 'Customer' by thszabi
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Billing Information</em>' reference list.
@@ -42,7 +43,7 @@ public interface Organization extends Customer {
 	 * @model ordered="false"
 	 * @generated
 	 */
-	EList<BillingInformation> getBillingInformation();
+	//EList<BillingInformation> getBillingInformation();
 
 	/**
 	 * Returns the value of the '<em><b>Room Bookings</b></em>' reference list.
@@ -51,6 +52,7 @@ public interface Organization extends Customer {
 	 * <p>
 	 * If the meaning of the '<em>Room Bookings</em>' reference list isn't clear,
 	 * there really should be more of a description here...
+	 * Moved to interface 'Customer' by thszabi
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Room Bookings</em>' reference list.
@@ -58,7 +60,7 @@ public interface Organization extends Customer {
 	 * @model ordered="false"
 	 * @generated
 	 */
-	EList<RoomBooking> getRoomBookings();
+	//EList<RoomBooking> getRoomBookings();
 
 	/**
 	 * Returns the value of the '<em><b>Event Bookings</b></em>' reference list.
@@ -67,6 +69,7 @@ public interface Organization extends Customer {
 	 * <p>
 	 * If the meaning of the '<em>Event Bookings</em>' reference list isn't clear,
 	 * there really should be more of a description here...
+	 * Moved to interface 'Customer' by thszabi
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Event Bookings</em>' reference list.
@@ -74,7 +77,7 @@ public interface Organization extends Customer {
 	 * @model ordered="false"
 	 * @generated
 	 */
-	EList<EventBooking> getEventBookings();
+	//EList<EventBooking> getEventBookings();
 
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
@@ -153,12 +156,4 @@ public interface Organization extends Customer {
 	 * @generated
 	 */
 	void setResponsiblePerson(Person value);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model infoRequired="true" infoOrdered="false"
-	 * @generated
-	 */
-	void addBillingInformation(BillingInformation info);
 } // Organization

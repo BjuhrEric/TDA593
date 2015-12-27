@@ -6,7 +6,6 @@ import java.util.Scanner;
 import ClassDiagram.Customer;
 import ClassDiagram.IndividualCustomer;
 import ClassDiagram.Organization;
-import ClassDiagram.Title;
 import ClassDiagram.impl.ClassDiagramFactoryImpl;
 import Payment.CreditCard;
 import Payment.Invoice;
@@ -26,14 +25,34 @@ public class CustomerManager {
 	private int findCustomer(long customerID) {
 		
 		for (int i = 0; i < customers.size(); ++i)
-			if (customers.get(i).getId() == customerID)
+			if (customers.get(i).getID() == customerID)
 				return i;
 		
 		return -1;
 	}
 	
 	private void listCustomers() {
-		// TODO Auto-generated method stub
+		System.out.println();
+		System.out.println("\tID\tName\t\tPayment method");
+		for (int i = 0; i < customers.size(); ++i) {
+			Customer elem = customers.get(i);
+			System.out.print((i+1) + ".\t#" + elem.getID() + "\t");
+			if (elem instanceof IndividualCustomer) {
+				System.out.print(((IndividualCustomer) elem).getFirstNames().get(0) + " "
+						+ ((IndividualCustomer) elem).getFamilyNames().get(0) + "\t");
+			}
+			
+			if (elem instanceof Organization) {
+				System.out.print(((Organization) elem).getName() + "\t");
+			}
+			
+			if (elem.getBillingInformation().get(0) instanceof Invoice) {
+				System.out.println("Invoice");
+			}
+			if (elem.getBillingInformation().get(0) instanceof CreditCard) {
+				System.out.println("Credit Card");
+			}
+		}
 		
 	}
 
@@ -111,6 +130,8 @@ public class CustomerManager {
 		
 		addBillingInfo(newCustomer);
 		
+		customers.add(newCustomer);
+		
 		System.out.println();
 		System.out.print("Customer #" + newCustomer.getID() + ", "
 						 + newCustomer.getFirstNames().get(0) + " " + newCustomer.getFamilyNames().get(0)
@@ -126,7 +147,7 @@ public class CustomerManager {
 		newOrganization.setID(ID);
 		++ID;
 		
-		System.out.println("Name of the organization: ");
+		System.out.print("Name of the organization: ");
 		String name = userInput.next();
 		newOrganization.setName(name);
 		
@@ -137,6 +158,8 @@ public class CustomerManager {
 		addBillingInfo(newOrganization);
 		
 		//TODO You can add newOrganization.getResponsiblePerson() if you want to.
+		
+		customers.add(newOrganization);
 		
 		System.out.println();
 		System.out.print("Customer #" + newOrganization.getID() + ", "
@@ -160,6 +183,8 @@ public class CustomerManager {
 			if (customers.get(searchResult) instanceof IndividualCustomer) {
 				IndividualCustomer modifiedCustomer = factory.createIndividualCustomer();
 				
+				modifiedCustomer.setID(customerID);
+				
 				//System.out.println("Choose the title of the new customer: ");
 				setTitle(modifiedCustomer);
 				
@@ -179,7 +204,9 @@ public class CustomerManager {
 			if (customers.get(searchResult) instanceof Organization) {
 				Organization modifiedOrganization = factory.createOrganization();
 				
-				System.out.println("New name of the organization: ");
+				modifiedOrganization.setID(customerID);
+				
+				System.out.print("New name of the organization: ");
 				String newName = userInput.next();
 				modifiedOrganization.setName(newName);
 				

@@ -59,10 +59,29 @@ public interface Customer extends EObject {
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * Added by thszabi
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
+	 * @model infoRequired="true" infoOrdered="false"
 	 * @generated
 	 */
-	void getID();
+	void addBillingInformation(BillingInformation info);
+	
+	/**
+	 * <!-- begin-user-doc -->
+	 * Added by thszabi
+	 * <!-- end-user-doc -->
+	 * @model kind="operation"
+	 * @generated NOT
+	 */
+	long getID();
+	
+	/**
+	 * <!-- begin-user-doc -->
+	 * Added by thszabi
+	 * <!-- end-user-doc -->
+	 * @model kind="operation"
+	 * @generated NOT
+	 */
+	void setID(long newID);
 
 } // Customer
