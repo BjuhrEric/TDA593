@@ -17,7 +17,7 @@ import java.util.Collection;
 import java.util.Date;
 
 import org.eclipse.emf.common.notify.Notification;
-
+import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
@@ -214,7 +214,9 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 	 */
 	public EList<RoomType> getRoomType() {
 		if (roomType == null) {
-			roomType = new EObjectResolvingEList<RoomType>(RoomType.class, this, ClassDiagramPackage.ROOM_BOOKING__ROOM_TYPE);
+			//roomType = new EObjectResolvingEList<RoomType>(RoomType.class, this, ClassDiagramPackage.ROOM_BOOKING__ROOM_TYPE);
+			//thszabi: Changed EObjectResolvingEList to BasicEList because EObjectResolvingEList can't store the same elements more than once
+			roomType = new BasicEList<RoomType>();
 		}
 		return roomType;
 	}
@@ -361,9 +363,11 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 	 */
 	public void addRoomType(RoomType roomType) {
 		if(this.roomType == null) {
-			this.roomType = new EObjectResolvingEList<RoomType>(RoomType.class, this, ClassDiagramPackage.ROOM_BOOKING__ROOM_TYPE); 
+			//this.roomType = new EObjectResolvingEList<RoomType>(RoomType.class, this, ClassDiagramPackage.ROOM_BOOKING__ROOM_TYPE); 
+			//thszabi: Changed EObjectResolvingEList to BasicEList because EObjectResolvingEList can't store the same elements more than once
+			this.roomType = new BasicEList<RoomType>();
 		}
-			this.roomType.add(roomType);	
+			this.roomType.add(roomType);
 	}
 
 	/**

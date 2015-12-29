@@ -311,6 +311,9 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * @generated NOT
 	 */
 	public int getNumberOfGuests() {
+		if (guests == null) {
+			guests = new EObjectResolvingEList<Guest>(Guest.class, this, ClassDiagramPackage.ROOM__GUESTS);
+		}
 		return guests.size();
 	}
 
@@ -332,6 +335,9 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * @generated NOT
 	 */
 	public void addGuest(Guest guest) {
+		if (guests == null) {
+			guests = new EObjectResolvingEList<Guest>(Guest.class, this, ClassDiagramPackage.ROOM__GUESTS);
+		}
 		this.guests.add(guest);
 	}
 

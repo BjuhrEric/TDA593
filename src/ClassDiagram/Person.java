@@ -42,6 +42,14 @@ public interface Person extends EObject {
 	EList<String> getFirstNames();
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * Added by thszabi
+	 * <!-- end-user-doc --> 
+	 * @param firstName the first name which should be added to the '<em>FirstNames</em>' list.
+	 */
+	void addFirstName(String firstName);
+	
+	/**
 	 * Returns the value of the '<em><b>Family Names</b></em>' attribute list.
 	 * The list contents are of type {@link java.lang.String}.
 	 * <!-- begin-user-doc -->
@@ -57,6 +65,14 @@ public interface Person extends EObject {
 	 */
 	EList<String> getFamilyNames();
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * Added by thszabi
+	 * <!-- end-user-doc --> 
+	 * @param familyName the family name which should be added to the '<em>FamilyNames</em>' list.
+	 */
+	void addFamilyName(String familyName);
+	
 	/**
 	 * Returns the value of the '<em><b>Title</b></em>' attribute.
 	 * The literals are from the enumeration {@link ClassDiagram.Title}.

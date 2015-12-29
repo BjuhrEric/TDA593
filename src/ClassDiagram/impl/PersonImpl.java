@@ -2,6 +2,7 @@
  */
 package ClassDiagram.impl;
 
+import ClassDiagram.BillingInformation;
 import ClassDiagram.ClassDiagramPackage;
 import ClassDiagram.Person;
 import ClassDiagram.Title;
@@ -103,6 +104,19 @@ public class PersonImpl extends MinimalEObjectImpl.Container implements Person {
 		}
 		return firstNames;
 	}
+	
+	/**
+	 * <!-- begin-user-doc -->
+	 * Added by thszabi
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public void addFirstName(String firstName) {
+		if (firstNames == null) {
+			firstNames = new EDataTypeUniqueEList<String>(String.class, this, ClassDiagramPackage.PERSON__FIRST_NAMES);
+		}
+		firstNames.add(firstName);
+	}
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -116,6 +130,19 @@ public class PersonImpl extends MinimalEObjectImpl.Container implements Person {
 		return familyNames;
 	}
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * Added by thszabi
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public void addFamilyName(String familyName) {
+		if (familyNames == null) {
+			familyNames = new EDataTypeUniqueEList<String>(String.class, this, ClassDiagramPackage.PERSON__FAMILY_NAMES);
+		}
+		familyNames.add(familyName);
+	}
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

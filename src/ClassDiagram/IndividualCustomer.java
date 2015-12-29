@@ -2,7 +2,7 @@
  */
 package ClassDiagram;
 
-import org.eclipse.emf.common.util.EList;
+//import org.eclipse.emf.common.util.EList; //Commented out by thszabi
 
 /**
  * <!-- begin-user-doc -->
@@ -30,14 +30,15 @@ public interface IndividualCustomer extends Person, Customer {
 	 * <p>
 	 * If the meaning of the '<em>Billing Information</em>' reference list isn't clear,
 	 * there really should be more of a description here...
+	 * Moved to interface 'Customer' by thszabi
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Billing Information</em>' reference list.
 	 * @see ClassDiagram.ClassDiagramPackage#getIndividualCustomer_BillingInformation()
 	 * @model ordered="false"
-	 * @generated
+	 * @generated NOT
 	 */
-	EList<BillingInformation> getBillingInformation();
+	//EList<BillingInformation> getBillingInformation();
 
 	/**
 	 * Returns the value of the '<em><b>Room Bookings</b></em>' reference list.
@@ -46,14 +47,15 @@ public interface IndividualCustomer extends Person, Customer {
 	 * <p>
 	 * If the meaning of the '<em>Room Bookings</em>' reference list isn't clear,
 	 * there really should be more of a description here...
+	 * Moved to interface 'Customer' by thszabi
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Room Bookings</em>' reference list.
 	 * @see ClassDiagram.ClassDiagramPackage#getIndividualCustomer_RoomBookings()
 	 * @model ordered="false"
-	 * @generated
+	 * @generated NOT
 	 */
-	EList<RoomBooking> getRoomBookings();
+	//EList<RoomBooking> getRoomBookings();
 
 	/**
 	 * Returns the value of the '<em><b>Event Bookings</b></em>' reference list.
@@ -62,21 +64,23 @@ public interface IndividualCustomer extends Person, Customer {
 	 * <p>
 	 * If the meaning of the '<em>Event Bookings</em>' reference list isn't clear,
 	 * there really should be more of a description here...
+	 * Moved to interface 'Customer' by thszabi
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Event Bookings</em>' reference list.
 	 * @see ClassDiagram.ClassDiagramPackage#getIndividualCustomer_EventBookings()
 	 * @model ordered="false"
-	 * @generated
+	 * @generated NOT
 	 */
-	EList<EventBooking> getEventBookings();
+	//EList<EventBooking> getEventBookings();
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * Moved to interface 'Customer' by thszabi
 	 * <!-- end-user-doc -->
 	 * @model infoRequired="true" infoOrdered="false"
-	 * @generated
+	 * @generated NOT
 	 */
-	void addBillingInformation(BillingInformation info);
+	//void addBillingInformation(BillingInformation info);
 
 } // IndividualCustomer
