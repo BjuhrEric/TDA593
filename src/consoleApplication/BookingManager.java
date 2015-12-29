@@ -4,6 +4,11 @@ import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
+import org.eclipse.emf.common.util.EList;
+
+import ClassDiagram.Customer;
+import ClassDiagram.IndividualCustomer;
+import ClassDiagram.Organization;
 import ClassDiagram.RoomBooking;
 import ClassDiagram.RoomType;
 import ClassDiagram.impl.ClassDiagramFactoryImpl;
@@ -11,21 +16,21 @@ import ClassDiagram.impl.ClassDiagramFactoryImpl;
 public class BookingManager {
 
 	private Scanner userInput;
-	private List<RoomBooking> bookings;
 	private List<RoomType> roomTypes;
+	private List<Customer> customers;
 	private int ID;
 	
-	public BookingManager(Scanner userInput, List<RoomBooking> bookings, List<RoomType> roomTypes) {
+	public BookingManager(Scanner userInput, List<Customer> customers, List<RoomType> roomTypes) {
 		this.userInput = userInput;
-		this.bookings = bookings;
+		this.customers = customers;
 		this.roomTypes = roomTypes;
 		ID = 1;
 	}
 	
-	private int findBooking(long bookingId) {
+	private int findCustomer(long customerID) {
 		
-		for (int i = 0; i < bookings.size(); ++i)
-			if (bookings.get(i).getId() == bookingId)
+		for (int i = 0; i < customers.size(); ++i)
+			if (customers.get(i).getID() == customerID)
 				return i;
 		
 		return -1;
@@ -33,11 +38,37 @@ public class BookingManager {
 	
 	private void listBookings() {
 		System.out.println();
-		System.out.println("Current bookings in the system:");
+		System.out.print("Enter the ID of the customer of the bookings: ");
+		long customerID = userInput.nextLong();
+		
+		int searchResult = findCustomer(customerID);
+		
+		if (searchResult >= 0) {
+			Customer customer = customers.get(searchResult);
+			listBookings(customer);
+		}
+		else {
+			System.out.println("ERROR! Customer not found!");
+			System.out.println();
+		}		
+	}
+	
+	private void listBookings(Customer customer) {
+
 		System.out.println();
+		
+		if (customer instanceof IndividualCustomer)
+			System.out.println("Current bookings of "
+							+ ((IndividualCustomer) customer).getFirstNames().get(0) + " "
+							+ ((IndividualCustomer) customer).getFamilyNames().get(0) + ":");
+		
+		if (customer instanceof Organization)
+			System.out.println("Current bookings of "
+							+ ((Organization) customer).getName() + ":");			
 		
 		System.out.println("No. Id\tStart Date\t\t\tEnd date");
 		
+		EList<RoomBooking> bookings = customer.getRoomBookings();
 		for (int i = 0; i < bookings.size(); ++i) {
 			RoomBooking elem = bookings.get(i);
 			System.out.println((i+1) + ". #" + elem.getId()
@@ -47,41 +78,7 @@ public class BookingManager {
 		}
 		
 		System.out.println();
-		
 	}
-	
-	//private int findGuest(String firstName, String familyName) {
-	//	
-	//	for (int i = 0; i < guests.size(); ++i)
-	//		if (guests.get(i).getFirstNames().contains(firstName)
-	//			&& guests.get(i).getFamilyNames().contains(familyName))
-	//			return i;
-	//	
-	//	return -1;
-	//}
-	
-	//requires !Guests.isEmpty()
-	//private void addAGuestToBooking(RoomBooking newBooking) {
-	//	
-	//	int searchResult = -1;
-	//	do {
-	//		System.out.print("First name of the guest: ");
-	//		String firstName = userInput.next();
-	//
-	//		System.out.print("Family name of the guest: ");
-	//		String familyName = userInput.next();
-	//		
-	//		searchResult = findGuest(firstName, familyName);
-	//		if (searchResult != -1) {
-	//			System.out.println("TODO: addGuest is missing?");
-	//			//newBooking.addGuest(guests.get(searchResult));
-	//		}
-	//		else
-	//			System.out.println("ERROR! Guest '" + firstName + " " + familyName + "'not found!");
-	//		
-	//	} while (searchResult == -1);
-	//	
-	//}
 
 	private void listRoomTypes() {
 		System.out.println();
@@ -108,12 +105,22 @@ public class BookingManager {
 			return;
 		}
 		
+		System.out.print("Enter the ID of the customer who will be the owner of the booking: ");
+		long customerID = userInput.nextLong();
+		
+		int searchResult = findCustomer(customerID);
+		
+		if (searchResult < 0) {
+			System.out.println("ERROR! Customer not found!");
+			return;
+		}
+		
 		ClassDiagramFactoryImpl factory = new ClassDiagramFactoryImpl();
 		RoomBooking newBooking = factory.createRoomBooking();
 		
 		newBooking.setId(ID);
 		++ID;
-
+		
 		System.out.print("Year of start date: ");
 		int startYear = userInput.nextInt();
 		
@@ -156,9 +163,6 @@ public class BookingManager {
 		int numberOfGuests = userInput.nextInt();
 		newBooking.setNumberOfGuests(numberOfGuests);
 		
-		//for (int i = 0; i < numberOfGuests; ++i)
-		//	addAGuestToBooking(newBooking);
-		
 		//TODO Add rooms or choose package?
 		
 		System.out.print("Number of rooms: ");
@@ -176,18 +180,23 @@ public class BookingManager {
 				++addedRooms;
 		}
 		
-		//TODO Ask for e-mail address? Search for guest in the guest list using e-mail address?
-		//TODO If guest is not in the system, call GuestManager.addGuest()
-		//TODO why would I ask "pay by invoice" if payment method is already stored in the guest's data??
 		//TODO is there a Bank class?
 		//TODO ask if pay in advance
-		//TODO can't add customer to Booking! Booking class has no "customer" attribute!
 		
-		
-		bookings.add(newBooking);
+		Customer customer = customers.get(searchResult);
+		customer.addRoomBooking(newBooking);
 		
 		System.out.println();
-		System.out.print("Booking #" + newBooking.getId() + " created.");
+		
+		if (customer instanceof IndividualCustomer)
+			System.out.println("Booking #" + newBooking.getId() + " created for "
+							+ ((IndividualCustomer) customer).getFirstNames().get(0) + " "
+							+ ((IndividualCustomer) customer).getFamilyNames().get(0) + ".");
+		
+		if (customer instanceof Organization)
+			System.out.println("Booking #" + newBooking.getId() + " created for "
+							+ ((Organization) customer).getName() + ".");
+		
 		System.out.println();
 	}
 
@@ -199,18 +208,31 @@ public class BookingManager {
 		}
 		
 		System.out.println();
-		System.out.print("Enter the ID of the booking you want to modify: ");
-		long bookingID = userInput.nextLong();
+		System.out.print("Enter the ID of the customer who is owner of the booking you want to modify: ");
+		long customerID = userInput.nextLong();
 		
-		int searchResult = findBooking(bookingID);
+		int searchResult = findCustomer(customerID);
 		if (searchResult >= 0) {
 			
 			System.out.println();
 			
-			ClassDiagramFactoryImpl factory = new ClassDiagramFactoryImpl();
-			RoomBooking newBooking = factory.createRoomBooking();
+			Customer customer = customers.get(searchResult);
+			EList<RoomBooking> bookings = customer.getRoomBookings();
 			
-			newBooking.setId(bookingID);
+			if (bookings.size() == 0) {
+				System.out.println("This customer does not have any bookings at the moment!");
+				return;
+			}
+			
+			listBookings(customer);
+			
+			int chosenBooking = -1;
+			while (chosenBooking < 1 || chosenBooking > bookings.size()) {
+				System.out.print("Choose the booking you want to modify: ");
+				chosenBooking = userInput.nextInt();
+			}
+			
+			RoomBooking bookingToBeModified = bookings.get(chosenBooking-1); 
 			
 			System.out.print("Year of new start date: ");
 			int newStartYear = userInput.nextInt();
@@ -229,7 +251,7 @@ public class BookingManager {
 			newStartDate.setMinutes(0);
 			newStartDate.setSeconds(0);
 			
-			newBooking.setStartDate(newStartDate);
+			bookingToBeModified.setStartDate(newStartDate);
 			
 			System.out.print("Year of new end date: ");
 			int newEndYear = userInput.nextInt();
@@ -248,14 +270,11 @@ public class BookingManager {
 			newEndDate.setMinutes(0);
 			newEndDate.setSeconds(0);
 			
-			newBooking.setEndDate(newEndDate);
+			bookingToBeModified.setEndDate(newEndDate);
 			
 			System.out.print("New number of guests: ");
 			int newNumberOfGuests = userInput.nextInt();
-			newBooking.setNumberOfGuests(newNumberOfGuests);
-			
-			//for (int i = 0; i < numberOfGuests; ++i)
-			//	addAGuestToBooking(newBooking);
+			bookingToBeModified.setNumberOfGuests(newNumberOfGuests);
 			
 			System.out.print("New number of rooms: ");
 			int newNumberOfRooms = userInput.nextInt();
@@ -267,18 +286,18 @@ public class BookingManager {
 				System.out.print("Room type #" + (addedRooms+1) + ": ");
 				int roomTypeNumber = userInput.nextInt();
 				
-				boolean success = addARoomTypeToBooking(newBooking, roomTypeNumber);
+				boolean success = addARoomTypeToBooking(bookingToBeModified, roomTypeNumber);
 				if (success)
 					++addedRooms;
 			}
 
-			bookings.set(searchResult, newBooking);
+			bookings.set(chosenBooking-1, bookingToBeModified);
 			
 			System.out.println();
-			System.out.println("Booking #" + bookingID + " updated.");
+			System.out.println("Booking #" + bookingToBeModified.getId() + " updated.");
 		}
 		else
-			System.out.println("ERROR! Booking not found!");
+			System.out.println("ERROR! Customer not found!");
 		
 		System.out.println();
 		
@@ -286,17 +305,36 @@ public class BookingManager {
 	
 	private void removeBooking() {
 		System.out.println();
-		System.out.print("Enter the ID of the booking you want to remove: ");
-		long bookingID = userInput.nextLong();
+		System.out.println();
+		System.out.print("Enter the ID of the customer who is owner of the booking you want to remove: ");
+		long customerID = userInput.nextLong();
 		
-		int searchResult = findBooking(bookingID);
-		
+		int searchResult = findCustomer(customerID);
 		if (searchResult >= 0) {
-			bookings.remove(searchResult);
-			System.out.println("Booking #" + bookingID + " removed.");
+			
+			System.out.println();
+			
+			Customer customer = customers.get(searchResult);
+			EList<RoomBooking> bookings = customer.getRoomBookings();
+			
+			if (bookings.size() == 0) {
+				System.out.println("This customer does not have any bookings at the moment!");
+				return;
+			}
+			
+			listBookings(customer);
+			
+			int chosenBooking = -1;
+			while (chosenBooking < 1 || chosenBooking > bookings.size()) {
+				System.out.print("Choose the booking you want to remove: ");
+				chosenBooking = userInput.nextInt();
+			}
+			
+			bookings.remove(chosenBooking-1);
+			System.out.println("Booking removed.");
 		}
 		else
-			System.out.println("ERROR! No booking found with ID #" + bookingID + "!");
+			System.out.println("ERROR! Customer not found!");
 		
 	}
 	

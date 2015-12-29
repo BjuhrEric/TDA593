@@ -277,6 +277,9 @@ public class OrganizationImpl extends MinimalEObjectImpl.Container implements Or
 	 * @generated NOT
 	 */
 	public void addRoomBooking(RoomBooking roomBooking) {
+		if (roomBookings == null) {
+			roomBookings = new EObjectResolvingEList<RoomBooking>(RoomBooking.class, this, ClassDiagramPackage.ORGANIZATION__ROOM_BOOKINGS);
+		}
 		roomBookings.add(roomBooking);
 	}
 
@@ -286,6 +289,9 @@ public class OrganizationImpl extends MinimalEObjectImpl.Container implements Or
 	 * @generated NOT
 	 */
 	public void addEventBooking(EventBooking eventBooking) {
+		if (eventBookings == null) {
+			eventBookings = new EObjectResolvingEList<EventBooking>(EventBooking.class, this, ClassDiagramPackage.ORGANIZATION__EVENT_BOOKINGS);
+		}
 		eventBookings.add(eventBooking);
 	}
 

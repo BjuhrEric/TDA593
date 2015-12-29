@@ -149,6 +149,9 @@ public class IndividualCustomerImpl extends PersonImpl implements IndividualCust
 	 * @generated NOT
 	 */
 	public void addRoomBooking(RoomBooking roomBooking) {
+		if (roomBookings == null) {
+			roomBookings = new EObjectResolvingEList<RoomBooking>(RoomBooking.class, this, ClassDiagramPackage.INDIVIDUAL_CUSTOMER__ROOM_BOOKINGS);
+		}
 		roomBookings.add(roomBooking);
 	}
 
@@ -158,6 +161,9 @@ public class IndividualCustomerImpl extends PersonImpl implements IndividualCust
 	 * @generated NOT
 	 */
 	public void addEventBooking(EventBooking eventBooking) {
+		if (eventBookings == null) {
+			eventBookings = new EObjectResolvingEList<EventBooking>(EventBooking.class, this, ClassDiagramPackage.INDIVIDUAL_CUSTOMER__EVENT_BOOKINGS);
+		}
 		eventBookings.add(eventBooking);
 	}
 

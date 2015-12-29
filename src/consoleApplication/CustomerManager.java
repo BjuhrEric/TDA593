@@ -131,7 +131,7 @@ public class CustomerManager {
 		addBillingInfo(newCustomer);
 		
 		customers.add(newCustomer);
-		
+
 		System.out.println();
 		System.out.print("Customer #" + newCustomer.getID() + ", "
 						 + newCustomer.getFirstNames().get(0) + " " + newCustomer.getFamilyNames().get(0)
