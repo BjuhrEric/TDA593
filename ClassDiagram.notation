@@ -768,6 +768,10 @@
         <element xmi:type="uml:Operation" href="ClassDiagram.uml#_qFE8IKAdEeWVP7497XArVA"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_qFqyAaAdEeWVP7497XArVA"/>
       </children>
+      <children xmi:type="notation:Shape" xmi:id="_xy_LoLCHEeW_4NQZOBXGxA" type="3007">
+        <element xmi:type="uml:Operation" href="ClassDiagram.uml#_xdh5ALCHEeW_4NQZOBXGxA"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_xy_LobCHEeW_4NQZOBXGxA"/>
+      </children>
       <styles xmi:type="notation:TitleStyle" xmi:id="_Wmp2G5UQEeWictR9w7kxNQ"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_Wmp2HJUQEeWictR9w7kxNQ"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_Wmp2HZUQEeWictR9w7kxNQ"/>

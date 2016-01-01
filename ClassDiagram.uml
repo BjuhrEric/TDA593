@@ -446,6 +446,7 @@
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_iuG6oJUREeWictR9w7kxNQ" name="eventBooking" type="_DngK8JOQEeWai68V7lLhPw"/>
     </ownedOperation>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_qFE8IKAdEeWVP7497XArVA" name="getID"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_xdh5ALCHEeW_4NQZOBXGxA" name="setID"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_-7sboJUaEeWqN5aFuAz_Hg" name="IndividualCustomer">
     <generalization xmi:type="uml:Generalization" xmi:id="_MKN18JUcEeWqN5aFuAz_Hg" general="_oHzLAJODEeWai68V7lLhPw"/>
