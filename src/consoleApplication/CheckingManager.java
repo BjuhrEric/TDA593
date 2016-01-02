@@ -5,11 +5,13 @@ import java.util.Scanner;
 
 import org.eclipse.emf.common.util.EList;
 
+import ClassDiagram.CleaningStatus;
 import ClassDiagram.Customer;
 import ClassDiagram.Guest;
 import ClassDiagram.GuestStatus;
 import ClassDiagram.IndividualCustomer;
 import ClassDiagram.Organization;
+import ClassDiagram.Payment;
 import ClassDiagram.Room;
 import ClassDiagram.RoomBooking;
 import ClassDiagram.RoomStatus;
@@ -70,7 +72,8 @@ public class CheckingManager {
 		for (int i = 0; i < roomTypes.size(); ++i) {
 			int j = 0;
 			while (j < rooms.size() && (!rooms.get(j).getRoomType().equals(roomTypes.get(i))
-									    || !rooms.get(j).getRoomStatus().equals(RoomStatus.AVAILABLE)))
+									    || !rooms.get(j).getRoomStatus().equals(RoomStatus.AVAILABLE)
+									    || !rooms.get(j).getCleaningStatus().equals(CleaningStatus.CLEAN)))
 				++j;
 			
 			if (j < rooms.size()) {
@@ -134,8 +137,6 @@ public class CheckingManager {
 			return;
 		}
 		
-		//System.out.println();
-		
 		Customer customer = customers.get(searchResult);
 		EList<RoomBooking> bookings = customer.getRoomBookings();
 		
@@ -189,6 +190,39 @@ public class CheckingManager {
 	}
 	
 	public void startCheckOut() {
+		System.out.print("Enter the ID of the customer who is the owner of the booking: ");
+		long customerID = userInput.nextLong();
+		
+		int searchResult = findCustomer(customerID);
+		
+		if (searchResult < 0) {
+			System.out.println("ERROR! Customer not found!");
+			return;
+		}
+		
+		Customer customer = customers.get(searchResult);
+		EList<RoomBooking> bookings = customer.getRoomBookings();
+		
+		if (bookings.size() == 0) {
+			System.out.println("This customer does not have any bookings!");
+			return;
+		}
+		
+		listBookings(customer);
+		
+		int chosenBooking = -1;
+		while (chosenBooking < 1 || chosenBooking > bookings.size()) {
+			System.out.print("Choose the current booking: ");
+			chosenBooking = userInput.nextInt();
+		}
+		
+		RoomBooking booking = bookings.get(chosenBooking-1);
+		EList<Room> roomsOfBooking = booking.getRooms();
+		for (int i = 0; i < roomsOfBooking.size(); ++i) {
+			Room room = roomsOfBooking.get(i);
+			Payment payment = room.checkOut();
+			payment.performPayment(customer.getBillingInformation().get(0));			
+		}
 		
 	}
 }
