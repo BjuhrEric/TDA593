@@ -1,5 +1,7 @@
 package DatabaseInterfaces;
 
+import java.util.List;
+
 import ClassDiagram.RoomType;
 
 public interface RoomTypes {
@@ -11,4 +13,5 @@ public interface RoomTypes {
 	public void dispRoomType(RoomType roomType);
 	//List all roomTypes
 	public void listRoomTypes();
+	public List<RoomType> getAvailableRoomTypes();
 }
