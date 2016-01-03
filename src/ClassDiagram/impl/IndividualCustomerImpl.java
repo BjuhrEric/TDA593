@@ -198,6 +198,11 @@ public class IndividualCustomerImpl extends PersonImpl implements IndividualCust
 		if (billingInformation == null) {
 			billingInformation = new EObjectResolvingEList<BillingInformation>(BillingInformation.class, this, ClassDiagramPackage.INDIVIDUAL_CUSTOMER__BILLING_INFORMATION);
 		}
+		for (BillingInformation i : billingInformation) {
+			if (i.getClass().equals(info.getClass())) {
+				billingInformation.remove(i);
+			}
+		}
 		billingInformation.add(info);
 	}
 
