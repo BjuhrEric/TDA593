@@ -326,6 +326,11 @@ public class OrganizationImpl extends MinimalEObjectImpl.Container implements Or
 		if (billingInformation == null) {
 			billingInformation = new EObjectResolvingEList<BillingInformation>(BillingInformation.class, this, ClassDiagramPackage.ORGANIZATION__BILLING_INFORMATION);
 		}
+		for (BillingInformation i : billingInformation) {
+			if (i.getClass().equals(info.getClass())) {
+				billingInformation.remove(i);
+			}
+		}
 		billingInformation.add(info);
 	}
 
