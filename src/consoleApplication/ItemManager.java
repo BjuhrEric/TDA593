@@ -44,14 +44,14 @@ public class ItemManager {
 	}
 	
 	private void createItem() {
-		ClassDiagramFactoryImpl factory = new ClassDiagramFactoryImpl();
-		Item newItem = factory.createItem();
+		Item newItem = ClassDiagramFactoryImpl.eINSTANCE.createItem();
 		
 		String name = "";
 		int searchResult = -1;
 		
 		System.out.println();
 		
+		//Ask for the name of the item until it's valid (not already used)
 		do {
 			System.out.print("Name of the new item: ");
 			name = userInput.next();
@@ -76,6 +76,7 @@ public class ItemManager {
 		System.out.println();
 	}
 	
+	//This method takes an existing item, updates it with new data, and puts it back to the items
 	private void modifyItem() {
 		System.out.println();
 		System.out.print("Enter the name of the item you want to modify: ");
@@ -88,12 +89,17 @@ public class ItemManager {
 			
 			String newItemName = "";
 			int searchResult2 = -1;
+			
+			//Ask for item's name until it's valid (not already taken)
+			//(it is OK if it's the old name of the item we want to modify)
 			do {
 				System.out.print("New name of the item: ");
 				newItemName = userInput.next();
 				
 				searchResult2 = findItem(newItemName);
 				
+				//If the name already exists, and it is not the old name of the item we want to modify
+				//then give an error
 				if (searchResult2 >= 0 && searchResult2 != searchResult)
 					System.out.println("ERROR! Item '" + newItemName + "' already exists!");
 				
@@ -102,10 +108,10 @@ public class ItemManager {
 			System.out.print("New price of the item: ");
 			double newPrice = userInput.nextDouble();
 			
-			ClassDiagramFactoryImpl factory = new ClassDiagramFactoryImpl();
-			Item newItem = factory.createItem();
+			Item newItem = ClassDiagramFactoryImpl.eINSTANCE.createItem();
 			newItem.setName(newItemName);
 			newItem.setPrice(newPrice);
+			//We replace the old item with the new one we just created
 			items.set(searchResult, newItem);
 			
 			System.out.println();

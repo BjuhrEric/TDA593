@@ -15,10 +15,11 @@ import ClassDiagram.impl.ClassDiagramFactoryImpl;
 
 public class BookingManager {
 
-	private Scanner userInput;
-	private List<RoomType> roomTypes;
-	private List<Customer> customers;
-	private int ID;
+	//Local variables instead of database
+	Scanner userInput;
+	List<RoomType> roomTypes;
+	List<Customer> customers;
+	int ID; //This variable is used to give different IDs to each booking
 	
 	public BookingManager(Scanner userInput, List<Customer> customers, List<RoomType> roomTypes) {
 		this.userInput = userInput;
@@ -27,6 +28,8 @@ public class BookingManager {
 		ID = 1;
 	}
 	
+	//Returns the index of the customer with the ID 'customerID'
+	//Returns -1 if no customer found with ID 'customerID'
 	private int findCustomer(long customerID) {
 		
 		for (int i = 0; i < customers.size(); ++i)
@@ -36,13 +39,17 @@ public class BookingManager {
 		return -1;
 	}
 	
+	//Lists every booking of one customer
+	//The customers ID is asked
 	private void listBookings() {
 		System.out.println();
 		System.out.print("Enter the ID of the customer of the bookings: ");
 		long customerID = userInput.nextLong();
 		
+		//We search for the customer
 		int searchResult = findCustomer(customerID);
 		
+		//If the customer was found, we print its booking
 		if (searchResult >= 0) {
 			Customer customer = customers.get(searchResult);
 			listBookings(customer);
@@ -53,10 +60,16 @@ public class BookingManager {
 		}		
 	}
 	
+	/**
+	 * Lists every booking of a customer
+	 * @param customer the customer whose bookings needed to be listed
+	 */
 	private void listBookings(Customer customer) {
 
 		System.out.println();
 		
+		//Since an individual customer's name and a company's name is stored in a different name
+		//we have to print it in two different ways
 		if (customer instanceof IndividualCustomer)
 			System.out.println("Current bookings of "
 							+ ((IndividualCustomer) customer).getFirstNames().get(0) + " "
@@ -66,20 +79,26 @@ public class BookingManager {
 			System.out.println("Current bookings of "
 							+ ((Organization) customer).getName() + ":");			
 		
+		//We print the header
 		System.out.println("No. Id\tStart Date\t\t\tEnd date");
 		
 		EList<RoomBooking> bookings = customer.getRoomBookings();
+		//We print out every booking
 		for (int i = 0; i < bookings.size(); ++i) {
 			RoomBooking elem = bookings.get(i);
 			System.out.println((i+1) + ". #" + elem.getId()
 									 + "\t" + elem.getStartDate().toString()
 									 + "\t" + elem.getEndDate().toString());
-			//TODO Print out room types too?
+			
+			//Optional ToDo: We can print out the bookings' room types too.
 		}
 		
 		System.out.println();
 	}
 
+	/**
+	 * Prints out all the room types currently stored in the system
+	 */
 	private void listRoomTypes() {
 		System.out.println();
 		for (int i = 0; i < roomTypes.size(); ++i)
@@ -87,7 +106,15 @@ public class BookingManager {
 		System.out.println();
 	}
 	
+	/**
+	 * Adds a room type to a booking
+	 * @param newBooking the room type will be added to this booking
+	 * @param roomTypeNumber the number of the room type in the list
+	 * @return true if the adding was successful, false otherwise
+	 */
 	private boolean addARoomTypeToBooking(RoomBooking newBooking, int roomTypeNumber) {
+		//We have to decrease roomTypeNumber, since the list on the screen is numbered [1 - size]
+		//but our List is indexed [0 - size-1]
 		--roomTypeNumber;
 		
 		if (0 <= roomTypeNumber && roomTypeNumber < roomTypes.size()) {
@@ -108,15 +135,16 @@ public class BookingManager {
 		System.out.print("Enter the ID of the customer who will be the owner of the booking: ");
 		long customerID = userInput.nextLong();
 		
+		//We search for the customer
 		int searchResult = findCustomer(customerID);
 		
+		//If we don't find the customer, return with an error
 		if (searchResult < 0) {
 			System.out.println("ERROR! Customer not found!");
 			return;
 		}
 		
-		ClassDiagramFactoryImpl factory = new ClassDiagramFactoryImpl();
-		RoomBooking newBooking = factory.createRoomBooking();
+		RoomBooking newBooking = ClassDiagramFactoryImpl.eINSTANCE.createRoomBooking();
 		
 		newBooking.setId(ID);
 		++ID;
@@ -130,6 +158,9 @@ public class BookingManager {
 		System.out.print("Day of start date: ");
 		int startDay = userInput.nextInt();
 		
+		//Sorry for the deprecated Date, replace it with Calendar if you want.
+		//Set the date to YYYY.MM.DD 12:00:00
+		//Month needed to be decreased, dunno why
 		Date startDate = new Date();
 		startDate.setYear(startYear);
 		startDate.setMonth(startMonth-1);
@@ -161,29 +192,33 @@ public class BookingManager {
 		
 		System.out.print("Number of guests: ");
 		int numberOfGuests = userInput.nextInt();
+		//Not sure if this is needed, or numberOfGuests is calculated inside the 'Booking' class
 		newBooking.setNumberOfGuests(numberOfGuests);
 		
-		//TODO Add rooms or choose package?
+		//TODO Ask if the user wants to enter room types one by one or select a package
 		
 		System.out.print("Number of rooms: ");
 		int numberOfRooms = userInput.nextInt();
 		
 		int addedRooms = 0;
+		//Add 'numberOfRooms' rooms to the booking
 		while (addedRooms < numberOfRooms) {
 			listRoomTypes();
 			
 			System.out.print("Room type #" + (addedRooms+1) + ": ");
 			int roomTypeNumber = userInput.nextInt();
 			
+			//If the room adding failed, don't increase 'addedRooms'!
 			boolean success = addARoomTypeToBooking(newBooking, roomTypeNumber);
 			if (success)
 				++addedRooms;
 		}
 		
-		//TODO is there a Bank class?
-		//TODO ask if pay in advance
+		//TODO The use case says paying for the room happens here. Is there a Bank class which can be used?
+		//TODO Ask if the customer wants to pay in advance
 		
 		Customer customer = customers.get(searchResult);
+		//Add the newly created booking to the customer. This means bookings are stored in the customers' data.
 		customer.addRoomBooking(newBooking);
 		
 		System.out.println();
@@ -200,6 +235,7 @@ public class BookingManager {
 		System.out.println();
 	}
 
+	//This method takes an existing booking, updates it with new data, and puts it back to the customer's bookings
 	@SuppressWarnings("deprecation")
 	private void modifyBooking() {
 		if (roomTypes.isEmpty()) {
@@ -211,7 +247,9 @@ public class BookingManager {
 		System.out.print("Enter the ID of the customer who is owner of the booking you want to modify: ");
 		long customerID = userInput.nextLong();
 		
+		//We search for the customer
 		int searchResult = findCustomer(customerID);
+		//If the customer was found, ask which booking should be replaced with a new one
 		if (searchResult >= 0) {
 			
 			System.out.println();
@@ -226,13 +264,15 @@ public class BookingManager {
 			
 			listBookings(customer);
 			
+			//After listing the bookings, we ask which booking should be updated (until a valid input is given)
 			int chosenBooking = -1;
 			while (chosenBooking < 1 || chosenBooking > bookings.size()) {
 				System.out.print("Choose the booking you want to modify: ");
 				chosenBooking = userInput.nextInt();
 			}
 			
-			RoomBooking bookingToBeModified = bookings.get(chosenBooking-1); 
+			//This is the booking that needs to be modified
+			RoomBooking bookingToBeModified = bookings.get(chosenBooking-1);
 			
 			System.out.print("Year of new start date: ");
 			int newStartYear = userInput.nextInt();
@@ -272,6 +312,8 @@ public class BookingManager {
 			
 			bookingToBeModified.setEndDate(newEndDate);
 			
+			//The rest is almost like createBooking()
+			
 			System.out.print("New number of guests: ");
 			int newNumberOfGuests = userInput.nextInt();
 			bookingToBeModified.setNumberOfGuests(newNumberOfGuests);
@@ -291,6 +333,7 @@ public class BookingManager {
 					++addedRooms;
 			}
 
+			//Put back the booking to where we took it
 			bookings.set(chosenBooking-1, bookingToBeModified);
 			
 			System.out.println();
@@ -303,6 +346,7 @@ public class BookingManager {
 		
 	}
 	
+	//This method takes a customer, and removes one of its bookings
 	private void removeBooking() {
 		System.out.println();
 		System.out.println();
@@ -310,6 +354,7 @@ public class BookingManager {
 		long customerID = userInput.nextLong();
 		
 		int searchResult = findCustomer(customerID);
+		//If we found the customer, print its bookings, then delete one
 		if (searchResult >= 0) {
 			
 			System.out.println();
@@ -325,11 +370,14 @@ public class BookingManager {
 			listBookings(customer);
 			
 			int chosenBooking = -1;
+			//We ask the user which booking should be removed (until a valid input is given)
 			while (chosenBooking < 1 || chosenBooking > bookings.size()) {
 				System.out.print("Choose the booking you want to remove: ");
 				chosenBooking = userInput.nextInt();
 			}
 			
+			//We have to subtract 1 from 'chosenBooking' because the list on the screen goes from 1 to size
+			//But the 'bookings' list goes from 0 to size-1
 			bookings.remove(chosenBooking-1);
 			System.out.println("Booking removed.");
 		}
@@ -349,6 +397,7 @@ public class BookingManager {
 		System.out.print("Please select a function: ");
 		
 		int choice = userInput.nextInt();
+		//If the input is invalid, change it to 5, so it will just simply quit
 		if (choice < 1 || choice > 5) choice = 5;
 		
 		switch(choice) {

@@ -9,12 +9,12 @@ import ClassDiagram.AccountType;
 import ClassDiagram.Customer;
 import ClassDiagram.Item;
 import ClassDiagram.Room;
-import ClassDiagram.RoomBooking;
 import ClassDiagram.RoomType;
 import ClassDiagram.impl.ClassDiagramFactoryImpl;
 
 public class ConsoleApplication {
 	
+	//Manager objects
 	static Scanner userInput;
 	static AccountManager accountManager;
 	static RoomManager roomManager;
@@ -23,6 +23,7 @@ public class ConsoleApplication {
 	static CustomerManager customerManager;
 	static CheckingManager checkingManager;
 	
+	//Local variables instead of database
 	static List<Account> accounts;
 	static List<AccountType> accountTypes;
 	static List<RoomType> roomTypes;
@@ -46,12 +47,13 @@ public class ConsoleApplication {
 		bookingManager = new BookingManager(userInput, customers, roomTypes);
 		checkingManager = new CheckingManager(userInput, rooms, customers);
 		
-		ClassDiagramFactoryImpl factory = new ClassDiagramFactoryImpl();
-		
-		AccountType accountType_admin = factory.createAccountType();
+		//We create an 'admin' account type
+		AccountType accountType_admin = ClassDiagramFactoryImpl.eINSTANCE.createAccountType();
 		accountTypes.add(accountType_admin);
+		//Optional ToDo: add more account types
 		
-		Account admin = factory.createAccount();
+		//We add an account with the privileges of an admin
+		Account admin = ClassDiagramFactoryImpl.eINSTANCE.createAccount();
 		admin.setAccounttype(accountType_admin);
 		admin.setUsername("admin");
 		admin.setPassword("admin");
@@ -69,18 +71,21 @@ public class ConsoleApplication {
 		String username = "";
 		Account result = null;
 		
+		//We ask for username until the user inputs 'quit' or until the login is successful
 		do {
 			username = "";
 			result = null;
 			
+			//We ask the username
 			System.out.print("Enter username (type 'quit' to quit): ");
 			username = userInput.next();
 		
 			if (!username.equals("quit")) {
-			
+				//If the username was valid, we ask the password
 				System.out.print("Enter password: ");
 				String password = userInput.next();
 			
+				//We search for an account with the name & password given by the user
 				for (int i = 0; i < accounts.size(); ++i)
 					if (accounts.get(i).getUsername().equals(username)
 					&&  accounts.get(i).getPassword().equals(password))
@@ -96,8 +101,7 @@ public class ConsoleApplication {
 	}
 	
 	static void printFunctions(Account loggedInAccount) {
-		//TODO add every funcionality, regarding the account type, watch out for the order of the functions
-		//TODO add other groups
+		//TODO This method should handle every account type, not just 'admin'.
 		System.out.println();
 		System.out.println("*** MAIN MENU ***");
 		
@@ -109,6 +113,8 @@ public class ConsoleApplication {
 			System.out.println("5. Manage items");
 			System.out.println("6. Check-in guest");
 			System.out.println("7. Check-out guest");
+			//Possible ToDo: 8. Manage bills (add/remove items to/from a bill)
+			//Possible ToDo: 9. Mark a room as cleaned
 		}
 		
 		System.out.println();
@@ -117,7 +123,9 @@ public class ConsoleApplication {
 	}
 	
 	static void executeFunction(int choice, Account loggedInAccount) {
-		//TODO convert incorrect choices to -1
+		//TODO If 'choice' is an incorrect number, change it to -1 somehow, and the switch-case will handle it
+		//TODO Watch out! This is written for the 'admin' only. It is possible that choice '1' will not be
+		//	   'Manage accounts' for ex. the 'receptionist' account type.
 		switch(choice) {
 		case -1:
 			System.out.println("Incorrect function!");
@@ -151,6 +159,7 @@ public class ConsoleApplication {
 		init();
 		Account loggedInAccount = null;
 		
+		//This loops holds until loggedInAccount isn't null == the user does not input 'quit' as username
 		do {
 			
 			loggedInAccount = login();
@@ -166,6 +175,7 @@ public class ConsoleApplication {
 				do {
 					printFunctions(loggedInAccount);
 					System.out.print("Please select a function: ");
+					
 					choice = userInput.nextInt();
 					executeFunction(choice, loggedInAccount);
 				} while (choice != 0);

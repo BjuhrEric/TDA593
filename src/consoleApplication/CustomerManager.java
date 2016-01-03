@@ -22,6 +22,8 @@ public class CustomerManager {
 		ID = 1;
 	}
 	
+	//Returns the index of the customer with the ID 'customerID'
+	//Returns -1 if no customer found with ID 'customerID'
 	private int findCustomer(long customerID) {
 		
 		for (int i = 0; i < customers.size(); ++i)
@@ -31,12 +33,17 @@ public class CustomerManager {
 		return -1;
 	}
 	
+	/**
+	 * Prints out all the customers currently stored in the system
+	 */
 	private void listCustomers() {
 		System.out.println();
 		System.out.println("\tID\tName\t\tPayment method");
 		for (int i = 0; i < customers.size(); ++i) {
 			Customer elem = customers.get(i);
 			System.out.print((i+1) + ".\t#" + elem.getID() + "\t");
+			
+			//Since an individual customer's name and a company's name is stored in a different name
 			if (elem instanceof IndividualCustomer) {
 				System.out.print(((IndividualCustomer) elem).getFirstNames().get(0) + " "
 						+ ((IndividualCustomer) elem).getFamilyNames().get(0) + "\t");
@@ -56,10 +63,6 @@ public class CustomerManager {
 		
 	}
 
-	private void setTitle(IndividualCustomer newCustomer) {
-		// TODO Auto-generated method stub
-	}
-	
 	private void addBillingInfo(Customer newCustomer) {
 		System.out.println();
 		System.out.println("1. Invoice");
@@ -67,9 +70,11 @@ public class CustomerManager {
 		System.out.print("Payment method of the customer: ");
 		int paymentMethod = userInput.nextInt();
 		
+		//Create invoice payment method
 		if (paymentMethod != 2) {
 			boolean valid = false;
 			
+			//Create an invoice and check if it is valid or not
 			while (!valid) {
 				System.out.print("Enter the invoice's number (numbers only): ");
 				long invoiceNbr = userInput.nextLong();
@@ -89,6 +94,7 @@ public class CustomerManager {
 		else {
 			boolean valid = false;
 			
+			//Create a credit card and check if it is valid or not
 			while (!valid) {
 				System.out.print("Enter credit card's number (16 digits, numbers only): ");
 				String cardno = userInput.next();
@@ -111,14 +117,12 @@ public class CustomerManager {
 	}
 	
 	private void createIndividualCustomer() {
-		ClassDiagramFactoryImpl factory = new ClassDiagramFactoryImpl();
-		IndividualCustomer newCustomer = factory.createIndividualCustomer();
+		IndividualCustomer newCustomer = ClassDiagramFactoryImpl.eINSTANCE.createIndividualCustomer();
 		
 		newCustomer.setID(ID);
 		++ID;
 		
-		//System.out.println("Choose the title of the new customer: ");
-		setTitle(newCustomer);
+		//Optional ToDo: we can ask for the title of the customer
 		
 		System.out.print("First name of the customer: ");
 		String firstName = userInput.next();
@@ -141,8 +145,7 @@ public class CustomerManager {
 	}
 
 	private void createOrganization() {
-		ClassDiagramFactoryImpl factory = new ClassDiagramFactoryImpl();
-		Organization newOrganization = factory.createOrganization();
+		Organization newOrganization = ClassDiagramFactoryImpl.eINSTANCE.createOrganization();
 		
 		newOrganization.setID(ID);
 		++ID;
@@ -157,7 +160,7 @@ public class CustomerManager {
 		
 		addBillingInfo(newOrganization);
 		
-		//TODO You can add newOrganization.getResponsiblePerson() if you want to.
+		//Optional ToDo: You can add newOrganization.getResponsiblePerson() if you want to.
 		
 		customers.add(newOrganization);
 		
@@ -168,6 +171,7 @@ public class CustomerManager {
 		System.out.println();		
 	}
 
+	//This method takes an existing customer, updates it with new data, and puts it back to the customers
 	private void modifyCustomer() {
 		System.out.println();
 		System.out.print("Enter the ID of the customer you want to modify: ");
@@ -178,15 +182,12 @@ public class CustomerManager {
 			
 			System.out.println();
 			
-			ClassDiagramFactoryImpl factory = new ClassDiagramFactoryImpl();
-			
 			if (customers.get(searchResult) instanceof IndividualCustomer) {
-				IndividualCustomer modifiedCustomer = factory.createIndividualCustomer();
+				IndividualCustomer modifiedCustomer = ClassDiagramFactoryImpl.eINSTANCE.createIndividualCustomer();
 				
 				modifiedCustomer.setID(customerID);
 				
-				//System.out.println("Choose the title of the new customer: ");
-				setTitle(modifiedCustomer);
+				//Optional ToDo: we can ask for the title of the customer
 				
 				System.out.print("New first name of the customer: ");
 				String newFirstName = userInput.next();
@@ -202,7 +203,7 @@ public class CustomerManager {
 			}
 			
 			if (customers.get(searchResult) instanceof Organization) {
-				Organization modifiedOrganization = factory.createOrganization();
+				Organization modifiedOrganization = ClassDiagramFactoryImpl.eINSTANCE.createOrganization();
 				
 				modifiedOrganization.setID(customerID);
 				
@@ -229,6 +230,7 @@ public class CustomerManager {
 		
 	}
 
+	//This method removes a customer
 	private void removeCustomer() {
 		System.out.println();
 		System.out.print("Enter the ID of the customer you want to remove: ");
