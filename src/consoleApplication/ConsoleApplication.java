@@ -50,6 +50,18 @@ public class ConsoleApplication {
 		//We create an 'admin' account type
 		AccountType accountType_admin = ClassDiagramFactoryImpl.eINSTANCE.createAccountType();
 		accountTypes.add(accountType_admin);
+		
+		//We create a 'receptionist' account type
+		AccountType accountType_receptionist = ClassDiagramFactoryImpl.eINSTANCE.createAccountType();
+		accountTypes.add(accountType_receptionist);
+		
+		//We create a 'cleaner' account type
+		AccountType accountType_cleaner = ClassDiagramFactoryImpl.eINSTANCE.createAccountType();
+		accountTypes.add(accountType_cleaner);
+		
+		//We create a 'chef' account type
+		AccountType accountType_chef= ClassDiagramFactoryImpl.eINSTANCE.createAccountType();
+		accountTypes.add(accountType_chef);
 		//Optional ToDo: add more account types
 		
 		//We add an account with the privileges of an admin
