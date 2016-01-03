@@ -19,10 +19,12 @@ import ClassDiagram.PaymentStrategy;
 public class CreditCard implements BillingInformation {
 	private String cardno;
 	private String cvv;
+	private String expirationDate;
 	
-	public CreditCard(String cardno, String cvv){
+	public CreditCard(String cardno, String cvv, String expirationDate){
 		this.cardno = cardno;
 		this.cvv = cvv;
+		this.expirationDate = expirationDate;
 	}
 
 	@Override
