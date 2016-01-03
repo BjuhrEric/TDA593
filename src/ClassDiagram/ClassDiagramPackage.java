@@ -1475,13 +1475,22 @@ public interface ClassDiagramPackage extends EPackage {
 	int CUSTOMER___GET_ID = 5;
 
 	/**
+	 * The operation id for the '<em>Add Billing Information</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOMER___ADD_BILLING_INFORMATION__BILLINGINFORMATION = 6;
+
+	/**
 	 * The number of operations of the '<em>Customer</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CUSTOMER_OPERATION_COUNT = 6;
+	int CUSTOMER_OPERATION_COUNT = 7;
 
 	/**
 	 * The feature id for the '<em><b>Billing Information</b></em>' reference list.
@@ -1607,7 +1616,7 @@ public interface ClassDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORGANIZATION___ADD_BILLING_INFORMATION__BILLINGINFORMATION = CUSTOMER_OPERATION_COUNT + 0;
+	int ORGANIZATION___ADD_BILLING_INFORMATION__BILLINGINFORMATION = CUSTOMER___ADD_BILLING_INFORMATION__BILLINGINFORMATION;
 
 	/**
 	 * The number of operations of the '<em>Organization</em>' class.
@@ -1616,7 +1625,7 @@ public interface ClassDiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORGANIZATION_OPERATION_COUNT = CUSTOMER_OPERATION_COUNT + 1;
+	int ORGANIZATION_OPERATION_COUNT = CUSTOMER_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>First Names</b></em>' attribute list.
@@ -1673,13 +1682,40 @@ public interface ClassDiagramPackage extends EPackage {
 	int INDIVIDUAL_CUSTOMER__EVENT_BOOKINGS = PERSON_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Phone Number</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDIVIDUAL_CUSTOMER__PHONE_NUMBER = PERSON_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Email</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDIVIDUAL_CUSTOMER__EMAIL = PERSON_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Address</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDIVIDUAL_CUSTOMER__ADDRESS = PERSON_FEATURE_COUNT + 5;
+
+	/**
 	 * The number of structural features of the '<em>Individual Customer</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INDIVIDUAL_CUSTOMER_FEATURE_COUNT = PERSON_FEATURE_COUNT + 3;
+	int INDIVIDUAL_CUSTOMER_FEATURE_COUNT = PERSON_FEATURE_COUNT + 6;
 
 	/**
 	 * The operation id for the '<em>Get Billing Information</em>' operation.
@@ -2977,16 +3013,6 @@ public interface ClassDiagramPackage extends EPackage {
 	EReference getOrganization_ResponsiblePerson();
 
 	/**
-	 * Returns the meta object for the '{@link ClassDiagram.Organization#addBillingInformation(ClassDiagram.BillingInformation) <em>Add Billing Information</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Add Billing Information</em>' operation.
-	 * @see ClassDiagram.Organization#addBillingInformation(ClassDiagram.BillingInformation)
-	 * @generated
-	 */
-	EOperation getOrganization__AddBillingInformation__BillingInformation();
-
-	/**
 	 * Returns the meta object for class '{@link ClassDiagram.Customer <em>Customer</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3057,6 +3083,16 @@ public interface ClassDiagramPackage extends EPackage {
 	EOperation getCustomer__GetID();
 
 	/**
+	 * Returns the meta object for the '{@link ClassDiagram.Customer#addBillingInformation(ClassDiagram.BillingInformation) <em>Add Billing Information</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Add Billing Information</em>' operation.
+	 * @see ClassDiagram.Customer#addBillingInformation(ClassDiagram.BillingInformation)
+	 * @generated
+	 */
+	EOperation getCustomer__AddBillingInformation__BillingInformation();
+
+	/**
 	 * Returns the meta object for class '{@link ClassDiagram.IndividualCustomer <em>Individual Customer</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3100,14 +3136,37 @@ public interface ClassDiagramPackage extends EPackage {
 	EReference getIndividualCustomer_EventBookings();
 
 	/**
-	 * Returns the meta object for the '{@link ClassDiagram.IndividualCustomer#addBillingInformation(ClassDiagram.BillingInformation) <em>Add Billing Information</em>}' operation.
+	 * Returns the meta object for the attribute '{@link ClassDiagram.IndividualCustomer#getPhoneNumber <em>Phone Number</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Add Billing Information</em>' operation.
-	 * @see ClassDiagram.IndividualCustomer#addBillingInformation(ClassDiagram.BillingInformation)
+	 * @return the meta object for the attribute '<em>Phone Number</em>'.
+	 * @see ClassDiagram.IndividualCustomer#getPhoneNumber()
+	 * @see #getIndividualCustomer()
 	 * @generated
 	 */
-	EOperation getIndividualCustomer__AddBillingInformation__BillingInformation();
+	EAttribute getIndividualCustomer_PhoneNumber();
+
+	/**
+	 * Returns the meta object for the attribute '{@link ClassDiagram.IndividualCustomer#getEmail <em>Email</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Email</em>'.
+	 * @see ClassDiagram.IndividualCustomer#getEmail()
+	 * @see #getIndividualCustomer()
+	 * @generated
+	 */
+	EAttribute getIndividualCustomer_Email();
+
+	/**
+	 * Returns the meta object for the attribute '{@link ClassDiagram.IndividualCustomer#getAddress <em>Address</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Address</em>'.
+	 * @see ClassDiagram.IndividualCustomer#getAddress()
+	 * @see #getIndividualCustomer()
+	 * @generated
+	 */
+	EAttribute getIndividualCustomer_Address();
 
 	/**
 	 * Returns the meta object for class '{@link ClassDiagram.BookingSchedule <em>Booking Schedule</em>}'.
@@ -4188,14 +4247,6 @@ public interface ClassDiagramPackage extends EPackage {
 		EReference ORGANIZATION__RESPONSIBLE_PERSON = eINSTANCE.getOrganization_ResponsiblePerson();
 
 		/**
-		 * The meta object literal for the '<em><b>Add Billing Information</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ORGANIZATION___ADD_BILLING_INFORMATION__BILLINGINFORMATION = eINSTANCE.getOrganization__AddBillingInformation__BillingInformation();
-
-		/**
 		 * The meta object literal for the '{@link ClassDiagram.Customer <em>Customer</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4254,6 +4305,14 @@ public interface ClassDiagramPackage extends EPackage {
 		EOperation CUSTOMER___GET_ID = eINSTANCE.getCustomer__GetID();
 
 		/**
+		 * The meta object literal for the '<em><b>Add Billing Information</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CUSTOMER___ADD_BILLING_INFORMATION__BILLINGINFORMATION = eINSTANCE.getCustomer__AddBillingInformation__BillingInformation();
+
+		/**
 		 * The meta object literal for the '{@link ClassDiagram.impl.IndividualCustomerImpl <em>Individual Customer</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4288,12 +4347,28 @@ public interface ClassDiagramPackage extends EPackage {
 		EReference INDIVIDUAL_CUSTOMER__EVENT_BOOKINGS = eINSTANCE.getIndividualCustomer_EventBookings();
 
 		/**
-		 * The meta object literal for the '<em><b>Add Billing Information</b></em>' operation.
+		 * The meta object literal for the '<em><b>Phone Number</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation INDIVIDUAL_CUSTOMER___ADD_BILLING_INFORMATION__BILLINGINFORMATION = eINSTANCE.getIndividualCustomer__AddBillingInformation__BillingInformation();
+		EAttribute INDIVIDUAL_CUSTOMER__PHONE_NUMBER = eINSTANCE.getIndividualCustomer_PhoneNumber();
+
+		/**
+		 * The meta object literal for the '<em><b>Email</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute INDIVIDUAL_CUSTOMER__EMAIL = eINSTANCE.getIndividualCustomer_Email();
+
+		/**
+		 * The meta object literal for the '<em><b>Address</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute INDIVIDUAL_CUSTOMER__ADDRESS = eINSTANCE.getIndividualCustomer_Address();
 
 		/**
 		 * The meta object literal for the '{@link ClassDiagram.impl.BookingScheduleImpl <em>Booking Schedule</em>}' class.

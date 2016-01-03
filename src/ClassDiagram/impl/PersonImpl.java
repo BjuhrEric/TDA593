@@ -2,7 +2,6 @@
  */
 package ClassDiagram.impl;
 
-import ClassDiagram.BillingInformation;
 import ClassDiagram.ClassDiagramPackage;
 import ClassDiagram.Person;
 import ClassDiagram.Title;

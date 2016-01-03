@@ -253,9 +253,6 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Permission"/>
   <eClassifiers xsi:type="ecore:EClass" name="Organization" eSuperTypes="#//Customer">
-    <eOperations name="addBillingInformation" ordered="false" lowerBound="1">
-      <eParameters name="info" ordered="false" lowerBound="1" eType="#//BillingInformation"/>
-    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="billingInformation" ordered="false"
         upperBound="-1" eType="#//BillingInformation"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="roomBookings" ordered="false"
@@ -280,17 +277,23 @@
       <eParameters name="eventBooking" ordered="false" lowerBound="1" eType="#//EventBooking"/>
     </eOperations>
     <eOperations name="getID" ordered="false" lowerBound="1"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="IndividualCustomer" eSuperTypes="#//Person #//Customer">
     <eOperations name="addBillingInformation" ordered="false" lowerBound="1">
       <eParameters name="info" ordered="false" lowerBound="1" eType="#//BillingInformation"/>
     </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IndividualCustomer" eSuperTypes="#//Person #//Customer">
     <eStructuralFeatures xsi:type="ecore:EReference" name="billingInformation" ordered="false"
         upperBound="-1" eType="#//BillingInformation"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="roomBookings" ordered="false"
         upperBound="-1" eType="#//RoomBooking"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="eventBookings" ordered="false"
         upperBound="-1" eType="#//EventBooking"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="phoneNumber" ordered="false"
+        lowerBound="1" eType="ecore:EDataType ../org.eclipse.uml2.types/model/Types.ecore#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="email" ordered="false"
+        lowerBound="1" eType="ecore:EDataType ../org.eclipse.uml2.types/model/Types.ecore#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="address" ordered="false"
+        lowerBound="1" eType="ecore:EDataType ../org.eclipse.uml2.types/model/Types.ecore#//String"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BookingSchedule">
     <eOperations name="showBookedRooms" ordered="false" lowerBound="1"/>

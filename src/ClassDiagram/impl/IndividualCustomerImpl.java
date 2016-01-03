@@ -13,10 +13,12 @@ import java.lang.reflect.InvocationTargetException;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
@@ -30,6 +32,9 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *   <li>{@link ClassDiagram.impl.IndividualCustomerImpl#getBillingInformation <em>Billing Information</em>}</li>
  *   <li>{@link ClassDiagram.impl.IndividualCustomerImpl#getRoomBookings <em>Room Bookings</em>}</li>
  *   <li>{@link ClassDiagram.impl.IndividualCustomerImpl#getEventBookings <em>Event Bookings</em>}</li>
+ *   <li>{@link ClassDiagram.impl.IndividualCustomerImpl#getPhoneNumber <em>Phone Number</em>}</li>
+ *   <li>{@link ClassDiagram.impl.IndividualCustomerImpl#getEmail <em>Email</em>}</li>
+ *   <li>{@link ClassDiagram.impl.IndividualCustomerImpl#getAddress <em>Address</em>}</li>
  * </ul>
  *
  * @generated
@@ -64,6 +69,66 @@ public class IndividualCustomerImpl extends PersonImpl implements IndividualCust
 	 * @ordered
 	 */
 	protected EList<EventBooking> eventBookings;
+
+	/**
+	 * The default value of the '{@link #getPhoneNumber() <em>Phone Number</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPhoneNumber()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String PHONE_NUMBER_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getPhoneNumber() <em>Phone Number</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPhoneNumber()
+	 * @generated
+	 * @ordered
+	 */
+	protected String phoneNumber = PHONE_NUMBER_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getEmail() <em>Email</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEmail()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String EMAIL_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getEmail() <em>Email</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEmail()
+	 * @generated
+	 * @ordered
+	 */
+	protected String email = EMAIL_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getAddress() <em>Address</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAddress()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ADDRESS_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getAddress() <em>Address</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAddress()
+	 * @generated
+	 * @ordered
+	 */
+	protected String address = ADDRESS_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -146,6 +211,69 @@ public class IndividualCustomerImpl extends PersonImpl implements IndividualCust
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPhoneNumber(String newPhoneNumber) {
+		String oldPhoneNumber = phoneNumber;
+		phoneNumber = newPhoneNumber;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ClassDiagramPackage.INDIVIDUAL_CUSTOMER__PHONE_NUMBER, oldPhoneNumber, phoneNumber));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getEmail() {
+		return email;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setEmail(String newEmail) {
+		String oldEmail = email;
+		email = newEmail;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ClassDiagramPackage.INDIVIDUAL_CUSTOMER__EMAIL, oldEmail, email));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getAddress() {
+		return address;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAddress(String newAddress) {
+		String oldAddress = address;
+		address = newAddress;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ClassDiagramPackage.INDIVIDUAL_CUSTOMER__ADDRESS, oldAddress, address));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
 	public void addRoomBooking(RoomBooking roomBooking) {
@@ -220,6 +348,12 @@ public class IndividualCustomerImpl extends PersonImpl implements IndividualCust
 				return getRoomBookings();
 			case ClassDiagramPackage.INDIVIDUAL_CUSTOMER__EVENT_BOOKINGS:
 				return getEventBookings();
+			case ClassDiagramPackage.INDIVIDUAL_CUSTOMER__PHONE_NUMBER:
+				return getPhoneNumber();
+			case ClassDiagramPackage.INDIVIDUAL_CUSTOMER__EMAIL:
+				return getEmail();
+			case ClassDiagramPackage.INDIVIDUAL_CUSTOMER__ADDRESS:
+				return getAddress();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -245,6 +379,15 @@ public class IndividualCustomerImpl extends PersonImpl implements IndividualCust
 				getEventBookings().clear();
 				getEventBookings().addAll((Collection<? extends EventBooking>)newValue);
 				return;
+			case ClassDiagramPackage.INDIVIDUAL_CUSTOMER__PHONE_NUMBER:
+				setPhoneNumber((String)newValue);
+				return;
+			case ClassDiagramPackage.INDIVIDUAL_CUSTOMER__EMAIL:
+				setEmail((String)newValue);
+				return;
+			case ClassDiagramPackage.INDIVIDUAL_CUSTOMER__ADDRESS:
+				setAddress((String)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -266,6 +409,15 @@ public class IndividualCustomerImpl extends PersonImpl implements IndividualCust
 			case ClassDiagramPackage.INDIVIDUAL_CUSTOMER__EVENT_BOOKINGS:
 				getEventBookings().clear();
 				return;
+			case ClassDiagramPackage.INDIVIDUAL_CUSTOMER__PHONE_NUMBER:
+				setPhoneNumber(PHONE_NUMBER_EDEFAULT);
+				return;
+			case ClassDiagramPackage.INDIVIDUAL_CUSTOMER__EMAIL:
+				setEmail(EMAIL_EDEFAULT);
+				return;
+			case ClassDiagramPackage.INDIVIDUAL_CUSTOMER__ADDRESS:
+				setAddress(ADDRESS_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -284,6 +436,12 @@ public class IndividualCustomerImpl extends PersonImpl implements IndividualCust
 				return roomBookings != null && !roomBookings.isEmpty();
 			case ClassDiagramPackage.INDIVIDUAL_CUSTOMER__EVENT_BOOKINGS:
 				return eventBookings != null && !eventBookings.isEmpty();
+			case ClassDiagramPackage.INDIVIDUAL_CUSTOMER__PHONE_NUMBER:
+				return PHONE_NUMBER_EDEFAULT == null ? phoneNumber != null : !PHONE_NUMBER_EDEFAULT.equals(phoneNumber);
+			case ClassDiagramPackage.INDIVIDUAL_CUSTOMER__EMAIL:
+				return EMAIL_EDEFAULT == null ? email != null : !EMAIL_EDEFAULT.equals(email);
+			case ClassDiagramPackage.INDIVIDUAL_CUSTOMER__ADDRESS:
+				return ADDRESS_EDEFAULT == null ? address != null : !ADDRESS_EDEFAULT.equals(address);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -303,6 +461,7 @@ public class IndividualCustomerImpl extends PersonImpl implements IndividualCust
 				case ClassDiagramPackage.CUSTOMER___ADD_ROOM_BOOKING__ROOMBOOKING: return ClassDiagramPackage.INDIVIDUAL_CUSTOMER___ADD_ROOM_BOOKING__ROOMBOOKING;
 				case ClassDiagramPackage.CUSTOMER___ADD_EVENT_BOOKING__EVENTBOOKING: return ClassDiagramPackage.INDIVIDUAL_CUSTOMER___ADD_EVENT_BOOKING__EVENTBOOKING;
 				case ClassDiagramPackage.CUSTOMER___GET_ID: return ClassDiagramPackage.INDIVIDUAL_CUSTOMER___GET_ID;
+				case ClassDiagramPackage.CUSTOMER___ADD_BILLING_INFORMATION__BILLINGINFORMATION: return ClassDiagramPackage.INDIVIDUAL_CUSTOMER___ADD_BILLING_INFORMATION__BILLINGINFORMATION;
 				default: return -1;
 			}
 		}
@@ -331,6 +490,26 @@ public class IndividualCustomerImpl extends PersonImpl implements IndividualCust
 				return null;
 		}
 		return super.eInvoke(operationID, arguments);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (phoneNumber: ");
+		result.append(phoneNumber);
+		result.append(", email: ");
+		result.append(email);
+		result.append(", address: ");
+		result.append(address);
+		result.append(')');
+		return result.toString();
 	}
 
 } //IndividualCustomerImpl

@@ -5,8 +5,6 @@ package ClassDiagram.impl;
 import ClassDiagram.Bill;
 import ClassDiagram.ClassDiagramPackage;
 import ClassDiagram.Cost;
-import DatabaseInterfaces.Bills;
-
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;

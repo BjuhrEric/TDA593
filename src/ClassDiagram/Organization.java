@@ -2,6 +2,8 @@
  */
 package ClassDiagram;
 
+import org.eclipse.emf.common.util.EList;
+
 //import org.eclipse.emf.common.util.EList; //Commented out by thszabi
 
 
@@ -78,6 +80,54 @@ public interface Organization extends Customer {
 	 * @generated
 	 */
 	//EList<EventBooking> getEventBookings();
+
+	/**
+	 * Returns the value of the '<em><b>Billing Information</b></em>' reference list.
+	 * The list contents are of type {@link ClassDiagram.BillingInformation}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Billing Information</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Billing Information</em>' reference list.
+	 * @see ClassDiagram.ClassDiagramPackage#getOrganization_BillingInformation()
+	 * @model ordered="false"
+	 * @generated
+	 */
+	EList<BillingInformation> getBillingInformation();
+
+	/**
+	 * Returns the value of the '<em><b>Room Bookings</b></em>' reference list.
+	 * The list contents are of type {@link ClassDiagram.RoomBooking}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Room Bookings</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Room Bookings</em>' reference list.
+	 * @see ClassDiagram.ClassDiagramPackage#getOrganization_RoomBookings()
+	 * @model ordered="false"
+	 * @generated
+	 */
+	EList<RoomBooking> getRoomBookings();
+
+	/**
+	 * Returns the value of the '<em><b>Event Bookings</b></em>' reference list.
+	 * The list contents are of type {@link ClassDiagram.EventBooking}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Event Bookings</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Event Bookings</em>' reference list.
+	 * @see ClassDiagram.ClassDiagramPackage#getOrganization_EventBookings()
+	 * @model ordered="false"
+	 * @generated
+	 */
+	EList<EventBooking> getEventBookings();
 
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.

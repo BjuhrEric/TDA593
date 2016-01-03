@@ -416,9 +416,6 @@
     </ownedAttribute>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_plcswKAQEeWVP7497XArVA" name="responsiblePerson" type="_oHzLAJODEeWai68V7lLhPw"/>
     <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_2W6pAJhNEeW7U_6ODGI2HQ" client="_e-lcQJUOEeWictR9w7kxNQ" supplier="_Wmon8JUQEeWictR9w7kxNQ" contract="_Wmon8JUQEeWictR9w7kxNQ"/>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_zYGPsKEaEeWmwaea7MAVWA" name="addBillingInformation">
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_3-QigKEaEeWmwaea7MAVWA" name="info" type="_n4U5sJOFEeWai68V7lLhPw"/>
-    </ownedOperation>
   </packagedElement>
   <packagedElement xmi:type="uml:Interface" xmi:id="_Wmon8JUQEeWictR9w7kxNQ" name="Customer">
     <ownedOperation xmi:type="uml:Operation" xmi:id="_YOaeEJUQEeWictR9w7kxNQ" name="getBillingInformation">
@@ -446,6 +443,9 @@
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_iuG6oJUREeWictR9w7kxNQ" name="eventBooking" type="_DngK8JOQEeWai68V7lLhPw"/>
     </ownedOperation>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_qFE8IKAdEeWVP7497XArVA" name="getID"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_BDuqsLJdEeWSksosP5lxAg" name="addBillingInformation">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_I9I28LJdEeWSksosP5lxAg" name="info" type="_n4U5sJOFEeWai68V7lLhPw"/>
+    </ownedOperation>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_-7sboJUaEeWqN5aFuAz_Hg" name="IndividualCustomer">
     <generalization xmi:type="uml:Generalization" xmi:id="_MKN18JUcEeWqN5aFuAz_Hg" general="_oHzLAJODEeWai68V7lLhPw"/>
@@ -461,10 +461,16 @@
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_6z4m0JUcEeWqN5aFuAz_Hg"/>
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_6z508JUcEeWqN5aFuAz_Hg" value="*"/>
     </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_KtdagLJcEeWSksosP5lxAg" name="phoneNumber">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_NenTgLJcEeWSksosP5lxAg" name="email">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_PCZacLJcEeWSksosP5lxAg" name="address">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
     <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_0CBOMJhNEeW7U_6ODGI2HQ" client="_-7sboJUaEeWqN5aFuAz_Hg" supplier="_Wmon8JUQEeWictR9w7kxNQ" contract="_Wmon8JUQEeWictR9w7kxNQ"/>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_xQWgEKEaEeWmwaea7MAVWA" name="addBillingInformation">
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_8gcUQKEaEeWmwaea7MAVWA" name="info" type="_n4U5sJOFEeWai68V7lLhPw"/>
-    </ownedOperation>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_LiYE0JbHEeWywcXnTB_lHw" name="BookingSchedule">
     <ownedAttribute xmi:type="uml:Property" xmi:id="_SpeDUJbHEeWywcXnTB_lHw" name="roomBookings" type="_gxp5UJOCEeWai68V7lLhPw">

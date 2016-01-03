@@ -2,7 +2,6 @@
  */
 package ClassDiagram.impl;
 
-import ClassDiagram.BillingInformation;
 import ClassDiagram.ClassDiagramPackage;
 import ClassDiagram.Guest;
 import ClassDiagram.GuestStatus;
@@ -214,9 +213,7 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 	 */
 	public EList<RoomType> getRoomType() {
 		if (roomType == null) {
-			//roomType = new EObjectResolvingEList<RoomType>(RoomType.class, this, ClassDiagramPackage.ROOM_BOOKING__ROOM_TYPE);
-			//thszabi: Changed EObjectResolvingEList to BasicEList because EObjectResolvingEList can't store the same elements more than once
-			roomType = new BasicEList<RoomType>();
+			roomType = new EObjectResolvingEList<RoomType>(RoomType.class, this, ClassDiagramPackage.ROOM_BOOKING__ROOM_TYPE);
 		}
 		return roomType;
 	}
