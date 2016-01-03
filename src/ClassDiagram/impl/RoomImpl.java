@@ -326,6 +326,8 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 		Payment p = ClassDiagramFactoryImpl.eINSTANCE.createPayment();
 		p.setBill(bill);
 		guests.clear();
+		setCleaningStatus(CleaningStatus.CHECKED_OUT);
+		setRoomStatus(RoomStatus.AVAILABLE);
 		return p;
 	}
 

@@ -5,6 +5,7 @@ package ClassDiagram.impl;
 import ClassDiagram.Bill;
 import ClassDiagram.ClassDiagramPackage;
 import ClassDiagram.Cost;
+import DatabaseInterfaces.Bills;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
@@ -68,6 +69,11 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 	protected BillImpl() {
 		super();
 	}
+	protected BillImpl(long id){
+		super();
+		this.id = id;
+		//TODO: add bill to database
+	}
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -94,7 +100,7 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public long getId() {
 		return id;
@@ -115,32 +121,29 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void addCost(Cost cost) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		this.cost.add(cost);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void removeCost(Cost cost) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		this.cost.remove(cost);
+		
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public Bill remove() {
-		// TODO: implement this method
+		// TODO: implement this method, remove bill from database
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
 	}

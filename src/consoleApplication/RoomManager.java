@@ -19,6 +19,8 @@ public class RoomManager {
 		this.roomTypes = roomTypes;
 	}
 
+	//Returns the index of the roomType in the system with the name 'roomTypeName'
+	//Returns -1 if no roomType was found with the name 'roomTypeName'
 	private int findRoomType(String roomTypeName) {
 		
 		for (int i = 0; i < roomTypes.size(); ++i)
@@ -28,6 +30,9 @@ public class RoomManager {
 		return -1;
 	}
 	
+	/**
+	 * Prints out all the roomTypes currently stored in the system
+	 */
 	private void listRoomTypes() {
 		System.out.println();
 		System.out.println("Current room types in the system:");
@@ -47,7 +52,9 @@ public class RoomManager {
 		
 		System.out.println();
 	}
-	
+
+	//Returns the index of the room in the system with the number 'roomNumber'
+	//Returns -1 if no room was found with the number 'roomNumber'
 	private int findRoom(int roomNumber) {
 		
 		for (int i = 0; i < rooms.size(); ++i)
@@ -57,6 +64,9 @@ public class RoomManager {
 		return -1;
 	}	
 	
+	/**
+	 * Prints out all the rooms currently stored in the system
+	 */
 	private void listRooms() {
 		System.out.println();
 		System.out.println("Current rooms in the system:");
@@ -79,11 +89,21 @@ public class RoomManager {
 	}
 	
 	private void createRoomType() {
-		ClassDiagramFactoryImpl factory = new ClassDiagramFactoryImpl();
-		RoomType newRoomType = factory.createRoomType();
+		RoomType newRoomType = ClassDiagramFactoryImpl.eINSTANCE.createRoomType();
 		
-		System.out.print("Name of new room type: ");
-		String name = userInput.next();
+		String name = "";
+		int searchResult = -1;
+		do {
+			System.out.print("Name of new room type: ");
+			name = userInput.next();
+			
+			searchResult = findRoomType(name);
+			
+			if (searchResult >= 0)
+				System.out.println("ERROR! Room type '" + name + "' already exists!");
+			
+		} while (searchResult >= 0);
+		
 		newRoomType.setName(name);
 		
 		System.out.print("Number of beds in room type: ");
@@ -114,6 +134,7 @@ public class RoomManager {
 		
 	}
 	
+	//This method basically replaces a roomType with a new one
 	private void modifyRoomType() {
 		
 		System.out.println();
@@ -153,14 +174,14 @@ public class RoomManager {
 			System.out.print("Description of room type: ");
 			String description = userInput.next();
 			
-			ClassDiagramFactoryImpl factory = new ClassDiagramFactoryImpl();
-			RoomType newRoomType = factory.createRoomType();
+			RoomType newRoomType = ClassDiagramFactoryImpl.eINSTANCE.createRoomType();
 			newRoomType.setName(newRoomTypeName);
 			newRoomType.setNumberOfBeds(numberOfBeds);
 			newRoomType.setNumberOfExtraBeds(numberOfExtraBeds);
 			newRoomType.setGuestCapacity(guestCapacity);
 			newRoomType.setPrice(price);
 			newRoomType.setDescription(description);
+			//We replace the old roomType with the new one we just created
 			roomTypes.set(searchResult, newRoomType);
 			
 			System.out.println();
@@ -194,8 +215,7 @@ public class RoomManager {
 			return;
 		}
 		
-		ClassDiagramFactoryImpl factory = new ClassDiagramFactoryImpl();
-		Room newRoom = factory.createRoom();
+		Room newRoom = ClassDiagramFactoryImpl.eINSTANCE.createRoom();
 		
 		int number = -1;
 		int searchResult = -1;
@@ -236,6 +256,7 @@ public class RoomManager {
 		
 	}
 	
+	//This method basically replaces a room with a new one
 	private void modifyRoom() {
 		if (roomTypes.isEmpty()) {
 			System.out.println("ERROR! There are no room types in the system. Create a room type and try again!");
@@ -274,10 +295,10 @@ public class RoomManager {
 				roomType = userInput.nextInt();
 			} while (roomType <= 0 || roomType > roomTypes.size());
 			
-			ClassDiagramFactoryImpl factory = new ClassDiagramFactoryImpl();
-			Room newRoom = factory.createRoom();
+			Room newRoom = ClassDiagramFactoryImpl.eINSTANCE.createRoom();
 			newRoom.setRoomNumber(newRoomNumber);
 			newRoom.setRoomType(roomTypes.get(roomType-1));
+			//We replace the old room with the new one we just created
 			rooms.set(searchResult, newRoom);
 			
 			System.out.println();
