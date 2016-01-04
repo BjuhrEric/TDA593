@@ -1484,13 +1484,22 @@ public interface ClassDiagramPackage extends EPackage {
 	int CUSTOMER___ADD_BILLING_INFORMATION__BILLINGINFORMATION = 6;
 
 	/**
+	 * The operation id for the '<em>Get Email</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOMER___GET_EMAIL = 7;
+
+	/**
 	 * The number of operations of the '<em>Customer</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CUSTOMER_OPERATION_COUNT = 7;
+	int CUSTOMER_OPERATION_COUNT = 8;
 
 	/**
 	 * The feature id for the '<em><b>Billing Information</b></em>' reference list.
@@ -1547,13 +1556,22 @@ public interface ClassDiagramPackage extends EPackage {
 	int ORGANIZATION__RESPONSIBLE_PERSON = CUSTOMER_FEATURE_COUNT + 5;
 
 	/**
+	 * The feature id for the '<em><b>Email</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ORGANIZATION__EMAIL = CUSTOMER_FEATURE_COUNT + 6;
+
+	/**
 	 * The number of structural features of the '<em>Organization</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ORGANIZATION_FEATURE_COUNT = CUSTOMER_FEATURE_COUNT + 6;
+	int ORGANIZATION_FEATURE_COUNT = CUSTOMER_FEATURE_COUNT + 7;
 
 	/**
 	 * The operation id for the '<em>Get Billing Information</em>' operation.
@@ -1617,6 +1635,15 @@ public interface ClassDiagramPackage extends EPackage {
 	 * @ordered
 	 */
 	int ORGANIZATION___ADD_BILLING_INFORMATION__BILLINGINFORMATION = CUSTOMER___ADD_BILLING_INFORMATION__BILLINGINFORMATION;
+
+	/**
+	 * The operation id for the '<em>Get Email</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ORGANIZATION___GET_EMAIL = CUSTOMER___GET_EMAIL;
 
 	/**
 	 * The number of operations of the '<em>Organization</em>' class.
@@ -1781,13 +1808,22 @@ public interface ClassDiagramPackage extends EPackage {
 	int INDIVIDUAL_CUSTOMER___ADD_BILLING_INFORMATION__BILLINGINFORMATION = PERSON_OPERATION_COUNT + 6;
 
 	/**
+	 * The operation id for the '<em>Get Email</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDIVIDUAL_CUSTOMER___GET_EMAIL = PERSON_OPERATION_COUNT + 7;
+
+	/**
 	 * The number of operations of the '<em>Individual Customer</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INDIVIDUAL_CUSTOMER_OPERATION_COUNT = PERSON_OPERATION_COUNT + 7;
+	int INDIVIDUAL_CUSTOMER_OPERATION_COUNT = PERSON_OPERATION_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Room Bookings</b></em>' reference list.
@@ -3013,6 +3049,17 @@ public interface ClassDiagramPackage extends EPackage {
 	EReference getOrganization_ResponsiblePerson();
 
 	/**
+	 * Returns the meta object for the attribute '{@link ClassDiagram.Organization#getEmail <em>Email</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Email</em>'.
+	 * @see ClassDiagram.Organization#getEmail()
+	 * @see #getOrganization()
+	 * @generated
+	 */
+	EAttribute getOrganization_Email();
+
+	/**
 	 * Returns the meta object for class '{@link ClassDiagram.Customer <em>Customer</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3091,6 +3138,16 @@ public interface ClassDiagramPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getCustomer__AddBillingInformation__BillingInformation();
+
+	/**
+	 * Returns the meta object for the '{@link ClassDiagram.Customer#getEmail() <em>Get Email</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Email</em>' operation.
+	 * @see ClassDiagram.Customer#getEmail()
+	 * @generated
+	 */
+	EOperation getCustomer__GetEmail();
 
 	/**
 	 * Returns the meta object for class '{@link ClassDiagram.IndividualCustomer <em>Individual Customer</em>}'.
@@ -4247,6 +4304,14 @@ public interface ClassDiagramPackage extends EPackage {
 		EReference ORGANIZATION__RESPONSIBLE_PERSON = eINSTANCE.getOrganization_ResponsiblePerson();
 
 		/**
+		 * The meta object literal for the '<em><b>Email</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ORGANIZATION__EMAIL = eINSTANCE.getOrganization_Email();
+
+		/**
 		 * The meta object literal for the '{@link ClassDiagram.Customer <em>Customer</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4311,6 +4376,14 @@ public interface ClassDiagramPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation CUSTOMER___ADD_BILLING_INFORMATION__BILLINGINFORMATION = eINSTANCE.getCustomer__AddBillingInformation__BillingInformation();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Email</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CUSTOMER___GET_EMAIL = eINSTANCE.getCustomer__GetEmail();
 
 		/**
 		 * The meta object literal for the '{@link ClassDiagram.impl.IndividualCustomerImpl <em>Individual Customer</em>}' class.

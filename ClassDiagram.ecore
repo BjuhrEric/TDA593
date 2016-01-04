@@ -265,6 +265,8 @@
         lowerBound="1" eType="ecore:EDataType ../org.eclipse.uml2.types/model/Types.ecore#//String"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="responsiblePerson" ordered="false"
         lowerBound="1" eType="#//Person"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="email" ordered="false"
+        lowerBound="1" eType="ecore:EDataType ../org.eclipse.uml2.types/model/Types.ecore#//String"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Customer" abstract="true" interface="true">
     <eOperations name="getBillingInformation" ordered="false" upperBound="-1" eType="#//BillingInformation"/>
@@ -280,6 +282,7 @@
     <eOperations name="addBillingInformation" ordered="false" lowerBound="1">
       <eParameters name="info" ordered="false" lowerBound="1" eType="#//BillingInformation"/>
     </eOperations>
+    <eOperations name="getEmail" ordered="false" lowerBound="1" eType="ecore:EDataType ../org.eclipse.uml2.types/model/Types.ecore#//String"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IndividualCustomer" eSuperTypes="#//Person #//Customer">
     <eStructuralFeatures xsi:type="ecore:EReference" name="billingInformation" ordered="false"

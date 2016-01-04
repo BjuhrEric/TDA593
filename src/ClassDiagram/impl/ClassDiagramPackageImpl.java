@@ -1216,6 +1216,15 @@ public class ClassDiagramPackageImpl extends EPackageImpl implements ClassDiagra
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getOrganization_Email() {
+		return (EAttribute)organizationEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getCustomer() {
 		return customerEClass;
 	}
@@ -1281,6 +1290,15 @@ public class ClassDiagramPackageImpl extends EPackageImpl implements ClassDiagra
 	 */
 	public EOperation getCustomer__AddBillingInformation__BillingInformation() {
 		return customerEClass.getEOperations().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getCustomer__GetEmail() {
+		return customerEClass.getEOperations().get(7);
 	}
 
 	/**
@@ -1687,6 +1705,7 @@ public class ClassDiagramPackageImpl extends EPackageImpl implements ClassDiagra
 		createEAttribute(organizationEClass, ORGANIZATION__NAME);
 		createEAttribute(organizationEClass, ORGANIZATION__ADDRESS);
 		createEReference(organizationEClass, ORGANIZATION__RESPONSIBLE_PERSON);
+		createEAttribute(organizationEClass, ORGANIZATION__EMAIL);
 
 		customerEClass = createEClass(CUSTOMER);
 		createEOperation(customerEClass, CUSTOMER___GET_BILLING_INFORMATION);
@@ -1696,6 +1715,7 @@ public class ClassDiagramPackageImpl extends EPackageImpl implements ClassDiagra
 		createEOperation(customerEClass, CUSTOMER___ADD_EVENT_BOOKING__EVENTBOOKING);
 		createEOperation(customerEClass, CUSTOMER___GET_ID);
 		createEOperation(customerEClass, CUSTOMER___ADD_BILLING_INFORMATION__BILLINGINFORMATION);
+		createEOperation(customerEClass, CUSTOMER___GET_EMAIL);
 
 		individualCustomerEClass = createEClass(INDIVIDUAL_CUSTOMER);
 		createEReference(individualCustomerEClass, INDIVIDUAL_CUSTOMER__BILLING_INFORMATION);
@@ -1942,6 +1962,7 @@ public class ClassDiagramPackageImpl extends EPackageImpl implements ClassDiagra
 		initEAttribute(getOrganization_Name(), theTypesPackage.getString(), "name", null, 1, 1, Organization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getOrganization_Address(), theTypesPackage.getString(), "address", null, 1, 1, Organization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getOrganization_ResponsiblePerson(), this.getPerson(), null, "responsiblePerson", null, 1, 1, Organization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getOrganization_Email(), theTypesPackage.getString(), "email", null, 1, 1, Organization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(customerEClass, Customer.class, "Customer", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1961,6 +1982,8 @@ public class ClassDiagramPackageImpl extends EPackageImpl implements ClassDiagra
 
 		op = initEOperation(getCustomer__AddBillingInformation__BillingInformation(), null, "addBillingInformation", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getBillingInformation(), "info", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		initEOperation(getCustomer__GetEmail(), theTypesPackage.getString(), "getEmail", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(individualCustomerEClass, IndividualCustomer.class, "IndividualCustomer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getIndividualCustomer_BillingInformation(), this.getBillingInformation(), null, "billingInformation", null, 0, -1, IndividualCustomer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);

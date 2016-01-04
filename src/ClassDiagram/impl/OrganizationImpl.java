@@ -35,6 +35,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *   <li>{@link ClassDiagram.impl.OrganizationImpl#getName <em>Name</em>}</li>
  *   <li>{@link ClassDiagram.impl.OrganizationImpl#getAddress <em>Address</em>}</li>
  *   <li>{@link ClassDiagram.impl.OrganizationImpl#getResponsiblePerson <em>Responsible Person</em>}</li>
+ *   <li>{@link ClassDiagram.impl.OrganizationImpl#getEmail <em>Email</em>}</li>
  * </ul>
  *
  * @generated
@@ -135,6 +136,25 @@ public class OrganizationImpl extends MinimalEObjectImpl.Container implements Or
 	 * @ordered
 	 */
 	protected Person responsiblePerson;
+
+	/**
+	 * The default value of the '{@link #getEmail() <em>Email</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEmail()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String EMAIL_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getEmail() <em>Email</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEmail()
+	 * @generated
+	 * @ordered
+	 */
+	protected String email = EMAIL_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -274,6 +294,27 @@ public class OrganizationImpl extends MinimalEObjectImpl.Container implements Or
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getEmail() {
+		return email;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setEmail(String newEmail) {
+		String oldEmail = email;
+		email = newEmail;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ClassDiagramPackage.ORGANIZATION__EMAIL, oldEmail, email));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
 	public void addRoomBooking(RoomBooking roomBooking) {
@@ -355,6 +396,8 @@ public class OrganizationImpl extends MinimalEObjectImpl.Container implements Or
 			case ClassDiagramPackage.ORGANIZATION__RESPONSIBLE_PERSON:
 				if (resolve) return getResponsiblePerson();
 				return basicGetResponsiblePerson();
+			case ClassDiagramPackage.ORGANIZATION__EMAIL:
+				return getEmail();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -389,6 +432,9 @@ public class OrganizationImpl extends MinimalEObjectImpl.Container implements Or
 			case ClassDiagramPackage.ORGANIZATION__RESPONSIBLE_PERSON:
 				setResponsiblePerson((Person)newValue);
 				return;
+			case ClassDiagramPackage.ORGANIZATION__EMAIL:
+				setEmail((String)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -419,6 +465,9 @@ public class OrganizationImpl extends MinimalEObjectImpl.Container implements Or
 			case ClassDiagramPackage.ORGANIZATION__RESPONSIBLE_PERSON:
 				setResponsiblePerson((Person)null);
 				return;
+			case ClassDiagramPackage.ORGANIZATION__EMAIL:
+				setEmail(EMAIL_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -443,6 +492,8 @@ public class OrganizationImpl extends MinimalEObjectImpl.Container implements Or
 				return ADDRESS_EDEFAULT == null ? address != null : !ADDRESS_EDEFAULT.equals(address);
 			case ClassDiagramPackage.ORGANIZATION__RESPONSIBLE_PERSON:
 				return responsiblePerson != null;
+			case ClassDiagramPackage.ORGANIZATION__EMAIL:
+				return EMAIL_EDEFAULT == null ? email != null : !EMAIL_EDEFAULT.equals(email);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -485,6 +536,8 @@ public class OrganizationImpl extends MinimalEObjectImpl.Container implements Or
 		result.append(name);
 		result.append(", address: ");
 		result.append(address);
+		result.append(", email: ");
+		result.append(email);
 		result.append(')');
 		return result.toString();
 	}
