@@ -53,6 +53,12 @@ public class BookingManager {
 		return -1;
 	}
 	
+	private void listAllBookings() {
+		for (Customer c : customers) {
+			listBookings(c);
+		}
+	}
+	
 	//Lists every booking of one customer
 	//The customers ID is asked
 	private void listBookings() {
@@ -79,19 +85,21 @@ public class BookingManager {
 	 * @param customer the customer whose bookings needed to be listed
 	 */
 	private void listBookings(Customer customer) {
-
-		System.out.println();
 		
 		//Since an individual customer's name and a company's name is stored in a different name
 		//we have to print it in two different ways
-		if (customer instanceof IndividualCustomer)
-			System.out.println("Current bookings of "
-							+ ((IndividualCustomer) customer).getFirstNames().get(0) + " "
-							+ ((IndividualCustomer) customer).getFamilyNames().get(0) + ":");
-		
-		if (customer instanceof Organization)
-			System.out.println("Current bookings of "
-							+ ((Organization) customer).getName() + ":");			
+		System.out.println();
+		System.out.print("Current bookings for");
+		if (customer instanceof IndividualCustomer) {
+			((IndividualCustomer) customer).getFirstNames()
+						.forEach((name) -> System.out.print(" " + name));
+			((IndividualCustomer) customer).getFamilyNames()
+						.forEach((name) -> System.out.print(" " + name));
+		}
+		if (customer instanceof Organization) {
+			System.out.print(" " + ((Organization) customer).getName());
+		}
+		System.out.println(":");		
 		
 		//We print the header
 		System.out.println("No. Id\tStart Date\t\t\tEnd date");
@@ -859,11 +867,12 @@ public class BookingManager {
 	
 	public void start() {
 		System.out.println();
-		System.out.println("1. List existing bookings");
-		System.out.println("2. Create a new booking");
-		System.out.println("3. Modify an existing booking");
-		System.out.println("4. Cancel an existing booking");
-		System.out.println("5. Back");
+		System.out.println("1. List all existing bookings");
+		System.out.println("2. List a customer's existing bookings");
+		System.out.println("3. Create a new booking");
+		System.out.println("4. Modify an existing booking");
+		System.out.println("5. Cancel an existing booking");
+		System.out.println("6. Back");
 		System.out.println();
 		System.out.print("Please select a function: ");
 		
@@ -873,15 +882,18 @@ public class BookingManager {
 		
 		switch(choice) {
 		case 1:
-			listBookings();
+			listAllBookings();
 			break;
 		case 2:
-			createBooking();
+			listBookings();
 			break;
 		case 3:
-			modifyBooking();
+			createBooking();
 			break;
 		case 4:
+			modifyBooking();
+			break;
+		case 5:
 			removeBooking();
 			break;
 		}
