@@ -128,6 +128,20 @@ public class ConsoleApplication {
 			//Possible ToDo: 8. Manage bills (add/remove items to/from a bill)
 			//Possible ToDo: 9. Mark a room as cleaned
 		}
+		/*
+		 * If there is time we will fix the menu for other account types
+		 * For now this below remains commented
+		 * 
+		if (loggedInAccount.getAccounttype().equals(accountTypes.get(1))) { //receptionist
+			System.out.println("1. Manage rooms and room types");
+			System.out.println("2. Manage customers");
+			System.out.println("3. Manage bookings");
+			System.out.println("4. Manage items");
+			System.out.println("5. Check-in guest");
+			System.out.println("6. Check-out guest");
+			//Possible ToDo: 8. Manage bills (add/remove items to/from a bill)
+			//Possible ToDo: 9. Mark a room as cleaned
+		}*/
 		
 		System.out.println();
 		System.out.println("0. Log out");		

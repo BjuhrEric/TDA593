@@ -1,5 +1,6 @@
 package consoleApplication;
 
+import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
@@ -177,10 +178,15 @@ public class CheckingManager {
 	public void startCheckIn() {
 		
 	// START: ASK FOR CUSTOMER ID AND BOOKING ID
-		
-		
+		long customerID = 0; 
+		try{
 		System.out.print("Enter the ID of the customer who is the owner of the booking: ");
-		long customerID = userInput.nextLong();
+		customerID = userInput.nextLong();
+		}catch(InputMismatchException e){
+			System.out.println("Must enter a valid customer ID");
+			userInput.nextLine();
+			return;
+		}
 		
 		int searchResult = findCustomer(customerID);
 		
