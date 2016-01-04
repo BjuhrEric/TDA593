@@ -53,6 +53,12 @@ public class BookingManager {
 		return -1;
 	}
 	
+	private void listAllBookings() {
+		for (Customer c : customers) {
+			listBookings(c);
+		}
+	}
+	
 	//Lists every booking of one customer
 	//The customers ID is asked
 	private void listBookings() {
@@ -79,19 +85,21 @@ public class BookingManager {
 	 * @param customer the customer whose bookings needed to be listed
 	 */
 	private void listBookings(Customer customer) {
-
-		System.out.println();
 		
 		//Since an individual customer's name and a company's name is stored in a different name
 		//we have to print it in two different ways
-		if (customer instanceof IndividualCustomer)
-			System.out.println("Current bookings of "
-							+ ((IndividualCustomer) customer).getFirstNames().get(0) + " "
-							+ ((IndividualCustomer) customer).getFamilyNames().get(0) + ":");
-		
-		if (customer instanceof Organization)
-			System.out.println("Current bookings of "
-							+ ((Organization) customer).getName() + ":");			
+		System.out.println();
+		System.out.print("Current bookings for");
+		if (customer instanceof IndividualCustomer) {
+			((IndividualCustomer) customer).getFirstNames()
+						.forEach((name) -> System.out.print(" " + name));
+			((IndividualCustomer) customer).getFamilyNames()
+						.forEach((name) -> System.out.print(" " + name));
+		}
+		if (customer instanceof Organization) {
+			System.out.print(" " + ((Organization) customer).getName());
+		}
+		System.out.println(":");		
 		
 		//We print the header
 		System.out.println("No. Id\tStart Date\t\t\tEnd date");
@@ -141,6 +149,7 @@ public class BookingManager {
 	
 	@SuppressWarnings("deprecation")
 	private void createBooking() {
+		String stupidHackVariable = userInput.nextLine();
 		
 		RoomBooking newBooking = ClassDiagramFactoryImpl.eINSTANCE.createRoomBooking();
 		newBooking.setId(ID++);
@@ -148,11 +157,11 @@ public class BookingManager {
 		/** Comments labeled 1..n corresponds to the flow of events of the Complete Use Case 1: Booking **/
 		//1. Actor enter the number of rooms he/she wants to book, the number of people staying in each room and the arrival and departure date.
 		System.out.print("Enter the number of rooms you want to book: ");
-		int numberOfRooms = userInput.nextInt();
+		int numberOfRooms = Integer.parseInt(userInput.nextLine());
 		int numberOfGuestsInRooms[] = new int[numberOfRooms];
 		for(int i = 1; i <= numberOfRooms; i++) {
 			System.out.print("Enter the number of people that will stay in room #" + i + ": ");
-			numberOfGuestsInRooms[(i-1)] = userInput.nextInt();
+			numberOfGuestsInRooms[(i-1)] = Integer.parseInt(userInput.nextLine());
 		}
 		
 		int totalNumberOfGuests = 0;
@@ -164,13 +173,13 @@ public class BookingManager {
 		newBooking.setNumberOfGuests(totalNumberOfGuests);
 		
 		System.out.print("Year of start date: ");
-		int startYear = userInput.nextInt();
+		int startYear = Integer.parseInt(userInput.nextLine());
 		
 		System.out.print("Month of start date: ");
-		int startMonth = userInput.nextInt();
+		int startMonth = Integer.parseInt(userInput.nextLine());
 		
 		System.out.print("Day of start date: ");
-		int startDay = userInput.nextInt();
+		int startDay = Integer.parseInt(userInput.nextLine());
 		
 		//Sorry for the deprecated Date, replace it with Calendar if you want.
 		//Set the date to YYYY.MM.DD 12:00:00
@@ -186,13 +195,13 @@ public class BookingManager {
 		newBooking.setStartDate(startDate);
 		
 		System.out.print("Year of end date: ");
-		int endYear = userInput.nextInt();
+		int endYear = Integer.parseInt(userInput.nextLine());
 		
 		System.out.print("Month of end date: ");
-		int endMonth = userInput.nextInt();
+		int endMonth = Integer.parseInt(userInput.nextLine());
 		
 		System.out.print("Day of end date: ");
-		int endDay = userInput.nextInt();
+		int endDay = Integer.parseInt(userInput.nextLine());
 		
 		Date endDate = new Date();
 		endDate.setYear(endYear);
@@ -251,7 +260,7 @@ public class BookingManager {
 		int chosenRoomTypes[] = new int[numberOfRooms];
 		for(int i = 0; i < numberOfRooms; i++) {
 			System.out.print("Select a room type for room #" + new Integer(i+1) + ": ");
-			chosenRoomTypes[i] = userInput.nextInt() - 1;
+			chosenRoomTypes[i] = Integer.parseInt(userInput.nextLine()) - 1;
 		}
 		
 		//6. Assume: The actor did not pick a package
@@ -270,8 +279,10 @@ public class BookingManager {
 		//9. Assume: No event booking should be added
 		//Ok.
 		
+		System.out.println(newBooking);
+		
 		//10. Actor confirms the booking.
-		String confirmBookingChoice = /*This is a hack to circumvent my bad understanding of java.util.scanner */ userInput.nextLine();
+		String confirmBookingChoice = "";
 		do {
 			System.out.print("Do you want to confirm the booking? (y/n): ");
 			confirmBookingChoice = userInput.nextLine();
@@ -289,7 +300,7 @@ public class BookingManager {
 		String customerEmail = userInput.nextLine();
 		
 		//13. Assume: the customer information is stored in the system
-		CustomersMock customers = CustomersMock.getInstance(); //TODO: How would I get hold of a concrete instance that realizes the Customers-interface?
+		CustomersMock customers = CustomersMock.getInstance();
 		Customer customer = customers.getCustomerByEmail(customerEmail);
 		
 		if(customer == null) {
@@ -300,7 +311,7 @@ public class BookingManager {
 			int typeOfCustomerChoice = 0;
 			do {
 				System.out.print("Is the customer a private customer (1) or a company (2)?: ");
-				typeOfCustomerChoice = userInput.nextInt();
+				typeOfCustomerChoice = Integer.parseInt(userInput.nextLine());
 			} while(typeOfCustomerChoice != 1 && typeOfCustomerChoice != 2);
 			
 			if(typeOfCustomerChoice == 1) {
@@ -313,10 +324,8 @@ public class BookingManager {
 				System.out.print("Family name: ");
 				String familyName = userInput.nextLine();
 				individualCustomer.addFamilyName(familyName);
-				
-				System.out.print("Email: ");
-				String email = userInput.nextLine();
-				individualCustomer.setEmail(email);
+
+				individualCustomer.setEmail(customerEmail);
 				
 				System.out.print("Telephone number: ");
 				String telephoneNumber = userInput.nextLine(); //Some phonenumbers are very long (or very strange) so string is more appropiate
@@ -348,6 +357,15 @@ public class BookingManager {
 
 				System.out.print("Address: ");
 				String organizationAddress = userInput.nextLine();
+				
+				System.out.print("Credit-card number: ");
+				String creditCardNumber = userInput.nextLine();
+				
+				System.out.print("CVC: ");
+				String cvc = userInput.nextLine();
+				
+				System.out.print("Expiration-date: ");
+				String expirationDate = userInput.nextLine();
 
 				String title = "";
 				do {
@@ -377,6 +395,10 @@ public class BookingManager {
 				organization.setName(organizationName);
 				organization.setAddress(organizationAddress);
 				organization.setResponsiblePerson(person);
+				organization.setEmail(customerEmail);
+				organization.addBillingInformation(new CreditCard(creditCardNumber, cvc, expirationDate));
+				
+				customer = organization;
 			}
 			
 			//3. System stores customer information
@@ -442,7 +464,16 @@ public class BookingManager {
 
 				System.out.print("Address: ");
 				String organizationAddress = userInput.nextLine();
-
+				
+				System.out.print("Credit-card number: ");
+				String creditCardNumber = userInput.nextLine();
+				
+				System.out.print("CVC: ");
+				String cvc = userInput.nextLine();
+				
+				System.out.print("Expiration-date: ");
+				String expirationDate = userInput.nextLine();
+			
 				String title = "";
 				do {
 					System.out.print("Contact persons title (ms/mr/mrs): ");
@@ -471,6 +502,7 @@ public class BookingManager {
 				organization.setName(organizationName);
 				organization.setAddress(organizationAddress);
 				organization.setResponsiblePerson(person);
+				organization.addBillingInformation(new CreditCard(creditCardNumber, cvc, expirationDate));
 			} else {
 				System.out.println("ERROR: Could not determine type of customer (if customer is an IndividualCustomer or an Organization), terminating!");
 				return;
@@ -523,7 +555,7 @@ public class BookingManager {
 				//1. The system asks for the organisation number.
 				System.out.print("Enter organization number: ");
 				//2. Actor provides organisation number
-				int organizationNumber = userInput.nextInt();
+				int organizationNumber = Integer.parseInt(userInput.nextLine());
 				invoice = new Invoice(customer);
 				if(!invoice.validate()){
 					System.out.println("Customer not granted to pay by invoice, terminating...");
@@ -835,11 +867,12 @@ public class BookingManager {
 	
 	public void start() {
 		System.out.println();
-		System.out.println("1. List existing bookings");
-		System.out.println("2. Create a new booking");
-		System.out.println("3. Modify an existing booking");
-		System.out.println("4. Cancel an existing booking");
-		System.out.println("5. Back");
+		System.out.println("1. List all existing bookings");
+		System.out.println("2. List a customer's existing bookings");
+		System.out.println("3. Create a new booking");
+		System.out.println("4. Modify an existing booking");
+		System.out.println("5. Cancel an existing booking");
+		System.out.println("6. Back");
 		System.out.println();
 		System.out.print("Please select a function: ");
 		
@@ -849,15 +882,18 @@ public class BookingManager {
 		
 		switch(choice) {
 		case 1:
-			listBookings();
+			listAllBookings();
 			break;
 		case 2:
-			createBooking();
+			listBookings();
 			break;
 		case 3:
-			modifyBooking();
+			createBooking();
 			break;
 		case 4:
+			modifyBooking();
+			break;
+		case 5:
 			removeBooking();
 			break;
 		}

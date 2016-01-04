@@ -11,6 +11,8 @@ import ClassDiagram.Item;
 import ClassDiagram.Room;
 import ClassDiagram.RoomType;
 import ClassDiagram.impl.ClassDiagramFactoryImpl;
+import DatabaseInterfaces.Customers;
+import MockDatabase.CustomersMock;
 
 public class ConsoleApplication {
 	
@@ -38,7 +40,7 @@ public class ConsoleApplication {
 		roomTypes = new LinkedList<RoomType>();
 		rooms = new LinkedList<Room>();
 		items = new LinkedList<Item>();
-		customers = new LinkedList<Customer>();
+		customers = CustomersMock.getInstance().getCustomers();
 		
 		accountManager = new AccountManager(userInput, accounts, accountTypes);
 		roomManager = new RoomManager(userInput, rooms, roomTypes);
