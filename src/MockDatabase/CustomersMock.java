@@ -64,7 +64,7 @@ public class CustomersMock implements Customers {
 		rektorn.addFamilyName("Ahrendt");
 		rektorn.addFirstName("Wolfgang");
 		o.setResponsiblePerson(rektorn);
-		customers.put(""/*o.getEmail()*/, o);
+		customers.put(o.getEmail(), o);
 	}
 	
 	public static CustomersMock getInstance(){
@@ -77,7 +77,7 @@ public class CustomersMock implements Customers {
 	@Override
 	public boolean addCustomer(Customer customer) {
 		//Only inserts if key is unique and then returns true, otherwise returns false (fail to insert)
-		return customers.putIfAbsent(""/* TODO: Uncomment when getEmail() exists for class Organization customer.getEmail()*/, customer) == null;
+		return customers.put(customer.getEmail(), customer) == null;
 	}
 
 	@Override
@@ -92,13 +92,7 @@ public class CustomersMock implements Customers {
 
 	@Override
 	public Customer getCustomerByEmail(String email) {
-		for(Customer c : customers.values()){
-			//TODO: Add getEmail to customer interface
-			if(true/*c.getEmail().equals(email)*/){
-				return c;
-			}
-		}
-		return null;
+		return getCustomer(email);
 	}
 
 	@Override
