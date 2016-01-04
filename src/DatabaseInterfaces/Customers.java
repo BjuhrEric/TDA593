@@ -7,8 +7,8 @@ import ClassDiagram.Customer;
 
 public interface Customers {
 	boolean addCustomer(Customer customer);
-	boolean deleteCustomer(UUID id);
-	Customer getCustomer(UUID id);
+	boolean deleteCustomer(String email);
+	Customer getCustomer(String email);
 	Customer getCustomerByEmail(String email);
 	List<Customer> getCustomers();
 }

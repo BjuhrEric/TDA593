@@ -1,6 +1,8 @@
 package DatabaseInterfaces;
 
+import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 import ClassDiagram.RoomType;
 
@@ -13,5 +15,5 @@ public interface RoomTypes {
 	public void dispRoomType(RoomType roomType);
 	//List all roomTypes
 	public void listRoomTypes();
-	public List<RoomType> getAvailableRoomTypes();
+	public List<RoomType> getAvailableRoomTypes(Date start, Date end, int[] distribution);
 }

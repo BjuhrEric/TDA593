@@ -1,9 +1,11 @@
 package consoleApplication;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
+import java.util.Set;
 
 import org.eclipse.emf.common.util.EList;
 
@@ -20,6 +22,8 @@ import ClassDiagram.impl.ClassDiagramFactoryImpl;
 import DatabaseInterfaces.Customers;
 import DatabaseInterfaces.RoomBookings;
 import DatabaseInterfaces.RoomTypes;
+import MockDatabase.CustomersMock;
+import MockDatabase.RoomTypesMock;
 import Payment.CreditCard;
 import Payment.Invoice;
 
@@ -141,10 +145,6 @@ public class BookingManager {
 		RoomBooking newBooking = ClassDiagramFactoryImpl.eINSTANCE.createRoomBooking();
 		newBooking.setId(ID++);
 		
-		/***********************************************************************************************/
-		/** There are LOTS of todos. When all of them are done, Complete use case #1: booking is done **/
-		/***********************************************************************************************/
-		
 		/** Comments labeled 1..n corresponds to the flow of events of the Complete Use Case 1: Booking **/
 		//1. Actor enter the number of rooms he/she wants to book, the number of people staying in each room and the arrival and departure date.
 		System.out.print("Enter the number of rooms you want to book: ");
@@ -205,22 +205,27 @@ public class BookingManager {
 		newBooking.setEndDate(endDate);
 		
 		//2. The system provides a list of available room types for each room based on the capacity of the room type and a list of available packages that is suitable.
-		RoomTypes roomTypes = null; //TODO: How would I get hold of a concrete instance that realizes the RoomTypes-interface?
-		List<RoomType> availableRoomTypes = roomTypes.getAvailableRoomTypes(/*TODO: That returns a list of RoomTypes that could hold the specified amount of guests with respect to guest distribution*/);
+		RoomTypes roomTypes = RoomTypesMock.getInstance();
+		List<RoomType> availableRoomTypes = roomTypes.getAvailableRoomTypes(startDate, endDate, numberOfGuestsInRooms);
 		for(int i = 0; i < availableRoomTypes.size(); i++) {
-			System.out.println("Available Roomtype #" + i + ": " + availableRoomTypes.get(i).toString());
+			System.out.println("Available Roomtype #" + new Integer(i+1) + ": " + availableRoomTypes.get(i).toString());
 		}
 
 		//3. Assume: There are enough available room types to satisfy the booking
-		if(roomTypes.getAvailableRoomTypes(/*0, if there are no available roomtypes for a booking with zero guests, then no room types at all are available and it is futile to try to make a booking again*/).isEmpty()) {
+		Date current = new Date();
+		Date next = new Date();
+		next.setYear(current.getYear() + 2);
+		int[] noGuests = {0};
+		List<RoomType> allAvailableRoomTypes = roomTypes.getAvailableRoomTypes(current,  next, noGuests);
+		if(allAvailableRoomTypes.isEmpty()) {
 			System.out.println("There are no available room types. Booking can't be made, terminating...");
 			return;
 		}
-		if(true /*availableRoomTypes.isEmpty()*/) {
+		if(availableRoomTypes.isEmpty()) {
 			//3a. There are not enough room types available.
 			//1.  System provides information about which room types are available.
-			System.out.println("There are not enough room type. The following room types are available: <NOT IMPLEMENTED>");
-			for(RoomType roomType : roomTypes.getAvailableRoomTypes(/*0*/)) {
+			System.out.println("There are not enough room type.");
+			for(RoomType roomType : allAvailableRoomTypes) {
 				System.out.println("Available Roomtype: " + roomType.toString());
 			}
 			
@@ -228,10 +233,10 @@ public class BookingManager {
 			String redoChoice = "";
 			do {
 				System.out.print("Do you want to redo the booking with another distribution of people? (y/n): ");
-				redoChoice = userInput.next();
-			} while(redoChoice != "y" && redoChoice != "n");
+				redoChoice = userInput.nextLine();
+			} while(!redoChoice.equals("y") && !redoChoice.equals("n"));
 			
-			if(redoChoice == "n") {
+			if(redoChoice.equals("n")) {
 				return;
 			}
 			//3.  Start over at 1.
@@ -245,8 +250,8 @@ public class BookingManager {
 		//5. The actor picks the room type(s) for each room or a package
 		int chosenRoomTypes[] = new int[numberOfRooms];
 		for(int i = 0; i < numberOfRooms; i++) {
-			System.out.print("Select a room type for room #" + i+1 + ": ");
-			chosenRoomTypes[i] = userInput.nextInt();
+			System.out.print("Select a room type for room #" + new Integer(i+1) + ": ");
+			chosenRoomTypes[i] = userInput.nextInt() - 1;
 		}
 		
 		//6. Assume: The actor did not pick a package
@@ -266,14 +271,14 @@ public class BookingManager {
 		//Ok.
 		
 		//10. Actor confirms the booking.
-		String confirmBookingChoice = "";
+		String confirmBookingChoice = /*This is a hack to circumvent my bad understanding of java.util.scanner */ userInput.nextLine();
 		do {
 			System.out.print("Do you want to confirm the booking? (y/n): ");
-			confirmBookingChoice = userInput.next();
+			confirmBookingChoice = userInput.nextLine();
 			
-		} while(confirmBookingChoice != "y" && confirmBookingChoice != "n");
+		} while(!confirmBookingChoice.equals("y") && !confirmBookingChoice.equals("n"));
 		
-		if(confirmBookingChoice == "n") {
+		if(confirmBookingChoice.equals("n")) {
 			return;
 		}
 		
@@ -281,10 +286,10 @@ public class BookingManager {
 		System.out.print("Enter your email: ");
 		
 		//12. Actor provides email-address.
-		String customerEmail = userInput.next();
+		String customerEmail = userInput.nextLine();
 		
 		//13. Assume: the customer information is stored in the system
-		Customers customers = null; //TODO: How would I get hold of a concrete instance that realizes the Customers-interface?
+		CustomersMock customers = CustomersMock.getInstance(); //TODO: How would I get hold of a concrete instance that realizes the Customers-interface?
 		Customer customer = customers.getCustomerByEmail(customerEmail);
 		
 		if(customer == null) {
@@ -302,33 +307,33 @@ public class BookingManager {
 				IndividualCustomer individualCustomer = ClassDiagramFactoryImpl.eINSTANCE.createIndividualCustomer();
 				
 				System.out.print("First name: ");
-				String firstName = userInput.next();
+				String firstName = userInput.nextLine();
 				individualCustomer.addFirstName(firstName);
 				
 				System.out.print("Family name: ");
-				String familyName = userInput.next();
+				String familyName = userInput.nextLine();
 				individualCustomer.addFamilyName(familyName);
 				
 				System.out.print("Email: ");
-				String email = userInput.next();
+				String email = userInput.nextLine();
 				individualCustomer.setEmail(email);
 				
 				System.out.print("Telephone number: ");
-				String telephoneNumber = userInput.next(); //Some phonenumbers are very long (or very strange) so string is more appropiate
+				String telephoneNumber = userInput.nextLine(); //Some phonenumbers are very long (or very strange) so string is more appropiate
 				individualCustomer.setPhoneNumber(telephoneNumber);
 				
 				System.out.print("Billing address: ");
-				String billingAddress = userInput.next();
+				String billingAddress = userInput.nextLine();
 				individualCustomer.setAddress(billingAddress);
 				
 				System.out.print("Credit-card number: ");
-				String creditCardNumber = userInput.next();
+				String creditCardNumber = userInput.nextLine();
 				
 				System.out.print("CVC: ");
-				String cvc = userInput.next();
+				String cvc = userInput.nextLine();
 				
 				System.out.print("Expiration-date: ");
-				String expirationDate = userInput.next();
+				String expirationDate = userInput.nextLine();
 
 				CreditCard creditCard = new CreditCard(creditCardNumber, cvc, expirationDate);
 				customer.addBillingInformation(creditCard);
@@ -339,22 +344,22 @@ public class BookingManager {
 				Organization organization = ClassDiagramFactoryImpl.eINSTANCE.createOrganization();
 				
 				System.out.print("Organization name: ");
-				String organizationName = userInput.next();
+				String organizationName = userInput.nextLine();
 
 				System.out.print("Address: ");
-				String organizationAddress = userInput.next();
+				String organizationAddress = userInput.nextLine();
 
 				String title = "";
 				do {
 					System.out.print("Contact persons title (ms/mr/mrs): ");
-					title = userInput.next();
-				} while(title != "ms" && title != "mr" && title != "mrs");
+					title = userInput.nextLine();
+				} while(!title.equals("ms") && !title.equals("mr") && !title.equals("mrs"));
 				
 				System.out.print("Contact persons first name: ");
-				String contactPersonFirstName = userInput.next();
+				String contactPersonFirstName = userInput.nextLine();
 				
 				System.out.print("Contact persons last name: ");
-				String contactPersonLastName = userInput.next();
+				String contactPersonLastName = userInput.nextLine();
 				
 				Person person = ClassDiagramFactoryImpl.eINSTANCE.createPerson();
 				person.addFirstName(contactPersonFirstName);
@@ -386,69 +391,69 @@ public class BookingManager {
 		String customerInfoUptodateChoice = "";
 		do {
 			System.out.print("Is the customer information up-to-date? (y/n): ");
-			customerInfoUptodateChoice = userInput.next();
+			customerInfoUptodateChoice = userInput.nextLine();
 			
-		} while(customerInfoUptodateChoice != "y" && customerInfoUptodateChoice != "n");
+		} while(!customerInfoUptodateChoice.equals("y") && !customerInfoUptodateChoice.equals("n"));
 		
-		if(customerInfoUptodateChoice == "n") {			
+		if(customerInfoUptodateChoice.equals("n")) {			
 			//1. System asks for customer information; name, telephone number, billing address and credit card information.
 			//2. Actor provides customer information
-			if(customer.getClass() == IndividualCustomer.class) {
+			if(customer instanceof IndividualCustomer) {
 				IndividualCustomer individualCustomer = (IndividualCustomer)customer;
 				
 				//Update IndividualCustomer info
 				System.out.print("First name: ");
-				String firstName = userInput.next();
+				String firstName = userInput.nextLine();
 				individualCustomer.addFirstName(firstName);
 				
 				System.out.print("Family name: ");
-				String familyName = userInput.next();
+				String familyName = userInput.nextLine();
 				individualCustomer.addFamilyName(familyName);
 				
 				System.out.print("Email: ");
-				String email = userInput.next();
+				String email = userInput.nextLine();
 				individualCustomer.setEmail(email);
 				
 				System.out.print("Telephone number: ");
-				String telephoneNumber = userInput.next(); //Some phonenumbers are very long (or very strange) so string is more appropiate
+				String telephoneNumber = userInput.nextLine(); //Some phonenumbers are very long (or very strange) so string is more appropiate
 				individualCustomer.setPhoneNumber(telephoneNumber);
 				
 				System.out.print("Billing address: ");
-				String billingAddress = userInput.next();
+				String billingAddress = userInput.nextLine();
 				individualCustomer.setAddress(billingAddress);
 				
 				System.out.print("Credit-card number: ");
-				String creditCardNumber = userInput.next();
+				String creditCardNumber = userInput.nextLine();
 				
 				System.out.print("CVC: ");
-				String cvc = userInput.next();
+				String cvc = userInput.nextLine();
 				
 				System.out.print("Expiration-date: ");
-				String expirationDate = userInput.next();
+				String expirationDate = userInput.nextLine();
 
 				CreditCard creditCard = new CreditCard(creditCardNumber, cvc, expirationDate);
-				customer.addBillingInformation(creditCard);
+				individualCustomer.addBillingInformation(creditCard);
 				
-			} else if(customer.getClass() == Organization.class) {
+			} else if(customer instanceof Organization) {
 				Organization organization = (Organization)customer;
 				
 				System.out.print("Organization name: ");
-				String organizationName = userInput.next();
+				String organizationName = userInput.nextLine();
 
 				System.out.print("Address: ");
-				String organizationAddress = userInput.next();
+				String organizationAddress = userInput.nextLine();
 
 				String title = "";
 				do {
 					System.out.print("Contact persons title (ms/mr/mrs): ");
-					title = userInput.next();
-				} while(title != "ms" && title != "mr" && title != "mrs");
+					title = userInput.nextLine();
+				} while(!title.equals("ms") && !title.equals("mr") && !title.equals("mrs"));
 				
 				System.out.print("Contact persons first name: ");
-				String contactPersonFirstName = userInput.next();
+				String contactPersonFirstName = userInput.nextLine();
 				
 				System.out.print("Contact persons last name: ");
-				String contactPersonLastName = userInput.next();
+				String contactPersonLastName = userInput.nextLine();
 				
 				Person person = ClassDiagramFactoryImpl.eINSTANCE.createPerson();
 				person.addFirstName(contactPersonFirstName);
@@ -479,12 +484,12 @@ public class BookingManager {
 		String customerInfoConfirmChoice = "";
 		do {
 			System.out.print("Confirm customer information up-to-date? (y/n): ");
-			customerInfoConfirmChoice = userInput.next();
+			customerInfoConfirmChoice = userInput.nextLine();
 			
-		} while(customerInfoConfirmChoice != "y" && customerInfoConfirmChoice != "n");
+		} while(!customerInfoConfirmChoice.equals("y") && !customerInfoConfirmChoice.equals("n"));
 		
 		//If customer is unruly...
-		if(customerInfoConfirmChoice == "n") {
+		if(customerInfoConfirmChoice.equals("n")) {
 			return;
 		}
 		
@@ -494,19 +499,19 @@ public class BookingManager {
 		String invoiceChoice = "";
 		do {
 			System.out.print("Do you wish to pay with invoice? (y/n): ");
-			invoiceChoice = userInput.next();
+			invoiceChoice = userInput.nextLine();
 			
-		} while(invoiceChoice != "y" && invoiceChoice != "n");
+		} while(!invoiceChoice.equals("y") && !invoiceChoice.equals("n"));
 		
 		//17-18a The booking will be paid by invoice.
 		Invoice invoice = null;
-		if(invoiceChoice == "y") {
+		if(invoiceChoice.equals("y")) {
 			//1. Assume: customer is a person and not an organisation.
 			if(customer instanceof IndividualCustomer) {
 				//2. System asks for the social security number of the customer.
 				System.out.print("Enter social security number: ");
 				//3. Actor provides the social security number.
-				int socialSecurityNumber = userInput.nextInt();
+				int socialSecurityNumber = Integer.parseInt(userInput.nextLine());
 				//4. System sends a request to validate the customer credit record.
 				invoice = new Invoice(customer);
 				if(!invoice.validate()){
@@ -550,22 +555,22 @@ public class BookingManager {
 			String cancelChoice = "";
 			do {
 				System.out.print("Do you wish to cancel the booking? (y/n): ");
-				cancelChoice = userInput.next();
-			} while(cancelChoice != "y" && cancelChoice != "n");
+				cancelChoice = userInput.nextLine();
+			} while(!cancelChoice.equals("y") && !cancelChoice.equals("n"));
 			
-			if(cancelChoice == "y") {
+			if(cancelChoice.equals("y")) {
 				return;
 			}
 			
 			System.out.println("Enter new credit-card information (this replaces your old credit-card information)");
 			System.out.print("Credit-card number: ");
-			String creditCardNumber = userInput.next();
+			String creditCardNumber = userInput.nextLine();
 			
 			System.out.print("CVC: ");
-			String cvc = userInput.next();
+			String cvc = userInput.nextLine();
 			
 			System.out.print("Expiration-date: ");
-			String expirationDate = userInput.next();
+			String expirationDate = userInput.nextLine();
 
 			CreditCard creditCard = new CreditCard(creditCardNumber, cvc, expirationDate);
 			customer.addBillingInformation(creditCard);
@@ -577,12 +582,12 @@ public class BookingManager {
 		String payInAdvanceChoice = "";
 		do {
 			System.out.print("Should the booking be paid in advance? (y/n): ");
-			payInAdvanceChoice = userInput.next();
+			payInAdvanceChoice = userInput.nextLine();
 			
-		} while(payInAdvanceChoice != "y" && payInAdvanceChoice != "n");
+		} while(!payInAdvanceChoice.equals("y") && !payInAdvanceChoice.equals("n"));
 		
 		//23. Assume: Booking is not to be paid in advance
-		if(payInAdvanceChoice == "y") {
+		if(payInAdvanceChoice.equals("y")) {
 			Bill bill = ClassDiagramFactoryImpl.eINSTANCE.createBill();
 			for(RoomType roomType : newBooking.getRoomType()) {
 				bill.addCost(roomType);
@@ -599,22 +604,18 @@ public class BookingManager {
 		}
 		
 		//24. System adds customer to the booking.
-		customer.addRoomBooking(newBooking);
-		
 		//25. System adds the booking to the system and decreases the number of room types available on the dates between arrival and departure date.
-		//TODO: I need to get hold of and instance of a class realizing the RoomBookings-interface.
-		RoomBookings roomBookingsInterface = null;
-		roomBookingsInterface.addRoomBooking(newBooking);
+		customer.addRoomBooking(newBooking);
 		
 		//26. Actor states if a confirmation email should be sent.
 		String confirmationEmailChoice = "";
 		do {
 			System.out.print("Do you want an confirmation email? (y/n): ");
-			confirmationEmailChoice = userInput.next();
+			confirmationEmailChoice = userInput.nextLine();
 			
-		} while(confirmationEmailChoice != "y" && confirmationEmailChoice != "n");
+		} while(!confirmationEmailChoice.equals("y") && !confirmationEmailChoice.equals("n"));
 		
-		if(confirmationEmailChoice == "y") {
+		if(confirmationEmailChoice.equals("y")) {
 			//27. Assume: Confirmation email should be sent
 			//28. System generates a PDF containing the booking information and sends it to the customer email address.
 			System.out.println("Sent confimation email"); //Lies
