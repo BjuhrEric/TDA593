@@ -22,6 +22,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link ClassDiagram.Organization#getName <em>Name</em>}</li>
  *   <li>{@link ClassDiagram.Organization#getAddress <em>Address</em>}</li>
  *   <li>{@link ClassDiagram.Organization#getResponsiblePerson <em>Responsible Person</em>}</li>
+ *   <li>{@link ClassDiagram.Organization#getEmail <em>Email</em>}</li>
  * </ul>
  *
  * @see ClassDiagram.ClassDiagramPackage#getOrganization()
@@ -206,4 +207,30 @@ public interface Organization extends Customer {
 	 * @generated
 	 */
 	void setResponsiblePerson(Person value);
+
+	/**
+	 * Returns the value of the '<em><b>Email</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Email</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Email</em>' attribute.
+	 * @see #setEmail(String)
+	 * @see ClassDiagram.ClassDiagramPackage#getOrganization_Email()
+	 * @model dataType="org.eclipse.uml2.types.String" required="true" ordered="false"
+	 * @generated
+	 */
+	String getEmail();
+
+	/**
+	 * Sets the value of the '{@link ClassDiagram.Organization#getEmail <em>Email</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Email</em>' attribute.
+	 * @see #getEmail()
+	 * @generated
+	 */
+	void setEmail(String value);
 } // Organization

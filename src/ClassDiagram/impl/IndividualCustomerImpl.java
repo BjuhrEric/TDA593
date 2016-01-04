@@ -467,6 +467,7 @@ public class IndividualCustomerImpl extends PersonImpl implements IndividualCust
 				case ClassDiagramPackage.CUSTOMER___ADD_EVENT_BOOKING__EVENTBOOKING: return ClassDiagramPackage.INDIVIDUAL_CUSTOMER___ADD_EVENT_BOOKING__EVENTBOOKING;
 				case ClassDiagramPackage.CUSTOMER___GET_ID: return ClassDiagramPackage.INDIVIDUAL_CUSTOMER___GET_ID;
 				case ClassDiagramPackage.CUSTOMER___ADD_BILLING_INFORMATION__BILLINGINFORMATION: return ClassDiagramPackage.INDIVIDUAL_CUSTOMER___ADD_BILLING_INFORMATION__BILLINGINFORMATION;
+				case ClassDiagramPackage.CUSTOMER___GET_EMAIL: return ClassDiagramPackage.INDIVIDUAL_CUSTOMER___GET_EMAIL;
 				default: return -1;
 			}
 		}

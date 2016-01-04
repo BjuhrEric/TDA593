@@ -76,6 +76,14 @@ public interface Customer extends EObject {
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" dataType="org.eclipse.uml2.types.String" required="true" ordered="false"
+	 * @generated
+	 */
+	String getEmail();
+
+	/**
+	 * <!-- begin-user-doc -->
 	 * Added by thszabi
 	 * <!-- end-user-doc -->
 	 * @model kind="operation"
