@@ -12,8 +12,10 @@ import ClassDiagram.BillingInformation;
 import ClassDiagram.Customer;
 import ClassDiagram.IndividualCustomer;
 import ClassDiagram.Organization;
+import ClassDiagram.Person;
 import ClassDiagram.RoomBooking;
 import ClassDiagram.RoomType;
+import ClassDiagram.Title;
 import ClassDiagram.impl.ClassDiagramFactoryImpl;
 import DatabaseInterfaces.Customers;
 import DatabaseInterfaces.RoomBookings;
@@ -287,6 +289,7 @@ public class BookingManager {
 		
 		if(customer == null) {
 			//13a. Customer information is not in the system
+			System.out.println("Customer not found. Creating a new customer...");
 			//1. System asks for customer information; name, telephone number, billing address and credit card information.
 			//2. Actor provides customer information
 			int typeOfCustomerChoice = 0;
@@ -296,7 +299,6 @@ public class BookingManager {
 			} while(typeOfCustomerChoice != 1 && typeOfCustomerChoice != 2);
 			
 			if(typeOfCustomerChoice == 1) {
-				System.out.println("Customer not found. Creating a new customer...");
 				IndividualCustomer individualCustomer = ClassDiagramFactoryImpl.eINSTANCE.createIndividualCustomer();
 				
 				System.out.print("First name: ");
@@ -309,15 +311,15 @@ public class BookingManager {
 				
 				System.out.print("Email: ");
 				String email = userInput.next();
-				//individualCustomer.addEmail(email); TODO: Implement
+				individualCustomer.setEmail(email);
 				
 				System.out.print("Telephone number: ");
 				String telephoneNumber = userInput.next(); //Some phonenumbers are very long (or very strange) so string is more appropiate
-				//individualCustomer.addTelephoneNumber(telephoneNumber); TODO: Implement
+				individualCustomer.setPhoneNumber(telephoneNumber);
 				
 				System.out.print("Billing address: ");
 				String billingAddress = userInput.next();
-				//individualCustomer.addBillingAddress(billingAddress); TODO: Implement
+				individualCustomer.setAddress(billingAddress);
 				
 				System.out.print("Credit-card number: ");
 				String creditCardNumber = userInput.next();
@@ -334,7 +336,42 @@ public class BookingManager {
 				customer = individualCustomer;
 				
 			} else {
-				//TODO: Enter company customer information
+				Organization organization = ClassDiagramFactoryImpl.eINSTANCE.createOrganization();
+				
+				System.out.print("Organization name: ");
+				String organizationName = userInput.next();
+
+				System.out.print("Address: ");
+				String organizationAddress = userInput.next();
+
+				String title = "";
+				do {
+					System.out.print("Contact persons title (ms/mr/mrs): ");
+					title = userInput.next();
+				} while(title != "ms" && title != "mr" && title != "mrs");
+				
+				System.out.print("Contact persons first name: ");
+				String contactPersonFirstName = userInput.next();
+				
+				System.out.print("Contact persons last name: ");
+				String contactPersonLastName = userInput.next();
+				
+				Person person = ClassDiagramFactoryImpl.eINSTANCE.createPerson();
+				person.addFirstName(contactPersonFirstName);
+				person.addFamilyName(contactPersonLastName);
+				
+				//This is good coding
+				if(title == "ms") {
+					person.setTitle(Title.MS);
+				} else if(title == "mr") {
+					person.setTitle(Title.MR);
+				} else {
+					person.setTitle(Title.MRS);
+				}
+				
+				organization.setName(organizationName);
+				organization.setAddress(organizationAddress);
+				organization.setResponsiblePerson(person);
 			}
 			
 			//3. System stores customer information
@@ -356,8 +393,84 @@ public class BookingManager {
 		if(customerInfoUptodateChoice == "n") {			
 			//1. System asks for customer information; name, telephone number, billing address and credit card information.
 			//2. Actor provides customer information
-			//TODO: There has to be a customer.updateInfo()-method (which is overriden in a different way for company / individual-customer)
-			//customer.updateInfo();
+			if(customer.getClass() == IndividualCustomer.class) {
+				IndividualCustomer individualCustomer = (IndividualCustomer)customer;
+				
+				//Update IndividualCustomer info
+				System.out.print("First name: ");
+				String firstName = userInput.next();
+				individualCustomer.addFirstName(firstName);
+				
+				System.out.print("Family name: ");
+				String familyName = userInput.next();
+				individualCustomer.addFamilyName(familyName);
+				
+				System.out.print("Email: ");
+				String email = userInput.next();
+				individualCustomer.setEmail(email);
+				
+				System.out.print("Telephone number: ");
+				String telephoneNumber = userInput.next(); //Some phonenumbers are very long (or very strange) so string is more appropiate
+				individualCustomer.setPhoneNumber(telephoneNumber);
+				
+				System.out.print("Billing address: ");
+				String billingAddress = userInput.next();
+				individualCustomer.setAddress(billingAddress);
+				
+				System.out.print("Credit-card number: ");
+				String creditCardNumber = userInput.next();
+				
+				System.out.print("CVC: ");
+				String cvc = userInput.next();
+				
+				System.out.print("Expiration-date: ");
+				String expirationDate = userInput.next();
+
+				CreditCard creditCard = new CreditCard(creditCardNumber, cvc, expirationDate);
+				customer.addBillingInformation(creditCard);
+				
+			} else if(customer.getClass() == Organization.class) {
+				Organization organization = (Organization)customer;
+				
+				System.out.print("Organization name: ");
+				String organizationName = userInput.next();
+
+				System.out.print("Address: ");
+				String organizationAddress = userInput.next();
+
+				String title = "";
+				do {
+					System.out.print("Contact persons title (ms/mr/mrs): ");
+					title = userInput.next();
+				} while(title != "ms" && title != "mr" && title != "mrs");
+				
+				System.out.print("Contact persons first name: ");
+				String contactPersonFirstName = userInput.next();
+				
+				System.out.print("Contact persons last name: ");
+				String contactPersonLastName = userInput.next();
+				
+				Person person = ClassDiagramFactoryImpl.eINSTANCE.createPerson();
+				person.addFirstName(contactPersonFirstName);
+				person.addFamilyName(contactPersonLastName);
+				
+				//This is good coding
+				if(title == "ms") {
+					person.setTitle(Title.MS);
+				} else if(title == "mr") {
+					person.setTitle(Title.MR);
+				} else {
+					person.setTitle(Title.MRS);
+				}
+				
+				organization.setName(organizationName);
+				organization.setAddress(organizationAddress);
+				organization.setResponsiblePerson(person);
+			} else {
+				System.out.println("ERROR: Could not determine type of customer (if customer is an IndividualCustomer or an Organization), terminating!");
+				return;
+			}
+			
 			//3. System stores customer information
 			//Moved to below 16.
 		}
