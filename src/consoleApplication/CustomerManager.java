@@ -79,7 +79,7 @@ public class CustomerManager {
 				System.out.print("Enter the invoice's number (numbers only): ");
 				long invoiceNbr = userInput.nextLong();
 			
-				Invoice invoice = new Invoice(invoiceNbr);
+				Invoice invoice = new Invoice(newCustomer);
 				valid = invoice.validate();
 				
 				if (valid)
@@ -98,11 +98,14 @@ public class CustomerManager {
 			while (!valid) {
 				System.out.print("Enter credit card's number (16 digits, numbers only): ");
 				String cardno = userInput.next();
+				
+				System.out.print("Enter expiration date (YYYY-MM-DD): ");
+				String expirationDate = userInput.next();
 			
 				System.out.print("Enter credit card's CVV number (3 digits, numbers only): ");
 				String cvv = userInput.next();
 			
-				CreditCard creditCard = new CreditCard(cardno, cvv);
+				CreditCard creditCard = new CreditCard(cardno, cvv, expirationDate);
 				valid = creditCard.validate();
 				
 				if (valid)
