@@ -270,6 +270,8 @@ public class BookingManager {
 		//9. Assume: No event booking should be added
 		//Ok.
 		
+		System.out.println(newBooking);
+		
 		//10. Actor confirms the booking.
 		String confirmBookingChoice = /*This is a hack to circumvent my bad understanding of java.util.scanner */ userInput.nextLine();
 		do {
@@ -289,7 +291,7 @@ public class BookingManager {
 		String customerEmail = userInput.nextLine();
 		
 		//13. Assume: the customer information is stored in the system
-		CustomersMock customers = CustomersMock.getInstance(); //TODO: How would I get hold of a concrete instance that realizes the Customers-interface?
+		CustomersMock customers = CustomersMock.getInstance();
 		Customer customer = customers.getCustomerByEmail(customerEmail);
 		
 		if(customer == null) {
