@@ -5,6 +5,8 @@ import static org.junit.Assert.*;
 import java.util.Date;
 
 import ClassDiagram.GuestStatus;
+import ClassDiagram.Room;
+import ClassDiagram.RoomStatus;
 import ClassDiagram.impl.*;
 
 
@@ -28,7 +30,12 @@ public class BookingTest {
 		RoomTypeImpl roomType = (RoomTypeImpl) factory.createRoomType();
 		RoomTypeImpl roomType2 = (RoomTypeImpl) factory.createRoomType();
 		GuestImpl guest = (GuestImpl)factory.createGuest();
-		
+		BillImpl bill = (BillImpl)factory.createBill();
+		ItemImpl item = (ItemImpl)factory.createItem();
+		item.setPrice(200);
+		bill.addCost(item);
+		room.setBill(bill);
+				
 		
 		//Start date
 		Date startDate = new Date(2015,12,24);
@@ -56,6 +63,19 @@ public class BookingTest {
 		assertTrue(testResult);
 		//-----------------
 		
+		//removeRoom
+		try {
+			roomBook.removeRoom(room);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		testResult = roomBook.getRooms().contains(room);
+		
+		//This test does deliberately violate the intended behavior
+		//Should cause failed test
+		assertTrue(!testResult);
+				
+		
 		//RoomType
 		roomBook.addRoomType(roomType);
 		testResult = roomBook.getRoomType().contains(roomType);
@@ -71,8 +91,31 @@ public class BookingTest {
 		//-----------------
 		
 		
-		//Check out
+		//Check in
+		room.setRoomStatus(RoomStatus.AVAILABLE);
+		roomBook.addRoom(room);
+		roomBook.checkIn(guest, room);
 		
+		testResult = room.getGuests().contains(guest);
+		assertTrue(testResult);
+		
+		testResult = room.getRoomStatus() == RoomStatus.OCCUPIED;
+		assertTrue(testResult);
+		
+		testResult = guest.getStatus() == GuestStatus.CHECKED_IN;
+		assertTrue(testResult);
+		
+		//Check out
+		testResult =  room.checkOut().getBill().getCost().get(0).getPrice() == 200 ;
+		assertTrue(testResult);
+		
+		testResult = true;
+		for (Room theRoom: roomBook.getRooms()) {
+			if (theRoom.getRoomStatus() != RoomStatus.AVAILABLE) {
+				testResult = false;
+			}
+		}
+		assertTrue(testResult);
 		
 	}
 

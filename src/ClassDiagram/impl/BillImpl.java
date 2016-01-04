@@ -122,6 +122,9 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 	 * @generated NOT
 	 */
 	public void addCost(Cost cost) {
+		if (this.cost == null) {
+			this.cost = new EObjectResolvingEList<Cost>(Cost.class, this, ClassDiagramPackage.BILL__COST);
+		}
 		this.cost.add(cost);
 	}
 

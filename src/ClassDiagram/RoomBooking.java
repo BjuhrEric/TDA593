@@ -211,10 +211,11 @@ public interface RoomBooking extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @throws Exception 
 	 * @model roomRequired="true" roomOrdered="false"
 	 * @generated
 	 */
-	void removeRoom(Room room);
+	void removeRoom(Room room) throws Exception;
 
 	/**
 	 * <!-- begin-user-doc -->

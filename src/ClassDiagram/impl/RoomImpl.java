@@ -6,6 +6,7 @@ import ClassDiagram.Bill;
 import ClassDiagram.ClassDiagramPackage;
 import ClassDiagram.CleaningStatus;
 import ClassDiagram.Guest;
+import ClassDiagram.GuestStatus;
 import ClassDiagram.Payment;
 import ClassDiagram.Room;
 import ClassDiagram.RoomStatus;
@@ -325,9 +326,13 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	public Payment checkOut() {
 		Payment p = ClassDiagramFactoryImpl.eINSTANCE.createPayment();
 		p.setBill(bill);
+		for (Guest guest: guests) {
+			guest.setStatus(GuestStatus.CHECKED_OUT);
+		}
 		guests.clear();
 		setCleaningStatus(CleaningStatus.CHECKED_OUT);
 		setRoomStatus(RoomStatus.AVAILABLE);
+		
 		return p;
 	}
 
