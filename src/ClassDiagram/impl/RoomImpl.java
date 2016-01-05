@@ -143,6 +143,8 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 */
 	protected RoomImpl() {
 		super();
+		bill = ClassDiagramFactoryImpl.eINSTANCE.createBill();
+		
 	}
 
 	/**
