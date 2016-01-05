@@ -345,9 +345,9 @@ public class BookingManager {
 				String expirationDate = userInput.nextLine();
 
 				CreditCard creditCard = new CreditCard(creditCardNumber, cvc, expirationDate);
-				customer.addBillingInformation(creditCard);
-				
+							
 				customer = individualCustomer;
+				customer.addBillingInformation(creditCard);
 				
 			} else {
 				Organization organization = ClassDiagramFactoryImpl.eINSTANCE.createOrganization();
