@@ -8,6 +8,8 @@ import ClassDiagram.ClassDiagramPackage;
 import ClassDiagram.Cost;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
+import java.util.UUID;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 
@@ -68,7 +70,7 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 	protected BillImpl() {
 		super();
 		cost = new EObjectResolvingEList<Cost>(Cost.class, this, ClassDiagramPackage.BILL__COST);
-
+		id = UUID.randomUUID().getLeastSignificantBits();
 	}
 
 
