@@ -80,6 +80,10 @@ public class RoomTypesMock implements RoomTypes{
 	public List<RoomType> getRoomTypes() {
 		return roomTypes;		
 	}
+	
+	public List<RoomType> getRoomTypes() {
+		return new ArrayList<>(roomTypes);
+	}
 
 	@Override
 	public List<RoomType> getAvailableRoomTypes(Date start, Date end, int[] distribution) {

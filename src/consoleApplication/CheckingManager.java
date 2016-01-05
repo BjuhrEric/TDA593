@@ -18,6 +18,7 @@ import ClassDiagram.RoomBooking;
 import ClassDiagram.RoomStatus;
 import ClassDiagram.RoomType;
 import ClassDiagram.impl.ClassDiagramFactoryImpl;
+import MockDatabase.CustomersMock;
 
 public class CheckingManager {
 	
@@ -44,7 +45,7 @@ public class CheckingManager {
 	}
 	private int findCustomerByEmail(String email) {
 		for (int i = 0; i < customers.size(); ++i) {
-			if(customers.get(i).getEmail() == email) {
+			if(email.equals(customers.get(i).getEmail())) {
 				return i;
 			}
 		}
@@ -187,6 +188,7 @@ public class CheckingManager {
 	public void startCheckIn() {
 		
 	// START: ASK FOR CUSTOMER ID AND BOOKING ID
+		customers = CustomersMock.getInstance().getCustomers();
 		String customerEmail = ""; 
 		try{
 		System.out.print("Enter the E-mail of the customer who is the owner of the booking: ");
@@ -257,9 +259,10 @@ public class CheckingManager {
 		}
 	}
 	
-	//TODO Lack of checks! For example, I can check out a booking which was not even checked in!
+	//TODO Lack of checks! For example, I can check out a7 booking which was not even checked in!
 	public void startCheckOut() {
 	// START: ASK FOR CUSTOMER ID AND BOOKING ID
+		customers = CustomersMock.getInstance().getCustomers();
 		System.out.print("Enter the Email of the customer who is the owner of the booking: ");
 		String customerEmail = userInput.next();
 		

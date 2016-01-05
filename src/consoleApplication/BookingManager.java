@@ -866,6 +866,8 @@ public class BookingManager {
 	}
 	
 	public void start() {
+		customers = CustomersMock.getInstance().getCustomers();
+		roomTypes = RoomTypesMock.getInstance().getRoomTypes();
 		System.out.println();
 		System.out.println("1. List all existing bookings");
 		System.out.println("2. List a customer's existing bookings");

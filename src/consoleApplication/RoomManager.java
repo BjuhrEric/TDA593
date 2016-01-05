@@ -6,6 +6,7 @@ import java.util.Scanner;
 import ClassDiagram.Room;
 import ClassDiagram.RoomType;
 import ClassDiagram.impl.ClassDiagramFactoryImpl;
+import MockDatabase.RoomTypesMock;
 
 public class RoomManager {
 
@@ -328,6 +329,7 @@ public class RoomManager {
 	}
 	
 	public void start() {
+		roomTypes = RoomTypesMock.getInstance().getRoomTypes();
 		System.out.println();
 		System.out.println("1. List existing room types");
 		System.out.println("2. Create a new room type");
