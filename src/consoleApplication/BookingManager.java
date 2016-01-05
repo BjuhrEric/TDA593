@@ -345,7 +345,7 @@ public class BookingManager {
 				String expirationDate = userInput.nextLine();
 
 				CreditCard creditCard = new CreditCard(creditCardNumber, cvc, expirationDate);
-				customer.addBillingInformation(creditCard);
+				individualCustomer.addBillingInformation(creditCard);
 				
 				customer = individualCustomer;
 				
@@ -543,7 +543,7 @@ public class BookingManager {
 				//2. System asks for the social security number of the customer.
 				System.out.print("Enter social security number: ");
 				//3. Actor provides the social security number.
-				int socialSecurityNumber = Integer.parseInt(userInput.nextLine());
+				String socialSecurityNumber = userInput.nextLine();
 				//4. System sends a request to validate the customer credit record.
 				invoice = new Invoice(customer);
 				if(!invoice.validate()){
@@ -555,7 +555,7 @@ public class BookingManager {
 				//1. The system asks for the organisation number.
 				System.out.print("Enter organization number: ");
 				//2. Actor provides organisation number
-				int organizationNumber = Integer.parseInt(userInput.nextLine());
+				String organizationNumber = userInput.nextLine();
 				invoice = new Invoice(customer);
 				if(!invoice.validate()){
 					System.out.println("Customer not granted to pay by invoice, terminating...");

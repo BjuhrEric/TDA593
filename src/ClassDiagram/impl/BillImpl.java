@@ -3,6 +3,7 @@
 package ClassDiagram.impl;
 
 import ClassDiagram.Bill;
+import ClassDiagram.BillingInformation;
 import ClassDiagram.ClassDiagramPackage;
 import ClassDiagram.Cost;
 import java.lang.reflect.InvocationTargetException;
@@ -62,16 +63,14 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected BillImpl() {
 		super();
+		cost = new EObjectResolvingEList<Cost>(Cost.class, this, ClassDiagramPackage.BILL__COST);
+
 	}
-	protected BillImpl(long id){
-		super();
-		this.id = id;
-		//TODO: add bill to database
-	}
+
 
 	/**
 	 * <!-- begin-user-doc -->
