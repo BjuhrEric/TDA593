@@ -176,7 +176,7 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void setStartDate(Date newStartDate) {
 		Date oldStartDate = startDate;
@@ -197,7 +197,7 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void setEndDate(Date newEndDate) {
 		Date oldEndDate = endDate;
@@ -209,7 +209,7 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public EList<RoomType> getRoomType() {
 		if (roomType == null) {
@@ -238,7 +238,7 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public EList<Room> getRooms() {
 		if (rooms == null) {
@@ -259,7 +259,7 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void setId(long newId) {
 		long oldId = id;
@@ -308,13 +308,13 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 	 */
 	public void checkIn(Guest guest, Room room) {
 		if(rooms.contains(room)) {
+			room.addGuest(guest);
 			room.setRoomStatus(RoomStatus.OCCUPIED);
 			guest.setStatus(GuestStatus.CHECKED_IN);
-			room.addGuest(guest);
+		} else {
+			//TODO Handle this
 		}
-		
 	}
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -345,10 +345,15 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @throws Exception 
 	 * @generated NOT
 	 */
-	public void removeRoom(Room room) {
-		this.rooms.remove(room);
+	public void removeRoom(Room room) throws Exception {
+		if(rooms.contains(room)) {
+			this.rooms.remove(room);
+		} else {
+			throw new Exception("Room does not exist in this booking");
+		}
 		// TODO
 		//Database.updateBooking(this);
 	}
@@ -507,7 +512,12 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 				addRoom((Room)arguments.get(0));
 				return null;
 			case ClassDiagramPackage.ROOM_BOOKING___REMOVE_ROOM__ROOM:
+			try {
 				removeRoom((Room)arguments.get(0));
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 				return null;
 			case ClassDiagramPackage.ROOM_BOOKING___ADD_ROOM_TYPE__ROOMTYPE:
 				addRoomType((RoomType)arguments.get(0));

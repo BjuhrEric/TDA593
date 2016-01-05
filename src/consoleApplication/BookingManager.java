@@ -346,7 +346,7 @@ public class BookingManager {
 
 				CreditCard creditCard = new CreditCard(creditCardNumber, cvc, expirationDate);
 				individualCustomer.addBillingInformation(creditCard);
-				
+											
 				customer = individualCustomer;
 				
 			} else {
