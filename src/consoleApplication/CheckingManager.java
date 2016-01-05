@@ -260,10 +260,10 @@ public class CheckingManager {
 	//TODO Lack of checks! For example, I can check out a booking which was not even checked in!
 	public void startCheckOut() {
 	// START: ASK FOR CUSTOMER ID AND BOOKING ID
-		System.out.print("Enter the ID of the customer who is the owner of the booking: ");
-		long customerID = userInput.nextLong();
+		System.out.print("Enter the Email of the customer who is the owner of the booking: ");
+		String customerEmail = userInput.next();
 		
-		int searchResult = findCustomer(customerID);
+		int searchResult = findCustomerByEmail(customerEmail);
 		
 		if (searchResult < 0) {
 			System.out.println("ERROR! Customer not found!");

@@ -7,6 +7,8 @@ import ClassDiagram.Customer;
 import ClassDiagram.IndividualCustomer;
 import ClassDiagram.Organization;
 import ClassDiagram.impl.ClassDiagramFactoryImpl;
+import DatabaseInterfaces.Customers;
+import MockDatabase.CustomersMock;
 import Payment.CreditCard;
 import Payment.Invoice;
 
@@ -135,9 +137,15 @@ public class CustomerManager {
 		String familyName = userInput.next();
 		newCustomer.addFamilyName(familyName);
 		
+		System.out.println("Email address of the customer");
+		String email = userInput.next();
+		newCustomer.setEmail(email);
+		
 		addBillingInfo(newCustomer);
 		
-		customers.add(newCustomer);
+		Customers customers = CustomersMock.getInstance();
+		customers.addCustomer(newCustomer);
+		this.customers = customers.getCustomers();
 
 		System.out.println();
 		System.out.print("Customer #" + newCustomer.getID() + ", "
@@ -164,8 +172,9 @@ public class CustomerManager {
 		addBillingInfo(newOrganization);
 		
 		//Optional ToDo: You can add newOrganization.getResponsiblePerson() if you want to.
-		
-		customers.add(newOrganization);
+		Customers customers = CustomersMock.getInstance();
+		customers.addCustomer(newOrganization);
+		this.customers = customers.getCustomers();
 		
 		System.out.println();
 		System.out.print("Customer #" + newOrganization.getID() + ", "
