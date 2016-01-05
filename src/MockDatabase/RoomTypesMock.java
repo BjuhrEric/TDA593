@@ -77,9 +77,8 @@ public class RoomTypesMock implements RoomTypes{
 	}
 
 	@Override
-	public void listRoomTypes() {
-		// TODO Auto-generated method stub
-		
+	public List<RoomType> getRoomTypes() {
+		return roomTypes;		
 	}
 
 	@Override
