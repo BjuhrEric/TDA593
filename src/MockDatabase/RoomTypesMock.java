@@ -75,11 +75,6 @@ public class RoomTypesMock implements RoomTypes{
 		// TODO Not implemented
 		
 	}
-
-	@Override
-	public List<RoomType> getRoomTypes() {
-		return roomTypes;		
-	}
 	
 	public List<RoomType> getRoomTypes() {
 		return new ArrayList<>(roomTypes);
