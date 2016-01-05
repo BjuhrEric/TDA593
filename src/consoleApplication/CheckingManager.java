@@ -42,6 +42,15 @@ public class CheckingManager {
 		
 		return -1;
 	}
+	private int findCustomerByEmail(String email) {
+		for (int i = 0; i < customers.size(); ++i) {
+			if(customers.get(i).getEmail() == email) {
+				return i;
+			}
+		}
+			
+		return -1;
+	}
 	
 	/**
 	 * Lists every booking of a customer
@@ -178,17 +187,17 @@ public class CheckingManager {
 	public void startCheckIn() {
 		
 	// START: ASK FOR CUSTOMER ID AND BOOKING ID
-		long customerID = 0; 
+		String customerEmail = ""; 
 		try{
-		System.out.print("Enter the ID of the customer who is the owner of the booking: ");
-		customerID = userInput.nextLong();
+		System.out.print("Enter the E-mail of the customer who is the owner of the booking: ");
+		customerEmail = userInput.next();
 		}catch(InputMismatchException e){
-			System.out.println("Must enter a valid customer ID");
+			System.out.println("Must enter a valid E-mail");
 			userInput.nextLine();
 			return;
 		}
 		
-		int searchResult = findCustomer(customerID);
+		int searchResult = findCustomerByEmail(customerEmail);
 		
 		if (searchResult < 0) {
 			System.out.println("ERROR! Customer not found!");
