@@ -338,7 +338,7 @@ public class IndividualCustomerImpl extends PersonImpl implements IndividualCust
 		billingInformation.remove(itmp);
 		billingInformation.add(info);
 	}
-
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
