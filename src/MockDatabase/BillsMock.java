@@ -11,11 +11,19 @@ import DatabaseInterfaces.Bills;
 public class BillsMock implements Bills{
 	
 	private HashMap<UUID, Bill> bills;
+	private static BillsMock instance = null;
 	
 	private BillsMock(){
 		bills = new HashMap<UUID, Bill>();
 	}
 
+	public static BillsMock getInstance(){
+		if(instance == null){
+			instance = new BillsMock();
+		}
+		return instance;	
+	}
+	
 	@Override
 	public boolean saveBill(Bill bill) {
 		Bill result = bills.put(new UUID(0, bill.getId()), bill);
