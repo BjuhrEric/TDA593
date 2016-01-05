@@ -6,6 +6,8 @@ import ClassDiagram.Bill;
 import ClassDiagram.BillingInformation;
 import ClassDiagram.ClassDiagramPackage;
 import ClassDiagram.Cost;
+import MockDatabase.BillsMock;
+
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 import java.util.UUID;
@@ -61,6 +63,8 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 	 * @ordered
 	 */
 	protected long id = ID_EDEFAULT;
+	
+	private BillsMock billsMock = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -71,6 +75,9 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 		super();
 		cost = new EObjectResolvingEList<Cost>(Cost.class, this, ClassDiagramPackage.BILL__COST);
 		id = UUID.randomUUID().getLeastSignificantBits();
+		billsMock = BillsMock.getInstance();
+		//Add this bill to database
+		billsMock.saveBill(this);
 	}
 
 
@@ -108,11 +115,14 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void setId(long newId) {
+		//You probably dont want to do this since the bill is stored in the "database" but if you insist..
+		billsMock.removeBill(this);
 		long oldId = id;
 		id = newId;
+		billsMock.saveBill(this);
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ClassDiagramPackage.BILL__ID, oldId, id));
 	}
@@ -123,10 +133,12 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 	 * @generated NOT
 	 */
 	public void addCost(Cost cost) {
+		billsMock.removeBill(this);
 		if (this.cost == null) {
 			this.cost = new EObjectResolvingEList<Cost>(Cost.class, this, ClassDiagramPackage.BILL__COST);
 		}
 		this.cost.add(cost);
+		billsMock.saveBill(this);
 	}
 
 	/**
@@ -135,19 +147,23 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 	 * @generated NOT
 	 */
 	public void removeCost(Cost cost) {
+		billsMock.removeBill(this);
 		this.cost.remove(cost);
+		billsMock.saveBill(this);
 		
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @returns Null if failed to remove bill (this bill did not exist in the database), 'this' if all went well
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
 	public Bill remove() {
-		// TODO: implement this method, remove bill from database
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		if(billsMock.removeBill(this)){
+			return this;
+		}
+		return null;
 	}
 
 	/**
