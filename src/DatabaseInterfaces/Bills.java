@@ -10,7 +10,7 @@ public interface Bills {
 
 	boolean saveBill (Bill bill);
 	boolean removeBill (Bill bill);
-	boolean getBill (UUID billId);
+	Bill getBill (UUID billId);
 	
 	/**
 	 * Returns a list of bills associated with the given room no.
