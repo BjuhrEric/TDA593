@@ -98,7 +98,7 @@ public class BookingTest {
 			roomBook.cancel();
 		}
 		
-		//Make a booking #2
+		//Make a booking #2 (Violates the intended behavior)
 		rooms = RoomTypesMock.getInstance().getAvailableRoomTypes(startDate, endDate, array);
 		
 		assertTrue(rooms.size()!= 0);
@@ -112,7 +112,7 @@ public class BookingTest {
 		
 		cardValid = customer2.getBillingInformation().get(0).validate();
 	
-		//This card's validity is deliberately set to be incorrect. It violates the intended behavior.
+		//This card's validity is deliberately set to be incorrect.
 		assertFalse(cardValid);
 		
 		if(!(rooms.size()!= 0) && !cardValid) {
