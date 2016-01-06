@@ -48,20 +48,26 @@ public class CheckOutTest {
 	
 	@Before
 	public void setUp() throws Exception {
+		// Instantiate global variables
 		customer = factory.createIndividualCustomer();
 		roomBooking = factory.createRoomBooking();
 		roomType = factory.createRoomType();
 		rooms = new ArrayList<>();
 		guests = new ArrayList<>();
+		
+		//Set up the testing environment
 		setUpGuests();
 		setUpRoomBooking();
 		setUpRoomType();
 		setUpRooms();
 		setUpCustomer();
-		for(Guest g: guests){
-			roomBooking.checkIn(g, rooms.get(0));
+		for(Room r: rooms){
+			for(Guest g: guests){
+				roomBooking.checkIn(g, r);
+			}
 		}
 	}
+	
 	private void setUpGuests(){
 		final Guest g1 = factory.createGuest();
 		final Guest g2 = factory.createGuest(); 
@@ -74,6 +80,7 @@ public class CheckOutTest {
 		guests.add(g1);
 		guests.add(g2);
 	}
+	
 	private void setUpCustomer(){
 		if(customer instanceof IndividualCustomer){
 			final IndividualCustomer c = (IndividualCustomer) customer;
@@ -137,7 +144,7 @@ public class CheckOutTest {
 		}
 	}
 	
-	// Tests the checkOut procedure and true if successful, false otherwise
+	// Tests the checkOut procedure and returns true if successful, false otherwise
 	private Boolean checkOutSuccessful(){
 		boolean success = true;
 		final Customer thisCustomer = cdb.getCustomer(customer.getEmail());
