@@ -8,6 +8,7 @@ import ClassDiagram.EventBooking;
 import ClassDiagram.Organization;
 import ClassDiagram.Person;
 import ClassDiagram.RoomBooking;
+import MockDatabase.CustomersMock;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
@@ -223,13 +224,16 @@ public class OrganizationImpl extends MinimalEObjectImpl.Container implements Or
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ClassDiagramPackage.ORGANIZATION__NAME, oldName, name));
+		if(email != null){
+			CustomersMock.getInstance().addCustomer(this);
+		}
 	}
 
 	/**
@@ -244,13 +248,16 @@ public class OrganizationImpl extends MinimalEObjectImpl.Container implements Or
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void setAddress(String newAddress) {
 		String oldAddress = address;
 		address = newAddress;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ClassDiagramPackage.ORGANIZATION__ADDRESS, oldAddress, address));
+		if(email != null){
+			CustomersMock.getInstance().addCustomer(this);
+		}
 	}
 
 	/**
@@ -282,13 +289,16 @@ public class OrganizationImpl extends MinimalEObjectImpl.Container implements Or
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void setResponsiblePerson(Person newResponsiblePerson) {
 		Person oldResponsiblePerson = responsiblePerson;
 		responsiblePerson = newResponsiblePerson;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ClassDiagramPackage.ORGANIZATION__RESPONSIBLE_PERSON, oldResponsiblePerson, responsiblePerson));
+		if(email != null){
+			CustomersMock.getInstance().addCustomer(this);
+		}
 	}
 
 	/**
@@ -303,13 +313,18 @@ public class OrganizationImpl extends MinimalEObjectImpl.Container implements Or
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void setEmail(String newEmail) {
+		if(email != null){
+			CustomersMock.getInstance().deleteCustomer(email);
+		}
 		String oldEmail = email;
 		email = newEmail;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ClassDiagramPackage.ORGANIZATION__EMAIL, oldEmail, email));
+		
+		CustomersMock.getInstance().addCustomer(this);
 	}
 
 	/**
@@ -322,6 +337,9 @@ public class OrganizationImpl extends MinimalEObjectImpl.Container implements Or
 			roomBookings = new EObjectResolvingEList<RoomBooking>(RoomBooking.class, this, ClassDiagramPackage.ORGANIZATION__ROOM_BOOKINGS);
 		}
 		roomBookings.add(roomBooking);
+		if(email != null){
+			CustomersMock.getInstance().addCustomer(this);
+		}
 	}
 
 	/**
@@ -334,6 +352,9 @@ public class OrganizationImpl extends MinimalEObjectImpl.Container implements Or
 			eventBookings = new EObjectResolvingEList<EventBooking>(EventBooking.class, this, ClassDiagramPackage.ORGANIZATION__EVENT_BOOKINGS);
 		}
 		eventBookings.add(eventBooking);
+		if(email != null){
+			CustomersMock.getInstance().addCustomer(this);
+		}
 	}
 
 	/**
@@ -373,6 +394,9 @@ public class OrganizationImpl extends MinimalEObjectImpl.Container implements Or
 			}
 		}
 		billingInformation.add(info);
+		if(email != null){
+			CustomersMock.getInstance().addCustomer(this);
+		}
 	}
 
 	/**
