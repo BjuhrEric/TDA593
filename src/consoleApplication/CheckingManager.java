@@ -96,7 +96,7 @@ public class CheckingManager {
 	 */
 	private boolean renderRoomsToBooking(RoomBooking booking) {
 		//TODO is this method buggy? If I enter an invalid input, it goes nuts
-		EList<RoomType> roomTypes = booking.getRoomType();
+		EList<RoomType> roomTypes = booking.getRoomTypes();
 		
 		//Go through 'roomTypes' list
 		for (int i = 0; i < roomTypes.size(); ++i) {

@@ -667,7 +667,7 @@ public class ClassDiagramPackageImpl extends EPackageImpl implements ClassDiagra
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRoomBooking_RoomType() {
+	public EReference getRoomBooking_RoomTypes() {
 		return (EReference)roomBookingEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -1636,7 +1636,7 @@ public class ClassDiagramPackageImpl extends EPackageImpl implements ClassDiagra
 		roomBookingEClass = createEClass(ROOM_BOOKING);
 		createEAttribute(roomBookingEClass, ROOM_BOOKING__START_DATE);
 		createEAttribute(roomBookingEClass, ROOM_BOOKING__END_DATE);
-		createEReference(roomBookingEClass, ROOM_BOOKING__ROOM_TYPE);
+		createEReference(roomBookingEClass, ROOM_BOOKING__ROOM_TYPES);
 		createEAttribute(roomBookingEClass, ROOM_BOOKING__NUMBER_OF_GUESTS);
 		createEReference(roomBookingEClass, ROOM_BOOKING__ROOMS);
 		createEAttribute(roomBookingEClass, ROOM_BOOKING__ID);
@@ -1862,7 +1862,7 @@ public class ClassDiagramPackageImpl extends EPackageImpl implements ClassDiagra
 		initEClass(roomBookingEClass, RoomBooking.class, "RoomBooking", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRoomBooking_StartDate(), ecorePackage.getEDate(), "startDate", null, 1, 1, RoomBooking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getRoomBooking_EndDate(), ecorePackage.getEDate(), "endDate", null, 1, 1, RoomBooking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getRoomBooking_RoomType(), this.getRoomType(), null, "roomType", null, 0, -1, RoomBooking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getRoomBooking_RoomTypes(), this.getRoomType(), null, "roomTypes", null, 0, -1, RoomBooking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getRoomBooking_NumberOfGuests(), theTypesPackage.getInteger(), "numberOfGuests", null, 1, 1, RoomBooking.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getRoomBooking_Rooms(), this.getRoom(), null, "rooms", null, 0, -1, RoomBooking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getRoomBooking_Id(), ecorePackage.getELong(), "id", null, 1, 1, RoomBooking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);

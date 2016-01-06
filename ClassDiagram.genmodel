@@ -141,7 +141,7 @@
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute ClassDiagram.ecore#//RoomBooking/startDate"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute ClassDiagram.ecore#//RoomBooking/endDate"/>
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-          propertySortChoices="true" ecoreFeature="ecore:EReference ClassDiagram.ecore#//RoomBooking/roomType"/>
+          propertySortChoices="true" ecoreFeature="ecore:EReference ClassDiagram.ecore#//RoomBooking/roomTypes"/>
       <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" createChild="false"
           ecoreFeature="ecore:EAttribute ClassDiagram.ecore#//RoomBooking/numberOfGuests"/>
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"

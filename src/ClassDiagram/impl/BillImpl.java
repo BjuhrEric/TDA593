@@ -3,7 +3,6 @@
 package ClassDiagram.impl;
 
 import ClassDiagram.Bill;
-import ClassDiagram.BillingInformation;
 import ClassDiagram.ClassDiagramPackage;
 import ClassDiagram.Cost;
 import MockDatabase.BillsMock;

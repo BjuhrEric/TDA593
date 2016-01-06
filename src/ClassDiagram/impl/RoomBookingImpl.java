@@ -11,8 +11,6 @@ import ClassDiagram.Room;
 import ClassDiagram.RoomBooking;
 import ClassDiagram.RoomStatus;
 import ClassDiagram.RoomType;
-import sun.util.locale.provider.AvailableLanguageTags;
-
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 import java.util.Date;
@@ -38,7 +36,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * <ul>
  *   <li>{@link ClassDiagram.impl.RoomBookingImpl#getStartDate <em>Start Date</em>}</li>
  *   <li>{@link ClassDiagram.impl.RoomBookingImpl#getEndDate <em>End Date</em>}</li>
- *   <li>{@link ClassDiagram.impl.RoomBookingImpl#getRoomType <em>Room Type</em>}</li>
+ *   <li>{@link ClassDiagram.impl.RoomBookingImpl#getRoomTypes <em>Room Types</em>}</li>
  *   <li>{@link ClassDiagram.impl.RoomBookingImpl#getNumberOfGuests <em>Number Of Guests</em>}</li>
  *   <li>{@link ClassDiagram.impl.RoomBookingImpl#getRooms <em>Rooms</em>}</li>
  *   <li>{@link ClassDiagram.impl.RoomBookingImpl#getId <em>Id</em>}</li>
@@ -88,14 +86,14 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 	protected Date endDate = END_DATE_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getRoomType() <em>Room Type</em>}' reference list.
+	 * The cached value of the '{@link #getRoomTypes() <em>Room Types</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRoomType()
+	 * @see #getRoomTypes()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<RoomType> roomType;
+	protected EList<RoomType> roomTypes;
 
 	/**
 	 * The default value of the '{@link #getNumberOfGuests() <em>Number Of Guests</em>}' attribute.
@@ -213,11 +211,11 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public EList<RoomType> getRoomType() {
-		if (roomType == null) {
-			roomType = new EObjectResolvingEList<RoomType>(RoomType.class, this, ClassDiagramPackage.ROOM_BOOKING__ROOM_TYPE);
+	public EList<RoomType> getRoomTypes() {
+		if (roomTypes == null) {
+			roomTypes = new EObjectResolvingEList<RoomType>(RoomType.class, this, ClassDiagramPackage.ROOM_BOOKING__ROOM_TYPES);
 		}
-		return roomType;
+		return roomTypes;
 	}
 
 	/**
@@ -367,12 +365,12 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 	 * @generated NOT
 	 */
 	public void addRoomType(RoomType roomType) {
-		if(this.roomType == null) {
+		if(this.roomTypes == null) {
 			//this.roomType = new EObjectResolvingEList<RoomType>(RoomType.class, this, ClassDiagramPackage.ROOM_BOOKING__ROOM_TYPE); 
 			//thszabi: Changed EObjectResolvingEList to BasicEList because EObjectResolvingEList can't store the same elements more than once
-			this.roomType = new BasicEList<RoomType>();
+			this.roomTypes = new BasicEList<RoomType>();
 		}
-			this.roomType.add(roomType);
+			this.roomTypes.add(roomType);
 	}
 
 	/**
@@ -381,7 +379,7 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 	 * @generated NOT
 	 */
 	public void removeRoomType(RoomType roomType) {
-		this.roomType.remove(roomType);
+		this.roomTypes.remove(roomType);
 	}
 
 	/**
@@ -396,8 +394,8 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 				return getStartDate();
 			case ClassDiagramPackage.ROOM_BOOKING__END_DATE:
 				return getEndDate();
-			case ClassDiagramPackage.ROOM_BOOKING__ROOM_TYPE:
-				return getRoomType();
+			case ClassDiagramPackage.ROOM_BOOKING__ROOM_TYPES:
+				return getRoomTypes();
 			case ClassDiagramPackage.ROOM_BOOKING__NUMBER_OF_GUESTS:
 				return getNumberOfGuests();
 			case ClassDiagramPackage.ROOM_BOOKING__ROOMS:
@@ -423,9 +421,9 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 			case ClassDiagramPackage.ROOM_BOOKING__END_DATE:
 				setEndDate((Date)newValue);
 				return;
-			case ClassDiagramPackage.ROOM_BOOKING__ROOM_TYPE:
-				getRoomType().clear();
-				getRoomType().addAll((Collection<? extends RoomType>)newValue);
+			case ClassDiagramPackage.ROOM_BOOKING__ROOM_TYPES:
+				getRoomTypes().clear();
+				getRoomTypes().addAll((Collection<? extends RoomType>)newValue);
 				return;
 			case ClassDiagramPackage.ROOM_BOOKING__ROOMS:
 				getRooms().clear();
@@ -452,8 +450,8 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 			case ClassDiagramPackage.ROOM_BOOKING__END_DATE:
 				setEndDate(END_DATE_EDEFAULT);
 				return;
-			case ClassDiagramPackage.ROOM_BOOKING__ROOM_TYPE:
-				getRoomType().clear();
+			case ClassDiagramPackage.ROOM_BOOKING__ROOM_TYPES:
+				getRoomTypes().clear();
 				return;
 			case ClassDiagramPackage.ROOM_BOOKING__ROOMS:
 				getRooms().clear();
@@ -477,8 +475,8 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 				return START_DATE_EDEFAULT == null ? startDate != null : !START_DATE_EDEFAULT.equals(startDate);
 			case ClassDiagramPackage.ROOM_BOOKING__END_DATE:
 				return END_DATE_EDEFAULT == null ? endDate != null : !END_DATE_EDEFAULT.equals(endDate);
-			case ClassDiagramPackage.ROOM_BOOKING__ROOM_TYPE:
-				return roomType != null && !roomType.isEmpty();
+			case ClassDiagramPackage.ROOM_BOOKING__ROOM_TYPES:
+				return roomTypes != null && !roomTypes.isEmpty();
 			case ClassDiagramPackage.ROOM_BOOKING__NUMBER_OF_GUESTS:
 				return numberOfGuests != NUMBER_OF_GUESTS_EDEFAULT;
 			case ClassDiagramPackage.ROOM_BOOKING__ROOMS:
@@ -515,12 +513,12 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 				addRoom((Room)arguments.get(0));
 				return null;
 			case ClassDiagramPackage.ROOM_BOOKING___REMOVE_ROOM__ROOM:
-			try {
-				removeRoom((Room)arguments.get(0));
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+				try {
+					removeRoom((Room)arguments.get(0));
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				return null;
 			case ClassDiagramPackage.ROOM_BOOKING___ADD_ROOM_TYPE__ROOMTYPE:
 				addRoomType((RoomType)arguments.get(0));

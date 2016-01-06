@@ -163,14 +163,14 @@ public class BookingTest {
 		
 		//RoomType
 		roomBook.addRoomType(roomType);
-		testResult = roomBook.getRoomType().contains(roomType);
+		testResult = roomBook.getRoomTypes().contains(roomType);
 		
 		assertTrue(testResult);
 		//-----------------
 		
 		roomBook.addRoomType(roomType2);
-		testResult = roomBook.getRoomType().contains(roomType)&&
-				roomBook.getRoomType().contains(roomType2);
+		testResult = roomBook.getRoomTypes().contains(roomType)&&
+				roomBook.getRoomTypes().contains(roomType2);
 		
 		assertTrue(testResult);
 		//-----------------

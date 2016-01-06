@@ -175,7 +175,7 @@ public class CheckInTest {
 	public static List<Room> checkIn(final RoomBooking roomBooking, 
 			List<Guest> guests, final List<Room> rooms) {
 		final List<Room> availableRooms = new ArrayList<>();
-		final List<RoomType> roomTypes = new ArrayList<>(roomBooking.getRoomType());
+		final List<RoomType> roomTypes = new ArrayList<>(roomBooking.getRoomTypes());
 		final List<Room> ret;
 		final int n = roomTypes.size();
 		

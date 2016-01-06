@@ -135,7 +135,7 @@ public class RoomTypesMock implements RoomTypes{
 		List<RoomBooking> bookings = RoomBookingsMock.getInstance().getRoomBookings();
 		ArrayList<Date> toReturn = new ArrayList<Date>();
 		for(RoomBooking booking : bookings){
-			if(booking.getRoomType().equals(roomType)){
+			if(booking.getRoomTypes().equals(roomType)){
 				toReturn.add(booking.getStartDate());
 			}
 		}
@@ -148,7 +148,7 @@ public class RoomTypesMock implements RoomTypes{
 		List<RoomBooking> bookings = RoomBookingsMock.getInstance().getRoomBookings();
 		ArrayList<Date> toReturn = new ArrayList<Date>();
 		for(RoomBooking booking : bookings){
-			if(booking.getRoomType().equals(roomType)){
+			if(booking.getRoomTypes().equals(roomType)){
 				toReturn.add(booking.getEndDate());
 			}
 		}

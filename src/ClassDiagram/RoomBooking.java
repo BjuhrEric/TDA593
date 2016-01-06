@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link ClassDiagram.RoomBooking#getStartDate <em>Start Date</em>}</li>
  *   <li>{@link ClassDiagram.RoomBooking#getEndDate <em>End Date</em>}</li>
- *   <li>{@link ClassDiagram.RoomBooking#getRoomType <em>Room Type</em>}</li>
+ *   <li>{@link ClassDiagram.RoomBooking#getRoomTypes <em>Room Types</em>}</li>
  *   <li>{@link ClassDiagram.RoomBooking#getNumberOfGuests <em>Number Of Guests</em>}</li>
  *   <li>{@link ClassDiagram.RoomBooking#getRooms <em>Rooms</em>}</li>
  *   <li>{@link ClassDiagram.RoomBooking#getId <em>Id</em>}</li>
@@ -83,7 +83,7 @@ public interface RoomBooking extends EObject {
 	void setEndDate(Date value);
 
 	/**
-	 * Returns the value of the '<em><b>Room Type</b></em>' reference list.
+	 * Returns the value of the '<em><b>Room Types</b></em>' reference list.
 	 * The list contents are of type {@link ClassDiagram.RoomType}.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -91,12 +91,12 @@ public interface RoomBooking extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Room Type</em>' reference list.
-	 * @see ClassDiagram.ClassDiagramPackage#getRoomBooking_RoomType()
+	 * @return the value of the '<em>Room Types</em>' reference list.
+	 * @see ClassDiagram.ClassDiagramPackage#getRoomBooking_RoomTypes()
 	 * @model ordered="false"
 	 * @generated
 	 */
-	EList<RoomType> getRoomType();
+	EList<RoomType> getRoomTypes();
 
 	/**
 	 * Returns the value of the '<em><b>Number Of Guests</b></em>' attribute.
@@ -211,7 +211,6 @@ public interface RoomBooking extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @throws Exception 
 	 * @model roomRequired="true" roomOrdered="false"
 	 * @generated
 	 */

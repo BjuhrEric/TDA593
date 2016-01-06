@@ -809,13 +809,13 @@ public interface ClassDiagramPackage extends EPackage {
 	int ROOM_BOOKING__END_DATE = 1;
 
 	/**
-	 * The feature id for the '<em><b>Room Type</b></em>' reference list.
+	 * The feature id for the '<em><b>Room Types</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_BOOKING__ROOM_TYPE = 2;
+	int ROOM_BOOKING__ROOM_TYPES = 2;
 
 	/**
 	 * The feature id for the '<em><b>Number Of Guests</b></em>' attribute.
@@ -2405,15 +2405,15 @@ public interface ClassDiagramPackage extends EPackage {
 	EAttribute getRoomBooking_EndDate();
 
 	/**
-	 * Returns the meta object for the reference list '{@link ClassDiagram.RoomBooking#getRoomType <em>Room Type</em>}'.
+	 * Returns the meta object for the reference list '{@link ClassDiagram.RoomBooking#getRoomTypes <em>Room Types</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Room Type</em>'.
-	 * @see ClassDiagram.RoomBooking#getRoomType()
+	 * @return the meta object for the reference list '<em>Room Types</em>'.
+	 * @see ClassDiagram.RoomBooking#getRoomTypes()
 	 * @see #getRoomBooking()
 	 * @generated
 	 */
-	EReference getRoomBooking_RoomType();
+	EReference getRoomBooking_RoomTypes();
 
 	/**
 	 * Returns the meta object for the attribute '{@link ClassDiagram.RoomBooking#getNumberOfGuests <em>Number Of Guests</em>}'.
@@ -3800,12 +3800,12 @@ public interface ClassDiagramPackage extends EPackage {
 		EAttribute ROOM_BOOKING__END_DATE = eINSTANCE.getRoomBooking_EndDate();
 
 		/**
-		 * The meta object literal for the '<em><b>Room Type</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Room Types</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ROOM_BOOKING__ROOM_TYPE = eINSTANCE.getRoomBooking_RoomType();
+		EReference ROOM_BOOKING__ROOM_TYPES = eINSTANCE.getRoomBooking_RoomTypes();
 
 		/**
 		 * The meta object literal for the '<em><b>Number Of Guests</b></em>' attribute feature.

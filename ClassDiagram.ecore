@@ -152,7 +152,7 @@
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="endDate" ordered="false"
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="roomType" ordered="false"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="roomTypes" ordered="false"
         upperBound="-1" eType="#//RoomType"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="numberOfGuests" ordered="false"
         lowerBound="1" eType="ecore:EDataType ../org.eclipse.uml2.types/model/Types.ecore#//Integer"

@@ -634,7 +634,7 @@ public class BookingManager {
 		//23. Assume: Booking is not to be paid in advance
 		if(payInAdvanceChoice.equals("y")) {
 			Bill bill = ClassDiagramFactoryImpl.eINSTANCE.createBill();
-			for(RoomType roomType : newBooking.getRoomType()) {
+			for(RoomType roomType : newBooking.getRoomTypes()) {
 				bill.addCost(roomType);
 			}
 			if(invoice != null){

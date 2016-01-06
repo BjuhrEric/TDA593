@@ -35,7 +35,7 @@
     <ownedAttribute xmi:type="uml:Property" xmi:id="_mTbtkJOHEeWai68V7lLhPw" name="endDate">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
     </ownedAttribute>
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_2S-MEZOKEeWai68V7lLhPw" name="roomType" type="_kdDI0JOJEeWai68V7lLhPw" aggregation="shared" association="_2S8W4JOKEeWai68V7lLhPw">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_2S-MEZOKEeWai68V7lLhPw" name="roomTypes" type="_kdDI0JOJEeWai68V7lLhPw" aggregation="shared" association="_2S8W4JOKEeWai68V7lLhPw">
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4fOoQJOKEeWai68V7lLhPw"/>
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4fQdcJOKEeWai68V7lLhPw" value="*"/>
     </ownedAttribute>

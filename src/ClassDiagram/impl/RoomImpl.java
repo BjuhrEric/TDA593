@@ -140,7 +140,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected RoomImpl() {
 		super();
