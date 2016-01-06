@@ -18,13 +18,49 @@ import Payment.Invoice;
 
 public class CustomersMock implements Customers {
 
-	HashMap<String, Customer> customers;
+	static HashMap<String, Customer> customers;
 	private static CustomersMock instance = null;
 	
 	private CustomersMock(){
 		//Customer email is the key
 		customers = new HashMap<String, Customer>();
-		
+	}
+	
+	public static CustomersMock getInstance(){
+		if(instance == null){
+			instance = new CustomersMock();
+			init();
+		}
+		return instance;
+	}
+	
+	@Override
+	public boolean addCustomer(Customer customer) {
+		//Only inserts if key is unique and then returns true, otherwise returns false (fail to insert)
+		return customers.put(customer.getEmail(), customer) == null;
+	}
+
+	@Override
+	public boolean deleteCustomer(String email) {
+		return customers.remove(email) != null;
+	}
+
+	@Override
+	public Customer getCustomer(String email) {
+		return customers.get(email);
+	}
+
+	@Override
+	public Customer getCustomerByEmail(String email) {
+		return getCustomer(email);
+	}
+
+	@Override
+	public List<Customer> getCustomers() {
+		return new ArrayList<Customer>(customers.values());
+	}
+	
+	public static void init(){
 		IndividualCustomer c1 = ClassDiagramFactoryImpl.eINSTANCE.createIndividualCustomer();
 		c1.addBillingInformation(new CreditCard("1234123412341234", "123", "1216"));
 		c1.addFamilyName("Jonsson");
@@ -65,39 +101,6 @@ public class CustomersMock implements Customers {
 		rektorn.addFirstName("Wolfgang");
 		o.setResponsiblePerson(rektorn);
 		customers.put(o.getEmail(), o);
-	}
-	
-	public static CustomersMock getInstance(){
-		if(instance == null){
-			instance = new CustomersMock();
-		}
-		return instance;
-	}
-	
-	@Override
-	public boolean addCustomer(Customer customer) {
-		//Only inserts if key is unique and then returns true, otherwise returns false (fail to insert)
-		return customers.put(customer.getEmail(), customer) == null;
-	}
-
-	@Override
-	public boolean deleteCustomer(String email) {
-		return customers.remove(email) != null;
-	}
-
-	@Override
-	public Customer getCustomer(String email) {
-		return customers.get(email);
-	}
-
-	@Override
-	public Customer getCustomerByEmail(String email) {
-		return getCustomer(email);
-	}
-
-	@Override
-	public List<Customer> getCustomers() {
-		return new ArrayList<Customer>(customers.values());
 	}
 
 }
