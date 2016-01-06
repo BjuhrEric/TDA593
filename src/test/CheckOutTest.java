@@ -32,6 +32,7 @@ import Payment.CreditCard;
 import Payment.Invoice;
 
 import static ClassDiagram.ClassDiagramFactory.eINSTANCE;
+import static ClassDiagram.CleaningStatus.DIRTY;
 
 public class CheckOutTest {
 	private final static ClassDiagramFactory factory = eINSTANCE;
@@ -43,7 +44,7 @@ public class CheckOutTest {
 	private RoomType roomType;
 	private CustomersMock cdb = CustomersMock.getInstance();
 	private RoomsMock rdb = RoomsMock.getInstance();
-	private final int NBRROOMS = 1;
+	private final int NBRROOMS = 2;
 	
 	@Before
 	public void setUp() throws Exception {
@@ -125,9 +126,9 @@ public class CheckOutTest {
 			final Room room = factory.createRoom();
 			room.setRoomType(roomType);
 			room.setBill(b);
-			room.setRoomStatus(RoomStatus.AVAILABLE);
+			room.setRoomStatus(RoomStatus.OCCUPIED);
 			room.setCleaningStatus(CleaningStatus.CLEAN);
-			room.setRoomNumber(1);
+			room.setRoomNumber(i);
 			for(Guest g: guests){
 				room.addGuest(g);
 			}
@@ -135,67 +136,49 @@ public class CheckOutTest {
 			roomBooking.addRoom(room);
 		}
 	}
-
-	@Test
-	public void testMainFlow(){
+	
+	// Tests the checkOut procedure and true if successful, false otherwise
+	private Boolean checkOutSuccessful(){
+		boolean success = true;
 		final Customer thisCustomer = cdb.getCustomer(customer.getEmail());
-		
-		// Check that there exists a customer with the given email
-		assertTrue(thisCustomer != null);
-		
+		final CreditCard customerCC = (CreditCard)thisCustomer.getBillingInformation().get(0);
+		final List<Payment> payments = thisCustomer.getRoomBookings().get(0).checkOut();
+		final Bill customerBill = payments.get(0).getBill();
 		final List<Room> customerRooms = thisCustomer.getRoomBookings().get(0).getRooms();
 		List<Guest> customerGuests = customerRooms.get(0).getGuests();
 		
-		// Check that all guests are checked in before checking them out
-		for(int i = 0; i < customerRooms.size(); i++){
-			for(Guest g: customerRooms.get(i).getGuests()){
-				assertTrue(g.getStatus().equals(GuestStatus.CHECKED_IN));
-			}
+		success &= 
+		thisCustomer != null && // Check that a customer with that email exists
+		customerRooms.size() == NBRROOMS && // Checks that there are correct nbr of rooms
+		customerCC.validate() && // Check that the credit card is valid
+		customerBill != null; // Check that there exists a bill
+		for(Room r: customerRooms){
+			customerGuests = r.getGuests();
+			success &= 
+			customerGuests.size() == 0 && // Check that there are no guests attached to the room ater checkout
+			r.getCleaningStatus().equals(CleaningStatus.CHECKED_OUT) && // Check that the cleaning status is correct
+			r.getRoomStatus().equals(RoomStatus.AVAILABLE); // Check that the room status is correct
 		}
 		
-		// Check that there are correct number of rooms in the customer's name"
-		assertTrue(customerRooms.size() == NBRROOMS);
-		
-		//Check that the customer's credit card is valid
-		final CreditCard customerCC = (CreditCard)thisCustomer.getBillingInformation().get(0);
-		assertTrue(customerCC.validate());
-		
-		//Check that there exists a room bill that can be payed
-		final List<Payment> payments = thisCustomer.getRoomBookings().get(0).checkOut();
-		final Bill customerBill = payments.get(0).getBill();
-		assertTrue(customerBill != null);
-		
-		//Performing the payment. This is not testable in our system
+		// Perform the payment. This cannot be tested in our system
 		payments.get(0).performPayment(customerCC);
 		
-		// Check that there are no guests in the rooms after checkout
-		// and also that all rooms are marked with the cleaning status checked out
-		// and that the rooms are marked as available again
-		for(int i = 0; i < customerRooms.size(); i++){
-			customerGuests = customerRooms.get(i).getGuests();
-			assertTrue(customerGuests.size() == 0);
-			assertTrue(customerRooms.get(i).getCleaningStatus().equals(CleaningStatus.CHECKED_OUT));
-			assertTrue(customerRooms.get(i).getRoomStatus().equals(RoomStatus.AVAILABLE));
+		for(Guest g: guests){
+			// Check that all the guests are marked as checked out after checkout
+			success &= g.getStatus().equals(GuestStatus.CHECKED_OUT);
 		}
+		
+		return success;
 	}
 	@Test
-	public void testSomethingWroing(){
-		//Check that if the email is entered incorrectly, it does not return a customer
-		Customer thisCustomer = cdb.getCustomer("This is not an email");
-		assertTrue(thisCustomer == null);
-		
-		//Checking that a room is correctly removed from a room booking
-		try{
-			customer.getRoomBookings().get(0).removeRoom(rooms.get(0));
-		}catch(Exception e){
-			
-		};
-		thisCustomer = cdb.getCustomer(customer.getEmail());
-		assertTrue(thisCustomer.getRoomBookings().get(0).getRooms().size() == 0);
-		
-		//Check that an invalid credit card does not pass the validation
-		CreditCard customerCC = new CreditCard("Not 16 chars", "333", "12/12");
-		assertFalse(customerCC.validate());
+	public void testMainFlow(){
+		assertTrue(checkOutSuccessful());
+	}
+	@Test
+	public void testUnintendedBehaviour(){
+		// Tests that an invalid creditCard fails the check-out procedure
+		customer.addBillingInformation(new CreditCard("123123123", "2323", "323"));
+		assertFalse(checkOutSuccessful());
 	}
 	
 
