@@ -65,7 +65,7 @@ public class BookingTest {
 		startDate = new Date(2016,12,24);
 		endDate = new Date(2016,12,25);
 		
-		
+		room.setRoomType(roomType);
 		item.setPrice(200);
 		bill.addCost(item);
 		room.setBill(bill);
