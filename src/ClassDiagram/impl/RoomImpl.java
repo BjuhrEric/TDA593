@@ -11,6 +11,7 @@ import ClassDiagram.Payment;
 import ClassDiagram.Room;
 import ClassDiagram.RoomStatus;
 import ClassDiagram.RoomType;
+import MockDatabase.RoomsMock;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
@@ -145,6 +146,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 		super();
 		bill = ClassDiagramFactoryImpl.eINSTANCE.createBill();
 		
+		
 	}
 
 	/**
@@ -181,13 +183,16 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void setRoomStatus(RoomStatus newRoomStatus) {
+		RoomsMock db = RoomsMock.getInstance();
+		db.deleteRoom(roomNumber);
 		RoomStatus oldRoomStatus = roomStatus;
 		roomStatus = newRoomStatus == null ? ROOM_STATUS_EDEFAULT : newRoomStatus;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ClassDiagramPackage.ROOM__ROOM_STATUS, oldRoomStatus, roomStatus));
+		db.addRoom(this);
 	}
 
 	/**
@@ -202,13 +207,16 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void setCleaningStatus(CleaningStatus newCleaningStatus) {
+		RoomsMock db = RoomsMock.getInstance();
+		db.deleteRoom(roomNumber);
 		CleaningStatus oldCleaningStatus = cleaningStatus;
 		cleaningStatus = newCleaningStatus == null ? CLEANING_STATUS_EDEFAULT : newCleaningStatus;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ClassDiagramPackage.ROOM__CLEANING_STATUS, oldCleaningStatus, cleaningStatus));
+		db.addRoom(this);
 	}
 
 	/**
@@ -240,13 +248,16 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void setRoomType(RoomType newRoomType) {
+		RoomsMock db = RoomsMock.getInstance();
+		db.deleteRoom(roomNumber);
 		RoomType oldRoomType = roomType;
 		roomType = newRoomType;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ClassDiagramPackage.ROOM__ROOM_TYPE, oldRoomType, roomType));
+		db.addRoom(this);
 	}
 
 	/**
@@ -278,13 +289,16 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void setBill(Bill newBill) {
+		RoomsMock db = RoomsMock.getInstance();
+		db.deleteRoom(roomNumber);
 		Bill oldBill = bill;
 		bill = newBill;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ClassDiagramPackage.ROOM__BILL, oldBill, bill));
+		db.addRoom(this);
 	}
 
 	/**
@@ -299,13 +313,15 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void setRoomNumber(int newRoomNumber) {
+		RoomsMock db = RoomsMock.getInstance();
 		int oldRoomNumber = roomNumber;
 		roomNumber = newRoomNumber;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ClassDiagramPackage.ROOM__ROOM_NUMBER, oldRoomNumber, roomNumber));
+		db.addRoom(this);
 	}
 
 	/**
@@ -326,6 +342,8 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * @generated NOT
 	 */
 	public Payment checkOut() {
+		RoomsMock db = RoomsMock.getInstance();
+		db.deleteRoom(roomNumber);
 		Payment p = ClassDiagramFactoryImpl.eINSTANCE.createPayment();
 		p.setBill(bill);
 		for (Guest guest: guests) {
@@ -334,6 +352,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 		guests.clear();
 		setCleaningStatus(CleaningStatus.CHECKED_OUT);
 		setRoomStatus(RoomStatus.AVAILABLE);
+		db.addRoom(this);
 		
 		return p;
 	}
@@ -344,10 +363,13 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * @generated NOT
 	 */
 	public void addGuest(Guest guest) {
+		RoomsMock db = RoomsMock.getInstance();
+		db.deleteRoom(roomNumber);
 		if (guests == null) {
 			guests = new EObjectResolvingEList<Guest>(Guest.class, this, ClassDiagramPackage.ROOM__GUESTS);
 		}
 		this.guests.add(guest);
+		db.addRoom(this);
 	}
 
 	/**
