@@ -317,6 +317,10 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 */
 	public void setRoomNumber(int newRoomNumber) {
 		RoomsMock db = RoomsMock.getInstance();
+		if(roomNumber != 0){
+			//this means you want to change room number
+			db.deleteRoom(roomNumber);
+		}
 		int oldRoomNumber = roomNumber;
 		roomNumber = newRoomNumber;
 		if (eNotificationRequired())
