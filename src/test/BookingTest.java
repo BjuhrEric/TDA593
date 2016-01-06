@@ -32,7 +32,7 @@ public class BookingTest {
 	IndividualCustomerImpl customer2;
 	BillingInformation info;
 	BillingInformation info2;
-	int[] array = {1};
+
 	
 	@Before
 	public void setUp() throws Exception {
@@ -79,7 +79,7 @@ public class BookingTest {
 		//Assume customer wants the roomType suite
 		//Assume Customer wants 2 person to stay in room
 		
-		List rooms = RoomTypesMock.getInstance().getAvailableRoomTypes(startDate, endDate, array);
+		List rooms = RoomTypesMock.getInstance().getAvailableRoomTypes(startDate, endDate, 1);
 		
 		assertTrue(rooms.size()!= 0);
 		
@@ -99,7 +99,7 @@ public class BookingTest {
 		}
 		
 		//Make a booking #2 (Violates the intended behavior)
-		rooms = RoomTypesMock.getInstance().getAvailableRoomTypes(startDate, endDate, array);
+		rooms = RoomTypesMock.getInstance().getAvailableRoomTypes(startDate, endDate, 1);
 		
 		assertTrue(rooms.size()!= 0);
 		
