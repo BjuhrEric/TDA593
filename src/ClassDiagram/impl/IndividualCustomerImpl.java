@@ -8,6 +8,8 @@ import ClassDiagram.Customer;
 import ClassDiagram.EventBooking;
 import ClassDiagram.IndividualCustomer;
 import ClassDiagram.RoomBooking;
+import MockDatabase.CustomersMock;
+import MockDatabase.RoomBookingsMock;
 
 import java.lang.reflect.InvocationTargetException;
 
@@ -160,6 +162,9 @@ public class IndividualCustomerImpl extends PersonImpl implements IndividualCust
 	
 	protected IndividualCustomerImpl() {
 		super();
+		getRoomBookings();
+		getEventBookings();
+		getBillingInformation();
 	}
 
 	/**
@@ -220,13 +225,16 @@ public class IndividualCustomerImpl extends PersonImpl implements IndividualCust
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void setPhoneNumber(String newPhoneNumber) {
 		String oldPhoneNumber = phoneNumber;
 		phoneNumber = newPhoneNumber;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ClassDiagramPackage.INDIVIDUAL_CUSTOMER__PHONE_NUMBER, oldPhoneNumber, phoneNumber));
+		if(email != null){
+			CustomersMock.getInstance().addCustomer(this);
+		}
 	}
 
 	/**
@@ -241,13 +249,18 @@ public class IndividualCustomerImpl extends PersonImpl implements IndividualCust
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void setEmail(String newEmail) {
+		CustomersMock db = CustomersMock.getInstance();
+		if(email != null){
+			db.deleteCustomer(email);
+		}
 		String oldEmail = email;
 		email = newEmail;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ClassDiagramPackage.INDIVIDUAL_CUSTOMER__EMAIL, oldEmail, email));
+		db.addCustomer(this);
 	}
 
 	/**
@@ -262,13 +275,17 @@ public class IndividualCustomerImpl extends PersonImpl implements IndividualCust
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void setAddress(String newAddress) {
+		CustomersMock db = CustomersMock.getInstance();
 		String oldAddress = address;
 		address = newAddress;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ClassDiagramPackage.INDIVIDUAL_CUSTOMER__ADDRESS, oldAddress, address));
+		if(email != null){
+			db.addCustomer(this);
+		}
 	}
 
 	/**
@@ -281,6 +298,11 @@ public class IndividualCustomerImpl extends PersonImpl implements IndividualCust
 			roomBookings = new EObjectResolvingEList<RoomBooking>(RoomBooking.class, this, ClassDiagramPackage.INDIVIDUAL_CUSTOMER__ROOM_BOOKINGS);
 		}
 		roomBookings.add(roomBooking);
+		RoomBookingsMock.getInstance().addRoomBooking(roomBooking);
+		if(email != null){
+			CustomersMock.getInstance().addCustomer(this);
+		}
+		
 	}
 
 	/**
@@ -337,6 +359,9 @@ public class IndividualCustomerImpl extends PersonImpl implements IndividualCust
 		
 		billingInformation.remove(itmp);
 		billingInformation.add(info);
+		if(email != null){
+			CustomersMock.getInstance().addCustomer(this);
+		}
 	}
 	
 	/**
