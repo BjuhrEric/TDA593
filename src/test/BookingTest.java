@@ -120,7 +120,9 @@ public class BookingTest {
 		}
 		
 		
-		//extra tests for the roomBooking class
+		/**
+		 * Extra tests for the roomBooking class
+		 */
 		Boolean testResult;
 		
 		//Start date
@@ -155,9 +157,8 @@ public class BookingTest {
 		}
 		testResult = roomBook.getRooms().contains(room);
 		
-		//This test does deliberately violate the intended behavior
-		//Should cause failed test
-		assertTrue(!testResult);
+		//This test does deliberately violate the intended behavior.
+		assertFalse(testResult);
 				
 		
 		//RoomType
