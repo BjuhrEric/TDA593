@@ -271,7 +271,7 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void cancel() {
 		// TODO: implement this method
