@@ -93,7 +93,6 @@ public class CheckOutTest {
 			c.setTitle(Title.DR);
 			c.addBillingInformation(bi);
 			c.addRoomBooking(roomBooking);
-			System.out.println(roomBooking.getRooms().get(0).getNumberOfGuests());
 			c.setID(10);
 		}else{
 			final Organization c = (Organization) customer;
