@@ -132,13 +132,21 @@ public class CheckInTest {
 
 	@Test
 	public void test() {
+		final List<Room> checkedInRooms = checkIn(roomBooking, guests, rooms);
 		boolean success = true;
-		checkIn(roomBooking, guests, rooms, roomType);
+	
+		System.out.println();
+		System.out.println("## A total of " + checkedInRooms.size() + " rooms are checked in. ##");
+		System.out.println();
 		
-		for (Room r : rooms) {
-			success &= r.getRoomStatus() == OCCUPIED;
-			success &= r.getCleaningStatus() == CLEAN;
+		for (Room r : checkedInRooms) {
+			success &= r.getRoomStatus().equals(OCCUPIED);
+			success &= r.getCleaningStatus().equals(CLEAN);
 			success &= guests.containsAll(r.getGuests());
+			System.out.println("Room " + r.getRoomNumber() + ":");
+			r.getGuests().forEach((guest) -> System.out.println(formatName(guest) 
+											+ " guest status: " + guest.getStatus()));
+			System.out.println();
 		}
 		
 		for (Guest g : guests) {
@@ -148,14 +156,23 @@ public class CheckInTest {
 		assertTrue("Post condition valid", success);
 	}
 	
-	public static void checkIn(final RoomBooking roomBooking, final List<Guest> guests, final List<Room> rooms, final RoomType roomType) {
+	public static List<Room> checkIn(final RoomBooking roomBooking, 
+			List<Guest> guests, final List<Room> rooms) {
 		final List<Room> availableRooms = new ArrayList<>();
-		final int n = roomBooking.getRoomType().size();
+		final List<RoomType> roomTypes = new ArrayList<>(roomBooking.getRoomType());
+		final List<Room> ret;
+		final int n = roomTypes.size();
+		
+		guests = new ArrayList<>(guests);
 		
 		System.out.println("Checking in " + guests.size() + " guest(s) to " + n + " room(s).");
 		for (Room r : rooms) {
-			if (r.getRoomStatus().equals(AVAILABLE) && r.getRoomType().equals(roomType)) {
-				availableRooms.add(r);
+			for (RoomType roomType : roomTypes) {
+				if (r.getRoomStatus().equals(AVAILABLE) && r.getRoomType().equals(roomType)) {
+					availableRooms.add(r);
+					roomTypes.remove(roomType);
+					break;
+				}
 			}
 			
 			if (availableRooms.size() >= n) {
@@ -163,6 +180,7 @@ public class CheckInTest {
 			}
 		}
 		
+		ret = new ArrayList<>(availableRooms);
 		System.out.println("Found " + availableRooms.size() + " available rooms, and require at least " + n);
 		
 		
@@ -179,12 +197,15 @@ public class CheckInTest {
 				
 				System.out.println("Guest status: " + g.getStatus());
 				System.out.println("Room status: " + availableRooms.get(0).getRoomStatus());
-				if (availableRooms.get(0).getNumberOfGuests() >= roomType.getGuestCapacity()) {
+				System.out.println("Cleaning status: " + availableRooms.get(0).getCleaningStatus());
+				if (availableRooms.get(0).getNumberOfGuests() >= availableRooms.get(0).getRoomType().getGuestCapacity()) {
 					availableRooms.remove(0);
 					roomBooking.addRoom(availableRooms.get(0));
 				}
 			}
 		}
+		
+		return ret;
 	}
 	
 	private static String formatName(final Person p) {
