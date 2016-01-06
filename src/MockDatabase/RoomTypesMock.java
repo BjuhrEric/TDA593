@@ -168,7 +168,7 @@ public class RoomTypesMock implements RoomTypes{
 		List<Room> rooms = RoomsMock.getInstance().listRooms();
 		int numberOfRooms = 0;
 		for(Room room : rooms){
-			if(room.getRoomType().equals(roomType)){
+			if(roomType.equals(room.getRoomType())){
 				numberOfRooms++;
 			}
 		}

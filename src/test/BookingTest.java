@@ -49,6 +49,7 @@ public class BookingTest {
 		customer = (IndividualCustomerImpl)factory.createIndividualCustomer();
 		customer2 = (IndividualCustomerImpl)factory.createIndividualCustomer();
 		
+			
 		info = new CreditCard("1234123412341234", "123", "2016-01-01");
 		customer.addBillingInformation(info);
 		info2 = new CreditCard("123412341234123", "12", "2016-01-01");
@@ -61,8 +62,8 @@ public class BookingTest {
 		roomType.setDescription("Beautiful luxurious room");
 		roomType.setPrice(5000);
 		
-		startDate = new Date(2015,12,24);
-		endDate = new Date(2016,01,01);
+		startDate = new Date(2016,12,24);
+		endDate = new Date(2016,12,25);
 		
 		
 		item.setPrice(200);
@@ -128,7 +129,7 @@ public class BookingTest {
 		//Start date
 		roomBook.setStartDate(startDate);
 		
-		int x = roomBook.getStartDate().compareTo(new Date(2015,12,24));
+		int x = roomBook.getStartDate().compareTo(new Date(2016,12,24));
 		testResult = x == 0;
 		
 		assertTrue(testResult);
@@ -136,7 +137,7 @@ public class BookingTest {
 		
 		//End date
 		roomBook.setEndDate(endDate);
-		int y = roomBook.getEndDate().compareTo(new Date(2016,01,01));
+		int y = roomBook.getEndDate().compareTo(new Date(2016,12,25));
 		testResult = y == 0;
 		
 		assertTrue(testResult);
