@@ -17,25 +17,13 @@ public class RoomBookingsMock implements RoomBookings{
 	private static RoomBookingsMock instance = null;
 	
 	private RoomBookingsMock(){
-		bookings = new HashMap<Long, RoomBooking>();
-		RoomTypesMock roomType = RoomTypesMock.getInstance();
-		CustomersMock customers = CustomersMock.getInstance();
-		//TODO: add bookings
-		RoomBooking rb1 = ClassDiagramFactoryImpl.eINSTANCE.createRoomBooking();
-		rb1.addRoomType(roomType.getRoomTypes().get(0));
-		rb1.setStartDate(new Date(2016,1,20));
-		rb1.setEndDate(new Date(2016, 1, 25));
-		rb1.setId(UUID.randomUUID().getLeastSignificantBits());
-		Customer c1 = customers.getCustomer("elvirajonsson123@hotmail.com");
-		c1.addRoomBooking(rb1);
-		
-		
-		
+		bookings = new HashMap<Long, RoomBooking>();		
 	}
 	
 	public static RoomBookingsMock getInstance(){
 		if(instance == null){
 			instance = new RoomBookingsMock();
+			init();
 		}
 		return instance;
 	}
@@ -67,6 +55,18 @@ public class RoomBookingsMock implements RoomBookings{
 	public List<RoomBooking> getRoomBookings(UUID customerId, Date date, RoomType roomType) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+	public static void init(){
+		RoomTypesMock roomType = RoomTypesMock.getInstance();
+		CustomersMock customers = CustomersMock.getInstance();
+		//TODO: add bookings
+		RoomBooking rb1 = ClassDiagramFactoryImpl.eINSTANCE.createRoomBooking();
+		rb1.addRoomType(roomType.getRoomTypes().get(0));
+		rb1.setStartDate(new Date(2016,1,20));
+		rb1.setEndDate(new Date(2016, 1, 25));
+		rb1.setId(UUID.randomUUID().getLeastSignificantBits());
+		Customer c1 = customers.getCustomer("elvirajonsson123@hotmail.com");
+		c1.addRoomBooking(rb1);
 	}
 
 }

@@ -10,7 +10,7 @@ import DatabaseInterfaces.Bills;
 
 public class BillsMock implements Bills{
 	
-	private HashMap<UUID, Bill> bills;
+	private static HashMap<UUID, Bill> bills;
 	private static BillsMock instance = null;
 	
 	private BillsMock(){
@@ -20,6 +20,7 @@ public class BillsMock implements Bills{
 	public static BillsMock getInstance(){
 		if(instance == null){
 			instance = new BillsMock();
+			init();
 		}
 		return instance;	
 	}
@@ -47,6 +48,9 @@ public class BillsMock implements Bills{
 	public List<Bill> getBill(int roomNo, Date date) {
 		//TODO: implement when roomMock is done
 		return null;
+	}
+	public static void init(){
+		//TODO: add some bills 
 	}
 
 }

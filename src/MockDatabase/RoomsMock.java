@@ -11,11 +11,50 @@ import DatabaseInterfaces.Rooms;
 
 public class RoomsMock implements Rooms{
 
-	private HashMap<Integer, Room> rooms;
+	private static HashMap<Integer, Room> rooms;
 	private static RoomsMock instance = null;
 	
 	private RoomsMock(){
 		rooms = new HashMap<Integer, Room>();
+	}
+	
+	public static RoomsMock getInstance(){
+		if(instance == null){
+			instance = new RoomsMock();
+			init();
+		}
+		return instance;
+	}
+	
+	@Override
+	/**
+	 * @returns null if everything went well, the previous room associated with the room number if the room number was occupied
+	 */
+	public Room addRoom(Room room) {
+		Room result = rooms.put(room.getRoomNumber(), room);
+		if(result == null || result.equals(room)){
+			return null;
+		}
+		return result;
+	}
+
+	@Override
+	public Room deleteRoom(int roomNumber) {
+		return rooms.remove(roomNumber);
+	}
+
+	@Override
+	public Room getRoom(int roomNumber) {
+		return rooms.get(roomNumber);
+	}
+
+	@Override
+	public List<Room> listRooms() {
+		ArrayList<Room> roomList = 	new ArrayList<Room>(rooms.values());
+		//TODO: sort after room number
+		return roomList;
+	}
+	public static void init(){
 		RoomTypesMock roomTypes = RoomTypesMock.getInstance();
 		List<RoomType> roomTypesInDb = roomTypes.getRoomTypes();
 		
@@ -63,42 +102,6 @@ public class RoomsMock implements Rooms{
 		r9.setRoomNumber(9);
 		r9.setRoomType(roomTypesInDb.get(2));
 		rooms.put(9, r9);
-	}
-	
-	public static RoomsMock getInstance(){
-		if(instance == null){
-			instance = new RoomsMock();
-		}
-		return instance;
-	}
-	
-	@Override
-	/**
-	 * @returns null if everything went well, the previous room associated with the room number if the room number was occupied
-	 */
-	public Room addRoom(Room room) {
-		Room result = rooms.put(room.getRoomNumber(), room);
-		if(result == null || result.equals(room)){
-			return null;
-		}
-		return result;
-	}
-
-	@Override
-	public Room deleteRoom(int roomNumber) {
-		return rooms.remove(roomNumber);
-	}
-
-	@Override
-	public Room getRoom(int roomNumber) {
-		return rooms.get(roomNumber);
-	}
-
-	@Override
-	public List<Room> listRooms() {
-		ArrayList<Room> roomList = 	new ArrayList<Room>(rooms.values());
-		//TODO: sort after room number
-		return roomList;
 	}
 
 }
