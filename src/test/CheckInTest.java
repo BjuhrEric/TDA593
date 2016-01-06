@@ -132,7 +132,7 @@ public class CheckInTest {
 
 	@Test
 	public void test() {
-		final List<Room> checkedInRooms = checkIn(roomBooking, guests, rooms, roomType);
+		final List<Room> checkedInRooms = checkIn(roomBooking, guests, rooms);
 		boolean success = true;
 	
 		System.out.println();
@@ -157,17 +157,22 @@ public class CheckInTest {
 	}
 	
 	public static List<Room> checkIn(final RoomBooking roomBooking, 
-			List<Guest> guests, final List<Room> rooms, final RoomType roomType) {
+			List<Guest> guests, final List<Room> rooms) {
 		final List<Room> availableRooms = new ArrayList<>();
+		final List<RoomType> roomTypes = new ArrayList<>(roomBooking.getRoomType());
 		final List<Room> ret;
-		final int n = roomBooking.getRoomType().size();
+		final int n = roomTypes.size();
 		
 		guests = new ArrayList<>(guests);
 		
 		System.out.println("Checking in " + guests.size() + " guest(s) to " + n + " room(s).");
 		for (Room r : rooms) {
-			if (r.getRoomStatus().equals(AVAILABLE) && r.getRoomType().equals(roomType)) {
-				availableRooms.add(r);
+			for (RoomType roomType : roomTypes) {
+				if (r.getRoomStatus().equals(AVAILABLE) && r.getRoomType().equals(roomType)) {
+					availableRooms.add(r);
+					roomTypes.remove(roomType);
+					break;
+				}
 			}
 			
 			if (availableRooms.size() >= n) {
@@ -193,7 +198,7 @@ public class CheckInTest {
 				System.out.println("Guest status: " + g.getStatus());
 				System.out.println("Room status: " + availableRooms.get(0).getRoomStatus());
 				System.out.println("Cleaning status: " + availableRooms.get(0).getCleaningStatus());
-				if (availableRooms.get(0).getNumberOfGuests() >= roomType.getGuestCapacity()) {
+				if (availableRooms.get(0).getNumberOfGuests() >= availableRooms.get(0).getRoomType().getGuestCapacity()) {
 					availableRooms.remove(0);
 					roomBooking.addRoom(availableRooms.get(0));
 				}
