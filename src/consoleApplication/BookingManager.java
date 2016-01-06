@@ -237,7 +237,7 @@ public class BookingManager {
 		Date current = new Date();
 		Date next = new Date();
 		next.setYear(current.getYear() + 2);
-		List<RoomType> allAvailableRoomTypes = roomTypes.getAvailableRoomTypes(current,  next, 0);
+		List<RoomType> allAvailableRoomTypes = roomTypes.getAvailableRoomTypes(startDate,  endDate, 0);
 		if(allAvailableRoomTypes.isEmpty()) {
 			System.out.println("There are no available room types. Booking can't be made, terminating...");
 			return;
