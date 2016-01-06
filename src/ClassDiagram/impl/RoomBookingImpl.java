@@ -3,6 +3,7 @@
 package ClassDiagram.impl;
 
 import ClassDiagram.ClassDiagramPackage;
+import ClassDiagram.CleaningStatus;
 import ClassDiagram.Guest;
 import ClassDiagram.GuestStatus;
 import ClassDiagram.Payment;
@@ -10,6 +11,7 @@ import ClassDiagram.Room;
 import ClassDiagram.RoomBooking;
 import ClassDiagram.RoomStatus;
 import ClassDiagram.RoomType;
+import sun.util.locale.provider.AvailableLanguageTags;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
@@ -307,7 +309,8 @@ public class RoomBookingImpl extends MinimalEObjectImpl.Container implements Roo
 	 * @generated NOT
 	 */
 	public void checkIn(Guest guest, Room room) {
-		if(rooms.contains(room)) {
+		if(rooms.contains(room) && room.getRoomStatus().equals(RoomStatus.AVAILABLE)
+				&& room.getCleaningStatus().equals(CleaningStatus.CLEAN)) {
 			room.addGuest(guest);
 			room.setRoomStatus(RoomStatus.OCCUPIED);
 			guest.setStatus(GuestStatus.CHECKED_IN);
