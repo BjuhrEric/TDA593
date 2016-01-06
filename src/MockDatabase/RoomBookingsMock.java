@@ -1,5 +1,6 @@
 package MockDatabase;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -67,6 +68,11 @@ public class RoomBookingsMock implements RoomBookings{
 		rb1.setId(UUID.randomUUID().getLeastSignificantBits());
 		Customer c1 = customers.getCustomer("elvirajonsson123@hotmail.com");
 		c1.addRoomBooking(rb1);
+	}
+
+	@Override
+	public List<RoomBooking> getRoomBookings() {
+		return new ArrayList<RoomBooking>(bookings.values());
 	}
 
 }

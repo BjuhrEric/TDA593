@@ -15,6 +15,7 @@ public interface RoomBookings {
 	boolean updateRoomBooking(RoomBooking roomBooking);
 	RoomBooking getRoomBooking(UUID id);
 	List<RoomBooking> getRoomBookings(UUID customerId, Date date, RoomType roomType);
+	List<RoomBooking> getRoomBookings();
 	
 	
 	

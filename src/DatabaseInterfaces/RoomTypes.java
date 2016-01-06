@@ -15,5 +15,9 @@ public interface RoomTypes {
 	public void dispRoomType(RoomType roomType);
 	//List all roomTypes
 	public List<RoomType> getRoomTypes();
-	public List<RoomType> getAvailableRoomTypes(Date start, Date end, int[] distribution);
+	public List<RoomType> getAvailableRoomTypes(Date start, Date end, int numPeople);
+	
+	public List<Date> getStartDates(RoomType roomType);
+	public List<Date> getEndDates(RoomType roomType);
+	public int getNumberOfRooms(RoomType roomType);
 }

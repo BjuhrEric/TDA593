@@ -215,22 +215,34 @@ public class BookingManager {
 		
 		//2. The system provides a list of available room types for each room based on the capacity of the room type and a list of available packages that is suitable.
 		RoomTypes roomTypes = RoomTypesMock.getInstance();
-		List<RoomType> availableRoomTypes = roomTypes.getAvailableRoomTypes(startDate, endDate, numberOfGuestsInRooms);
-		for(int i = 0; i < availableRoomTypes.size(); i++) {
-			System.out.println("Available Roomtype #" + new Integer(i+1) + ": " + availableRoomTypes.get(i).toString());
+		int roomNumber = 1;
+		boolean noneAvailable = false;
+		ArrayList<List<RoomType>> availableRoomTypesPerGuestGroup = new ArrayList<List<RoomType>>();
+		for(int guests : numberOfGuestsInRooms){
+			List<RoomType> availableRoomTypes = roomTypes.getAvailableRoomTypes(startDate, endDate, guests);
+			availableRoomTypesPerGuestGroup.add(availableRoomTypes);
+			if(availableRoomTypes.isEmpty()){
+				noneAvailable = true;
+				break;
+			}
+			System.out.println("Available room types for room # " + roomNumber + ":");
+			for(int i = 0; i < availableRoomTypes.size(); i++) {
+				System.out.println("Available Roomtype #" + new Integer(i+1) + ": " + availableRoomTypes.get(i).toString());
+			}
+			roomNumber++;
 		}
+
 
 		//3. Assume: There are enough available room types to satisfy the booking
 		Date current = new Date();
 		Date next = new Date();
 		next.setYear(current.getYear() + 2);
-		int[] noGuests = {0};
-		List<RoomType> allAvailableRoomTypes = roomTypes.getAvailableRoomTypes(current,  next, noGuests);
+		List<RoomType> allAvailableRoomTypes = roomTypes.getAvailableRoomTypes(current,  next, 0);
 		if(allAvailableRoomTypes.isEmpty()) {
 			System.out.println("There are no available room types. Booking can't be made, terminating...");
 			return;
 		}
-		if(availableRoomTypes.isEmpty()) {
+		if(noneAvailable) {
 			//3a. There are not enough room types available.
 			//1.  System provides information about which room types are available.
 			System.out.println("There are not enough room type.");
@@ -272,8 +284,9 @@ public class BookingManager {
 		//Won't implement this until we realize we need this
 		
 		//8. System adds each room type to the booking.
-		for(int chosenRoomType : chosenRoomTypes) {
-			newBooking.addRoomType(availableRoomTypes.get(chosenRoomType));
+		for(int i = 0; i < chosenRoomTypes.length; i++) {
+			//This *should* work lol
+			newBooking.addRoomType(availableRoomTypesPerGuestGroup.get(i).get(chosenRoomTypes[i]));
 		}
 		
 		//9. Assume: No event booking should be added
