@@ -130,11 +130,9 @@ public class CheckInTest {
 		customer.addRoomBooking(roomBooking);
 	}
 
-	@Test
-	public void test() {
-		final List<Room> checkedInRooms = checkIn(roomBooking, guests, rooms);
+	private boolean checkInSuccessful() {
+		final List<Room> checkedInRooms = checkIn(customer, guests, rooms);
 		boolean success = true;
-	
 		System.out.println();
 		System.out.println("## A total of " + checkedInRooms.size() + " rooms are checked in. ##");
 		System.out.println();
@@ -153,7 +151,25 @@ public class CheckInTest {
 			success &= g.getStatus() == CHECKED_IN;
 		}
 		
-		assertTrue("Post condition valid", success);
+		return success;
+	}
+	
+	@Test
+	public void testMainFlow() {
+		assertTrue("Post condition valid", checkInSuccessful());
+	}
+	
+	@Test
+	public void testUnintendedBehavior1() {
+		rooms.forEach((room) -> room.setCleaningStatus(DIRTY));
+		assertTrue("Post condition valid", !checkInSuccessful());
+	}
+	
+	public static List<Room> checkIn(final Customer customer,
+			final List<Guest> guests, final List<Room> rooms) {
+		final List<Room> checkedInRooms = new ArrayList<>();
+		customer.getRoomBookings().forEach((booking) -> checkedInRooms.addAll(checkIn(booking, guests, rooms)));
+		return checkedInRooms;
 	}
 	
 	public static List<Room> checkIn(final RoomBooking roomBooking, 
